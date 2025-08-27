@@ -1,0 +1,17 @@
+using UnityEngine;
+namespace KH
+{
+    public class Enums : MonoBehaviour
+    {
+
+    }
+    public enum EnemyType
+    {
+        Fairy,
+        GreatFairy,
+        SunflowerFairy,
+        ZombieFairy,
+        Kedama,
+        Raven,
+    }
+}
