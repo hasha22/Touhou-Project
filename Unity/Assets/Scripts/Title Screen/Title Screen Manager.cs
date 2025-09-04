@@ -7,17 +7,18 @@ namespace KH
     {
         public static TitleScreenManager instance { get; private set; }
         [Header("Scene Indexes")]
-        [SerializeField] private int gameSceneIndex = 1;
+        [SerializeField] public int gameSceneIndex = 1;
 
         private void Awake()
         {
             if (instance == null)
             {
                 instance = this;
+                DontDestroyOnLoad(gameObject);
             }
             else
             {
-                DontDestroyOnLoad(gameObject);
+                Destroy(gameObject);
             }
         }
         public void QuitGame()

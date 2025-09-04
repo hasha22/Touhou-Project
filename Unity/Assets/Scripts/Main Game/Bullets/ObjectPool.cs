@@ -8,8 +8,9 @@ namespace KH
 
         [Header("Object Pooling")]
         private List<GameObject> pooledObjects = new List<GameObject>();
-        private int amountToPool = 50;
+        [SerializeField] private int amountToPool = 200;
         [SerializeField] private GameObject bulletPrefab;
+        [SerializeField] private Transform bulletContainer;
 
         private void Awake()
         {
@@ -21,27 +22,31 @@ namespace KH
             {
                 DontDestroyOnLoad(gameObject);
             }
-        }
-        private void Start()
-        {
             for (int i = 0; i < amountToPool; i++)
             {
-                GameObject obj = Instantiate(bulletPrefab);
-                obj.SetActive(false);
-                pooledObjects.Add(obj);
+                GameObject bullet = Instantiate(bulletPrefab);
+                bullet.transform.SetParent(bulletContainer);
+
+                bullet.SetActive(false);
+                pooledObjects.Add(bullet);
             }
         }
 
-        public GameObject GetPooledObjects()
+        public GameObject GetPooledObject()
         {
             for (int i = 0; i < pooledObjects.Count; i++)
             {
                 if (!pooledObjects[i].activeInHierarchy)
                 {
+                    pooledObjects[i].SetActive(true);
                     return pooledObjects[i];
                 }
             }
             return null;
+        }
+        public void ReturnToPool(GameObject bullet)
+        {
+            bullet.SetActive(false);
         }
     }
 }

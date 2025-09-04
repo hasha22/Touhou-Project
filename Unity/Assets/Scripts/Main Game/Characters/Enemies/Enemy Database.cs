@@ -13,10 +13,11 @@ namespace KH
             if (instance == null)
             {
                 instance = this;
+                DontDestroyOnLoad(gameObject);
             }
             else
             {
-                DontDestroyOnLoad(gameObject);
+                Destroy(gameObject);
             }
         }
     }
