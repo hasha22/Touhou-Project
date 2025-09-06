@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5088386342807039593, guid: ba647a27916149f46ad47971c5c0d196, type: 3}
   sprite: {fileID: 21300000, guid: 0f432b8045840f0469f753591a3f73b4, type: 3}
-  speed: 8
-  damage: 1
+  speed: 10
+  damage: 10
   spawnOffset1: {x: -0.7, y: 0.5}
   spawnOffset2: {x: -0.3, y: 0.5}

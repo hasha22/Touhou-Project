@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patternSteps:
   - pattern: {fileID: 11400000, guid: 6c54d1c0f26700449be7e48bece1c012, type: 2}
-    delayBeforeNextPattern: 3
+    delayBeforeNextPattern: 2
   loopPattern: 1

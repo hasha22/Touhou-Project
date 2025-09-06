@@ -2925,7 +2925,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 4fbe62e9ed9ba1c4d856463199d61056, type: 2}
     - target: {fileID: 4842065427334829381, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
       propertyPath: startOnEnable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842065427334829381, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
       propertyPath: attackSequence
@@ -2933,19 +2933,19 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 2a9e556e8417ac4418ae77642bf3dd5e, type: 2}
     - target: {fileID: 5983365598333877050, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
       propertyPath: m_Size.x
-      value: 0.54195106
+      value: 0.4981501
       objectReference: {fileID: 0}
     - target: {fileID: 5983365598333877050, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
       propertyPath: m_Size.y
-      value: 0.6306951
+      value: 0.57946134
       objectReference: {fileID: 0}
     - target: {fileID: 5983365598333877050, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
       propertyPath: m_Offset.x
-      value: -0.0012653917
+      value: -0.006390929
       objectReference: {fileID: 0}
     - target: {fileID: 5983365598333877050, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
       propertyPath: m_Offset.y
-      value: 0.010508716
+      value: 0.0361256
       objectReference: {fileID: 0}
     - target: {fileID: 5983365598333877050, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
       propertyPath: m_IsTrigger
