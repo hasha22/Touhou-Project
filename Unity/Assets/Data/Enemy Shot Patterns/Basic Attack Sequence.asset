@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35db7f9ce4c5c3b4e890c1274faa18d8, type: 3}
   m_Name: Basic Attack Sequence
   m_EditorClassIdentifier: 
-  steps:
+  patternSteps:
   - pattern: {fileID: 11400000, guid: 6c54d1c0f26700449be7e48bece1c012, type: 2}
-    delayAfter: 3
-  loop: 1
+    delayBeforeNextPattern: 3
+  loopPattern: 1

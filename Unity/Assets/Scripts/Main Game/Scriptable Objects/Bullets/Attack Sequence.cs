@@ -4,13 +4,14 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Attack/Attack Sequence")]
 public class AttackSequence : ScriptableObject
 {
-    public List<PatternStep> steps;
-    public bool loop = true;
+    public List<PatternStep> patternSteps;
+    public bool loopPattern = true;
 }
 
+// System.Serializable = struct
 [System.Serializable]
 public class PatternStep
 {
     public EnemyShotPattern pattern;
-    public float delayAfter = 1f;
+    public float delayBeforeNextPattern = 1f;
 }

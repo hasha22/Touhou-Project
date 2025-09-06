@@ -16,8 +16,8 @@ TagManager:
   - Water
   - UI
   - Playable Area
-  - 
-  - 
+  - Background
+  - Game Objects
   - 
   - 
   - 
@@ -42,8 +42,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 653776647
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Game Objects
+    uniqueID: 2981919301
+    locked: 0
+  - name: Bullets
+    uniqueID: 2683733143
     locked: 0
   m_RenderingLayers:
   - Default

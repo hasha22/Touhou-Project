@@ -34,32 +34,15 @@ public class EnemyController : MonoBehaviour
     {
         do
         {
-
-            foreach (var step in attackSequence.steps)
+            foreach (var step in attackSequence.patternSteps)
             {
-                Debug.Log("Skib");
                 step.pattern.Fire((Vector2)transform.position + fireOriginOffset);
 
-                yield return new WaitForSeconds(step.delayAfter);
+                yield return new WaitForSeconds(step.delayBeforeNextPattern);
             }
-        } while (attackSequence.loop);
+        } while (attackSequence.loopPattern);
     }
 
-    private void Fire()
-    {/*
-        foreach (var offset in shotPattern.spawnOffsets)
-        {
-            Vector3 spawnPosition = transform.position + (Vector3)offset;
-            GameObject bulletObj = ObjectPool.instance.GetPooledEnemyObject();
-
-            if (bulletObj != null)
-            {
-                bulletObj.transform.position = spawnPosition;
-                BulletController bullet = bulletObj.GetComponent<BulletController>();
-                bullet.InitializeEnemyBullet(Vector2.down, shotPattern.defaultBulletSpeed, shotPattern.bulletSprite);
-            }
-        }*/
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player Bullet"))

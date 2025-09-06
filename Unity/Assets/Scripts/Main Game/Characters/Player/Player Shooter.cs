@@ -45,6 +45,8 @@ namespace KH
         }
         private void Shoot()
         {
+            // This method handles shooting for the player
+
             // Player bullets spawn position
             Vector3 spawnPosition1 = transform.position + (Vector3)playerManager.characterData.shotType.spawnOffset1;
             Vector3 spawnPosition2 = transform.position + (Vector3)playerManager.characterData.shotType.spawnOffset2;

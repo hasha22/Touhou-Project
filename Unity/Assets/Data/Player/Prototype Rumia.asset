@@ -18,7 +18,7 @@ MonoBehaviour:
   maxLives: 10
   startingPower: 1
   maxPower: 5
-  flyingSpeed: 500
-  precisionSpeed: 250
+  flyingSpeed: 5
+  precisionSpeed: 2.5
   speedLerp: 12
   shotType: {fileID: 11400000, guid: 350d8bf5adcb5b14ba04a1aff8a29ca1, type: 2}

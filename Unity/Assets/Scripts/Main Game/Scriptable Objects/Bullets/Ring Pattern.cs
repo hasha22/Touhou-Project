@@ -9,19 +9,16 @@ public class RingPattern : EnemyShotPattern
     public float spreadDegrees = 360f;
     public float startAngle = 0f;
 
+    // Each bullet pattern will contain it's own trigonometrical calculations to fire its specific pattern
     public override void Fire(Vector2 origin)
     {
         float step = spreadDegrees / count;
-
-        Debug.Log($"Pool: {ObjectPool.instance}, Sprite: {bulletSprite}");
         for (int i = 0; i < count; i++)
         {
             float radians = startAngle * Mathf.Rad2Deg;
             Vector2 direction = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
 
             GameObject bullet = ObjectPool.instance.SpawnBullet(origin);
-
-            if (bullet == null) Debug.LogError("SpawnBulletAt returned null!");
 
             BulletController bulletController = bullet.GetComponent<BulletController>();
             bulletController.InitializeEnemyBullet(direction, defaultBulletSpeed, bulletSprite);

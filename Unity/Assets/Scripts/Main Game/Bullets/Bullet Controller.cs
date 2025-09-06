@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 namespace KH
 {
     public class BulletController : MonoBehaviour
@@ -7,14 +6,14 @@ namespace KH
         [Header("Universal Bullet Behavior")]
         [HideInInspector] public float bulletSpeed;
         private Vector2 direction;
-        private Image bulletImage;
+        private SpriteRenderer spriteRenderer;
         private Rigidbody2D rb;
 
         [Header("Player Bullet")]
-        [HideInInspector] public float bulletDamage = 0f;
+        [HideInInspector] public float bulletDamage;
         private void Awake()
         {
-            bulletImage = GetComponent<Image>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
             rb = GetComponent<Rigidbody2D>();
         }
         private void FixedUpdate()
@@ -29,13 +28,13 @@ namespace KH
         {
             direction = dir.normalized;
             bulletSpeed = speed;
-            bulletImage.sprite = sprite;
+            spriteRenderer.sprite = sprite;
             bulletDamage = damage;
         }
         public void InitializeEnemyBullet(Vector2 dir, float speed, Sprite sprite)
         {
             rb.linearVelocity = dir.normalized * speed;
-            bulletImage.sprite = sprite;
+            spriteRenderer.sprite = sprite;
         }
 
     }
