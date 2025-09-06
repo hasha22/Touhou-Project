@@ -50,8 +50,8 @@ namespace KH
             Vector3 spawnPosition2 = transform.position + (Vector3)playerManager.characterData.shotType.spawnOffset2;
 
             // Grabs bullets from pool
-            GameObject bulletObject1 = ObjectPool.instance.GetPooledObject();
-            GameObject bulletObject2 = ObjectPool.instance.GetPooledObject();
+            GameObject bulletObject1 = ObjectPool.instance.GetPooledPlayerObject();
+            GameObject bulletObject2 = ObjectPool.instance.GetPooledPlayerObject();
 
             if (bulletObject1 != null && bulletObject2 != null)
             {
@@ -60,10 +60,12 @@ namespace KH
 
                 // Initializing bullet data
                 BulletController bullet1 = bulletObject1.GetComponent<BulletController>();
-                bullet1.InitializeBullet(Vector2.up, playerManager.characterData.shotType.speed, playerManager.characterData.shotType.sprite);
+                bullet1.InitializePlayerBullet(Vector2.up, playerManager.characterData.shotType.speed, playerManager.characterData.shotType.sprite,
+                    playerManager.characterData.shotType.damage);
 
                 BulletController bullet2 = bulletObject2.GetComponent<BulletController>();
-                bullet2.InitializeBullet(Vector2.up, playerManager.characterData.shotType.speed, playerManager.characterData.shotType.sprite);
+                bullet2.InitializePlayerBullet(Vector2.up, playerManager.characterData.shotType.speed, playerManager.characterData.shotType.sprite,
+                    playerManager.characterData.shotType.damage);
 
             }
         }

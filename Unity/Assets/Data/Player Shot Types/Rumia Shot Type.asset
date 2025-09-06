@@ -15,5 +15,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5088386342807039593, guid: ba647a27916149f46ad47971c5c0d196, type: 3}
   sprite: {fileID: -419473969, guid: 98ccb123c97b0c24698874a25a768bd1, type: 3}
   speed: 1000
+  damage: 10
   spawnOffset1: {x: 0, y: 50}
   spawnOffset2: {x: -45, y: 50}

@@ -8,6 +8,7 @@ namespace KH
         public GameObject bulletPrefab;
         public Sprite sprite;
         public float speed;
+        public float damage;
         public Vector2 spawnOffset1;
         public Vector2 spawnOffset2;
     }
