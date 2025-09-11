@@ -4,11 +4,11 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [Header("Enemy Stats")]
-    [SerializeField] private int maxHealth = 10;
-    [SerializeField] private float currentHealth;
+    [SerializeField] private Enemy enemyData;
+    [SerializeField] private int currentHealth;
 
     [Header("Shooting")]
-    [SerializeField] private AttackSequence attackSequence;
+    private AttackSequence attackSequence;
     public bool startOnEnable = true;
     public Vector2 fireOriginOffset = Vector2.zero;
 
@@ -16,7 +16,8 @@ public class EnemyController : MonoBehaviour
 
     private void OnEnable()
     {
-        currentHealth = maxHealth;
+        currentHealth = enemyData.enemyHealth;
+        attackSequence = enemyData.attackSequence;
 
         if (startOnEnable && attackSequence != null)
             playCoroutine = StartCoroutine(PlaySequence());
@@ -52,9 +53,10 @@ public class EnemyController : MonoBehaviour
             ObjectPool.instance.ReturnToPool(collision.gameObject);
         }
     }
-    private void TakeDamage(float damage)
+    private void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        ScoreManager.instance.AddScore(enemyData.hitScore * damage);
         if (currentHealth <= 0)
         {
             Die();
@@ -63,6 +65,8 @@ public class EnemyController : MonoBehaviour
     private void Die()
     {
         // add death sound,vfx
+
+        ScoreManager.instance.AddScore(enemyData.deathScore);
         gameObject.SetActive(false);
     }
 }

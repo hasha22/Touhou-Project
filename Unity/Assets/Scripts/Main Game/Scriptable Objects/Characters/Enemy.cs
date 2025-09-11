@@ -1,6 +1,7 @@
 using UnityEngine;
 namespace KH
 {
+    [CreateAssetMenu(menuName = "Enemy Data")]
     public class Enemy : ScriptableObject
     {
         [Header("Enemy Information")]
@@ -14,5 +15,8 @@ namespace KH
         [Header("Score")]
         public int deathScore;
         public int hitScore;
+
+        [Header("Enemy Shooting")]
+        public AttackSequence attackSequence;
     }
 }

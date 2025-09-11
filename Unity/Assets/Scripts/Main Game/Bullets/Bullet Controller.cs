@@ -10,7 +10,7 @@ namespace KH
         private Rigidbody2D rb;
 
         [Header("Player Bullet")]
-        [HideInInspector] public float bulletDamage;
+        [HideInInspector] public int bulletDamage;
         private void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -24,7 +24,7 @@ namespace KH
             }
         }
 
-        public void InitializePlayerBullet(Vector2 dir, float speed, Sprite sprite, float damage)
+        public void InitializePlayerBullet(Vector2 dir, float speed, Sprite sprite, int damage)
         {
             direction = dir.normalized;
             bulletSpeed = speed;
