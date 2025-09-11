@@ -10,5 +10,9 @@ namespace KH
         public int enemyID;
         public GameObject enemyPrefab;
         public EnemyType enemyType;
+
+        [Header("Score")]
+        public int deathScore;
+        public int hitScore;
     }
 }
