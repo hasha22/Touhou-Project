@@ -7,6 +7,10 @@ public class ScoreManager : MonoBehaviour
     public int CurrentScore { get; private set; }
     public int HiScore { get; private set; }
 
+    private int displayedCurrentScore = 0;
+    private int displayedHiScore = 0;
+    [SerializeField] private float scoreUpdateSpeed = 5000f;
+
     [Header("Save System")]
     private SaveSystem saveSystem;
 
@@ -26,8 +30,27 @@ public class ScoreManager : MonoBehaviour
     }
     private void Start()
     {
-        HiScore = saveSystem.LoadScore();
-        UIManager.instance.UpdateScoreUI(CurrentScore, HiScore);
+        displayedHiScore = saveSystem.LoadScore();
+        UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
+    }
+    private void Update()
+    {
+        if (displayedCurrentScore < CurrentScore)
+        {
+            displayedCurrentScore += Mathf.CeilToInt(scoreUpdateSpeed * Time.deltaTime);
+
+            if (displayedCurrentScore > CurrentScore) { displayedCurrentScore = CurrentScore; }
+
+            UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
+        }
+        if (displayedHiScore < HiScore)
+        {
+            displayedHiScore += Mathf.CeilToInt(scoreUpdateSpeed * Time.deltaTime);
+
+            if (displayedHiScore > HiScore) { displayedHiScore = HiScore; }
+
+            UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
+        }
     }
     public void AddScore(int score)
     {
@@ -38,7 +61,7 @@ public class ScoreManager : MonoBehaviour
             HiScore = CurrentScore;
             saveSystem.SaveScore(HiScore);
         }
-        UIManager.instance.UpdateScoreUI(CurrentScore, HiScore);
+        UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
     }
     public void ResetScore()
     {
