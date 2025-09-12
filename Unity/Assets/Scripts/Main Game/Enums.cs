@@ -14,4 +14,10 @@ namespace KH
         Kedama,
         Raven,
     }
+    public enum ItemType
+    {
+        Power,
+        Score,
+        LifeFragment
+    }
 }

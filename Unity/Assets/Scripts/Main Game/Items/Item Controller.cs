@@ -1,3 +1,4 @@
+using KH;
 using UnityEngine;
 public class ItemController : MonoBehaviour
 {
@@ -12,13 +13,18 @@ public class ItemController : MonoBehaviour
     private PlayerManager playerManager;
 
     [Header("Score")]
+    public ItemType itemType;
     [SerializeField] private float addedPowerScore = 0.5f;
     [SerializeField] private int addedScore = 500;
 
-    private void Start()
+    [Header("Sprite Renderer")]
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
+    private void OnEnable()
     {
         playerMagnet = GameObject.FindWithTag("Player Magnet").transform;
         playerManager = GameObject.FindWithTag("Player").GetComponent<PlayerManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -37,6 +43,29 @@ public class ItemController : MonoBehaviour
             transform.Translate(Vector2.down * fallSpeed * Time.deltaTime);
         }
     }
+    public void InitializeItem(ItemType type, int score, float power, Sprite itemSprite)
+    {
+        itemType = type;
+        addedScore = score;
+        addedPowerScore = power;
+        UpdateSprite(itemSprite);
+    }
+    private void UpdateSprite(Sprite sprite)
+    {
+        if (!spriteRenderer) return;
+
+        switch (itemType)
+        {
+            case ItemType.Score:
+                spriteRenderer.sprite = sprite;
+                gameObject.tag = "Score";
+                break;
+            case ItemType.Power:
+                spriteRenderer.sprite = sprite;
+                gameObject.tag = "Power";
+                break;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -45,13 +74,12 @@ public class ItemController : MonoBehaviour
             if (gameObject.CompareTag("Power"))
             {
                 playerManager.AddPower(addedPowerScore);
-                Destroy(gameObject);
             }
             if (gameObject.CompareTag("Score"))
             {
                 ScoreManager.instance.AddScore(addedScore);
-                Destroy(gameObject);
             }
+            ObjectPool.instance.ReturnToPool(gameObject);
         }
     }
 }

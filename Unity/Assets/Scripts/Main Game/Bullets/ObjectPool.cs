@@ -9,12 +9,16 @@ namespace KH
         [Header("Object Pooling")]
         private List<GameObject> pooledPlayerObjects = new List<GameObject>();
         private List<GameObject> pooledEnemyObjects = new List<GameObject>();
+        private List<GameObject> pooledItems = new List<GameObject>();
         [SerializeField] private int amountToPool1 = 100;
         [SerializeField] private int amountToPool2 = 100;
+        [SerializeField] private int amountToPool3 = 100;
         [SerializeField] private GameObject playerBulletPrefab;
         [SerializeField] private GameObject enemyBulletPrefab;
+        [SerializeField] private GameObject itemPrefab;
         [SerializeField] private Transform playerBulletsContainer;
         [SerializeField] private Transform enemyBulletsContainer;
+        [SerializeField] private Transform itemContainer;
 
         private void Awake()
         {
@@ -43,6 +47,14 @@ namespace KH
                 bullet.SetActive(false);
                 pooledEnemyObjects.Add(bullet);
             }
+            for (int i = 0; i < amountToPool3; i++)
+            {
+                GameObject item = Instantiate(itemPrefab);
+                item.transform.SetParent(itemContainer);
+
+                item.SetActive(false);
+                pooledItems.Add(item);
+            }
         }
 
         public GameObject GetPooledPlayerObject()
@@ -69,9 +81,21 @@ namespace KH
             }
             return null;
         }
-        public void ReturnToPool(GameObject bullet)
+        public GameObject GetPooledItem()
         {
-            bullet.SetActive(false);
+            for (int i = 0; i < pooledItems.Count; i++)
+            {
+                if (!pooledItems[i].activeInHierarchy)
+                {
+                    pooledItems[i].SetActive(true);
+                    return pooledItems[i];
+                }
+            }
+            return null;
+        }
+        public void ReturnToPool(GameObject gameObject)
+        {
+            gameObject.SetActive(false);
         }
         public GameObject SpawnBullet(Vector2 worldPos)
         {
