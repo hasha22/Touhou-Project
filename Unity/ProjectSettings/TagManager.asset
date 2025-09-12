@@ -8,6 +8,9 @@ TagManager:
   - Player Bullet
   - Enemy Bullet
   - Enemy
+  - Player Magnet
+  - Power
+  - Score
   layers:
   - Default
   - TransparentFX
