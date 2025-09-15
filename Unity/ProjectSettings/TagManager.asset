@@ -11,6 +11,8 @@ TagManager:
   - Player Magnet
   - Power
   - Score
+  - Player Hitbox
+  - Item
   layers:
   - Default
   - TransparentFX

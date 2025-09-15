@@ -4,7 +4,7 @@ namespace KH
 {
     public class PlayerInputManager : MonoBehaviour
     {
-        InputControls inputControls;
+        [HideInInspector] public InputControls inputControls;
         public static PlayerInputManager instance { get; private set; }
 
         [Header("Player Movement")]

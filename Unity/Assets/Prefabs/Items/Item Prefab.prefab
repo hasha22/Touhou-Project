@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5690104318284634263}
   m_Layer: 0
   m_Name: Item Prefab
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallSpeed: 1
   pullSpeed: 5
-  pullRadius: 2.5
+  pullRadius: 2
   itemType: 0
   addedPowerScore: 0.5
   addedScore: 500
