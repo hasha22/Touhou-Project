@@ -3,13 +3,20 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
 
-    [Header("Score Variables")]
-    public int CurrentScore { get; private set; }
-    public int HiScore { get; private set; }
+    private PlayerManager playerManager;
 
+    [Header("Score Variables")]
+    public int CurrentScore;
+    public int HiScore;
+    [SerializeField] private float scoreUpdateSpeed = 5000f;
     private int displayedCurrentScore = 0;
     private int displayedHiScore = 0;
-    [SerializeField] private float scoreUpdateSpeed = 5000f;
+
+    [Header("Score Thresholds")]
+    private bool passedFirst = false; // 20 million
+    private bool passedSecond = false; // 40 million
+    private bool passedThird = false; // 80 million
+    private bool passedFourth = false; // 150 million
 
     [Header("Save System")]
     private SaveSystem saveSystem;
@@ -17,7 +24,7 @@ public class ScoreManager : MonoBehaviour
     private void Awake()
     {
         saveSystem = new SaveSystem();
-
+        playerManager = GameObject.FindWithTag("Player").GetComponent<PlayerManager>();
         if (instance == null)
         {
             instance = this;
@@ -50,6 +57,27 @@ public class ScoreManager : MonoBehaviour
             if (displayedHiScore > HiScore) { displayedHiScore = HiScore; }
 
             UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
+        }
+
+        if (CurrentScore >= 20000000 && !passedFirst)
+        {
+            playerManager.AddLife();
+            passedFirst = true;
+        }
+        if (CurrentScore >= 40000000 && !passedSecond)
+        {
+            playerManager.AddLife();
+            passedSecond = true;
+        }
+        if (CurrentScore >= 80000000 && !passedThird)
+        {
+            playerManager.AddLife();
+            passedThird = true;
+        }
+        if (CurrentScore >= 150000000 && !passedFourth)
+        {
+            playerManager.AddLife();
+            passedFourth = true;
         }
     }
     public void AddScore(int score)

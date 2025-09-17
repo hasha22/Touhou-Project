@@ -16,6 +16,7 @@ public class ItemManager : MonoBehaviour
     [Header("Sprites")]
     [SerializeField] private Sprite scoreSprite;
     [SerializeField] private Sprite powerSprite;
+    [SerializeField] private Sprite oneUpSprite;
 
     private void Awake()
     {
@@ -63,5 +64,12 @@ public class ItemManager : MonoBehaviour
         powerItem.transform.position = spawnPos;
         ItemController itemController = powerItem.GetComponent<ItemController>();
         itemController.InitializeItem(ItemType.Power, 0, greatPower, powerSprite);
+    }
+    public void Spawn1UpItem(Vector3 spawnPos)
+    {
+        GameObject oneUpItem = ObjectPool.instance.GetPooledItem();
+        oneUpItem.transform.position = spawnPos;
+        ItemController itemController = oneUpItem.GetComponent<ItemController>();
+        itemController.InitializeItem(ItemType.OneUp, 0, 0, oneUpSprite);
     }
 }

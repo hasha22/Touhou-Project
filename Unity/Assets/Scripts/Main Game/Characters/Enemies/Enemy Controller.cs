@@ -68,6 +68,6 @@ public class EnemyController : MonoBehaviour
 
         ScoreManager.instance.AddScore(enemyData.deathScore);
         gameObject.SetActive(false);
-        ItemManager.instance.SpawnGreatScoreItem(transform.position);
+        ItemManager.instance.Spawn1UpItem(transform.position);
     }
 }

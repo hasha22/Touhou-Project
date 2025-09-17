@@ -58,6 +58,7 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         Time.timeScale = 0f;
         deathScreen.SetActive(true);
+        AudioManager.instance.bgmSource.Stop();
     }
 
 }

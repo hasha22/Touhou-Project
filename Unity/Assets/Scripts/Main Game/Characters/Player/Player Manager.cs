@@ -12,29 +12,26 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Player Respawning")]
     [SerializeField] private float respawnDelay = 0.5f;
-    [SerializeField] private float invulnerabilityTime = 4f;
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private float riseDistance = 1.5f;
     [SerializeField] private float riseSpeed = 2f;
+    private bool hasDied = false;
 
+    [Header("Player Invulnerability")]
+    [SerializeField] private float invulnerabilityTime = 5f;
+    [SerializeField] private float flickeringDelay = 0.1f;
 
     [Header("References")]
     [SerializeField] private Collider2D playerCollider;
     private SpriteRenderer spriteRenderer;
-    private PlayerMovement playerMovement;
-    private PlayerShooter playerShooter;
-
-    // Temporary, to be moved to Audio Manager
-    [SerializeField] private AudioClip deathSFX;
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        playerMovement = GetComponent<PlayerMovement>();
-        playerShooter = GetComponent<PlayerShooter>();
     }
     private void Start()
     {
         UIManager.instance.UpdatePowerUI(currentPower);
+        StartCoroutine(RespawnCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,8 +49,9 @@ public class PlayerManager : MonoBehaviour
     }
     private void Die()
     {
+        hasDied = true;
         currentPlayerLives--;
-        AudioSource.PlayClipAtPoint(deathSFX, transform.position, 1.0f);
+        AudioManager.instance.PlaySFX(AudioManager.instance.deathSFX, transform, 1f);
         UIManager.instance.RemoveLife();
 
         if (currentPlayerLives == 0)
@@ -66,13 +64,18 @@ public class PlayerManager : MonoBehaviour
         // Add method for losing power here
         StartCoroutine(RespawnCoroutine());
     }
+    public void AddLife()
+    {
+        currentPlayerLives++;
+        UIManager.instance.AddLife();
+    }
     private IEnumerator RespawnCoroutine()
     {
         spriteRenderer.enabled = false;
         playerCollider.enabled = false;
         PlayerInputManager.instance.inputControls.Disable();
 
-        yield return new WaitForSeconds(respawnDelay);
+        if (hasDied) { yield return new WaitForSeconds(respawnDelay); }
 
         transform.position = respawnPoint.position;
 
@@ -97,17 +100,21 @@ public class PlayerManager : MonoBehaviour
         float elapsed = 0f;
         bool visible = true;
 
+        Color invulnerabilityColor = new Color(0.49f, 0.57f, 0.93f);
+        spriteRenderer.color = invulnerabilityColor;
+
         // flickering
         while (elapsed < invulnerabilityTime)
         {
             visible = !visible;
             if (spriteRenderer != null) spriteRenderer.enabled = visible;
 
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(flickeringDelay);
             elapsed += 0.2f;
         }
 
         if (spriteRenderer != null) spriteRenderer.enabled = true;
         playerCollider.enabled = true;
+        spriteRenderer.color = Color.white;
     }
 }

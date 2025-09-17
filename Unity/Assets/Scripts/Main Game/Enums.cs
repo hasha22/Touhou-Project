@@ -18,6 +18,6 @@ namespace KH
     {
         Power,
         Score,
-        LifeFragment
+        OneUp,
     }
 }

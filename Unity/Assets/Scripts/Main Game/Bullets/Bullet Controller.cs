@@ -23,7 +23,6 @@ namespace KH
                 rb.MovePosition(rb.position + direction * bulletSpeed * Time.fixedDeltaTime);
             }
         }
-
         public void InitializePlayerBullet(Vector2 dir, float speed, Sprite sprite, int damage)
         {
             direction = dir.normalized;

@@ -64,6 +64,10 @@ public class ItemController : MonoBehaviour
                 spriteRenderer.sprite = sprite;
                 gameObject.tag = "Power";
                 break;
+            case ItemType.OneUp:
+                spriteRenderer.sprite = sprite;
+                gameObject.tag = "1 Up";
+                break;
         }
     }
 
@@ -79,7 +83,12 @@ public class ItemController : MonoBehaviour
             {
                 ScoreManager.instance.AddScore(addedScore);
             }
+            if (gameObject.CompareTag("1 Up"))
+            {
+                playerManager.AddLife();
+            }
             ObjectPool.instance.ReturnToPool(gameObject);
+
         }
     }
 }
