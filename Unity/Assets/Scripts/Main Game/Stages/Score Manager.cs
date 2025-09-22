@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
@@ -8,12 +9,18 @@ public class ScoreManager : MonoBehaviour
     [Header("Score Variables")]
     public int CurrentScore;
     public int HiScore;
-    public int Faith;
     [SerializeField] private float scoreUpdateSpeed = 5000f;
-    [SerializeField] private float faithUpdateSpeed = 5000f;
     private int displayedCurrentScore = 0;
     private int displayedHiScore = 0;
-    private int displayedFaith = 0;
+
+    [Header("Faith Variables")]
+    public int Faith;
+    [SerializeField] private float faithUpdateSpeed = 5000f;
+    [SerializeField] private int minFaith = 50000;
+    //[SerializeField] private int maxFaith = 999990;
+    [SerializeField] private int faithDecreaseAmount = 600;
+    [SerializeField] private float faithDecreaseInterval = 1f;
+    [SerializeField] private int displayedFaith = 50000;
 
     [Header("Score Thresholds")]
     private bool passedFirst = false; // 20 million
@@ -23,6 +30,9 @@ public class ScoreManager : MonoBehaviour
 
     [Header("Save System")]
     private SaveSystem saveSystem;
+
+    [Header("Coroutines")]
+    private Coroutine faithDecreaseCoroutine;
 
     private void Awake()
     {
@@ -40,11 +50,13 @@ public class ScoreManager : MonoBehaviour
     }
     private void Start()
     {
+        Faith = 50000;
         displayedHiScore = saveSystem.LoadScore();
         UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
     }
     private void Update()
     {
+        // Score & Faith UI Updates
         if (displayedCurrentScore < CurrentScore)
         {
             displayedCurrentScore += Mathf.CeilToInt(scoreUpdateSpeed * Time.deltaTime);
@@ -61,6 +73,7 @@ public class ScoreManager : MonoBehaviour
 
             UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
         }
+
         if (displayedFaith < Faith)
         {
             displayedFaith += Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
@@ -69,7 +82,12 @@ public class ScoreManager : MonoBehaviour
 
             UIManager.instance.UpdateFaithUI(displayedFaith);
         }
+        if (Faith > minFaith && faithDecreaseCoroutine == null)
+        {
+            faithDecreaseCoroutine = StartCoroutine(FaithDecayRoutine());
+        }
 
+        // Life Updates
         if (CurrentScore >= 20000000 && !passedFirst)
         {
             playerManager.AddLife();
@@ -109,8 +127,24 @@ public class ScoreManager : MonoBehaviour
     }
     public void DecreaseFaith(int faith)
     {
-        if (Faith > 50000) { Faith -= faith; }
-        if (Faith <= 50000) { Faith = 50000; }
+        Faith -= faith;
+        if (Faith < minFaith) { Faith = minFaith; }
+
+        displayedFaith -= Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
+        displayedFaith = Faith;
+
+        UIManager.instance.UpdateFaithUI(displayedFaith);
+    }
+    private IEnumerator FaithDecayRoutine()
+    {
+        yield return new WaitForSeconds(faithDecreaseInterval);
+
+        while (Faith > minFaith)
+        {
+            DecreaseFaith(faithDecreaseAmount);
+        }
+
+        faithDecreaseCoroutine = null;
     }
     public void ResetScore()
     {

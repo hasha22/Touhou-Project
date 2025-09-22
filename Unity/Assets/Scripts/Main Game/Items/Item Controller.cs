@@ -13,10 +13,11 @@ public class ItemController : MonoBehaviour
     private PlayerManager playerManager;
 
     [Header("Score")]
+    // Do not modify these here. Check Item Manager
     public ItemType itemType;
-    [SerializeField] private float addedPowerScore = 0.5f;
-    [SerializeField] private int addedScore = 500;
-    [SerializeField] private int addedFaith = 500;
+    [SerializeField] private float addedPowerScore;
+    [SerializeField] private int addedScore;
+    [SerializeField] private int addedFaith;
 
     [Header("Sprite Renderer")]
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -91,7 +92,7 @@ public class ItemController : MonoBehaviour
             }
             if (gameObject.CompareTag("Faith"))
             {
-
+                ScoreManager.instance.AddFaith(addedFaith);
             }
             if (gameObject.CompareTag("1 Up"))
             {

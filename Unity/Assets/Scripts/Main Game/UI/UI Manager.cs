@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour
     public void UpdateFaithUI(int faith)
     {
         if (currentFaith != null)
-        { currentFaith.text = $"{faith:D9}"; }
+        { currentFaith.text = $"{faith}"; }
     }
     public void UpdatePowerUI(float power)
     {
