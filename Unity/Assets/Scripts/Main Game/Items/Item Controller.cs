@@ -16,6 +16,7 @@ public class ItemController : MonoBehaviour
     public ItemType itemType;
     [SerializeField] private float addedPowerScore = 0.5f;
     [SerializeField] private int addedScore = 500;
+    [SerializeField] private int addedFaith = 500;
 
     [Header("Sprite Renderer")]
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -43,11 +44,12 @@ public class ItemController : MonoBehaviour
             transform.Translate(Vector2.down * fallSpeed * Time.deltaTime);
         }
     }
-    public void InitializeItem(ItemType type, int score, float power, Sprite itemSprite)
+    public void InitializeItem(ItemType type, int score, float power, int faith, Sprite itemSprite)
     {
         itemType = type;
         addedScore = score;
         addedPowerScore = power;
+        addedFaith = faith;
         UpdateSprite(itemSprite);
     }
     private void UpdateSprite(Sprite sprite)
@@ -63,6 +65,10 @@ public class ItemController : MonoBehaviour
             case ItemType.Power:
                 spriteRenderer.sprite = sprite;
                 gameObject.tag = "Power";
+                break;
+            case ItemType.Faith:
+                spriteRenderer.sprite = sprite;
+                gameObject.tag = "Faith";
                 break;
             case ItemType.OneUp:
                 spriteRenderer.sprite = sprite;
@@ -82,6 +88,10 @@ public class ItemController : MonoBehaviour
             if (gameObject.CompareTag("Score"))
             {
                 ScoreManager.instance.AddScore(addedScore);
+            }
+            if (gameObject.CompareTag("Faith"))
+            {
+
             }
             if (gameObject.CompareTag("1 Up"))
             {

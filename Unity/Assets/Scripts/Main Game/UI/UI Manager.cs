@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 
     [Header("UI Elements")]
     public TextMeshProUGUI currentScore;
+    public TextMeshProUGUI currentFaith;
     public TextMeshProUGUI hiScore;
     public TextMeshProUGUI powerScore;
     public GameObject lifePrefab;
@@ -31,6 +32,11 @@ public class UIManager : MonoBehaviour
         { currentScore.text = $"{score:D9}"; }
         if (hiScore != null)
         { hiScore.text = $"{highScore:D9}"; }
+    }
+    public void UpdateFaithUI(int faith)
+    {
+        if (currentFaith != null)
+        { currentFaith.text = $"{faith:D9}"; }
     }
     public void UpdatePowerUI(float power)
     {

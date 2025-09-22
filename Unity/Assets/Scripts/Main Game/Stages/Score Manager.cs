@@ -8,9 +8,12 @@ public class ScoreManager : MonoBehaviour
     [Header("Score Variables")]
     public int CurrentScore;
     public int HiScore;
+    public int Faith;
     [SerializeField] private float scoreUpdateSpeed = 5000f;
+    [SerializeField] private float faithUpdateSpeed = 5000f;
     private int displayedCurrentScore = 0;
     private int displayedHiScore = 0;
+    private int displayedFaith = 0;
 
     [Header("Score Thresholds")]
     private bool passedFirst = false; // 20 million
@@ -58,6 +61,14 @@ public class ScoreManager : MonoBehaviour
 
             UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
         }
+        if (displayedFaith < Faith)
+        {
+            displayedFaith += Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
+
+            if (displayedFaith > Faith) { displayedFaith = Faith; }
+
+            UIManager.instance.UpdateFaithUI(displayedFaith);
+        }
 
         if (CurrentScore >= 20000000 && !passedFirst)
         {
@@ -90,6 +101,16 @@ public class ScoreManager : MonoBehaviour
             saveSystem.SaveScore(HiScore);
         }
         UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
+    }
+    public void AddFaith(int faith)
+    {
+        Faith += faith;
+        UIManager.instance.UpdateFaithUI(displayedFaith);
+    }
+    public void DecreaseFaith(int faith)
+    {
+        if (Faith > 50000) { Faith -= faith; }
+        if (Faith <= 50000) { Faith = 50000; }
     }
     public void ResetScore()
     {

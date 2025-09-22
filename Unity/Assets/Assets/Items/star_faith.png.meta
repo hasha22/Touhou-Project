@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 324652390ddbbc046a3399f63958e4f2
+guid: 39760ca1e3cb28d46a1f30933107a549
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6743024233415356852
-    second: power_0
+      213: -6973119555340349586
+    second: star_faith_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: power_0
+      name: star_faith_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 12
-        height: 14
+        width: 16
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c4e4d6f8f27fb62a0800000000000000
-      internalID: -6743024233415356852
+      spriteID: e6fcb97a5b08a3f90800000000000000
+      internalID: -6973119555340349586
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      power_0: -6743024233415356852
+      star_faith_0: -6973119555340349586
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

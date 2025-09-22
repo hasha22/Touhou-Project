@@ -18,6 +18,8 @@ namespace KH
     {
         Power,
         Score,
+        Faith,
         OneUp,
+        Bomb,
     }
 }

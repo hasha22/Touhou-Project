@@ -14,6 +14,7 @@ TagManager:
   - Player Hitbox
   - Item
   - 1 Up
+  - Faith
   layers:
   - Default
   - TransparentFX
