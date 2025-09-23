@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      reimu_4_0: 3524445808118514715
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

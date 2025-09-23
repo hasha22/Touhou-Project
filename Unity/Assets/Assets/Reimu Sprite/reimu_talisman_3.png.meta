@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      reimu_talisman_3_0: 7948529044021300304
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

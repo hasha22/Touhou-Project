@@ -290,7 +290,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2538061501114219923}
   - component: {fileID: 5744155731172861457}
-  - component: {fileID: 5419483321789410382}
   m_Layer: 5
   m_Name: Faith Bar
   m_TagString: Untagged
@@ -367,24 +366,10 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5419483321789410382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217640520494976757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3408fb8f1da74a949be0659d05abd1dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  faithSlider: {fileID: 5744155731172861457}
-  depletionSpeed: 50
 --- !u!1 &1330949956991536017
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,7 +1498,8 @@ GameObject:
   - component: {fileID: 317238440296344950}
   - component: {fileID: 5418136232443236337}
   - component: {fileID: 1553452091819401589}
-  - component: {fileID: 5405906620911965016}
+  - component: {fileID: 1134669695596448575}
+  - component: {fileID: 3726207804060874546}
   m_Layer: 5
   m_Name: Player Faith
   m_TagString: Untagged
@@ -1563,7 +1549,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &5405906620911965016
+--- !u!114 &1134669695596448575
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1576,9 +1562,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeSpeed: 2
-  fadedAlpha: 0.3
+  fadedAlpha: 0.1
   player: {fileID: 0}
   uiElement: {fileID: 317238440296344950}
+--- !u!114 &3726207804060874546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928125605963527819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3408fb8f1da74a949be0659d05abd1dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faithSlider: {fileID: 5744155731172861457}
+  depletionSpeed: 5000
 --- !u!1 &6349377807459365266
 GameObject:
   m_ObjectHideFlags: 0

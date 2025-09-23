@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour
     //[SerializeField] private int maxFaith = 999990;
     [SerializeField] private int faithDecreaseAmount = 600;
     [SerializeField] private float faithDecreaseInterval = 1f;
-    [SerializeField] private int displayedFaith = 50000;
+    public int displayedFaith = 50000;
 
     [Header("Score Thresholds")]
     private bool passedFirst = false; // 20 million
@@ -81,10 +81,24 @@ public class ScoreManager : MonoBehaviour
             if (displayedFaith > Faith) { displayedFaith = Faith; }
 
             UIManager.instance.UpdateFaithUI(displayedFaith);
+
+            if (faithDecreaseCoroutine != null)
+            {
+                StopCoroutine(faithDecreaseCoroutine);
+                faithDecreaseCoroutine = null;
+            }
         }
-        if (Faith > minFaith && faithDecreaseCoroutine == null)
+        else if (displayedFaith > Faith)
         {
-            faithDecreaseCoroutine = StartCoroutine(FaithDecayRoutine());
+            displayedFaith -= Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
+            UIManager.instance.UpdateFaithUI(displayedFaith);
+        }
+        else
+        {
+            if (Faith > minFaith && faithDecreaseCoroutine == null)
+            {
+                faithDecreaseCoroutine = StartCoroutine(FaithDecayRoutine());
+            }
         }
 
         // Life Updates
@@ -129,16 +143,16 @@ public class ScoreManager : MonoBehaviour
     {
         Faith -= faith;
         if (Faith < minFaith) { Faith = minFaith; }
+    }
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(faithDecreaseInterval);
 
-        displayedFaith -= Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
-        displayedFaith = Faith;
-
-        UIManager.instance.UpdateFaithUI(displayedFaith);
+        faithDecreaseCoroutine = null;
     }
     private IEnumerator FaithDecayRoutine()
     {
         yield return new WaitForSeconds(faithDecreaseInterval);
-
         while (Faith > minFaith)
         {
             DecreaseFaith(faithDecreaseAmount);
@@ -146,6 +160,7 @@ public class ScoreManager : MonoBehaviour
 
         faithDecreaseCoroutine = null;
     }
+
     public void ResetScore()
     {
         CurrentScore = 0;

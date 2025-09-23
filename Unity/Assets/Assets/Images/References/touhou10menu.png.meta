@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      touhou10menu_0: -1848917351097800474
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

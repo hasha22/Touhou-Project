@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      touhou10game_0: 7372740749751164490
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

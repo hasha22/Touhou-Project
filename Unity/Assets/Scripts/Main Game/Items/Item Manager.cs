@@ -16,11 +16,11 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private int smallFaithMultiplier = 100;
 
     [Header("Sprites")]
-    [SerializeField] private Sprite regularScoreSprite;
-    [SerializeField] private Sprite greatScoreSprite;
+    [SerializeField] public Sprite regularScoreSprite;
+    [SerializeField] public Sprite greatScoreSprite;
     [Space]
-    [SerializeField] private Sprite starFaithSprite;
-    [SerializeField] private Sprite smallFaithSprite;
+    [SerializeField] public Sprite starFaithSprite;
+    [SerializeField] public Sprite smallFaithSprite;
     [Space]
     [SerializeField] private Sprite powerSprite;
     [SerializeField] private Sprite greatPowerSprite;
@@ -96,5 +96,17 @@ public class ItemManager : MonoBehaviour
         oneUpItem.transform.position = spawnPos;
         ItemController itemController = oneUpItem.GetComponent<ItemController>();
         itemController.InitializeItem(ItemType.OneUp, 0, 0, 0, oneUpSprite);
+    }
+
+    public void ConvertAllPowerItems()
+    {
+        GameObject[] allPowerItems = GameObject.FindGameObjectsWithTag("Power");
+
+        foreach (GameObject item in allPowerItems)
+        {
+            // Add VFX and SFX as well
+            ItemController itemController = item.GetComponent<ItemController>();
+            itemController.InitializeItem(ItemType.Score, regularScore, 0, 0, regularScoreSprite);
+        }
     }
 }

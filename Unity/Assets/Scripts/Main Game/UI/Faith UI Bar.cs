@@ -10,26 +10,27 @@ public class FaithUIBar : MonoBehaviour
 
     private void Awake()
     {
-        faithSlider = GetComponent<Slider>();
+        faithSlider = GetComponentInChildren<Slider>();
     }
     private void Start()
     {
         faithSlider.minValue = minFaith;
         faithSlider.maxValue = maxFaith;
-        faithSlider.value = minFaith;
         faithSlider.gameObject.SetActive(false);
     }
     private void Update()
     {
-        int currentFaith = ScoreManager.instance.Faith;
+        int currentFaith = ScoreManager.instance.displayedFaith;
 
-        // Show slider only if above minimum
-        faithSlider.gameObject.SetActive(currentFaith > minFaith);
+        bool shouldShow = currentFaith > minFaith;
 
-        faithSlider.value = Mathf.MoveTowards(
-            faithSlider.value,
-            currentFaith,
-            depletionSpeed * Time.deltaTime
-        );
+        if (faithSlider.gameObject.activeSelf != shouldShow)
+            faithSlider.gameObject.SetActive(shouldShow);
+
+        if (currentFaith > minFaith)
+        {
+            faithSlider.value = Mathf.MoveTowards(faithSlider.value, currentFaith, depletionSpeed * Time.deltaTime);
+        }
+
     }
 }

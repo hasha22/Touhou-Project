@@ -8,7 +8,10 @@ public class PlayerManager : MonoBehaviour
     [Header("Player Data")]
     public PlayableCharacterData characterData;
     [SerializeField] private int currentPlayerLives;
-    [SerializeField] private float currentPower;
+
+    [Header("Player Power")]
+    public float currentPower;
+    private float maxPower = 5.0f;
 
     [Header("Player Respawning")]
     [SerializeField] private float respawnDelay = 0.5f;
@@ -33,7 +36,14 @@ public class PlayerManager : MonoBehaviour
         UIManager.instance.UpdatePowerUI(currentPower);
         StartCoroutine(RespawnCoroutine());
     }
-
+    private void Update()
+    {
+        // not good enough
+        if (currentPower == maxPower)
+        {
+            ItemManager.instance.ConvertAllPowerItems();
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy Bullet") && playerCollider.enabled)
@@ -44,7 +54,9 @@ public class PlayerManager : MonoBehaviour
     }
     public void AddPower(float power)
     {
-        currentPower += power;
+        if (currentPower < maxPower) { currentPower += power; }
+        if (currentPower > maxPower) { currentPower = maxPower; }
+
         UIManager.instance.UpdatePowerUI(currentPower);
     }
     private void Die()
