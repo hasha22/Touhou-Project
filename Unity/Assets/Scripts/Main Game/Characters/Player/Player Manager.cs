@@ -12,6 +12,12 @@ public class PlayerManager : MonoBehaviour
     [Header("Player Power")]
     public float currentPower;
     private float maxPower = 5.0f;
+    public bool hasConvertedPower = false;
+    [Space]
+    [SerializeField] private int powerItemCount = 7;
+    [SerializeField] private int spreadDegrees = 120;
+    [SerializeField] private int startAngle = 0;
+    [SerializeField] private int powerDeathVelocity = 200;
 
     [Header("Player Respawning")]
     [SerializeField] private float respawnDelay = 0.5f;
@@ -38,10 +44,16 @@ public class PlayerManager : MonoBehaviour
     }
     private void Update()
     {
-        // not good enough
-        if (currentPower == maxPower)
+        bool isMaxPower = currentPower >= maxPower;
+
+        if (isMaxPower && !hasConvertedPower)
         {
             ItemManager.instance.ConvertAllPowerItems();
+            hasConvertedPower = false;
+        }
+        else if (!isMaxPower)
+        {
+            hasConvertedPower = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -66,6 +78,8 @@ public class PlayerManager : MonoBehaviour
         AudioManager.instance.PlaySFX(AudioManager.instance.deathSFX, transform, 1f);
         UIManager.instance.RemoveLife();
 
+        LosePower();
+
         if (currentPlayerLives == 0)
         {
             gameObject.SetActive(false);
@@ -73,13 +87,30 @@ public class PlayerManager : MonoBehaviour
             return;
         }
 
-        // Add method for losing power here
         StartCoroutine(RespawnCoroutine());
     }
     public void AddLife()
     {
         currentPlayerLives++;
         UIManager.instance.AddLife();
+    }
+    private void LosePower()
+    {
+        float angle = startAngle;
+        float degrees = spreadDegrees / powerItemCount;
+
+        for (int i = 0; i < powerItemCount; i++)
+        {
+            float radians = angle * Mathf.Deg2Rad;
+            Vector2 direction = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
+
+            GameObject powerItem = ItemManager.instance.InitializePlayerDeathItem(i, transform.position + new Vector3(0, 0.5f, 0));
+
+            ItemController itemController = powerItem.GetComponent<ItemController>();
+            itemController.LaunchPowerItem(direction, powerDeathVelocity);
+
+            angle += degrees;
+        }
     }
     private IEnumerator RespawnCoroutine()
     {

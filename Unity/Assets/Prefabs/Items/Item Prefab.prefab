@@ -53,6 +53,9 @@ MonoBehaviour:
   itemType: 0
   addedPowerScore: 0.5
   addedScore: 500
+  addedFaith: 0
+  isLaunched: 0
+  launchTimer: 1.8
   spriteRenderer: {fileID: 0}
 --- !u!212 &1419957897942489139
 SpriteRenderer:

@@ -17,7 +17,6 @@ public class ScoreManager : MonoBehaviour
     public int Faith;
     [SerializeField] private float faithUpdateSpeed = 5000f;
     [SerializeField] private int minFaith = 50000;
-    //[SerializeField] private int maxFaith = 999990;
     [SerializeField] private int faithDecreaseAmount = 600;
     [SerializeField] private float faithDecreaseInterval = 1f;
     public int displayedFaith = 50000;

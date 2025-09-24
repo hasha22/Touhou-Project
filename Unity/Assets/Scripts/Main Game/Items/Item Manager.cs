@@ -1,4 +1,5 @@
 using KH;
+using System.Collections;
 using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class ItemManager : MonoBehaviour
     [Space]
     [SerializeField] private Sprite oneUpSprite;
     [SerializeField] private Sprite bombSprite;
+
+    public Coroutine convertAllPowerItemsCoroutine = null;
 
     private void Awake()
     {
@@ -97,8 +100,24 @@ public class ItemManager : MonoBehaviour
         ItemController itemController = oneUpItem.GetComponent<ItemController>();
         itemController.InitializeItem(ItemType.OneUp, 0, 0, 0, oneUpSprite);
     }
+    public GameObject InitializePlayerDeathItem(int parity, Vector3 spawnPos)
+    {
+        GameObject powerItem = ObjectPool.instance.GetPooledItem();
+        powerItem.transform.position = spawnPos;
+        ItemController itemController = powerItem.GetComponent<ItemController>();
+
+        if (parity % 2 == 0)
+        { itemController.InitializeItem(ItemType.Power, 0, regularPower, 0, powerSprite); }
+        else { itemController.InitializeItem(ItemType.Power, 0, regularPower, 0, powerSprite); }
+
+        return powerItem;
+    }
 
     public void ConvertAllPowerItems()
+    {
+        convertAllPowerItemsCoroutine = StartCoroutine(ConvertItems());
+    }
+    private IEnumerator ConvertItems()
     {
         GameObject[] allPowerItems = GameObject.FindGameObjectsWithTag("Power");
 
@@ -107,6 +126,8 @@ public class ItemManager : MonoBehaviour
             // Add VFX and SFX as well
             ItemController itemController = item.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.Score, regularScore, 0, 0, regularScoreSprite);
+
+            yield return null;
         }
     }
 }

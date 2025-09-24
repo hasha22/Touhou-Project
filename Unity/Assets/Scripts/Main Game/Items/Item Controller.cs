@@ -19,22 +19,43 @@ public class ItemController : MonoBehaviour
     [SerializeField] private int addedScore;
     [SerializeField] private int addedFaith;
 
-    [Header("Sprite Renderer")]
+    [Header("Launch Settings")]
+    [SerializeField] private bool isLaunched = false;
+    [SerializeField] private float launchTimer = 3f;
+    private float launchTimerReset;
+
+    [Header("Sprite Renderer ")]
     [SerializeField] private SpriteRenderer spriteRenderer;
+
+    private Rigidbody2D rb;
 
     private void OnEnable()
     {
         playerMagnet = GameObject.FindWithTag("Player Magnet").transform;
         playerManager = GameObject.FindWithTag("Player").GetComponent<PlayerManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+        launchTimerReset = launchTimer;
     }
 
     private void Update()
     {
+        if (isLaunched)
+        {
+            launchTimer -= Time.deltaTime;
+            if (launchTimer <= 0f)
+            {
+                rb.linearVelocity = Vector3.zero;
+                isLaunched = false;
+            }
+            return;
+        }
+        launchTimer = launchTimerReset;
+
         if (playerMagnet == null) return;
 
         float distance = Vector2.Distance(transform.position, playerMagnet.position);
-        if (distance <= pullRadius) { canBePulled = true; }
+        canBePulled = distance <= pullRadius;
 
         if (canBePulled)
         {
@@ -52,6 +73,13 @@ public class ItemController : MonoBehaviour
         addedPowerScore = power;
         addedFaith = faith;
         UpdateSprite(itemSprite);
+    }
+    public void LaunchPowerItem(Vector2 direction, float speed)
+    {
+        isLaunched = true;
+
+        rb = GetComponent<Rigidbody2D>();
+        rb.linearVelocity = direction.normalized * speed;
     }
     private void UpdateSprite(Sprite sprite)
     {
