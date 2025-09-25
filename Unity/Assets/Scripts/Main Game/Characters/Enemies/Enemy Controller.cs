@@ -68,6 +68,10 @@ public class EnemyController : MonoBehaviour
 
         ScoreManager.instance.AddScore(enemyData.deathScore);
         gameObject.SetActive(false);
-        ItemManager.instance.SpawnStarFaithItem(transform.position);
+        ItemManager.instance.Spawn1UpItem(transform.position);
+    }
+    public Enemy GetEnemyData()
+    {
+        return enemyData;
     }
 }

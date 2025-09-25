@@ -11,6 +11,7 @@ namespace KH
         public int enemyID;
         public GameObject enemyPrefab;
         public EnemyType enemyType;
+        public int healthResetValue;
 
         [Header("Score")]
         public int deathScore;

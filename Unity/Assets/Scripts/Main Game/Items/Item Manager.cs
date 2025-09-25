@@ -58,19 +58,19 @@ public class ItemManager : MonoBehaviour
         ItemController itemController = scoreItem.GetComponent<ItemController>();
         itemController.InitializeItem(ItemType.Score, greatScore, 0, 0, greatScoreSprite);
     }
-    public void SpawnStarFaithItem(Vector3 spawnPos)
-    {
-        GameObject scoreItem = ObjectPool.instance.GetPooledItem();
-        scoreItem.transform.position = spawnPos;
-        ItemController itemController = scoreItem.GetComponent<ItemController>();
-        itemController.InitializeItem(ItemType.Faith, 0, 0, starFaithMultiplier, starFaithSprite);
-    }
     public void SpawnSmallFaithItem(Vector3 spawnPos)
     {
         GameObject scoreItem = ObjectPool.instance.GetPooledItem();
         scoreItem.transform.position = spawnPos;
         ItemController itemController = scoreItem.GetComponent<ItemController>();
         itemController.InitializeItem(ItemType.Faith, 0, 0, smallFaithMultiplier, smallFaithSprite);
+    }
+    public void SpawnStarFaithItem(Vector3 spawnPos)
+    {
+        GameObject scoreItem = ObjectPool.instance.GetPooledItem();
+        scoreItem.transform.position = spawnPos;
+        ItemController itemController = scoreItem.GetComponent<ItemController>();
+        itemController.InitializeItem(ItemType.Faith, 0, 0, starFaithMultiplier, starFaithSprite);
     }
     public void SpawnRegularPowerItem(Vector3 spawnPos)
     {

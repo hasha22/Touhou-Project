@@ -86,7 +86,7 @@ namespace KH
         private void OnSceneChange(Scene oldScene, Scene newScene)
         {
             //Enables controls if loading into Game Scene, disables otherwise
-            if (newScene.buildIndex == TitleScreenManager.instance.gameSceneIndex)
+            if (newScene.buildIndex == 1)
             {
                 instance.enabled = true;
                 if (inputControls != null)
