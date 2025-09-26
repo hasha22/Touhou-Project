@@ -393,6 +393,47 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.15161896, y: 10.076221}
   m_EdgeRadius: 0
+--- !u!21 &301326402
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 153.5, g: 10, b: 10, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &422429185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,13 +1496,17 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.039733596
       objectReference: {fileID: 0}
+    - target: {fileID: 3571368779277186174, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 42707a3c4ed620648bc854d5e4bfe16a, type: 2}
     - target: {fileID: 3850283987648551186, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: m_TagString
       value: Player Magnet
       objectReference: {fileID: 0}
     - target: {fileID: 4176292569134389203, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: m_Radius
-      value: 0.13998051
+      value: 0.038359784
       objectReference: {fileID: 0}
     - target: {fileID: 4176292569134389203, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: m_Enabled
@@ -1469,11 +1514,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4176292569134389203, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: m_Offset.x
-      value: -0.0066829813
+      value: 0.0055116005
       objectReference: {fileID: 0}
     - target: {fileID: 4176292569134389203, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: m_Offset.y
-      value: 0.045362785
+      value: -0.14754525
       objectReference: {fileID: 0}
     - target: {fileID: 4576629774671143622, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1489,19 +1534,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5192311149699131359, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: m_Size.x
-      value: 0.44567093
+      value: 0.15910043
       objectReference: {fileID: 0}
     - target: {fileID: 5192311149699131359, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: m_Size.y
-      value: 1.2766907
+      value: 0.45918426
       objectReference: {fileID: 0}
     - target: {fileID: 5192311149699131359, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: m_Offset.x
-      value: -0.015210424
+      value: -0.0019995822
       objectReference: {fileID: 0}
     - target: {fileID: 5192311149699131359, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: m_Offset.y
-      value: 0.04535724
+      value: -0.17772324
       objectReference: {fileID: 0}
     - target: {fileID: 5847374759062107243, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: m_Pivot.x
@@ -1537,11 +1582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5847374759062107243, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5847374759062107243, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5847374759062107243, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2847,7 +2892,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 595484408391723938, guid: 235d58a721145a640b108db501e5a29f, type: 3}
       propertyPath: bgmVolume
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 595484408391723938, guid: 235d58a721145a640b108db501e5a29f, type: 3}
       propertyPath: audioPrefab
@@ -2952,7 +2997,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 4fbe62e9ed9ba1c4d856463199d61056, type: 2}
     - target: {fileID: 4842065427334829381, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
       propertyPath: startOnEnable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842065427334829381, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
       propertyPath: attackSequence
@@ -3012,11 +3057,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6676215446362990136, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6676215446362990136, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6676215446362990136, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
       propertyPath: m_LocalPosition.x
