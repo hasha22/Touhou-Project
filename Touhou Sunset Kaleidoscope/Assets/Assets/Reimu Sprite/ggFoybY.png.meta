@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: 8ed41835bca739343b4929221d5227a5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5753144305642565583
+    second: ggFoybY_0
+  - first:
+      213: 6545086884522635517
+    second: ggFoybY_1
+  - first:
+      213: 1461103663878755064
+    second: ggFoybY_2
+  - first:
+      213: -1462006187146644688
+    second: ggFoybY_3
+  - first:
+      213: -386866806829606625
+    second: ggFoybY_4
+  - first:
+      213: -4540234229534832337
+    second: ggFoybY_5
+  - first:
+      213: -6056039529409730237
+    second: ggFoybY_6
+  - first:
+      213: -1806974908064670146
+    second: ggFoybY_7
+  - first:
+      213: 7137586145098645496
+    second: ggFoybY_8
+  - first:
+      213: 5014028416828911971
+    second: ggFoybY_9
+  - first:
+      213: 4227012648629705728
+    second: ggFoybY_10
+  - first:
+      213: -3429031283920460667
+    second: ggFoybY_11
+  - first:
+      213: -5296547163164206923
+    second: ggFoybY_12
+  - first:
+      213: 9133744533106562246
+    second: ggFoybY_13
+  - first:
+      213: 307064266822540650
+    second: ggFoybY_14
+  - first:
+      213: 5083594433710189984
+    second: ggFoybY_15
+  - first:
+      213: -3724240646042153339
+    second: ggFoybY_16
+  - first:
+      213: -8519926415278899909
+    second: ggFoybY_17
+  - first:
+      213: 8469273160320037025
+    second: ggFoybY_18
+  - first:
+      213: -8554954091385271537
+    second: ggFoybY_19
+  - first:
+      213: 2541516298259379679
+    second: ggFoybY_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ggFoybY_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 208
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1301d984cb9b820b0800000000000000
+      internalID: -5753144305642565583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 208
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df03a0818d1d4da50800000000000000
+      internalID: 6545086884522635517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 208
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f2d3818a02e64410800000000000000
+      internalID: 1461103663878755064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 208
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03373bb6e19e5bbe0800000000000000
+      internalID: -1462006187146644688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_4
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 208
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f19188b50b291aaf0800000000000000
+      internalID: -386866806829606625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 155
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f29c18ff509ddf0c0800000000000000
+      internalID: -4540234229534832337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 154
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3492fcf5220a4fba0800000000000000
+      internalID: -6056039529409730237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_7
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 154
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3ed2c615e55ce6e0800000000000000
+      internalID: -1806974908064670146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 154
+        width: 31
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ffba5c48cccd0360800000000000000
+      internalID: 7137586145098645496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_9
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 101
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3613dc69748659540800000000000000
+      internalID: 5014028416828911971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 100
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00c18a6bb9d59aa30800000000000000
+      internalID: 4227012648629705728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_11
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 100
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 584283e0732a960d0800000000000000
+      internalID: -3429031283920460667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_12
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 100
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b89e7bda62ee76b0800000000000000
+      internalID: -5296547163164206923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 82
+        width: 115
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c49bfc924491ce70800000000000000
+      internalID: 9133744533106562246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 91
+        width: 65
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6d5c23e259e24400800000000000000
+      internalID: 307064266822540650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_15
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 83
+        width: 65
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ade273143e8c8640800000000000000
+      internalID: 5083594433710189984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 67
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58e06924dd6d05cc0800000000000000
+      internalID: -3724240646042153339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_17
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 67
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3d75d8d01423c980800000000000000
+      internalID: -8519926415278899909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_18
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 66
+        width: 49
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a030a23117e88570800000000000000
+      internalID: 8469273160320037025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_19
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 50
+        width: 126
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0bc4397492b64980800000000000000
+      internalID: -8554954091385271537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ggFoybY_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 52
+        width: 66
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd5bd949b97454320800000000000000
+      internalID: 2541516298259379679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ggFoybY_0: -5753144305642565583
+      ggFoybY_1: 6545086884522635517
+      ggFoybY_10: 4227012648629705728
+      ggFoybY_11: -3429031283920460667
+      ggFoybY_12: -5296547163164206923
+      ggFoybY_13: 9133744533106562246
+      ggFoybY_14: 307064266822540650
+      ggFoybY_15: 5083594433710189984
+      ggFoybY_16: -3724240646042153339
+      ggFoybY_17: -8519926415278899909
+      ggFoybY_18: 8469273160320037025
+      ggFoybY_19: -8554954091385271537
+      ggFoybY_2: 1461103663878755064
+      ggFoybY_20: 2541516298259379679
+      ggFoybY_3: -1462006187146644688
+      ggFoybY_4: -386866806829606625
+      ggFoybY_5: -4540234229534832337
+      ggFoybY_6: -6056039529409730237
+      ggFoybY_7: -1806974908064670146
+      ggFoybY_8: 7137586145098645496
+      ggFoybY_9: 5014028416828911971
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
