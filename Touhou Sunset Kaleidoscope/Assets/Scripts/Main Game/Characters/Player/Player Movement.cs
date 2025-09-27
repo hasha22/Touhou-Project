@@ -4,6 +4,7 @@ namespace KH
     public class PlayerMovement : MonoBehaviour
     {
         PlayerManager playerManager;
+        Animator animator;
 
         [Header("Player Movement")]
         public float currentSpeed;
@@ -20,6 +21,7 @@ namespace KH
         {
             rb = GetComponent<Rigidbody2D>();
             playerManager = GetComponent<PlayerManager>();
+            animator = GetComponent<Animator>();
         }
         private void Start()
         {

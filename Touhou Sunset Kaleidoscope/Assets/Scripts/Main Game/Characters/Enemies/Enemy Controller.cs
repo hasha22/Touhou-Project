@@ -12,6 +12,9 @@ public class EnemyController : MonoBehaviour
     public bool startOnEnable = true;
     public Vector2 fireOriginOffset = Vector2.zero;
 
+    [Header("Bool")]
+    [HideInInspector] public bool hasDied = false;
+
     private Coroutine playCoroutine;
 
     private void OnEnable()
@@ -57,8 +60,9 @@ public class EnemyController : MonoBehaviour
     {
         currentHealth -= damage;
         ScoreManager.instance.AddScore(enemyData.hitScore * damage);
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !hasDied)
         {
+            hasDied = true;
             Die();
         }
     }

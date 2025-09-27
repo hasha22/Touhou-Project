@@ -18,7 +18,7 @@ MonoBehaviour:
   enemyID: 0
   enemyPrefab: {fileID: 1623289750752492140, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
   enemyType: 0
-  healthResetValue: 5000
+  healthResetValue: 3000
   deathScore: 1000
   hitScore: 60
   attackSequence: {fileID: 11400000, guid: 2a9e556e8417ac4418ae77642bf3dd5e, type: 2}

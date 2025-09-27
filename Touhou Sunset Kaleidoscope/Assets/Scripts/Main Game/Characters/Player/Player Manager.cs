@@ -11,8 +11,8 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Player Power")]
     public float currentPower;
-    private float maxPower = 5.0f;
     public bool hasConvertedPower = false;
+    private float maxPower = 5.0f;
     [Space]
     [SerializeField] private int powerItemCount = 7;
     [SerializeField] private int spreadDegrees = 120;

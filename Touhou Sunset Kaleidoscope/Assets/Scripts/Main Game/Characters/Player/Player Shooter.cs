@@ -9,6 +9,7 @@ namespace KH
         [SerializeField] private float fireRate = 0.1f;
         private float fireTimer = 0f;
         private bool shootingInput = false;
+        [SerializeField] private float damageMultiplier = 0.2f;
 
         // It is crucial to separate input, which needs to be detected every frame, from shooting
         // which needs to be frame rate independent. FixedUpdate is called every 0.02s (50 frames / second), thus
@@ -60,14 +61,15 @@ namespace KH
                 bulletObject1.transform.position = spawnPosition1;
                 bulletObject2.transform.position = spawnPosition2;
 
+                float damage = playerManager.characterData.shotType.damage * (1 + playerManager.currentPower * damageMultiplier);
+                int intDamage = Mathf.RoundToInt(damage);
+
                 // Initializing bullet data
                 BulletController bullet1 = bulletObject1.GetComponent<BulletController>();
-                bullet1.InitializePlayerBullet(Vector2.up, playerManager.characterData.shotType.speed, playerManager.characterData.shotType.sprite,
-                    playerManager.characterData.shotType.damage);
+                bullet1.InitializePlayerBullet(Vector2.up, playerManager.characterData.shotType.speed, playerManager.characterData.shotType.sprite, intDamage);
 
                 BulletController bullet2 = bulletObject2.GetComponent<BulletController>();
-                bullet2.InitializePlayerBullet(Vector2.up, playerManager.characterData.shotType.speed, playerManager.characterData.shotType.sprite,
-                    playerManager.characterData.shotType.damage);
+                bullet2.InitializePlayerBullet(Vector2.up, playerManager.characterData.shotType.speed, playerManager.characterData.shotType.sprite, intDamage);
 
             }
         }
