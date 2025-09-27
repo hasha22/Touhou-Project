@@ -15,7 +15,7 @@ public class ItemController : MonoBehaviour
     [Header("Score")]
     // Do not modify these here. Check Item Manager
     public ItemType itemType;
-    [SerializeField] private float addedPowerScore;
+    [SerializeField] private float addedPower;
     [SerializeField] private int addedScore;
     [SerializeField] private int addedFaith;
 
@@ -70,7 +70,7 @@ public class ItemController : MonoBehaviour
     {
         itemType = type;
         addedScore = score;
-        addedPowerScore = power;
+        addedPower = power;
         addedFaith = faith;
         UpdateSprite(itemSprite);
     }
@@ -112,7 +112,7 @@ public class ItemController : MonoBehaviour
         {
             if (gameObject.CompareTag("Power"))
             {
-                playerManager.AddPower(addedPowerScore);
+                playerManager.AddPower(addedPower);
             }
             if (gameObject.CompareTag("Score"))
             {
@@ -129,5 +129,17 @@ public class ItemController : MonoBehaviour
             ObjectPool.instance.ReturnToPool(gameObject);
 
         }
+    }
+    public float GetPower()
+    {
+        return addedPower;
+    }
+    public float GetFaith()
+    {
+        return addedFaith;
+    }
+    public int GetScore()
+    {
+        return addedScore;
     }
 }

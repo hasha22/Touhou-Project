@@ -58,10 +58,10 @@ public class PlayerManager : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy Bullet") && playerCollider.enabled)
+        if ((collision.CompareTag("Enemy Bullet") || collision.CompareTag("Enemy")) && playerCollider.enabled)
         {
             Die();
-            ObjectPool.instance.ReturnToPool(collision.gameObject);
+            if (collision.CompareTag("Enemy Bullet")) { ObjectPool.instance.ReturnToPool(collision.gameObject); }
         }
     }
     public void AddPower(float power)
@@ -111,6 +111,11 @@ public class PlayerManager : MonoBehaviour
 
             angle += degrees;
         }
+        float power = currentPower - 3.2f;
+        if (power <= 0)
+        { currentPower = 0; }
+        else { currentPower = power; }
+        UIManager.instance.UpdatePowerUI(currentPower);
     }
     private IEnumerator RespawnCoroutine()
     {

@@ -6,7 +6,7 @@ public class ItemManager : MonoBehaviour
     public static ItemManager instance { get; private set; }
 
     [Header("Power Types")]
-    [SerializeField] private float regularPower = 0.1f;
+    [SerializeField] private float regularPower = 0.05f;
     [SerializeField] private float greatPower = 1.0f;
     [SerializeField] private float fullPower = 5.0f;
 
@@ -108,7 +108,11 @@ public class ItemManager : MonoBehaviour
 
         if (parity % 2 == 0)
         { itemController.InitializeItem(ItemType.Power, 0, regularPower, 0, powerSprite); }
-        else { itemController.InitializeItem(ItemType.Power, 0, regularPower, 0, powerSprite); }
+        else
+        {
+            powerItem.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
+            itemController.InitializeItem(ItemType.Power, 0, greatPower, 0, powerSprite);
+        }
 
         return powerItem;
     }
@@ -125,7 +129,10 @@ public class ItemManager : MonoBehaviour
         {
             // Add VFX and SFX as well
             ItemController itemController = item.GetComponent<ItemController>();
-            itemController.InitializeItem(ItemType.Score, regularScore, 0, 0, regularScoreSprite);
+            if (itemController.GetScore() == fullPower)
+            { itemController.InitializeItem(ItemType.Score, greatScore, 0, 0, greatScoreSprite); }
+            else
+            { itemController.InitializeItem(ItemType.Score, regularScore, 0, 0, regularScoreSprite); }
 
             yield return null;
         }
