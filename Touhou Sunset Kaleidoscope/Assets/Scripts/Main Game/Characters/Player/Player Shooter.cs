@@ -14,7 +14,7 @@ namespace KH
         // It is crucial to separate input, which needs to be detected every frame, from shooting
         // which needs to be frame rate independent. FixedUpdate is called every 0.02s (50 frames / second), thus
         // making the player shooting constant, with equal gaps between volleys, regardless
-        // of frame rate. This also makes FixedUpdate ideal for applying forces to RigidBodies
+        // of frame rate. FixedUpdate is also ideal for applying forces to RigidBodies
         // and checking for collisions.
 
         private void Awake()

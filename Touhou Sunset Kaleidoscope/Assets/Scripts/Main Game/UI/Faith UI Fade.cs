@@ -19,9 +19,9 @@ public class FaithUIFade : MonoBehaviour
         Vector2 screenPoint = Camera.main.WorldToScreenPoint(player.position);
 
         if (RectTransformUtility.RectangleContainsScreenPoint(uiElement, screenPoint))
-            targetAlpha = fadedAlpha;
+        { targetAlpha = fadedAlpha; }
         else
-            targetAlpha = 1f;
+        { targetAlpha = 1f; }
 
         canvasGroup.alpha = Mathf.MoveTowards(canvasGroup.alpha, targetAlpha, fadeSpeed * Time.deltaTime);
     }

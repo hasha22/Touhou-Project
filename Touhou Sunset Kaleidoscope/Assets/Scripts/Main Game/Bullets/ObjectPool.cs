@@ -97,6 +97,10 @@ namespace KH
         {
             gameObject.SetActive(false);
         }
+        public List<GameObject> GetItemPool()
+        {
+            return pooledItems;
+        }
         public GameObject SpawnBullet(Vector2 worldPos)
         {
             GameObject bullet = GetPooledEnemyObject();

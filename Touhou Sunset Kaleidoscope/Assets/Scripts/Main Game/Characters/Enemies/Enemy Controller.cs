@@ -1,81 +1,82 @@
-using KH;
 using System.Collections;
 using UnityEngine;
-public class EnemyController : MonoBehaviour
+namespace KH
 {
-    [Header("Enemy Stats")]
-    [SerializeField] private Enemy enemyData;
-    [SerializeField] private int currentHealth;
-
-    [Header("Shooting")]
-    private AttackSequence attackSequence;
-    public bool startOnEnable = true;
-    public Vector2 fireOriginOffset = Vector2.zero;
-
-    [Header("Bool")]
-    [HideInInspector] public bool hasDied = false;
-
-    private Coroutine playCoroutine;
-
-    private void OnEnable()
+    public class EnemyController : MonoBehaviour
     {
-        currentHealth = enemyData.enemyHealth;
-        attackSequence = enemyData.attackSequence;
+        [Header("Enemy Stats")]
+        [SerializeField] private Enemy enemyData;
+        [SerializeField] private int currentHealth;
 
-        if (startOnEnable && attackSequence != null)
-            playCoroutine = StartCoroutine(PlaySequence());
-    }
-    public void StartSequence()
-    {
-        if (playCoroutine == null) playCoroutine = StartCoroutine(PlaySequence());
-    }
-    public void StopSequence()
-    {
-        if (playCoroutine != null) { StopCoroutine(playCoroutine); playCoroutine = null; }
-    }
+        [Header("Shooting")]
+        private AttackSequence attackSequence;
+        public bool startOnEnable = true;
+        public Vector2 fireOriginOffset = Vector2.zero;
 
-    private IEnumerator PlaySequence()
-    {
-        do
+        [Header("Bool")]
+        [HideInInspector] public bool hasDied = false;
+
+        private Coroutine playCoroutine;
+
+        private void OnEnable()
         {
-            foreach (var step in attackSequence.patternSteps)
+            currentHealth = enemyData.enemyHealth;
+            attackSequence = enemyData.attackSequence;
+
+            if (startOnEnable && attackSequence != null)
+                playCoroutine = StartCoroutine(PlaySequence());
+        }
+        public void StartSequence()
+        {
+            if (playCoroutine == null) playCoroutine = StartCoroutine(PlaySequence());
+        }
+        public void StopSequence()
+        {
+            if (playCoroutine != null) { StopCoroutine(playCoroutine); playCoroutine = null; }
+        }
+
+        private IEnumerator PlaySequence()
+        {
+            do
             {
-                step.pattern.Fire((Vector2)transform.position + fireOriginOffset);
+                foreach (var step in attackSequence.patternSteps)
+                {
+                    step.pattern.Fire((Vector2)transform.position + fireOriginOffset);
 
-                yield return new WaitForSeconds(step.delayBeforeNextPattern);
+                    yield return new WaitForSeconds(step.delayBeforeNextPattern);
+                }
+            } while (attackSequence.loopPattern);
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player Bullet"))
+            {
+                BulletController bullet = collision.GetComponent<BulletController>();
+                TakeDamage(bullet.bulletDamage);
+                ObjectPool.instance.ReturnToPool(collision.gameObject);
             }
-        } while (attackSequence.loopPattern);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player Bullet"))
-        {
-            BulletController bullet = collision.GetComponent<BulletController>();
-            TakeDamage(bullet.bulletDamage);
-            ObjectPool.instance.ReturnToPool(collision.gameObject);
         }
-    }
-    private void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        ScoreManager.instance.AddScore(enemyData.hitScore * damage);
-        if (currentHealth <= 0 && !hasDied)
+        public void TakeDamage(int damage)
         {
-            hasDied = true;
-            Die();
+            currentHealth -= damage;
+            ScoreManager.instance.AddScore(enemyData.hitScore * damage);
+            if (currentHealth <= 0 && !hasDied)
+            {
+                hasDied = true;
+                Die();
+            }
         }
-    }
-    private void Die()
-    {
-        // add death sound,vfx
+        private void Die()
+        {
+            // add death sound,vfx
 
-        ScoreManager.instance.AddScore(enemyData.deathScore);
-        gameObject.SetActive(false);
-        ItemManager.instance.Spawn1UpItem(transform.position);
-    }
-    public Enemy GetEnemyData()
-    {
-        return enemyData;
+            ScoreManager.instance.AddScore(enemyData.deathScore);
+            gameObject.SetActive(false);
+            ItemManager.instance.Spawn1UpItem(transform.position);
+        }
+        public Enemy GetEnemyData()
+        {
+            return enemyData;
+        }
     }
 }

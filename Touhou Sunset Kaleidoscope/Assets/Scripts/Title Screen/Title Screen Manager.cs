@@ -8,10 +8,6 @@ namespace KH
 
         [Header("Scene Indexes")]
         [SerializeField] public int gameSceneIndex = 1;
-        private void Awake()
-        {
-
-        }
         public void QuitGame()
         {
             Application.Quit();

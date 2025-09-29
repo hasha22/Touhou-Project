@@ -134,6 +134,7 @@ public class Debugger : MonoBehaviour
 
         EnemyController enemyController = enemyObject.GetComponent<EnemyController>();
         enemyController.hasDied = false;
+
         Enemy enemy = enemyController.GetEnemyData();
         enemy.enemyHealth = enemy.healthResetValue;
     }

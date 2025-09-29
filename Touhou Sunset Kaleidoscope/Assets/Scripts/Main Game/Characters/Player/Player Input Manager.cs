@@ -18,7 +18,14 @@ namespace KH
         public bool isInPrecision = false;
         public bool isBombing = false;
 
-        #region Setup Methods
+        [Header("Player Reference")]
+        public GameObject playerObject;
+
+        // PlayerInputManager stores a reference to the player game object, which can be accessed by other scripts when needed. This is done to save up on memory usage.
+        // Serializing game objects decreases CPU usage, but increases memory usage, as opposed to using 
+        // FindGameObjectWithTag which has O(n) complexity, and in a game with many game objects,
+        // CPU performance is more critical.
+
         private void Awake()
         {
             if (instance == null)
@@ -29,6 +36,10 @@ namespace KH
             else
             {
                 Destroy(gameObject);
+            }
+            if (playerObject == null)
+            {
+                Debug.LogError("Player Object is NULL!");
             }
         }
         private void Start()
@@ -103,16 +114,10 @@ namespace KH
                 }
             }
         }
-        #endregion
-
-        #region Input Methods
         private void HandleMovementInput()
         {
             verticalInput = movementInput.y;
             horizontalInput = movementInput.x;
         }
-        #endregion
-
     }
 }
-

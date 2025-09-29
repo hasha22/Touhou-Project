@@ -3,8 +3,9 @@ namespace KH
 {
     public class PlayerMovement : MonoBehaviour
     {
-        PlayerManager playerManager;
-        Animator animator;
+        [Header("References")]
+        private PlayerManager playerManager;
+        private Animator animator;
 
         [Header("Player Movement")]
         public float currentSpeed;
@@ -16,7 +17,6 @@ namespace KH
         [SerializeField] private Transform playableArea;
         private Vector2 minBounds, maxBounds;
 
-        #region Setup Methods
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -35,8 +35,6 @@ namespace KH
         {
             HandleMovement();
         }
-        #endregion
-        #region Movement Methods
         private void GetMovement()
         {
             verticalMovement = PlayerInputManager.instance.verticalInput;
@@ -69,7 +67,5 @@ namespace KH
 
             rb.linearVelocity = velocity;
         }
-        #endregion
     }
 }
-
