@@ -23,15 +23,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &5847374759062107243
-RectTransform:
+--- !u!4 &5847374759062107243
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339747915173234213}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.7955916}
+  m_LocalPosition: {x: -0.4409566, y: 0.35160136, z: -0.009643718}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -39,11 +40,6 @@ RectTransform:
   - {fileID: 392670056430834070}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -287, y: -277}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &-7532986062195704745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,13 +55,23 @@ MonoBehaviour:
   characterData: {fileID: 11400000, guid: 2173d49784cf2504b84e6d8a038b9928, type: 2}
   currentPlayerLives: 0
   currentPower: 0
+  hasConvertedPower: 0
+  powerItemCount: 7
+  spreadDegrees: 120
+  startAngle: 0
+  powerDeathVelocity: 200
   respawnDelay: 0.5
-  invulnerabilityTime: 4
   respawnPoint: {fileID: 0}
   riseDistance: 1.5
   riseSpeed: 2
+  invulnerabilityTime: 4
+  flickeringDelay: 0.1
+  autoCollectY: 2
+  bombParent: {fileID: 0}
+  bombDelay: 0.5
+  bombPrefab: {fileID: 0}
   playerCollider: {fileID: 0}
-  deathSFX: {fileID: 8300000, guid: 424071cbe8133bc43bd3345855178540, type: 3}
+  playerMagnet: {fileID: 0}
 --- !u!114 &7345670271713101541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0.1
+  damageMultiplier: 0.2
 --- !u!212 &-8221424544657772894
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -137,7 +144,7 @@ SpriteRenderer:
   m_SortingLayerID: -1313047995
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 070c5b1067f877e468810211d8334e97, type: 3}
+  m_Sprite: {fileID: -8844802492306121547, guid: 3926bb0149f277f4ea1a126eec4a2134, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
