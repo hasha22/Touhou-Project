@@ -6,6 +6,7 @@ public class Debugger : MonoBehaviour
 
     [Header("Spawn Settings")]
     [SerializeField] private Transform topSpawnPoint;
+    [SerializeField] private Transform offScreenSpawnPoint;
     [SerializeField] private float horizontalRange = 2f;
     [SerializeField] private GameObject enemyObject;
 
@@ -23,6 +24,8 @@ public class Debugger : MonoBehaviour
     [SerializeField] private bool oneUpItem = false;
     [Space]
     [SerializeField] private bool enableEnemy = false;
+    [Space]
+    [SerializeField] private bool scoreItemOutside = false;
 
     [Header("Murder")]
     [SerializeField] private bool murderPlayer = false;
@@ -91,6 +94,11 @@ public class Debugger : MonoBehaviour
             KillPlayer();
             murderPlayer = !murderPlayer;
         }
+        if (scoreItemOutside)
+        {
+            SpawnScoreItemOutside();
+            scoreItemOutside = !scoreItemOutside;
+        }
     }
     private void SpawnRegularPowerItem()
     {
@@ -135,6 +143,11 @@ public class Debugger : MonoBehaviour
     {
         Vector3 spawnPoint = topSpawnPoint.position + new Vector3(Random.Range(-horizontalRange, horizontalRange), 0f, 0f);
         ItemManager.instance.Spawn1UpItem(spawnPoint);
+    }
+    private void SpawnScoreItemOutside()
+    {
+        Vector3 spawnPoint = offScreenSpawnPoint.position + new Vector3(Random.Range(-horizontalRange, horizontalRange), 0f, 0f);
+        ItemManager.instance.SpawnRegularScoreItem(spawnPoint);
     }
     private void EnableEnemyObject()
     {

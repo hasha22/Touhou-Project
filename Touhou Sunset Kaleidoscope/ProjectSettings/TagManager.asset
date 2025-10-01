@@ -15,6 +15,7 @@ TagManager:
   - Item
   - 1 Up
   - Faith
+  - Indicator
   layers:
   - Default
   - TransparentFX

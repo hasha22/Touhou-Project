@@ -3,12 +3,14 @@ namespace KH
 {
     public class ItemController : MonoBehaviour
     {
-        [Header("Item Speed")]
+        [Header("Item Settings")]
         [SerializeField] private float fallSpeed = 1f;
         [SerializeField] private float pullSpeed = 5f;
+        [Space]
         public float currentPullRadius = 1.5f;
         [HideInInspector] public float autoCollectPullRadius = 20f;
         [HideInInspector] public float defaultPullRadius = 1.5f;
+        [HideInInspector] public bool wasPulled = false;
         private bool canBePulled = false;
 
         [Header("References")]
@@ -30,18 +32,33 @@ namespace KH
 
         [Header("Offscreen Settings")]
         [SerializeField] private bool isOffScreen = false;
+        [SerializeField] private GameObject indicatorPrefab;
+        private GameObject indicatorInstance;
+        [SerializeField] private Sprite greenIndicator;
+        [SerializeField] private Sprite blueIndicator;
+        [SerializeField] private Sprite redIndicator;
 
-        [Header("Sprite Renderer ")]
-        [SerializeField] private SpriteRenderer spriteRenderer;
+        [Header("Sprite Renderers")]
+        private SpriteRenderer spriteRenderer;
+        private SpriteRenderer indicatorSpriteRenderer;
 
         private void OnEnable()
         {
-            playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
-            playerMagnet = playerManager.playerMagnet;
             spriteRenderer = GetComponent<SpriteRenderer>();
             rb = GetComponent<Rigidbody2D>();
+            playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
+            indicatorSpriteRenderer = indicatorPrefab.GetComponent<SpriteRenderer>();
+
+            playerMagnet = playerManager.playerMagnet;
             launchTimerReset = launchTimer;
-            //isOffScreen = transform.position.y > ItemManager.instance.topBoundaryWorldY + 0.1f;
+
+            indicatorInstance = Instantiate(indicatorPrefab);
+            indicatorInstance.transform.SetParent(ItemManager.instance.topItemBar);
+            indicatorInstance.SetActive(false);
+        }
+        private void OnDisable()
+        {
+            Destroy(indicatorInstance);
         }
         private void Update()
         {
@@ -62,19 +79,24 @@ namespace KH
             float distance = Vector2.Distance(transform.position, playerMagnet.position);
             canBePulled = distance <= currentPullRadius;
 
-
-            if (IsOnScreen())
-            {
-                // add logic for offscreen indicator here
-            }
-
-            if (!canBePulled)
+            if (!canBePulled && wasPulled == false)
             {
                 transform.Translate(Vector2.down * fallSpeed * Time.deltaTime);
             }
             else
             {
                 transform.position = Vector2.MoveTowards(transform.position, playerMagnet.position, pullSpeed * Time.deltaTime);
+            }
+
+            Vector3 itemPos = transform.position;
+            if (itemPos.y > ItemManager.instance.topItemBar.position.y)
+            {
+                indicatorInstance.SetActive(true);
+                indicatorInstance.transform.position = new Vector3(itemPos.x, ItemManager.instance.topItemBar.position.y, itemPos.z);
+            }
+            else
+            {
+                indicatorInstance.SetActive(false);
             }
         }
         public void InitializeItem(ItemType type, int score, float power, int faith, Sprite itemSprite)
@@ -83,16 +105,16 @@ namespace KH
             addedScore = score;
             addedPower = power;
             addedFaith = faith;
-            UpdateSprite(itemSprite);
+            UpdateSprites(itemSprite);
         }
-        public void LaunchPowerItem(Vector2 direction, float speed)
+        public void LaunchItem(Vector2 direction, float speed)
         {
             isLaunched = true;
 
             rb = GetComponent<Rigidbody2D>();
             rb.linearVelocity = direction.normalized * speed;
         }
-        private void UpdateSprite(Sprite sprite)
+        private void UpdateSprites(Sprite sprite)
         {
             if (!spriteRenderer) return;
 
@@ -100,14 +122,17 @@ namespace KH
             {
                 case ItemType.Score:
                     spriteRenderer.sprite = sprite;
+                    indicatorSpriteRenderer.sprite = blueIndicator;
                     gameObject.tag = "Score";
                     break;
                 case ItemType.Power:
                     spriteRenderer.sprite = sprite;
+                    indicatorSpriteRenderer.sprite = redIndicator;
                     gameObject.tag = "Power";
                     break;
                 case ItemType.Faith:
                     spriteRenderer.sprite = sprite;
+                    indicatorSpriteRenderer.sprite = greenIndicator;
                     gameObject.tag = "Faith";
                     break;
                 case ItemType.OneUp:
@@ -136,6 +161,7 @@ namespace KH
                 {
                     playerManager.AddLife();
                 }
+                wasPulled = false;
                 ObjectPool.instance.ReturnToPool(gameObject);
 
             }

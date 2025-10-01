@@ -23,7 +23,7 @@ namespace KH
         [SerializeField] private float offScreenSpawnMargin = 2f;
 
         [Header("Offscreen UI")]
-        [SerializeField] private RectTransform indicatorParent;
+        public Transform topItemBar;
 
         [Header("Sprites")]
         [SerializeField] public Sprite regularScoreSprite;
@@ -139,6 +139,7 @@ namespace KH
                 ItemController itemController = item.GetComponent<ItemController>();
                 if (!item.activeInHierarchy) continue;
 
+                itemController.wasPulled = true;
                 itemController.currentPullRadius = itemController.autoCollectPullRadius;
 
             }

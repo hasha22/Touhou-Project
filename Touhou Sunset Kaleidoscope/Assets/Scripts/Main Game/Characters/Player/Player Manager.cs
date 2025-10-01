@@ -145,7 +145,7 @@ namespace KH
                 GameObject powerItem = ItemManager.instance.InitializePlayerDeathItem(i, transform.position + new Vector3(0, 0.5f, 0));
 
                 ItemController itemController = powerItem.GetComponent<ItemController>();
-                itemController.LaunchPowerItem(direction, powerDeathVelocity);
+                itemController.LaunchItem(direction, powerDeathVelocity);
 
                 angle += degrees;
             }

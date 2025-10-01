@@ -49,13 +49,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallSpeed: 1
   pullSpeed: 5
-  pullRadius: 2
+  currentPullRadius: 1.5
+  autoCollectPullRadius: 20
+  defaultPullRadius: 1.5
   itemType: 0
-  addedPowerScore: 0.5
+  addedPower: 0
   addedScore: 500
   addedFaith: 0
   isLaunched: 0
   launchTimer: 1.8
+  isOffScreen: 0
+  indicatorPrefab: {fileID: 4331718630796429101, guid: 7552c22aadc8af64da39241c1e7b37cb, type: 3}
+  greenIndicator: {fileID: 21300000, guid: 0170482b2b702384c98fd627d05b1007, type: 3}
+  blueIndicator: {fileID: 21300000, guid: e84471ea9169f3a4880a2b363633dd2e, type: 3}
+  redIndicator: {fileID: 21300000, guid: e4cad0b5f3e7b1b418ff4b583f328a00, type: 3}
   spriteRenderer: {fileID: 0}
 --- !u!212 &1419957897942489139
 SpriteRenderer:
