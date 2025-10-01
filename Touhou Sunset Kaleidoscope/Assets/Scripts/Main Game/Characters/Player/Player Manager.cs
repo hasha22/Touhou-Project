@@ -75,7 +75,7 @@ public class PlayerManager : MonoBehaviour
     {
         hasDied = true;
         currentPlayerLives--;
-        AudioManager.instance.PlaySFX(AudioManager.instance.deathSFX, transform, 1f);
+        AudioManager.instance.PlaySFX(AudioManager.instance.deathSFX, transform, 0.2f);
         UIManager.instance.RemoveLife();
 
         LosePower();
