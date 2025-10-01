@@ -23,6 +23,9 @@ public class Debugger : MonoBehaviour
     [SerializeField] private bool oneUpItem = false;
     [Space]
     [SerializeField] private bool enableEnemy = false;
+
+    [Header("Murder")]
+    [SerializeField] private bool murderPlayer = false;
     private void Awake()
     {
         if (instance == null)
@@ -83,6 +86,11 @@ public class Debugger : MonoBehaviour
             EnableEnemyObject();
             enableEnemy = !enableEnemy;
         }
+        if (murderPlayer)
+        {
+            KillPlayer();
+            murderPlayer = !murderPlayer;
+        }
     }
     private void SpawnRegularPowerItem()
     {
@@ -137,6 +145,11 @@ public class Debugger : MonoBehaviour
 
         Enemy enemy = enemyController.GetEnemyData();
         enemy.enemyHealth = enemy.healthResetValue;
+    }
+    private void KillPlayer()
+    {
+        PlayerManager playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
+        playerManager.Die();
     }
 
 }

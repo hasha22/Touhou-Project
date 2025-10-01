@@ -64,7 +64,6 @@ namespace KH
             {
                 velocity.y = 0;
             }
-
             rb.linearVelocity = velocity;
         }
     }

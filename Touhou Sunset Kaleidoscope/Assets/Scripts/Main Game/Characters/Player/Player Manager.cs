@@ -90,7 +90,7 @@ namespace KH
 
             UIManager.instance.UpdatePowerUI(currentPower);
         }
-        private void Die()
+        public void Die()
         {
             hasDied = true;
             currentPlayerLives--;
