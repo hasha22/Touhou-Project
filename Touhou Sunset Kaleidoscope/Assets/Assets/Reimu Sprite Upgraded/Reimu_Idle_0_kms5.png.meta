@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 26d2b39aed05c264e871e8d5b7abc42c
+guid: d79a093cbcba41842a0e23e4432a3884
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6930299806779052199
-    second: Reimu_Idle_0_0
+      213: -248735176306854685
+    second: Reimu_Idle_0_kms5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,10 +48,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,11 +100,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Reimu_Idle_0_0
+      name: Reimu_Idle_0_kms5_0
       rect:
         serializedVersion: 2
         x: 1
-        y: 4
+        y: 8
         width: 30
         height: 47
       alignment: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7a0160ab4fe5d2060800000000000000
-      internalID: 6930299806779052199
+      spriteID: 3e4f51dcca05c8cf0800000000000000
+      internalID: -248735176306854685
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Reimu_Idle_0_0: 6930299806779052199
+      Reimu_Idle_0_kms5_0: -248735176306854685
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

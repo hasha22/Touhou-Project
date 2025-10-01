@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Hakurei Reimu
   characterDescription: Maiden of the Hakurei Shrine
-  characterSprite: {fileID: 21300000, guid: 26d2b39aed05c264e871e8d5b7abc42c, type: 3}
+  characterSprite: {fileID: -136102550425703206, guid: 1afa63e53c75aa542813d3cfdbf7c989, type: 3}
   maxLives: 10
   startingPower: 1
   maxPower: 5
