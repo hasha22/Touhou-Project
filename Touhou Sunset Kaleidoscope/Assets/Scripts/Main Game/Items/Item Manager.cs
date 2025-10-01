@@ -18,6 +18,13 @@ namespace KH
         [SerializeField] private int starFaithMultiplier = 500;
         [SerializeField] private int smallFaithMultiplier = 100;
 
+        [Header("Item Auto-Collect")]
+        public float topBoundaryWorldY = 5f;
+        [SerializeField] private float offScreenSpawnMargin = 2f;
+
+        [Header("Offscreen UI")]
+        [SerializeField] private RectTransform indicatorParent;
+
         [Header("Sprites")]
         [SerializeField] public Sprite regularScoreSprite;
         [SerializeField] public Sprite greatScoreSprite;
@@ -123,6 +130,28 @@ namespace KH
         public void ConvertAllPowerItems()
         {
             convertAllPowerItemsCoroutine = StartCoroutine(ConvertItems());
+        }
+        public void AutoCollectAllItems()
+        {
+            PlayerManager playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
+            foreach (var item in ObjectPool.instance.GetItemPool())
+            {
+                ItemController itemController = item.GetComponent<ItemController>();
+                if (!item.activeInHierarchy) continue;
+
+                itemController.currentPullRadius = itemController.autoCollectPullRadius;
+
+            }
+        }
+        public void ResetItemPullRadius()
+        {
+            PlayerManager playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
+            foreach (var item in ObjectPool.instance.GetItemPool())
+            {
+                ItemController itemController = item.GetComponent<ItemController>();
+
+                itemController.currentPullRadius = itemController.defaultPullRadius;
+            }
         }
         private IEnumerator ConvertItems()
         {

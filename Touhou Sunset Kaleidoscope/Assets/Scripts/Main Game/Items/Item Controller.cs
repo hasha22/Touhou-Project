@@ -6,7 +6,9 @@ namespace KH
         [Header("Item Speed")]
         [SerializeField] private float fallSpeed = 1f;
         [SerializeField] private float pullSpeed = 5f;
-        [SerializeField] private float pullRadius = 1.5f;
+        public float currentPullRadius = 1.5f;
+        [HideInInspector] public float autoCollectPullRadius = 20f;
+        [HideInInspector] public float defaultPullRadius = 1.5f;
         private bool canBePulled = false;
 
         [Header("References")]
@@ -26,6 +28,9 @@ namespace KH
         [SerializeField] private float launchTimer = 3f;
         private float launchTimerReset;
 
+        [Header("Offscreen Settings")]
+        [SerializeField] private bool isOffScreen = false;
+
         [Header("Sprite Renderer ")]
         [SerializeField] private SpriteRenderer spriteRenderer;
 
@@ -36,6 +41,7 @@ namespace KH
             spriteRenderer = GetComponent<SpriteRenderer>();
             rb = GetComponent<Rigidbody2D>();
             launchTimerReset = launchTimer;
+            //isOffScreen = transform.position.y > ItemManager.instance.topBoundaryWorldY + 0.1f;
         }
         private void Update()
         {
@@ -54,15 +60,21 @@ namespace KH
             if (playerMagnet == null) return;
 
             float distance = Vector2.Distance(transform.position, playerMagnet.position);
-            canBePulled = distance <= pullRadius;
+            canBePulled = distance <= currentPullRadius;
 
-            if (canBePulled)
+
+            if (IsOnScreen())
             {
-                transform.position = Vector2.MoveTowards(transform.position, playerMagnet.position, pullSpeed * Time.deltaTime);
+                // add logic for offscreen indicator here
+            }
+
+            if (!canBePulled)
+            {
+                transform.Translate(Vector2.down * fallSpeed * Time.deltaTime);
             }
             else
             {
-                transform.Translate(Vector2.down * fallSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, playerMagnet.position, pullSpeed * Time.deltaTime);
             }
         }
         public void InitializeItem(ItemType type, int score, float power, int faith, Sprite itemSprite)
@@ -127,6 +139,13 @@ namespace KH
                 ObjectPool.instance.ReturnToPool(gameObject);
 
             }
+        }
+        private bool IsOnScreen()
+        {
+            var cam = Camera.main;
+            Vector3 viewpoint = cam.WorldToViewportPoint(transform.position);
+
+            return viewpoint.x >= 0f && viewpoint.x <= 1f && viewpoint.y >= 0f && viewpoint.y <= 1f;
         }
         public float GetPower()
         {

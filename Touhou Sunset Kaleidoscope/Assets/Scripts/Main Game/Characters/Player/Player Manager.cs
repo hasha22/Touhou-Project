@@ -31,6 +31,11 @@ namespace KH
         [SerializeField] private float invulnerabilityTime = 5f;
         [SerializeField] private float flickeringDelay = 0.1f;
 
+        [Header("Auto-Collect Settings")]
+        public float autoCollectY = 2.0f;
+        private bool wasAboveAutoCollect = false;
+        public bool InCollectionZone => transform.position.y >= autoCollectY;
+
         [Header("Bomb Settings")]
         [SerializeField] private Transform bombParent;
         [SerializeField] private float bombDelay = 0.5f;
@@ -67,6 +72,20 @@ namespace KH
             }
 
             bombInput = PlayerInputManager.instance.isBombing;
+
+            bool nowAbove = transform.position.y >= autoCollectY;
+
+            if (nowAbove && !wasAboveAutoCollect)
+            {
+                ItemManager.instance.AutoCollectAllItems();
+            }
+
+            if (!nowAbove && wasAboveAutoCollect)
+            {
+                ItemManager.instance.ResetItemPullRadius();
+            }
+            wasAboveAutoCollect = nowAbove;
+
         }
         private void FixedUpdate()
         {
