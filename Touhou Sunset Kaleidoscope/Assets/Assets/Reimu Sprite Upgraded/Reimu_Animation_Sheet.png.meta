@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: c6d0645c89b355445986dc03290a8fff
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -526101993467630948
+    second: Reimu_Animation_Sheet_0
+  - first:
+      213: 3487895297372140494
+    second: Reimu_Animation_Sheet_1
+  - first:
+      213: -2378780704571579829
+    second: Reimu_Animation_Sheet_2
+  - first:
+      213: 5082071532920975914
+    second: Reimu_Animation_Sheet_3
+  - first:
+      213: -5543941215643029829
+    second: Reimu_Animation_Sheet_4
+  - first:
+      213: -3303882516945513983
+    second: Reimu_Animation_Sheet_5
+  - first:
+      213: 8180025817712618608
+    second: Reimu_Animation_Sheet_6
+  - first:
+      213: 7365169149601098852
+    second: Reimu_Animation_Sheet_7
+  - first:
+      213: 7954244219022652022
+    second: Reimu_Animation_Sheet_8
+  - first:
+      213: -6502277755191436221
+    second: Reimu_Animation_Sheet_9
+  - first:
+      213: -6228122381057252153
+    second: Reimu_Animation_Sheet_10
+  - first:
+      213: -8907489094294754600
+    second: Reimu_Animation_Sheet_11
+  - first:
+      213: 5417167113131282699
+    second: Reimu_Animation_Sheet_12
+  - first:
+      213: -4912236319275963191
+    second: Reimu_Animation_Sheet_13
+  - first:
+      213: 1738044568332316303
+    second: Reimu_Animation_Sheet_14
+  - first:
+      213: 910205833810322652
+    second: Reimu_Animation_Sheet_15
+  - first:
+      213: 6355625106358136855
+    second: Reimu_Animation_Sheet_16
+  - first:
+      213: 5354492774908041399
+    second: Reimu_Animation_Sheet_17
+  - first:
+      213: 2884626410271867038
+    second: Reimu_Animation_Sheet_18
+  - first:
+      213: -8276189320898427489
+    second: Reimu_Animation_Sheet_19
+  - first:
+      213: -821852835541465469
+    second: Reimu_Animation_Sheet_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 225
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9aacbb3609e2b8f0800000000000000
+      internalID: -526101993467630948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 225
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec33f951b4e776030800000000000000
+      internalID: 3487895297372140494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 225
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4225717d8fdcfed0800000000000000
+      internalID: -2378780704571579829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 225
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2231ea1225278640800000000000000
+      internalID: 5082071532920975914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 225
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbe23f166d6ff03b0800000000000000
+      internalID: -5543941215643029829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 170
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 102d6d50b504622d0800000000000000
+      internalID: -3303882516945513983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 170
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07ce84e342a458170800000000000000
+      internalID: 8180025817712618608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 171
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ca3a8b156563660800000000000000
+      internalID: 7365169149601098852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 171
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 672bc8b49f6236e60800000000000000
+      internalID: 7954244219022652022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 173
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34cd3ea05d443c5a0800000000000000
+      internalID: -6502277755191436221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 173
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c42c6341b34199a0800000000000000
+      internalID: -6228122381057252153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 118
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8da25e5dcdd326480800000000000000
+      internalID: -8907489094294754600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 118
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b015e1bb9c4ad2b40800000000000000
+      internalID: 5417167113131282699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 60
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cca8c0081b34dbb0800000000000000
+      internalID: -4912236319275963191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 60
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8eae3b8356ce1810800000000000000
+      internalID: 1738044568332316303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 60
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd4a0c42263b1ac00800000000000000
+      internalID: 910205833810322652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 62
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 710f7065c57b33850800000000000000
+      internalID: 6355625106358136855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 62
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b81ac83fcafe4a40800000000000000
+      internalID: 5354492774908041399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 62
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9007fdcf60480820800000000000000
+      internalID: 2884626410271867038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 7
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f95c7f969a1152d80800000000000000
+      internalID: -8276189320898427489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reimu_Animation_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 7
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38647ef43313894f0800000000000000
+      internalID: -821852835541465469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c557b6c1fba90f24e9c032738ee2ac76
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Reimu_Animation_Sheet_0: -526101993467630948
+      Reimu_Animation_Sheet_1: 3487895297372140494
+      Reimu_Animation_Sheet_10: -6228122381057252153
+      Reimu_Animation_Sheet_11: -8907489094294754600
+      Reimu_Animation_Sheet_12: 5417167113131282699
+      Reimu_Animation_Sheet_13: -4912236319275963191
+      Reimu_Animation_Sheet_14: 1738044568332316303
+      Reimu_Animation_Sheet_15: 910205833810322652
+      Reimu_Animation_Sheet_16: 6355625106358136855
+      Reimu_Animation_Sheet_17: 5354492774908041399
+      Reimu_Animation_Sheet_18: 2884626410271867038
+      Reimu_Animation_Sheet_19: -8276189320898427489
+      Reimu_Animation_Sheet_2: -2378780704571579829
+      Reimu_Animation_Sheet_20: -821852835541465469
+      Reimu_Animation_Sheet_3: 5082071532920975914
+      Reimu_Animation_Sheet_4: -5543941215643029829
+      Reimu_Animation_Sheet_5: -3303882516945513983
+      Reimu_Animation_Sheet_6: 8180025817712618608
+      Reimu_Animation_Sheet_7: 7365169149601098852
+      Reimu_Animation_Sheet_8: 7954244219022652022
+      Reimu_Animation_Sheet_9: -6502277755191436221
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
