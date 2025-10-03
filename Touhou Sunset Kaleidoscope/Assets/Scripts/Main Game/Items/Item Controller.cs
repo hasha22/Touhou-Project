@@ -17,6 +17,8 @@ namespace KH
         private Transform playerMagnet;
         private PlayerManager playerManager;
         private Rigidbody2D rb;
+        private Transform playableArea;
+        private Vector2 minBounds, maxBounds;
 
         [Header("Score")]
         // Do not modify these here. Check Item Manager
@@ -47,10 +49,17 @@ namespace KH
             spriteRenderer = GetComponent<SpriteRenderer>();
             rb = GetComponent<Rigidbody2D>();
             playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
+            PlayerMovement playerMovement = playerManager.GetComponent<PlayerMovement>();
+            playableArea = playerMovement.playableArea;
             indicatorSpriteRenderer = indicatorPrefab.GetComponent<SpriteRenderer>();
 
             playerMagnet = playerManager.playerMagnet;
             launchTimerReset = launchTimer;
+
+            BoxCollider2D area = playableArea.GetComponent<BoxCollider2D>();
+            Bounds bounds = area.bounds;
+            minBounds = bounds.min;
+            maxBounds = bounds.max;
 
             indicatorInstance = Instantiate(indicatorPrefab);
             indicatorInstance.transform.SetParent(ItemManager.instance.topItemBar);
@@ -70,25 +79,24 @@ namespace KH
                     rb.linearVelocity = Vector3.zero;
                     isLaunched = false;
                 }
+                ConstrainToBounds();
                 return;
             }
             launchTimer = launchTimerReset;
 
-            if (playerMagnet == null) return;
-
             float distance = Vector2.Distance(transform.position, playerMagnet.position);
             canBePulled = distance <= currentPullRadius;
+            Vector3 itemPos = transform.position;
 
             if (!canBePulled && wasPulled == false)
             {
                 transform.Translate(Vector2.down * fallSpeed * Time.deltaTime);
             }
-            else
+            else if (itemPos.y <= ItemManager.instance.topItemBar.position.y)
             {
                 transform.position = Vector2.MoveTowards(transform.position, playerMagnet.position, pullSpeed * Time.deltaTime);
             }
 
-            Vector3 itemPos = transform.position;
             if (itemPos.y > ItemManager.instance.topItemBar.position.y)
             {
                 indicatorInstance.SetActive(true);
@@ -98,6 +106,7 @@ namespace KH
             {
                 indicatorInstance.SetActive(false);
             }
+            ConstrainToBounds();
         }
         public void InitializeItem(ItemType type, int score, float power, int faith, Sprite itemSprite)
         {
@@ -107,13 +116,19 @@ namespace KH
             addedFaith = faith;
             UpdateSprites(itemSprite);
         }
-        public void LaunchItem(Vector2 direction, float speed)
+        private void ConstrainToBounds()
         {
-            isLaunched = true;
+            Vector3 pos = transform.position;
 
-            rb = GetComponent<Rigidbody2D>();
-            rb.linearVelocity = direction.normalized * speed;
+            // Clamp X within bounds
+            if (pos.x < minBounds.x)
+                pos.x = minBounds.x;
+            else if (pos.x > maxBounds.x)
+                pos.x = maxBounds.x;
+
+            transform.position = pos;
         }
+
         private void UpdateSprites(Sprite sprite)
         {
             if (!spriteRenderer) return;
@@ -141,6 +156,13 @@ namespace KH
                     break;
             }
         }
+        public void LaunchItem(Vector2 direction, float speed)
+        {
+            isLaunched = true;
+
+            rb = GetComponent<Rigidbody2D>();
+            rb.linearVelocity = direction.normalized * speed;
+        }
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player Magnet"))
@@ -165,13 +187,6 @@ namespace KH
                 ObjectPool.instance.ReturnToPool(gameObject);
 
             }
-        }
-        private bool IsOnScreen()
-        {
-            var cam = Camera.main;
-            Vector3 viewpoint = cam.WorldToViewportPoint(transform.position);
-
-            return viewpoint.x >= 0f && viewpoint.x <= 1f && viewpoint.y >= 0f && viewpoint.y <= 1f;
         }
         public float GetPower()
         {

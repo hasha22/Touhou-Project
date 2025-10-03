@@ -48,10 +48,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallSpeed: 1
-  pullSpeed: 5
+  pullSpeed: 10
   currentPullRadius: 1.5
   autoCollectPullRadius: 20
   defaultPullRadius: 1.5
+  wasPulled: 0
+  playableArea: {fileID: 0}
   itemType: 0
   addedPower: 0
   addedScore: 500
@@ -63,7 +65,6 @@ MonoBehaviour:
   greenIndicator: {fileID: 21300000, guid: 0170482b2b702384c98fd627d05b1007, type: 3}
   blueIndicator: {fileID: 21300000, guid: e84471ea9169f3a4880a2b363633dd2e, type: 3}
   redIndicator: {fileID: 21300000, guid: e4cad0b5f3e7b1b418ff4b583f328a00, type: 3}
-  spriteRenderer: {fileID: 0}
 --- !u!212 &1419957897942489139
 SpriteRenderer:
   m_ObjectHideFlags: 0

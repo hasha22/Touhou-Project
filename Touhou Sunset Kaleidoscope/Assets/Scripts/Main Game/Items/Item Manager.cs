@@ -88,6 +88,12 @@ namespace KH
             powerItem.transform.position = spawnPos;
             ItemController itemController = powerItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.Power, 0, regularPower, 0, powerSprite);
+
+            PlayerManager playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
+            if (playerManager.currentPower == 5f)
+            {
+                ConvertPowerItemToScore(itemController);
+            }
         }
         public void SpawnGreatPowerItem(Vector3 spawnPos)
         {
@@ -95,6 +101,12 @@ namespace KH
             powerItem.transform.position = spawnPos;
             ItemController itemController = powerItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.Power, 0, greatPower, 0, powerSprite);
+
+            PlayerManager playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
+            if (playerManager.currentPower == 5f)
+            {
+                ConvertPowerItemToScore(itemController);
+            }
         }
         public void SpawnFullPowerItem(Vector3 spawnPos)
         {
@@ -102,6 +114,12 @@ namespace KH
             powerItem.transform.position = spawnPos;
             ItemController itemController = powerItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.Power, 0, fullPower, 0, fullPowerSprite);
+
+            PlayerManager playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
+            if (playerManager.currentPower == 5f)
+            {
+                ConvertPowerItemToScore(itemController);
+            }
         }
         public void Spawn1UpItem(Vector3 spawnPos)
         {
@@ -126,10 +144,35 @@ namespace KH
 
             return powerItem;
         }
+        public void ConvertPowerItemToScore(ItemController itemController)
+        {
+            if (itemController.GetPower() == fullPower || itemController.GetPower() == greatPower)
+            { itemController.InitializeItem(ItemType.Score, greatScore, 0, 0, greatScoreSprite); }
+            else
+            { itemController.InitializeItem(ItemType.Score, regularScore, 0, 0, regularScoreSprite); }
+        }
 
         public void ConvertAllPowerItems()
         {
             convertAllPowerItemsCoroutine = StartCoroutine(ConvertItems());
+        }
+        private IEnumerator ConvertItems()
+        {
+            List<GameObject> allPowerItems = ObjectPool.instance.GetItemPool();
+
+            foreach (GameObject item in allPowerItems)
+            {
+                if (item.activeInHierarchy && item.CompareTag("Power"))
+                {
+                    // Add VFX and SFX as well
+                    ItemController itemController = item.GetComponent<ItemController>();
+                    if (itemController.GetPower() == fullPower || itemController.GetPower() == greatPower)
+                    { itemController.InitializeItem(ItemType.Score, greatScore, 0, 0, greatScoreSprite); }
+                    else
+                    { itemController.InitializeItem(ItemType.Score, regularScore, 0, 0, regularScoreSprite); }
+                }
+                yield return null;
+            }
         }
         public void AutoCollectAllItems()
         {
@@ -152,24 +195,6 @@ namespace KH
                 ItemController itemController = item.GetComponent<ItemController>();
 
                 itemController.currentPullRadius = itemController.defaultPullRadius;
-            }
-        }
-        private IEnumerator ConvertItems()
-        {
-            List<GameObject> allPowerItems = ObjectPool.instance.GetItemPool();
-
-            foreach (GameObject item in allPowerItems)
-            {
-                if (item.activeInHierarchy && item.CompareTag("Power"))
-                {
-                    // Add VFX and SFX as well
-                    ItemController itemController = item.GetComponent<ItemController>();
-                    if (itemController.GetPower() == fullPower || itemController.GetPower() == greatPower)
-                    { itemController.InitializeItem(ItemType.Score, greatScore, 0, 0, greatScoreSprite); }
-                    else
-                    { itemController.InitializeItem(ItemType.Score, regularScore, 0, 0, regularScoreSprite); }
-                }
-                yield return null;
             }
         }
     }

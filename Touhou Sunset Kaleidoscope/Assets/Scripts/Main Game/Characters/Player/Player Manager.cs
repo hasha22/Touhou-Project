@@ -48,6 +48,9 @@ namespace KH
         [SerializeField] private Collider2D playerCollider;
         public Transform playerMagnet;
         private SpriteRenderer spriteRenderer;
+
+        public bool canMove = true;
+
         private void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -120,11 +123,11 @@ namespace KH
 
             if (currentPlayerLives == 0)
             {
-                gameObject.SetActive(false);
                 UIManager.instance.StartDeathScreenCoroutine();
+                gameObject.SetActive(false);
                 return;
             }
-
+            PlayerInputManager.instance.DisableInput();
             StartCoroutine(RespawnCoroutine());
         }
         public void AddLife()
@@ -187,8 +190,6 @@ namespace KH
         {
             spriteRenderer.enabled = false;
             playerCollider.enabled = false;
-            PlayerInputManager.instance.inputControls.Disable();
-
             if (hasDied) { yield return new WaitForSeconds(respawnDelay); }
 
             transform.position = respawnPoint.position;
@@ -207,7 +208,7 @@ namespace KH
                 );
                 yield return null;
             }
-            PlayerInputManager.instance.inputControls.Enable();
+            PlayerInputManager.instance.EnableInput();
         }
         private IEnumerator InvulnerabilityCoroutine()
         {

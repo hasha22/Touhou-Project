@@ -16,30 +16,30 @@
                 },
                 {
                     "name": "Precision",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "0fa1deaf-61ad-4144-b563-7073cd421667",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Shoot",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "3b24d31f-4efa-4775-a213-7660c58fb773",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Bomb",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "2706ca2c-2cb8-4047-b2ba-41d1eb5c6e21",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [

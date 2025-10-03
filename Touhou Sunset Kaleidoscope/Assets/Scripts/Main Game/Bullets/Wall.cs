@@ -6,9 +6,7 @@ namespace KH
         private void OnTriggerExit2D(Collider2D other)
         {
             if (other.CompareTag("Player Bullet") ||
-                other.CompareTag("Enemy Bullet") ||
-                other.CompareTag("Score") ||
-                other.CompareTag("Power"))
+                other.CompareTag("Enemy Bullet"))
             {
                 ObjectPool.instance.ReturnToPool(other.gameObject);
             }

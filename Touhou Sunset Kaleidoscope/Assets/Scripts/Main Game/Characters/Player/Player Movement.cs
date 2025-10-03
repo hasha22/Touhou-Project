@@ -14,7 +14,7 @@ namespace KH
         private Rigidbody2D rb;
 
         [Header("Player Bounds")]
-        [SerializeField] private Transform playableArea;
+        public Transform playableArea;
         private Vector2 minBounds, maxBounds;
 
         private void Awake()
@@ -64,6 +64,7 @@ namespace KH
             {
                 velocity.y = 0;
             }
+
             rb.linearVelocity = velocity;
         }
     }
