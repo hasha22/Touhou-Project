@@ -58,6 +58,7 @@ namespace KH
         private void Start()
         {
             UIManager.instance.UpdatePowerUI(currentPower);
+            PlayerInputManager.instance.DisableInput();
             StartCoroutine(RespawnCoroutine());
         }
         private void Update()

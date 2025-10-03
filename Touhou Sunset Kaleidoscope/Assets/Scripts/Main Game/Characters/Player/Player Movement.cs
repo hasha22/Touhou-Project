@@ -6,6 +6,7 @@ namespace KH
         [Header("References")]
         private PlayerManager playerManager;
         private Animator animator;
+        private PlayerAnimator playerAnimator;
 
         [Header("Player Movement")]
         public float currentSpeed;
@@ -22,6 +23,7 @@ namespace KH
             rb = GetComponent<Rigidbody2D>();
             playerManager = GetComponent<PlayerManager>();
             animator = GetComponent<Animator>();
+            playerAnimator = GetComponent<PlayerAnimator>();
         }
         private void Start()
         {
@@ -34,6 +36,7 @@ namespace KH
         private void FixedUpdate()
         {
             HandleMovement();
+            playerAnimator.Animate(animator, horizontalMovement);
         }
         private void GetMovement()
         {
