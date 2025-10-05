@@ -57,6 +57,7 @@ namespace KH
         {
             GameObject scoreItem = ObjectPool.instance.GetPooledItem();
             scoreItem.transform.position = spawnPos;
+            scoreItem.transform.localScale = new Vector3(1, 1, 1);
             ItemController itemController = scoreItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.Score, regularScore, 0, 0, regularScoreSprite);
         }
@@ -64,27 +65,31 @@ namespace KH
         {
             GameObject scoreItem = ObjectPool.instance.GetPooledItem();
             scoreItem.transform.position = spawnPos;
+            scoreItem.transform.localScale = new Vector3(1, 1, 1);
             ItemController itemController = scoreItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.Score, greatScore, 0, 0, greatScoreSprite);
         }
         public void SpawnSmallFaithItem(Vector3 spawnPos)
         {
-            GameObject scoreItem = ObjectPool.instance.GetPooledItem();
-            scoreItem.transform.position = spawnPos;
-            ItemController itemController = scoreItem.GetComponent<ItemController>();
+            GameObject faithItem = ObjectPool.instance.GetPooledItem();
+            faithItem.transform.position = spawnPos;
+            faithItem.transform.localScale = new Vector3(1, 1, 1);
+            ItemController itemController = faithItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.Faith, 0, 0, smallFaithMultiplier, smallFaithSprite);
         }
         public void SpawnStarFaithItem(Vector3 spawnPos)
         {
-            GameObject scoreItem = ObjectPool.instance.GetPooledItem();
-            scoreItem.transform.position = spawnPos;
-            ItemController itemController = scoreItem.GetComponent<ItemController>();
+            GameObject faithItem = ObjectPool.instance.GetPooledItem();
+            faithItem.transform.position = spawnPos;
+            faithItem.transform.localScale = new Vector3(1, 1, 1);
+            ItemController itemController = faithItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.Faith, 0, 0, starFaithMultiplier, starFaithSprite);
         }
         public void SpawnRegularPowerItem(Vector3 spawnPos)
         {
             GameObject powerItem = ObjectPool.instance.GetPooledItem();
             powerItem.transform.position = spawnPos;
+            powerItem.transform.localScale = new Vector3(1, 1, 1);
             ItemController itemController = powerItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.Power, 0, regularPower, 0, powerSprite);
 
@@ -98,6 +103,7 @@ namespace KH
         {
             GameObject powerItem = ObjectPool.instance.GetPooledItem();
             powerItem.transform.position = spawnPos;
+            powerItem.transform.localScale = new Vector3(1, 1, 1);
             ItemController itemController = powerItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.Power, 0, greatPower, 0, powerSprite);
 
@@ -111,6 +117,7 @@ namespace KH
         {
             GameObject powerItem = ObjectPool.instance.GetPooledItem();
             powerItem.transform.position = spawnPos;
+            powerItem.transform.localScale = new Vector3(1, 1, 1);
             ItemController itemController = powerItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.Power, 0, fullPower, 0, fullPowerSprite);
 
@@ -124,6 +131,7 @@ namespace KH
         {
             GameObject oneUpItem = ObjectPool.instance.GetPooledItem();
             oneUpItem.transform.position = spawnPos;
+            oneUpItem.transform.localScale = new Vector3(1, 1, 1);
             ItemController itemController = oneUpItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.OneUp, 0, 0, 0, oneUpSprite);
         }

@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 namespace KH
 {
     public class PlayerInputManager : MonoBehaviour
     {
-        //[HideInInspector] public InputControls inputControls;
+        [HideInInspector] public InputControls inputControls;
         public static PlayerInputManager instance { get; private set; }
 
         private PlayerInput playerInput;
@@ -47,12 +48,12 @@ namespace KH
         }
         private void Start()
         {
-            //SceneManager.activeSceneChanged += OnSceneChange;
-            /*
+            SceneManager.activeSceneChanged += OnSceneChange;
+
             if (inputControls != null)
             {
                 inputControls.Disable();
-            }*/
+            }
         }
         private void Update()
         {
@@ -62,28 +63,16 @@ namespace KH
         {
             HandleMovementInput();
         }
-        /*
+
         private void OnEnable()
         {
             if (inputControls == null)
             {
                 inputControls = new InputControls();
-                inputControls.Player.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
-                inputControls.Player.Movement.canceled += i => movementInput = Vector2.zero;
-
-                inputControls.Player.Shoot.performed += i => isShooting = true;
-                inputControls.Player.Shoot.canceled += i => isShooting = false;
-
-                inputControls.Player.Precision.performed += i => isInPrecision = true;
-                inputControls.Player.Precision.canceled += i => isInPrecision = false;
-
-                inputControls.Player.Bomb.performed += i => isBombing = true;
-                inputControls.Player.Bomb.canceled += i => isBombing = false;
-
                 inputControls.Enable();
             }
         }
-        */
+
         public void OnMovement(InputAction.CallbackContext context)
         {
             movementInput = context.ReadValue<Vector2>();
@@ -112,12 +101,12 @@ namespace KH
         {
             playerInput.enabled = true;
         }
-        /*
+
         private void OnDestroy()
         {
             SceneManager.activeSceneChanged -= OnSceneChange;
         }
-        
+
         private void OnApplicationFocus(bool focus)
         {
             if (enabled)
@@ -129,8 +118,7 @@ namespace KH
                 inputControls.Disable();
             }
         }
-        */
-        /*
+
         private void OnSceneChange(Scene oldScene, Scene newScene)
         {
             //Enables controls if loading into Game Scene, disables otherwise
@@ -151,7 +139,7 @@ namespace KH
                 }
             }
         }
-        */
+
         private void HandleMovementInput()
         {
             verticalInput = movementInput.y;
