@@ -20,6 +20,7 @@ namespace KH
 
         [Header("Item Auto-Collect")]
         public float topBoundaryWorldY = 5f;
+        public bool isAutoCollecting = false;
 
         [Header("Offscreen UI")]
         public Transform topItemBar;
@@ -183,19 +184,23 @@ namespace KH
         }
         public void AutoCollectAllItems()
         {
+            isAutoCollecting = true;
             PlayerManager playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
             foreach (var item in ObjectPool.instance.GetItemPool())
             {
                 ItemController itemController = item.GetComponent<ItemController>();
-                if (!item.activeInHierarchy) continue;
 
-                itemController.wasPulled = true;
-                itemController.currentPullRadius = itemController.autoCollectPullRadius;
-
+                if (item.activeInHierarchy && !itemController.isAboveTop && itemController.IsInPlayableArea(item.transform.position))
+                {
+                    Debug.Log("eat shit");
+                    itemController.wasPulled = true;
+                    itemController.currentPullRadius = itemController.autoCollectPullRadius;
+                }
             }
         }
         public void ResetItemPullRadius()
         {
+            isAutoCollecting = false;
             PlayerManager playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
             foreach (var item in ObjectPool.instance.GetItemPool())
             {

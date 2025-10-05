@@ -27,7 +27,7 @@ namespace KH
         [SerializeField] private float lowerLimit = 10f;
         [SerializeField] private float upperLimit = 100f;
         private bool hasDied = false;
-        [HideInInspector] public bool canPullItems = true;
+        public bool canPullItems = true;
 
         [Header("Player Invulnerability")]
         [SerializeField] private float invulnerabilityTime = 5f;
@@ -35,7 +35,8 @@ namespace KH
 
         [Header("Auto-Collect Settings")]
         public float autoCollectY = 2.0f;
-        private bool wasAboveAutoCollect = false;
+        public bool wasAboveAutoCollect = false;
+        private float autoCollectTimer = 0f;
         public bool InCollectionZone => transform.position.y >= autoCollectY;
 
         [Header("Bomb Settings")]
@@ -86,6 +87,16 @@ namespace KH
             if (nowAbove && !wasAboveAutoCollect)
             {
                 ItemManager.instance.AutoCollectAllItems();
+            }
+
+            if (nowAbove)
+            {
+                autoCollectTimer -= Time.deltaTime;
+                if (autoCollectTimer <= 0f)
+                {
+                    ItemManager.instance.AutoCollectAllItems();
+                    autoCollectTimer = 0.5f; // call every 0.2 seconds, tweak as needed
+                }
             }
 
             if (!nowAbove && wasAboveAutoCollect)

@@ -10,8 +10,8 @@ namespace KH
         public float currentPullRadius = 1.5f;
         [HideInInspector] public float autoCollectPullRadius = 20f;
         [HideInInspector] public float defaultPullRadius = 1.5f;
-        [HideInInspector] public bool wasPulled = false;
-        private bool canBePulled = false;
+        public bool wasPulled = false;
+        public bool canBePulled = false;
 
         [Header("References")]
         private Transform playerMagnet;
@@ -38,6 +38,7 @@ namespace KH
         [SerializeField] private Sprite greenIndicator;
         [SerializeField] private Sprite blueIndicator;
         [SerializeField] private Sprite redIndicator;
+        public bool isAboveTop = false;
 
         [Header("Sprite Renderers")]
         private SpriteRenderer spriteRenderer;
@@ -83,20 +84,31 @@ namespace KH
             }
             launchTimer = launchTimerReset;
 
-            float distance = Vector2.Distance(transform.position, playerMagnet.position);
+            float distance = Vector2.Distance(transform.position, playerMagnet.position); // distance between player and item
             canBePulled = distance <= currentPullRadius;
             Vector3 itemPos = transform.position;
 
-            if (!canBePulled && !wasPulled)
+            isAboveTop = itemPos.y > ItemManager.instance.topItemBar.position.y;
+
+            if (ItemManager.instance.isAutoCollecting && IsInPlayableArea(transform.position)) // auto-collected
             {
+                Debug.Log("MEOW 1");
+                transform.position = Vector2.MoveTowards(transform.position, playerMagnet.position, pullSpeed * Time.deltaTime);
+                wasPulled = true;
+            }
+            else if (!canBePulled && !wasPulled) // free fall
+            {
+                Debug.Log("MEOW 2");
                 transform.Translate(Vector2.down * fallSpeed * Time.deltaTime);
             }
-            else if (itemPos.y <= ItemManager.instance.topItemBar.position.y && playerManager.canPullItems)
+            else if (!isAboveTop && playerManager.canPullItems) // normal pulling
             {
+                Debug.Log("MEOW 3");
                 transform.position = Vector2.MoveTowards(transform.position, playerMagnet.position, pullSpeed * Time.deltaTime);
             }
 
-            if (itemPos.y > ItemManager.instance.topItemBar.position.y)
+
+            if (isAboveTop) //displays offscreen indicator
             {
                 indicatorInstance.SetActive(true);
                 indicatorInstance.transform.position = new Vector3(itemPos.x, ItemManager.instance.topItemBar.position.y, itemPos.z);
@@ -127,7 +139,10 @@ namespace KH
 
             transform.position = pos;
         }
-
+        public bool IsInPlayableArea(Vector3 worldPos)
+        {
+            return worldPos.x >= minBounds.x && worldPos.y >= minBounds.y && worldPos.x < maxBounds.x && worldPos.y < maxBounds.y;
+        }
         private void UpdateSprites(Sprite sprite)
         {
             if (!spriteRenderer) return;
@@ -183,6 +198,7 @@ namespace KH
                     playerManager.AddLife();
                 }
                 wasPulled = false;
+                currentPullRadius = defaultPullRadius;
                 ObjectPool.instance.ReturnToPool(gameObject);
 
             }
