@@ -27,6 +27,7 @@ namespace KH
         [SerializeField] private float lowerLimit = 10f;
         [SerializeField] private float upperLimit = 100f;
         private bool hasDied = false;
+        [HideInInspector] public bool canPullItems = true;
 
         [Header("Player Invulnerability")]
         [SerializeField] private float invulnerabilityTime = 5f;
@@ -47,7 +48,8 @@ namespace KH
 
         [Header("References")]
         [SerializeField] private Collider2D playerCollider;
-        public Transform playerMagnet;
+        public Transform playerMagnetTransform;
+
         private SpriteRenderer spriteRenderer;
         private PlayerMovement playerMovement;
 
@@ -55,6 +57,7 @@ namespace KH
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             playerMovement = GetComponent<PlayerMovement>();
+
         }
         private void Start()
         {
@@ -140,16 +143,13 @@ namespace KH
         }
         private void LosePower()
         {
-            Debug.Log(transform.position.x);
-            float t = Mathf.InverseLerp(playerMovement.minBounds.x, playerMovement.maxBounds.x, transform.position.x);
-            Debug.Log(t);
-            float angle = Mathf.Lerp(lowerLimit, upperLimit, t);
-            Debug.Log(angle);
-            float degrees = spreadDegrees / powerItemCount;
+            float t = Mathf.InverseLerp(playerMovement.minBounds.x, playerMovement.maxBounds.x, transform.position.x); // InverseLerp(a, b, t). Calculates where t lies in the (a,b) range, and returns a value between [0,1]
+            float angle = Mathf.Lerp(lowerLimit, upperLimit, t); //Lerp(a, b, t). Formula: a + (b - a) * t; Example: a = 10, b = 100, t = 0.53 => angle = 57.7f
+            float degrees = spreadDegrees / powerItemCount; // 17.14 increase in degrees each time a power item spawns
 
             for (int i = 0; i < powerItemCount; i++)
             {
-                float radians = angle * Mathf.Deg2Rad;
+                float radians = angle * Mathf.Deg2Rad; // Cos & Sin require radians
                 Vector2 direction = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
 
                 GameObject powerItem = ItemManager.instance.InitializePlayerDeathItem(i, transform.position + new Vector3(0, 0.5f, 0));
@@ -159,6 +159,7 @@ namespace KH
 
                 angle += degrees;
             }
+
             float power = currentPower - 3.2f;
             if (power <= 0)
             { currentPower = 0; }
@@ -197,11 +198,13 @@ namespace KH
         {
             spriteRenderer.enabled = false;
             playerCollider.enabled = false;
+            canPullItems = false;
             if (hasDied) { yield return new WaitForSeconds(respawnDelay); }
 
             transform.position = respawnPoint.position;
 
             spriteRenderer.enabled = true;
+            canPullItems = true;
 
             StartCoroutine(InvulnerabilityCoroutine());
 

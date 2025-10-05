@@ -617,7 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d250d842b6144742b778c863f63a3b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &814378293
+--- !u!21 &745644678
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -1524,6 +1524,10 @@ PrefabInstance:
       propertyPath: invulnerabilityTime
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -7532986062195704745, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
+      propertyPath: playerMagnetTransform
+      value: 
+      objectReference: {fileID: 406015982}
     - target: {fileID: 346994207006728913, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: characterData
       value: 

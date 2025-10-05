@@ -52,7 +52,7 @@ namespace KH
             playableArea = playerMovement.playableArea;
             indicatorSpriteRenderer = indicatorPrefab.GetComponent<SpriteRenderer>();
 
-            playerMagnet = playerManager.playerMagnet;
+            playerMagnet = playerManager.playerMagnetTransform;
             launchTimerReset = launchTimer;
 
             BoxCollider2D area = playableArea.GetComponent<BoxCollider2D>();
@@ -87,11 +87,11 @@ namespace KH
             canBePulled = distance <= currentPullRadius;
             Vector3 itemPos = transform.position;
 
-            if (!canBePulled && wasPulled == false)
+            if (!canBePulled && !wasPulled)
             {
                 transform.Translate(Vector2.down * fallSpeed * Time.deltaTime);
             }
-            else if (itemPos.y <= ItemManager.instance.topItemBar.position.y)
+            else if (itemPos.y <= ItemManager.instance.topItemBar.position.y && playerManager.canPullItems)
             {
                 transform.position = Vector2.MoveTowards(transform.position, playerMagnet.position, pullSpeed * Time.deltaTime);
             }
