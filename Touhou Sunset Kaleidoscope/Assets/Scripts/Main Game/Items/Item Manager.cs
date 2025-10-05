@@ -20,7 +20,6 @@ namespace KH
 
         [Header("Item Auto-Collect")]
         public float topBoundaryWorldY = 5f;
-        [SerializeField] private float offScreenSpawnMargin = 2f;
 
         [Header("Offscreen UI")]
         public Transform topItemBar;

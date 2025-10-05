@@ -16,7 +16,7 @@ namespace KH
 
         [Header("Player Bounds")]
         public Transform playableArea;
-        private Vector2 minBounds, maxBounds;
+        [HideInInspector] public Vector2 minBounds, maxBounds;
 
         private void Awake()
         {

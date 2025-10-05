@@ -33,7 +33,6 @@ namespace KH
         private float launchTimerReset;
 
         [Header("Offscreen Settings")]
-        [SerializeField] private bool isOffScreen = false;
         [SerializeField] private GameObject indicatorPrefab;
         private GameObject indicatorInstance;
         [SerializeField] private Sprite greenIndicator;

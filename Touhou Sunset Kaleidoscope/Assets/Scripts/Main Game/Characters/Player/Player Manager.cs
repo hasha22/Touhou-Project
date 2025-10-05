@@ -17,7 +17,6 @@ namespace KH
         [Space]
         [SerializeField] private int powerItemCount = 7;
         [SerializeField] private int spreadDegrees = 120;
-        [SerializeField] private int startAngle = 0;
         [SerializeField] private int powerDeathVelocity = 200;
 
         [Header("Player Respawning")]
@@ -48,12 +47,14 @@ namespace KH
         [SerializeField] private Collider2D playerCollider;
         public Transform playerMagnet;
         private SpriteRenderer spriteRenderer;
+        private PlayerMovement playerMovement;
 
         public bool canMove = true;
 
         private void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+            playerMovement = GetComponent<PlayerMovement>();
         }
         private void Start()
         {
@@ -138,7 +139,10 @@ namespace KH
         }
         private void LosePower()
         {
-            float angle = startAngle;
+            float t = Mathf.InverseLerp(playerMovement.minBounds.x, playerMovement.maxBounds.x, transform.position.x);
+            Debug.Log(t);
+            float angle = Mathf.Lerp(20f, 120f, t);
+            Debug.Log(angle);
             float degrees = spreadDegrees / powerItemCount;
 
             for (int i = 0; i < powerItemCount; i++)
