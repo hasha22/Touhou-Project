@@ -24,6 +24,8 @@ namespace KH
         [SerializeField] private Transform respawnPoint;
         [SerializeField] private float riseDistance = 1.5f;
         [SerializeField] private float riseSpeed = 2f;
+        [SerializeField] private float lowerLimit = 10f;
+        [SerializeField] private float upperLimit = 100f;
         private bool hasDied = false;
 
         [Header("Player Invulnerability")]
@@ -48,8 +50,6 @@ namespace KH
         public Transform playerMagnet;
         private SpriteRenderer spriteRenderer;
         private PlayerMovement playerMovement;
-
-        public bool canMove = true;
 
         private void Awake()
         {
@@ -130,7 +130,8 @@ namespace KH
                 return;
             }
             PlayerInputManager.instance.DisableInput();
-            StartCoroutine(RespawnCoroutine());
+            if (gameObject.activeSelf)
+            { StartCoroutine(RespawnCoroutine()); }
         }
         public void AddLife()
         {
@@ -139,9 +140,10 @@ namespace KH
         }
         private void LosePower()
         {
+            Debug.Log(transform.position.x);
             float t = Mathf.InverseLerp(playerMovement.minBounds.x, playerMovement.maxBounds.x, transform.position.x);
             Debug.Log(t);
-            float angle = Mathf.Lerp(20f, 120f, t);
+            float angle = Mathf.Lerp(lowerLimit, upperLimit, t);
             Debug.Log(angle);
             float degrees = spreadDegrees / powerItemCount;
 

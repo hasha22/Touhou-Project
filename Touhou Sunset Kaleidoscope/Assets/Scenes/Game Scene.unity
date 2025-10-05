@@ -617,7 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d250d842b6144742b778c863f63a3b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &828636210
+--- !u!21 &814378293
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -1469,8 +1469,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6382791621463436997, guid: 2c85d8562e5586f40aa0f0cc2c085403, type: 3}
     - target: {fileID: -7532986062195704745, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
+      propertyPath: lowerLimit
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -7532986062195704745, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: startAngle
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -7532986062195704745, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
+      propertyPath: upperLimit
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -7532986062195704745, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
       propertyPath: autoCollectY
@@ -1739,28 +1747,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1339747915173234213, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1812153488}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
 --- !u!4 &1812153487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5847374759062107243, guid: 1488e6e8f9093954fbb34e71d9daf29a, type: 3}
   m_PrefabInstance: {fileID: 1812153486}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1812153488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425677579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80d7aa5a0ea560b42b42a9d5cd099572, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!21 &1878981738
 Material:
   serializedVersion: 8
@@ -3414,7 +3407,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 4fbe62e9ed9ba1c4d856463199d61056, type: 2}
     - target: {fileID: 4842065427334829381, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
       propertyPath: startOnEnable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842065427334829381, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
       propertyPath: attackSequence
