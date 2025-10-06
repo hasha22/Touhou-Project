@@ -192,7 +192,6 @@ namespace KH
 
                 if (item.activeInHierarchy && !itemController.isAboveTop && itemController.IsInPlayableArea(item.transform.position))
                 {
-                    Debug.Log("eat shit");
                     itemController.wasPulled = true;
                     itemController.currentPullRadius = itemController.autoCollectPullRadius;
                 }

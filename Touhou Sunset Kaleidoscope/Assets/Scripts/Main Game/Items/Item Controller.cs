@@ -92,18 +92,15 @@ namespace KH
 
             if (ItemManager.instance.isAutoCollecting && IsInPlayableArea(transform.position)) // auto-collected
             {
-                Debug.Log("MEOW 1");
                 transform.position = Vector2.MoveTowards(transform.position, playerMagnet.position, pullSpeed * Time.deltaTime);
                 wasPulled = true;
             }
             else if (!canBePulled && !wasPulled) // free fall
             {
-                Debug.Log("MEOW 2");
                 transform.Translate(Vector2.down * fallSpeed * Time.deltaTime);
             }
             else if (!isAboveTop && playerManager.canPullItems) // normal pulling
             {
-                Debug.Log("MEOW 3");
                 transform.position = Vector2.MoveTowards(transform.position, playerMagnet.position, pullSpeed * Time.deltaTime);
             }
 
