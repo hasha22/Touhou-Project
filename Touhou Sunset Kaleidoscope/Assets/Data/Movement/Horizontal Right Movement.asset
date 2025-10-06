@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9835e7e1202c98846896ca4445a76cad, type: 3}
-  m_Name: Test Spawn Event 2
+  m_Script: {fileID: 11500000, guid: a60a583fa92525c4b897cb1c83669c1d, type: 3}
+  m_Name: Horizontal Right Movement
   m_EditorClassIdentifier: 
-  enemyID: 0
-  spawnPosition: {x: 1, y: 3}
-  spawnTime: 8
+  moveSpeed: 2
+  isMovingRight: 1

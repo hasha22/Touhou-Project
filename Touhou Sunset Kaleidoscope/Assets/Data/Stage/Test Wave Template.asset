@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Test Wave Template
   m_EditorClassIdentifier: 
   spawnEvents:
-  - {fileID: 11400000, guid: 4b1eddde5d0d43d45b5fed1d6cb26d57, type: 2}
+  - {fileID: 11400000, guid: 740103f378dca7d43923153c4987f76f, type: 2}

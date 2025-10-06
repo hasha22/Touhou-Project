@@ -25,6 +25,7 @@ namespace KH
 
         [Header("Enemy Shooting")]
         public AttackSequence attackSequence;
+        public float delayBeforeAttack;
 
         [Header("Enemy Movement")]
         public EnemyMovementPattern movementPattern;

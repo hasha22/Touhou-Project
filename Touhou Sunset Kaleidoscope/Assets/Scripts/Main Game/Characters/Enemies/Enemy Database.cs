@@ -26,7 +26,6 @@ namespace KH
 
             GameObject enemyPrefab = ObjectPool.instance.GetPooledEnemyObject();
             EnemyController enemyController = enemyPrefab.GetComponent<EnemyController>();
-            if (enemy == null) Debug.Log("Meow");
             enemyController.InitializeEnemy(enemy, data.spawnPosition);
             enemyController.InitializeAttackSequence(enemy.attackSequence);
         }

@@ -12,6 +12,7 @@ namespace KH
         private AttackSequence currentAttackSequence;
         public bool startOnEnable = true;
         public Vector2 fireOriginOffset = Vector2.zero;
+        public float timer = 0f;
 
         [Header("Movement")]
         private EnemyMovementPattern currentMovementPattern;
@@ -24,18 +25,50 @@ namespace KH
         private Coroutine attackCoroutine;
         private BoxCollider2D boxCollider2D;
         private Rigidbody2D rb;
+        private Transform playableArea;
+        private Vector2 minBounds, maxBounds;
+        private PlayerManager playerManager;
         private void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             boxCollider2D = GetComponent<BoxCollider2D>();
             rb = GetComponent<Rigidbody2D>();
+
+            playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
+            PlayerMovement playerMovement = playerManager.GetComponent<PlayerMovement>();
+            playableArea = playerMovement.playableArea;
+
+            BoxCollider2D area = playableArea.GetComponent<BoxCollider2D>();
+            Bounds bounds = area.bounds;
+            minBounds = bounds.min;
+            maxBounds = bounds.max;
+        }
+        private void Update()
+        {
+            if (!IsInPlayableArea(transform.position))
+            {
+                if (attackCoroutine != null)
+                {
+                    StopCoroutine(PlaySequence());
+                }
+                spriteRenderer.enabled = false;
+            }
+            else if (attackCoroutine == null)
+            {
+                timer += Time.deltaTime;
+                spriteRenderer.enabled = true;
+                if (timer > enemyData.delayBeforeAttack)
+                {
+                    timer = 0;
+                    attackCoroutine = StartCoroutine(PlaySequence());
+                }
+            }
         }
         private void FixedUpdate()
         {
             if (currentMovementPattern != null)
             {
                 Vector2 delta = currentMovementPattern.GetNextPosition(transform, Time.deltaTime);
-                Debug.Log(delta);
                 rb.MovePosition(rb.position + delta);
             }
         }
@@ -61,7 +94,6 @@ namespace KH
             if (attackCoroutine != null)
                 StopCoroutine(attackCoroutine);
 
-            attackCoroutine = StartCoroutine(PlaySequence());
         }
         private IEnumerator PlaySequence()
         {
@@ -111,14 +143,16 @@ namespace KH
             // add death sound,vfx
 
             ScoreManager.instance.AddScore(enemyData.deathScore);
-
             if (attackCoroutine != null)
             { StopCoroutine(PlaySequence()); }
 
             ItemManager.instance.SpawnItem(enemyData.itemToSpawn, transform.position);
             ObjectPool.instance.ReturnToPool(gameObject);
         }
-
+        public bool IsInPlayableArea(Vector3 worldPos)
+        {
+            return worldPos.x >= minBounds.x && worldPos.y >= minBounds.y && worldPos.x < maxBounds.x && worldPos.y < maxBounds.y;
+        }
         public Enemy GetEnemyData()
         {
             return enemyData;

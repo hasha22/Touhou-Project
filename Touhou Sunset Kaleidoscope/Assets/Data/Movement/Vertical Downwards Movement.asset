@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a60a583fa92525c4b897cb1c83669c1d, type: 3}
-  m_Name: Test Horizontal Movement
+  m_Script: {fileID: 11500000, guid: e887ba74e9aaa014bb93eefbeb851a4c, type: 3}
+  m_Name: Vertical Downwards Movement
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  isMovingRight: 1
+  isMovingDown: 1
