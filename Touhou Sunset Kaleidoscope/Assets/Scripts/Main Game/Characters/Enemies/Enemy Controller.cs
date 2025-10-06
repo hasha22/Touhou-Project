@@ -9,43 +9,67 @@ namespace KH
         [SerializeField] private int currentHealth;
 
         [Header("Shooting")]
-        private AttackSequence attackSequence;
+        private AttackSequence currentAttackSequence;
         public bool startOnEnable = true;
         public Vector2 fireOriginOffset = Vector2.zero;
 
         [Header("Bool")]
         [HideInInspector] public bool hasDied = false;
 
-        private Coroutine playCoroutine;
-
-        private void OnEnable()
+        [Header("References")]
+        private SpriteRenderer spriteRenderer;
+        private Coroutine attackCoroutine;
+        private BoxCollider2D boxCollider2D;
+        private void Awake()
         {
-            currentHealth = enemyData.enemyHealth;
-            attackSequence = enemyData.attackSequence;
-
-            if (startOnEnable && attackSequence != null)
-                playCoroutine = StartCoroutine(PlaySequence());
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            boxCollider2D = GetComponent<BoxCollider2D>();
         }
-        public void StartSequence()
+        public void InitializeEnemy(Enemy data, Vector2 spawnPosition)
         {
-            if (playCoroutine == null) playCoroutine = StartCoroutine(PlaySequence());
-        }
-        public void StopSequence()
-        {
-            if (playCoroutine != null) { StopCoroutine(playCoroutine); playCoroutine = null; }
-        }
+            enemyData = data;
+            transform.position = spawnPosition;
+            transform.rotation = Quaternion.identity;
 
+            boxCollider2D.size = data.colliderSize;
+            boxCollider2D.offset = data.colliderOffset;
+
+            spriteRenderer.sprite = data.enemySprite;
+            currentHealth = data.enemyHealth;
+            currentAttackSequence = data.attackSequence;
+        }
+        public void InitializeAttackSequence(AttackSequence attackSequence)
+        {
+            currentAttackSequence = attackSequence;
+
+            if (attackCoroutine != null)
+                StopCoroutine(attackCoroutine);
+
+            attackCoroutine = StartCoroutine(PlaySequence());
+        }
         private IEnumerator PlaySequence()
         {
-            do
-            {
-                foreach (var step in attackSequence.patternSteps)
-                {
-                    step.pattern.Fire((Vector2)transform.position + fireOriginOffset);
+            int index = 0;
+            if (currentAttackSequence.patternSteps.Count == 0)
+                yield break;
 
-                    yield return new WaitForSeconds(step.delayBeforeNextPattern);
+            while (currentAttackSequence.loopPattern || index < currentAttackSequence.patternSteps.Count)
+            {
+                PatternStep step = currentAttackSequence.patternSteps[index];
+                step.pattern.Fire(transform.position);
+
+                yield return new WaitForSeconds(step.delayBeforeNextPattern);
+
+                index++;
+
+                if (index >= currentAttackSequence.patternSteps.Count)
+                {
+                    if (currentAttackSequence.loopPattern)
+                        index = 0;
+                    else
+                        break;
                 }
-            } while (attackSequence.loopPattern);
+            }
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -71,9 +95,14 @@ namespace KH
             // add death sound,vfx
 
             ScoreManager.instance.AddScore(enemyData.deathScore);
-            gameObject.SetActive(false);
-            ItemManager.instance.Spawn1UpItem(transform.position);
+
+            if (attackCoroutine != null)
+            { StopCoroutine(PlaySequence()); }
+
+            ItemManager.instance.SpawnItem(enemyData.itemToSpawn, transform.position);
+            ObjectPool.instance.ReturnToPool(gameObject);
         }
+
         public Enemy GetEnemyData()
         {
             return enemyData;

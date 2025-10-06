@@ -1,7 +1,7 @@
 using UnityEngine;
 namespace KH
 {
-    [CreateAssetMenu(menuName = "Shot Pattern")]
+    [CreateAssetMenu(menuName = "Shot Type")]
     public class ShotType : ScriptableObject
     {
         [Header("Bullet Data")]

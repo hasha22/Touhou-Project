@@ -6,16 +6,22 @@ namespace KH
     {
         [Header("Enemy Information")]
         public string enemyName;
-        public Sprite enemySprite;
         public int enemyHealth;
         public int enemyID;
+        public int healthResetValue;
+        public Sprite enemySprite;
         public GameObject enemyPrefab;
         public EnemyType enemyType;
-        public int healthResetValue;
+        public ItemToSpawn itemToSpawn;
+        public int numberOfItemsToSpawn;
 
         [Header("Score")]
         public int deathScore;
         public int hitScore;
+
+        [Header("Collider Size")]
+        public Vector2 colliderSize;
+        public Vector2 colliderOffset;
 
         [Header("Enemy Shooting")]
         public AttackSequence attackSequence;
