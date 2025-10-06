@@ -13,6 +13,9 @@ namespace KH
         public bool startOnEnable = true;
         public Vector2 fireOriginOffset = Vector2.zero;
 
+        [Header("Movement")]
+        private EnemyMovementPattern currentMovementPattern;
+
         [Header("Bool")]
         [HideInInspector] public bool hasDied = false;
 
@@ -20,10 +23,21 @@ namespace KH
         private SpriteRenderer spriteRenderer;
         private Coroutine attackCoroutine;
         private BoxCollider2D boxCollider2D;
+        private Rigidbody2D rb;
         private void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             boxCollider2D = GetComponent<BoxCollider2D>();
+            rb = GetComponent<Rigidbody2D>();
+        }
+        private void FixedUpdate()
+        {
+            if (currentMovementPattern != null)
+            {
+                Vector2 delta = currentMovementPattern.GetNextPosition(transform, Time.deltaTime);
+                Debug.Log(delta);
+                rb.MovePosition(rb.position + delta);
+            }
         }
         public void InitializeEnemy(Enemy data, Vector2 spawnPosition)
         {
@@ -37,6 +51,8 @@ namespace KH
             spriteRenderer.sprite = data.enemySprite;
             currentHealth = data.enemyHealth;
             currentAttackSequence = data.attackSequence;
+            currentMovementPattern = data.movementPattern;
+            currentMovementPattern.Initialize(transform);
         }
         public void InitializeAttackSequence(AttackSequence attackSequence)
         {

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyID: 0
   spawnPosition: {x: -6, y: 3}
-  spawnTime: 5
+  spawnTime: 2

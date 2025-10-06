@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42a326601bea4ea48bb7ba1d3d6c1b48, type: 3}
-  m_Name: Test Wave Template
+  m_Script: {fileID: 11500000, guid: a60a583fa92525c4b897cb1c83669c1d, type: 3}
+  m_Name: Test Horizontal Movement
   m_EditorClassIdentifier: 
-  spawnEvents:
-  - {fileID: 11400000, guid: 4b1eddde5d0d43d45b5fed1d6cb26d57, type: 2}
+  moveSpeed: 2
+  isMovingRight: 1

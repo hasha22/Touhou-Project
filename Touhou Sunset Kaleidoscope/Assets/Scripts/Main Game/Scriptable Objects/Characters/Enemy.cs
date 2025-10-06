@@ -25,5 +25,8 @@ namespace KH
 
         [Header("Enemy Shooting")]
         public AttackSequence attackSequence;
+
+        [Header("Enemy Movement")]
+        public EnemyMovementPattern movementPattern;
     }
 }
