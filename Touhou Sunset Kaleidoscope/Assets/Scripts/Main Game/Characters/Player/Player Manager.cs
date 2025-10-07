@@ -17,7 +17,6 @@ namespace KH
         [Space]
         [SerializeField] private int powerItemCount = 7;
         [SerializeField] private int spreadDegrees = 120;
-        [SerializeField] private int startAngle = 0;
         [SerializeField] private int powerDeathVelocity = 200;
 
         [Header("Player Respawning")]
@@ -25,7 +24,10 @@ namespace KH
         [SerializeField] private Transform respawnPoint;
         [SerializeField] private float riseDistance = 1.5f;
         [SerializeField] private float riseSpeed = 2f;
+        [SerializeField] private float lowerLimit = 10f;
+        [SerializeField] private float upperLimit = 100f;
         private bool hasDied = false;
+        public bool canPullItems = true;
 
         [Header("Player Invulnerability")]
         [SerializeField] private float invulnerabilityTime = 5f;
@@ -33,7 +35,8 @@ namespace KH
 
         [Header("Auto-Collect Settings")]
         public float autoCollectY = 2.0f;
-        private bool wasAboveAutoCollect = false;
+        public bool wasAboveAutoCollect = false;
+        private float autoCollectTimer = 0f;
         public bool InCollectionZone => transform.position.y >= autoCollectY;
 
         [Header("Bomb Settings")]
@@ -46,14 +49,16 @@ namespace KH
 
         [Header("References")]
         [SerializeField] private Collider2D playerCollider;
-        public Transform playerMagnet;
-        private SpriteRenderer spriteRenderer;
+        public Transform playerMagnetTransform;
 
-        public bool canMove = true;
+        private SpriteRenderer spriteRenderer;
+        private PlayerMovement playerMovement;
 
         private void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+            playerMovement = GetComponent<PlayerMovement>();
+
         }
         private void Start()
         {
@@ -82,6 +87,16 @@ namespace KH
             if (nowAbove && !wasAboveAutoCollect)
             {
                 ItemManager.instance.AutoCollectAllItems();
+            }
+
+            if (nowAbove)
+            {
+                autoCollectTimer -= Time.deltaTime;
+                if (autoCollectTimer <= 0f)
+                {
+                    ItemManager.instance.AutoCollectAllItems();
+                    autoCollectTimer = 0.5f; // call every 0.2 seconds, tweak as needed
+                }
             }
 
             if (!nowAbove && wasAboveAutoCollect)
@@ -129,7 +144,8 @@ namespace KH
                 return;
             }
             PlayerInputManager.instance.DisableInput();
-            StartCoroutine(RespawnCoroutine());
+            if (gameObject.activeSelf)
+            { StartCoroutine(RespawnCoroutine()); }
         }
         public void AddLife()
         {
@@ -138,12 +154,13 @@ namespace KH
         }
         private void LosePower()
         {
-            float angle = startAngle;
-            float degrees = spreadDegrees / powerItemCount;
+            float t = Mathf.InverseLerp(playerMovement.minBounds.x, playerMovement.maxBounds.x, transform.position.x); // InverseLerp(a, b, t). Calculates where t lies in the (a,b) range, and returns a value between [0,1]
+            float angle = Mathf.Lerp(lowerLimit, upperLimit, t); //Lerp(a, b, t). Formula: a + (b - a) * t; Example: a = 10, b = 100, t = 0.53 => angle = 57.7f
+            float degrees = spreadDegrees / powerItemCount; // 17.14 increase in degrees each time a power item spawns
 
             for (int i = 0; i < powerItemCount; i++)
             {
-                float radians = angle * Mathf.Deg2Rad;
+                float radians = angle * Mathf.Deg2Rad; // Cos & Sin require radians
                 Vector2 direction = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
 
                 GameObject powerItem = ItemManager.instance.InitializePlayerDeathItem(i, transform.position + new Vector3(0, 0.5f, 0));
@@ -153,6 +170,7 @@ namespace KH
 
                 angle += degrees;
             }
+
             float power = currentPower - 3.2f;
             if (power <= 0)
             { currentPower = 0; }
@@ -191,11 +209,13 @@ namespace KH
         {
             spriteRenderer.enabled = false;
             playerCollider.enabled = false;
+            canPullItems = false;
             if (hasDied) { yield return new WaitForSeconds(respawnDelay); }
 
             transform.position = respawnPoint.position;
 
             spriteRenderer.enabled = true;
+            canPullItems = true;
 
             StartCoroutine(InvulnerabilityCoroutine());
 
