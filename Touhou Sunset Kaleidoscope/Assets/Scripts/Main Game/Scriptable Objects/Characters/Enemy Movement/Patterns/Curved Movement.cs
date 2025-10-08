@@ -1,9 +1,18 @@
 using UnityEngine;
 namespace KH
 {
-    [CreateAssetMenu(menuName = "Movement/Curved")]
+    [CreateAssetMenu(menuName = "Movement/Patterns/Curved")]
     public class CurvedMovement : EnemyMovementPattern
     {
+        public float horizontalSpeed = 2f;
+        public float verticalSpeed = 1f;
+        public float curveFrequency = 2f;
+        public override Vector2 GetNextPosition(Transform enemyTransform, float deltaTime, float timeInPattern)
+        {
+            float curve = Mathf.Sin(timeInPattern * curveFrequency) * horizontalSpeed;
+            return new Vector2(curve, -verticalSpeed) * deltaTime;
+        }
+        /*
         public bool moveDown = true;
         public float curveAmplitude = 1f;
         public float curveFrequency = 2f;
@@ -18,7 +27,7 @@ namespace KH
             timeOffset = Random.Range(0f, 2f * Mathf.PI);
         }
 
-        public override Vector2 GetNextPosition(Transform enemyTransform, float deltaTime)
+        public override Vector2 GetNextPosition(Transform enemyTransform, float deltaTime, float timeInPattern)
         {
             float dirY = moveDown ? -1f : 1f;
             float yMovement = dirY * moveSpeed * deltaTime;
@@ -26,7 +35,7 @@ namespace KH
             float xMovement = Mathf.Sin(Time.time * curveFrequency + timeOffset) * curveAmplitude * deltaTime * directionMultiplier;
 
             return new Vector2(xMovement, yMovement);
-        }
+        }*/
     }
 }
 

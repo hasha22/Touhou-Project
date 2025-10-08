@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Test Spawn Event
   m_EditorClassIdentifier: 
   enemyID: 0
-  spawnPoint: {x: -8, y: 4.2, z: 0}
+  spawnPoint: {x: -8, y: 4.5, z: 0}
   spawnTime: 2

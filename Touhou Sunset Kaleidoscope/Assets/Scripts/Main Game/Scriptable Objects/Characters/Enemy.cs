@@ -28,6 +28,6 @@ namespace KH
         public float delayBeforeAttack;
 
         [Header("Enemy Movement")]
-        public EnemyMovementPattern movementPattern;
+        public MovementSequence movementSequence;
     }
 }

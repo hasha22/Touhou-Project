@@ -27,4 +27,4 @@ MonoBehaviour:
   colliderOffset: {x: -0.02, y: 0.07}
   attackSequence: {fileID: 11400000, guid: 65e2a205ade7c5d4386d85932d4c88f9, type: 2}
   delayBeforeAttack: 0.5
-  movementPattern: {fileID: 11400000, guid: e6fe29bea6e0ea744996e0eb5735c37a, type: 2}
+  movementSequence: {fileID: 11400000, guid: 3855c1232a0f60b479de0aa50b9a29fb, type: 2}

@@ -28,6 +28,8 @@ namespace KH
             EnemyController enemyController = enemyPrefab.GetComponent<EnemyController>();
             enemyController.InitializeEnemy(enemy, data.spawnPoint);
             enemyController.InitializeAttackSequence(enemy.attackSequence);
+
+            enemyPrefab.gameObject.SetActive(true);
         }
         public Enemy GetEnemyByID(int id)
         {

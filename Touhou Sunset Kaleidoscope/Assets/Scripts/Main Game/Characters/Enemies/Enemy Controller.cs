@@ -15,7 +15,7 @@ namespace KH
         public float timer = 0f;
 
         [Header("Movement")]
-        private EnemyMovementPattern currentMovementPattern;
+        public MovementSequence currentMovementSequence;
 
         [Header("Bool")]
         [HideInInspector] public bool hasDied = false;
@@ -42,14 +42,24 @@ namespace KH
             Bounds bounds = area.bounds;
             minBounds = bounds.min;
             maxBounds = bounds.max;
+
+            spriteRenderer.enabled = false;
         }
+        private void OnEnable()
+        {
+            if (currentMovementSequence != null)
+            {
+                StartCoroutine(MovementSequence());
+            }
+        }
+
         private void Update()
         {
             if (!IsInPlayableArea(transform.position))
             {
                 if (attackCoroutine != null)
                 {
-                    StopCoroutine(PlaySequence());
+                    StopCoroutine(AttackSequence());
                 }
                 spriteRenderer.enabled = false;
             }
@@ -57,19 +67,12 @@ namespace KH
             {
                 timer += Time.deltaTime;
                 spriteRenderer.enabled = true;
+
                 if (timer > enemyData.delayBeforeAttack)
                 {
                     timer = 0;
-                    attackCoroutine = StartCoroutine(PlaySequence());
+                    attackCoroutine = StartCoroutine(AttackSequence());
                 }
-            }
-        }
-        private void FixedUpdate()
-        {
-            if (currentMovementPattern != null)
-            {
-                Vector2 delta = currentMovementPattern.GetNextPosition(transform, Time.deltaTime);
-                rb.MovePosition(rb.position + delta);
             }
         }
         public void InitializeEnemy(Enemy data, Vector2 spawnPosition)
@@ -84,8 +87,8 @@ namespace KH
             spriteRenderer.sprite = data.enemySprite;
             currentHealth = data.enemyHealth;
             currentAttackSequence = data.attackSequence;
-            currentMovementPattern = data.movementPattern;
-            currentMovementPattern.Initialize(transform);
+
+            currentMovementSequence = data.movementSequence;
         }
         public void InitializeAttackSequence(AttackSequence attackSequence)
         {
@@ -95,7 +98,38 @@ namespace KH
                 StopCoroutine(attackCoroutine);
 
         }
-        private IEnumerator PlaySequence()
+        private IEnumerator MovementSequence()
+        {
+            int index = 0;
+            if (currentMovementSequence.movementSteps.Count == 0)
+                yield break;
+
+            while (index < currentMovementSequence.movementSteps.Count || currentMovementSequence.loopSequence)
+            {
+                MovementStep step = currentMovementSequence.movementSteps[index];
+                float elapsed = 0f;
+
+                while (elapsed < step.duration)
+                {
+                    Vector2 offset = step.pattern.GetNextPosition(transform, Time.deltaTime, elapsed / step.duration);
+                    rb.MovePosition(rb.position + offset);
+                    elapsed += Time.deltaTime;
+                    yield return null;
+                }
+                if (step.delayBeforeNext > 0)
+                    yield return new WaitForSeconds(step.delayBeforeNext);
+                index++;
+
+                if (index >= currentMovementSequence.movementSteps.Count)
+                {
+                    if (currentMovementSequence.loopSequence)
+                        index = 0;
+                    else
+                        break;
+                }
+            }
+        }
+        private IEnumerator AttackSequence()
         {
             int index = 0;
             if (currentAttackSequence.patternSteps.Count == 0)
@@ -144,7 +178,7 @@ namespace KH
 
             ScoreManager.instance.AddScore(enemyData.deathScore);
             if (attackCoroutine != null)
-            { StopCoroutine(PlaySequence()); }
+            { StopCoroutine(AttackSequence()); }
 
             ItemManager.instance.SpawnItem(enemyData.itemToSpawn, transform.position);
             ObjectPool.instance.ReturnToPool(gameObject);

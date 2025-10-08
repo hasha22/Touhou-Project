@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 333ac7b32919e9e429f4a4244c2e9097, type: 3}
+  m_Name: Test Movement Sequence
+  m_EditorClassIdentifier: 
+  movementSteps:
+  - pattern: {fileID: 11400000, guid: e6fe29bea6e0ea744996e0eb5735c37a, type: 2}
+    duration: 2
+    delayBeforeNext: 0
+  - pattern: {fileID: 11400000, guid: eaa31e7064b5a2c46b8a13046a9c5ce3, type: 2}
+    duration: 2
+    delayBeforeNext: 1
+  - pattern: {fileID: 11400000, guid: 64dcbf380a7eec74aa1ace72f7440a22, type: 2}
+    duration: 10
+    delayBeforeNext: 0
+  loopSequence: 0

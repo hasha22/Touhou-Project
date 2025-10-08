@@ -112,7 +112,6 @@ namespace KH
             {
                 if (!pooledEnemyObjects[i].activeInHierarchy)
                 {
-                    pooledEnemyObjects[i].SetActive(true);
                     return pooledEnemyObjects[i];
                 }
             }
