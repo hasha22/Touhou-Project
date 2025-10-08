@@ -52,7 +52,7 @@ namespace KH
             // Smooth speed change
             currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, playerManager.characterData.speedLerp * Time.fixedDeltaTime);
 
-            Vector2 moveAmount = new Vector2(horizontalMovement, verticalMovement);
+            Vector2 moveAmount = new Vector2(horizontalMovement, verticalMovement).normalized;
             Vector2 velocity = moveAmount * currentSpeed;
 
             // Predicts next position

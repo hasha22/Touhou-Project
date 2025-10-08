@@ -5,7 +5,7 @@ namespace KH
     public class SpawnEvent : ScriptableObject
     {
         public int enemyID;
-        public Vector2 spawnPosition; // Testing needs to be done to determine the boundaries where enemies can spawn offscreen without hitting disabler wall. Can also be implemented using spawn points
+        public Vector3 spawnPoint;
         public float spawnTime;
     }
 }

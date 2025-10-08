@@ -11,10 +11,10 @@ namespace KH
         private List<GameObject> pooledEnemyBullets = new List<GameObject>();
         private List<GameObject> pooledItems = new List<GameObject>();
         private List<GameObject> pooledEnemyObjects = new List<GameObject>();
-        [SerializeField] private int amountToPool1 = 100;
-        [SerializeField] private int amountToPool2 = 100;
-        [SerializeField] private int amountToPool3 = 100;
-        [SerializeField] private int amountToPool4 = 100;
+        [SerializeField] private int playerBulletsToPool = 100;
+        [SerializeField] private int enemyBulletsToPool = 100;
+        [SerializeField] private int itemsToPool = 100;
+        [SerializeField] private int enemiesToPool = 100;
         [Space]
         [SerializeField] private GameObject playerBulletPrefab;
         [SerializeField] private GameObject enemyBulletPrefab;
@@ -37,7 +37,7 @@ namespace KH
             {
                 Destroy(gameObject);
             }
-            for (int i = 0; i < amountToPool1; i++)
+            for (int i = 0; i < playerBulletsToPool; i++)
             {
                 GameObject bullet = Instantiate(playerBulletPrefab);
                 bullet.transform.SetParent(playerBulletsContainer);
@@ -45,7 +45,7 @@ namespace KH
                 bullet.SetActive(false);
                 pooledPlayerBullets.Add(bullet);
             }
-            for (int i = 0; i < amountToPool2; i++)
+            for (int i = 0; i < enemyBulletsToPool; i++)
             {
                 GameObject bullet = Instantiate(enemyBulletPrefab);
                 bullet.transform.SetParent(enemyBulletsContainer);
@@ -53,7 +53,7 @@ namespace KH
                 bullet.SetActive(false);
                 pooledEnemyBullets.Add(bullet);
             }
-            for (int i = 0; i < amountToPool3; i++)
+            for (int i = 0; i < itemsToPool; i++)
             {
                 GameObject item = Instantiate(itemPrefab);
                 item.transform.SetParent(itemContainer);
@@ -61,7 +61,7 @@ namespace KH
                 item.SetActive(false);
                 pooledItems.Add(item);
             }
-            for (int i = 0; i < amountToPool4; i++)
+            for (int i = 0; i < enemiesToPool; i++)
             {
                 GameObject enemy = Instantiate(enemyObjectPrefab);
                 enemy.transform.SetParent(enemyContainer);

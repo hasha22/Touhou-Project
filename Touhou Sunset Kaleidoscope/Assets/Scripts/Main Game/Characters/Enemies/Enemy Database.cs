@@ -26,7 +26,7 @@ namespace KH
 
             GameObject enemyPrefab = ObjectPool.instance.GetPooledEnemyObject();
             EnemyController enemyController = enemyPrefab.GetComponent<EnemyController>();
-            enemyController.InitializeEnemy(enemy, data.spawnPosition);
+            enemyController.InitializeEnemy(enemy, data.spawnPoint);
             enemyController.InitializeAttackSequence(enemy.attackSequence);
         }
         public Enemy GetEnemyByID(int id)

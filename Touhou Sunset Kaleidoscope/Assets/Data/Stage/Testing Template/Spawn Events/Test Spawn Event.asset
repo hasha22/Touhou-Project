@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42a326601bea4ea48bb7ba1d3d6c1b48, type: 3}
-  m_Name: Test Wave Template
+  m_Script: {fileID: 11500000, guid: 9835e7e1202c98846896ca4445a76cad, type: 3}
+  m_Name: Test Spawn Event
   m_EditorClassIdentifier: 
-  spawnEvents:
-  - {fileID: 11400000, guid: 740103f378dca7d43923153c4987f76f, type: 2}
+  enemyID: 0
+  spawnPoint: {x: -8, y: 4.2, z: 0}
+  spawnTime: 2
