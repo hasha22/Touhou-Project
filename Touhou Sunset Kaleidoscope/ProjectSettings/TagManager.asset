@@ -62,6 +62,9 @@ TagManager:
   - name: Player
     uniqueID: 2683733143
     locked: 0
+  - name: AfterImages
+    uniqueID: 2412042999
+    locked: 0
   - name: Out of Bounds
     uniqueID: 1489019633
     locked: 0

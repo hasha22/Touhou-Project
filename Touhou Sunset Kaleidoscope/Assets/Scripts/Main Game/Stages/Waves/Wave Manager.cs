@@ -24,7 +24,7 @@ namespace KH
         public void InitializeWave(WaveTemplate wave)
         {
             currentWave = wave;
-            waveTimer = 0f;
+            waveTimer = 0f; // resets wave timer each wave
             nextSpawnIndex = 0;
         }
         void Update()
@@ -32,6 +32,7 @@ namespace KH
             if (currentWave == null) return;
             waveTimer += Time.deltaTime;
 
+            // spawns all enemies in the wave at their assigned time
             while (nextSpawnIndex < currentWave.spawnEvents.Count &&
                    waveTimer >= currentWave.spawnEvents[nextSpawnIndex].spawnTime)
             {

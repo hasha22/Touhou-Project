@@ -11,6 +11,8 @@ namespace KH
         private bool shootingInput = false;
         [SerializeField] private float damageMultiplier = 0.2f;
 
+        private Rigidbody2D rb;
+
         // It is crucial to separate input, which needs to be detected every frame, from shooting
         // which needs to be frame rate independent. FixedUpdate is called every 0.02s (50 frames / second), thus
         // making the player shooting constant, with equal gaps between volleys, regardless
@@ -20,6 +22,7 @@ namespace KH
         private void Awake()
         {
             playerManager = GetComponent<PlayerManager>();
+            rb = GetComponent<Rigidbody2D>();
         }
         void Update()
         {
@@ -52,6 +55,8 @@ namespace KH
             Vector3 spawnPosition1 = transform.position + (Vector3)playerManager.characterData.shotType.spawnOffset1;
             Vector3 spawnPosition2 = transform.position + (Vector3)playerManager.characterData.shotType.spawnOffset2;
 
+            Debug.Log($"Player Velocity: {rb.linearVelocity} | Spawn Pos: {spawnPosition1}");
+
             // Grabs bullets from pool
             GameObject bulletObject1 = ObjectPool.instance.GetPooledPlayerObject();
             GameObject bulletObject2 = ObjectPool.instance.GetPooledPlayerObject();
@@ -66,10 +71,18 @@ namespace KH
 
                 // Initializing bullet data
                 BulletController bullet1 = bulletObject1.GetComponent<BulletController>();
-                bullet1.InitializePlayerBullet(Vector2.up, playerManager.characterData.shotType.speed, playerManager.characterData.shotType.sprite, intDamage);
+                bullet1.InitializePlayerBullet(Vector2.up,
+                    playerManager.characterData.shotType.speed,
+                    playerManager.characterData.shotType.sprite,
+                    playerManager.characterData.shotType.spriteAfterImage,
+                    intDamage);
 
                 BulletController bullet2 = bulletObject2.GetComponent<BulletController>();
-                bullet2.InitializePlayerBullet(Vector2.up, playerManager.characterData.shotType.speed, playerManager.characterData.shotType.sprite, intDamage);
+                bullet2.InitializePlayerBullet(Vector2.up,
+                    playerManager.characterData.shotType.speed,
+                    playerManager.characterData.shotType.sprite,
+                    playerManager.characterData.shotType.spriteAfterImage,
+                    intDamage);
 
             }
         }

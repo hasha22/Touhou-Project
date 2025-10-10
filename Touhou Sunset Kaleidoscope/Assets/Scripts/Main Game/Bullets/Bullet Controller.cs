@@ -8,12 +8,14 @@ namespace KH
         private Vector2 direction;
         private SpriteRenderer spriteRenderer;
         private Rigidbody2D rb;
+        private PlayerMovement playerMovement;
 
         [Header("Player Bullet")]
         [HideInInspector] public int bulletDamage;
         private void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+            playerMovement = PlayerInputManager.instance.playerObject.GetComponent<PlayerMovement>();
             rb = GetComponent<Rigidbody2D>();
         }
         private void FixedUpdate()
@@ -23,12 +25,16 @@ namespace KH
                 rb.MovePosition(rb.position + direction * bulletSpeed * Time.fixedDeltaTime);
             }
         }
-        public void InitializePlayerBullet(Vector2 dir, float speed, Sprite sprite, int damage)
+        public void InitializePlayerBullet(Vector2 dir, float speed, Sprite sprite, Sprite afterImageSprite, int damage)
         {
             direction = dir.normalized;
             bulletSpeed = speed;
             spriteRenderer.sprite = sprite;
             bulletDamage = damage;
+
+            GameObject afterImage = ObjectPool.instance.GetPooledPlayerBulletAfterImage();
+            Afterimage img = afterImage.GetComponent<Afterimage>();
+            img.InitializeAfterImage(Vector2.up, speed, afterImageSprite, transform.position);
         }
         public void InitializeEnemyBullet(Vector2 dir, float speed, Sprite sprite)
         {

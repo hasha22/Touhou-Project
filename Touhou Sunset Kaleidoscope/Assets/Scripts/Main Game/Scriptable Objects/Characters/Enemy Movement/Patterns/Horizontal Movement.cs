@@ -9,7 +9,7 @@ namespace KH
         public override Vector2 GetTotalMovement(Transform enemyTransform, float duration)
         {
             float horizontal = isMovingRight ? 1f : -1f;
-            float totalDistance = moveSpeed * duration;
+            float totalDistance = moveSpeed * duration; // Distance = speed * deltaTime, 5th grade math
             Vector2 direction = new Vector2(horizontal, 0f);
             return direction * totalDistance;
         }

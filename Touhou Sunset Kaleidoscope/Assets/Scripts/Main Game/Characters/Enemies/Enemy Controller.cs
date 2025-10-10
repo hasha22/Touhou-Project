@@ -54,6 +54,7 @@ namespace KH
 
         private void Update()
         {
+            // Attacking is only enabled once they enter the playable area
             if (!IsInPlayableArea(transform.position))
             {
                 if (attackCoroutine != null)
@@ -103,6 +104,7 @@ namespace KH
             if (currentMovementSequence.movementSteps.Count == 0)
                 yield break;
 
+            // runs each step in the movement sequence
             while (index < currentMovementSequence.movementSteps.Count || currentMovementSequence.loopSequence)
             {
                 MovementStep step = currentMovementSequence.movementSteps[index];
@@ -147,15 +149,18 @@ namespace KH
             if (currentAttackSequence.patternSteps.Count == 0)
                 yield break;
 
+            // runs each step in the attack sequence
             while (currentAttackSequence.loopPattern || index < currentAttackSequence.patternSteps.Count)
             {
                 PatternStep step = currentAttackSequence.patternSteps[index];
                 step.pattern.Fire(transform.position);
 
+                // waits before firing next attack
                 yield return new WaitForSeconds(step.delayBeforeNextPattern);
 
                 index++;
 
+                // runs again if pattern loops
                 if (index >= currentAttackSequence.patternSteps.Count)
                 {
                     if (currentAttackSequence.loopPattern)

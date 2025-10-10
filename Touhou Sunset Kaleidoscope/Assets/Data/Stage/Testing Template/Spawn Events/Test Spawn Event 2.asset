@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f706566a3a00c04db94c1f3f31a41af, type: 3}
-  m_Name: Diagonal Upwards Left Movement
+  m_Script: {fileID: 11500000, guid: 9835e7e1202c98846896ca4445a76cad, type: 3}
+  m_Name: Test Spawn Event 2
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  isMovingRight: 0
-  isMovingUp: 1
+  enemyID: 0
+  spawnPoint: {x: 2.8, y: -1.8, z: 0}
+  spawnTime: 3

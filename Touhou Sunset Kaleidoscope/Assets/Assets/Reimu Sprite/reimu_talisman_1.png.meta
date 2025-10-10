@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fc6f57b3140b5fd49befec5fd8b0d81d
+guid: 9c7dfd6a161e04c4e852a38b82f2e3d0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -122846332618075817
-    second: reimu_talisman_1_0
+      213: 2107061588512180262
+    second: reimu_talisman_1_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: reimu_talisman_1_0
+      name: reimu_talisman_1_1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 15
-        height: 10
+        width: 10
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 751175e49ef8b4ef0800000000000000
-      internalID: -122846332618075817
+      spriteID: 628832fd959cd3d10800000000000000
+      internalID: 2107061588512180262
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      reimu_talisman_1_0: -122846332618075817
+      reimu_talisman_1_1_0: 2107061588512180262
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

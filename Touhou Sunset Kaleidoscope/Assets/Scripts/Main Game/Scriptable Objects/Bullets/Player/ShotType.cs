@@ -7,6 +7,7 @@ namespace KH
         [Header("Bullet Data")]
         public GameObject bulletPrefab;
         public Sprite sprite;
+        public Sprite spriteAfterImage;
         public float speed;
         public int damage;
         public Vector2 spawnOffset1;

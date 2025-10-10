@@ -9,6 +9,6 @@ namespace KH
         {
 
         }
-        public abstract Vector2 GetTotalMovement(Transform enemyTransform, float duration);
+        public abstract Vector2 GetTotalMovement(Transform enemyTransform, float duration); // gets its body from derived classes
     }
 }

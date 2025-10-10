@@ -8,20 +8,24 @@ namespace KH
 
         [Header("Object Pooling")]
         private List<GameObject> pooledPlayerBullets = new List<GameObject>();
+        private List<GameObject> pooledPlayerBulletAfterImages = new List<GameObject>();
         private List<GameObject> pooledEnemyBullets = new List<GameObject>();
         private List<GameObject> pooledItems = new List<GameObject>();
         private List<GameObject> pooledEnemyObjects = new List<GameObject>();
         [SerializeField] private int playerBulletsToPool = 100;
+        [SerializeField] private int playerBulletAfterImagesToPool = 100;
         [SerializeField] private int enemyBulletsToPool = 100;
         [SerializeField] private int itemsToPool = 100;
         [SerializeField] private int enemiesToPool = 100;
         [Space]
         [SerializeField] private GameObject playerBulletPrefab;
+        [SerializeField] private GameObject playerBulletAfterImagePrefab;
         [SerializeField] private GameObject enemyBulletPrefab;
         [SerializeField] private GameObject itemPrefab;
         [SerializeField] private GameObject enemyObjectPrefab;
         [Space]
         [SerializeField] private Transform playerBulletsContainer;
+        [SerializeField] private Transform playerBulletAfterImagesContainer;
         [SerializeField] private Transform enemyBulletsContainer;
         [SerializeField] private Transform itemContainer;
         [SerializeField] private Transform enemyContainer;
@@ -65,8 +69,17 @@ namespace KH
             {
                 GameObject enemy = Instantiate(enemyObjectPrefab);
                 enemy.transform.SetParent(enemyContainer);
+
                 enemy.SetActive(false);
                 pooledEnemyObjects.Add(enemy);
+            }
+            for (int i = 0; i < playerBulletAfterImagesToPool; i++)
+            {
+                GameObject afterImage = Instantiate(playerBulletAfterImagePrefab);
+                afterImage.transform.SetParent(playerBulletAfterImagesContainer);
+
+                afterImage.SetActive(false);
+                pooledPlayerBulletAfterImages.Add(afterImage);
             }
         }
 
@@ -113,6 +126,18 @@ namespace KH
                 if (!pooledEnemyObjects[i].activeInHierarchy)
                 {
                     return pooledEnemyObjects[i];
+                }
+            }
+            return null;
+        }
+        public GameObject GetPooledPlayerBulletAfterImage()
+        {
+            for (int i = 0; i < pooledPlayerBulletAfterImages.Count; i++)
+            {
+                if (!pooledPlayerBulletAfterImages[i].activeInHierarchy)
+                {
+                    pooledPlayerBulletAfterImages[i].SetActive(true);
+                    return pooledPlayerBulletAfterImages[i];
                 }
             }
             return null;

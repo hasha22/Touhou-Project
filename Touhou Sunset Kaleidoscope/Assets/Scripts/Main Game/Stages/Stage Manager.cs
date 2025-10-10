@@ -24,6 +24,7 @@ namespace KH
         }
         private void Start()
         {
+            // Initializes first wave
             if (waves.Count > 0)
             {
                 currentWaveIndex = 0;
@@ -34,6 +35,7 @@ namespace KH
         {
             if (WaveManager.instance.currentWave != null)
             {
+                // Starts next wave as soon as the previous one is finished
                 if (WaveManager.instance.IsWaveFinished() && currentWaveIndex < waves.Count - 1)
                 {
                     currentWaveIndex++;
