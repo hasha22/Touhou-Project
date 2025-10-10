@@ -1,0 +1,6617 @@
+fileFormatVersion: 2
+guid: 5fcde1955c00e0845a06f8986033cb6d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 39836981964409986
+    second: Shot_01-Recovered_0
+  - first:
+      213: -4307272596953098203
+    second: Shot_01-Recovered_1
+  - first:
+      213: 7881176530707506836
+    second: Shot_01-Recovered_2
+  - first:
+      213: 9117373280166717326
+    second: Shot_01-Recovered_3
+  - first:
+      213: 2528250511563856286
+    second: Shot_01-Recovered_4
+  - first:
+      213: -5139479274455782706
+    second: Shot_01-Recovered_5
+  - first:
+      213: -2846721150824221069
+    second: Shot_01-Recovered_6
+  - first:
+      213: 1372695913590475437
+    second: Shot_01-Recovered_7
+  - first:
+      213: -1818173783464274758
+    second: Shot_01-Recovered_8
+  - first:
+      213: 511484320775846409
+    second: Shot_01-Recovered_9
+  - first:
+      213: -7575208288610407250
+    second: Shot_01-Recovered_10
+  - first:
+      213: 5488519872109631151
+    second: Shot_01-Recovered_11
+  - first:
+      213: -3925920711431604321
+    second: Shot_01-Recovered_12
+  - first:
+      213: 277110180555496121
+    second: Shot_01-Recovered_13
+  - first:
+      213: -2167180311413956620
+    second: Shot_01-Recovered_14
+  - first:
+      213: 833978189098600469
+    second: Shot_01-Recovered_15
+  - first:
+      213: 7143310140765458247
+    second: Shot_01-Recovered_16
+  - first:
+      213: 8512722834744048874
+    second: Shot_01-Recovered_17
+  - first:
+      213: 8029301892895559767
+    second: Shot_01-Recovered_18
+  - first:
+      213: 4699390736476153119
+    second: Shot_01-Recovered_19
+  - first:
+      213: 1343923068369224720
+    second: Shot_01-Recovered_20
+  - first:
+      213: -5616474444411614228
+    second: Shot_01-Recovered_21
+  - first:
+      213: 6992162354349643060
+    second: Shot_01-Recovered_22
+  - first:
+      213: -3108733898123962581
+    second: Shot_01-Recovered_23
+  - first:
+      213: -478780332142441731
+    second: Shot_01-Recovered_24
+  - first:
+      213: -7494009675228182902
+    second: Shot_01-Recovered_25
+  - first:
+      213: -8559311352991458069
+    second: Shot_01-Recovered_26
+  - first:
+      213: 692124517908042710
+    second: Shot_01-Recovered_27
+  - first:
+      213: 9057448172223177760
+    second: Shot_01-Recovered_28
+  - first:
+      213: 3460820653733155402
+    second: Shot_01-Recovered_29
+  - first:
+      213: -6907200466674178275
+    second: Shot_01-Recovered_30
+  - first:
+      213: -8731092339722605032
+    second: Shot_01-Recovered_31
+  - first:
+      213: -4197644456263499128
+    second: Shot_01-Recovered_32
+  - first:
+      213: -4610841068036968640
+    second: Shot_01-Recovered_33
+  - first:
+      213: -5197524214328041015
+    second: Shot_01-Recovered_34
+  - first:
+      213: -8056197612683447367
+    second: Shot_01-Recovered_35
+  - first:
+      213: -4346511187304583855
+    second: Shot_01-Recovered_36
+  - first:
+      213: -5664637627097186911
+    second: Shot_01-Recovered_37
+  - first:
+      213: 5254589113022736993
+    second: Shot_01-Recovered_38
+  - first:
+      213: 5314918108728476969
+    second: Shot_01-Recovered_39
+  - first:
+      213: -3600273972220073252
+    second: Shot_01-Recovered_40
+  - first:
+      213: -2649878802448189776
+    second: Shot_01-Recovered_41
+  - first:
+      213: 1535712524603989970
+    second: Shot_01-Recovered_42
+  - first:
+      213: -4964690881449849596
+    second: Shot_01-Recovered_43
+  - first:
+      213: 2070579615209632863
+    second: Shot_01-Recovered_44
+  - first:
+      213: -4654907176716632516
+    second: Shot_01-Recovered_45
+  - first:
+      213: 3999798534636186202
+    second: Shot_01-Recovered_46
+  - first:
+      213: 8195547581043981824
+    second: Shot_01-Recovered_47
+  - first:
+      213: -853316515323562669
+    second: Shot_01-Recovered_48
+  - first:
+      213: -6064651867893188228
+    second: Shot_01-Recovered_49
+  - first:
+      213: -1879802126487648766
+    second: Shot_01-Recovered_50
+  - first:
+      213: 1890555530167250396
+    second: Shot_01-Recovered_51
+  - first:
+      213: -1763699827548543255
+    second: Shot_01-Recovered_52
+  - first:
+      213: -1157608058597066206
+    second: Shot_01-Recovered_53
+  - first:
+      213: 5969991069346329513
+    second: Shot_01-Recovered_54
+  - first:
+      213: -3570879410467386027
+    second: Shot_01-Recovered_55
+  - first:
+      213: 6644653057694073403
+    second: Shot_01-Recovered_56
+  - first:
+      213: 703415772754165928
+    second: Shot_01-Recovered_57
+  - first:
+      213: 4459494004021147794
+    second: Shot_01-Recovered_58
+  - first:
+      213: 8338451211337729791
+    second: Shot_01-Recovered_59
+  - first:
+      213: 8856114395411086314
+    second: Shot_01-Recovered_60
+  - first:
+      213: 3495851528310748274
+    second: Shot_01-Recovered_61
+  - first:
+      213: 1123935382395248873
+    second: Shot_01-Recovered_62
+  - first:
+      213: 8505193665027210003
+    second: Shot_01-Recovered_63
+  - first:
+      213: 6411536653043454959
+    second: Shot_01-Recovered_64
+  - first:
+      213: 6340443764647249238
+    second: Shot_01-Recovered_65
+  - first:
+      213: -932365663265166999
+    second: Shot_01-Recovered_66
+  - first:
+      213: 3715287471932925112
+    second: Shot_01-Recovered_67
+  - first:
+      213: -6288921305853993717
+    second: Shot_01-Recovered_68
+  - first:
+      213: 7601633267806969195
+    second: Shot_01-Recovered_69
+  - first:
+      213: 7689400564999455753
+    second: Shot_01-Recovered_70
+  - first:
+      213: 8893578378200585181
+    second: Shot_01-Recovered_71
+  - first:
+      213: -4786771880261508031
+    second: Shot_01-Recovered_72
+  - first:
+      213: 1509822087100520296
+    second: Shot_01-Recovered_73
+  - first:
+      213: -9055204752873342321
+    second: Shot_01-Recovered_74
+  - first:
+      213: 8066883191398035180
+    second: Shot_01-Recovered_75
+  - first:
+      213: 6966188993341632340
+    second: Shot_01-Recovered_76
+  - first:
+      213: 6488332120134122364
+    second: Shot_01-Recovered_77
+  - first:
+      213: 1199042049876305377
+    second: Shot_01-Recovered_78
+  - first:
+      213: -7862207209808328972
+    second: Shot_01-Recovered_79
+  - first:
+      213: -2032671102297576794
+    second: Shot_01-Recovered_80
+  - first:
+      213: 1077065685024599788
+    second: Shot_01-Recovered_81
+  - first:
+      213: -6108404956694972249
+    second: Shot_01-Recovered_82
+  - first:
+      213: 2210235091690124127
+    second: Shot_01-Recovered_83
+  - first:
+      213: -899872629715700359
+    second: Shot_01-Recovered_84
+  - first:
+      213: 1473814037178765980
+    second: Shot_01-Recovered_85
+  - first:
+      213: 6484894890711914661
+    second: Shot_01-Recovered_86
+  - first:
+      213: 8302067973822412550
+    second: Shot_01-Recovered_87
+  - first:
+      213: 5142622098895441128
+    second: Shot_01-Recovered_88
+  - first:
+      213: -5336556027443052091
+    second: Shot_01-Recovered_89
+  - first:
+      213: -7567852236367515739
+    second: Shot_01-Recovered_90
+  - first:
+      213: 294666063110527132
+    second: Shot_01-Recovered_91
+  - first:
+      213: -5304518820928268241
+    second: Shot_01-Recovered_92
+  - first:
+      213: -7256413103724437335
+    second: Shot_01-Recovered_93
+  - first:
+      213: 8893485821105108356
+    second: Shot_01-Recovered_94
+  - first:
+      213: -5535791771138468780
+    second: Shot_01-Recovered_95
+  - first:
+      213: -969208475050180877
+    second: Shot_01-Recovered_96
+  - first:
+      213: -546731095174037664
+    second: Shot_01-Recovered_97
+  - first:
+      213: -4364451856704964133
+    second: Shot_01-Recovered_98
+  - first:
+      213: -4979221579972606366
+    second: Shot_01-Recovered_99
+  - first:
+      213: -5122055715355609324
+    second: Shot_01-Recovered_100
+  - first:
+      213: -8218427425616293581
+    second: Shot_01-Recovered_101
+  - first:
+      213: -5456178899246635850
+    second: Shot_01-Recovered_102
+  - first:
+      213: 9078003015725104855
+    second: Shot_01-Recovered_103
+  - first:
+      213: -6516142549899644915
+    second: Shot_01-Recovered_104
+  - first:
+      213: -450077899018461419
+    second: Shot_01-Recovered_105
+  - first:
+      213: -5706381756642444700
+    second: Shot_01-Recovered_106
+  - first:
+      213: -6926894565115608035
+    second: Shot_01-Recovered_107
+  - first:
+      213: -3377681120289606613
+    second: Shot_01-Recovered_108
+  - first:
+      213: 32097316953537609
+    second: Shot_01-Recovered_109
+  - first:
+      213: 6419511465801541613
+    second: Shot_01-Recovered_110
+  - first:
+      213: 6942913592720525022
+    second: Shot_01-Recovered_111
+  - first:
+      213: 8011711928510058034
+    second: Shot_01-Recovered_112
+  - first:
+      213: 1519911034825576696
+    second: Shot_01-Recovered_113
+  - first:
+      213: -3920172441612451823
+    second: Shot_01-Recovered_114
+  - first:
+      213: -2205392507096556943
+    second: Shot_01-Recovered_115
+  - first:
+      213: -2800252076671140361
+    second: Shot_01-Recovered_116
+  - first:
+      213: 6116776780898007643
+    second: Shot_01-Recovered_117
+  - first:
+      213: -1654352527472228103
+    second: Shot_01-Recovered_118
+  - first:
+      213: 2818188586450408653
+    second: Shot_01-Recovered_119
+  - first:
+      213: 3258491085861247784
+    second: Shot_01-Recovered_120
+  - first:
+      213: -1184371538566415788
+    second: Shot_01-Recovered_121
+  - first:
+      213: 3565018721669195753
+    second: Shot_01-Recovered_122
+  - first:
+      213: -4997122862441683956
+    second: Shot_01-Recovered_123
+  - first:
+      213: 1652669578216917433
+    second: Shot_01-Recovered_124
+  - first:
+      213: -5994497288786645598
+    second: Shot_01-Recovered_125
+  - first:
+      213: 3482849729567344199
+    second: Shot_01-Recovered_126
+  - first:
+      213: -4919400059373084667
+    second: Shot_01-Recovered_127
+  - first:
+      213: 292888865816357886
+    second: Shot_01-Recovered_128
+  - first:
+      213: -4614837400001408558
+    second: Shot_01-Recovered_129
+  - first:
+      213: 7017587919826897289
+    second: Shot_01-Recovered_130
+  - first:
+      213: -7777481607530520769
+    second: Shot_01-Recovered_131
+  - first:
+      213: -7014487176603967912
+    second: Shot_01-Recovered_132
+  - first:
+      213: 3858545557012032903
+    second: Shot_01-Recovered_133
+  - first:
+      213: -7745652604539616681
+    second: Shot_01-Recovered_134
+  - first:
+      213: 7899307120058575678
+    second: Shot_01-Recovered_135
+  - first:
+      213: -3768551822381190935
+    second: Shot_01-Recovered_136
+  - first:
+      213: 1571900353277185748
+    second: Shot_01-Recovered_137
+  - first:
+      213: 2332375836281813421
+    second: Shot_01-Recovered_138
+  - first:
+      213: 5393319239151577149
+    second: Shot_01-Recovered_139
+  - first:
+      213: -1445001476426128012
+    second: Shot_01-Recovered_140
+  - first:
+      213: -3962279184328541503
+    second: Shot_01-Recovered_141
+  - first:
+      213: 7615976247435626423
+    second: Shot_01-Recovered_142
+  - first:
+      213: 8936127294983264189
+    second: Shot_01-Recovered_143
+  - first:
+      213: -8382354128138433973
+    second: Shot_01-Recovered_144
+  - first:
+      213: 6282786898435499293
+    second: Shot_01-Recovered_145
+  - first:
+      213: -6645010078341504261
+    second: Shot_01-Recovered_146
+  - first:
+      213: -5363243645491474498
+    second: Shot_01-Recovered_147
+  - first:
+      213: 7693688344063468464
+    second: Shot_01-Recovered_148
+  - first:
+      213: 3433738681132446003
+    second: Shot_01-Recovered_149
+  - first:
+      213: -5123333637658238030
+    second: Shot_01-Recovered_150
+  - first:
+      213: -8693472269766316321
+    second: Shot_01-Recovered_151
+  - first:
+      213: -5457611037668659268
+    second: Shot_01-Recovered_152
+  - first:
+      213: 5785057219049539260
+    second: Shot_01-Recovered_153
+  - first:
+      213: 5776197100867667717
+    second: Shot_01-Recovered_154
+  - first:
+      213: 5982958159146812177
+    second: Shot_01-Recovered_155
+  - first:
+      213: 6967959259466965893
+    second: Shot_01-Recovered_156
+  - first:
+      213: -430511220797027805
+    second: Shot_01-Recovered_157
+  - first:
+      213: -772839464189365365
+    second: Shot_01-Recovered_158
+  - first:
+      213: -1166311204036948882
+    second: Shot_01-Recovered_159
+  - first:
+      213: -3599304241958468442
+    second: Shot_01-Recovered_160
+  - first:
+      213: 7291280472351069257
+    second: Shot_01-Recovered_161
+  - first:
+      213: -6224567699582577742
+    second: Shot_01-Recovered_162
+  - first:
+      213: 4125141339557185075
+    second: Shot_01-Recovered_163
+  - first:
+      213: 5456394376166167930
+    second: Shot_01-Recovered_164
+  - first:
+      213: 7157093097049329129
+    second: Shot_01-Recovered_165
+  - first:
+      213: -5480986330174675381
+    second: Shot_01-Recovered_166
+  - first:
+      213: -3526470584865825229
+    second: Shot_01-Recovered_167
+  - first:
+      213: 9027701198871359672
+    second: Shot_01-Recovered_168
+  - first:
+      213: -6265426462875513968
+    second: Shot_01-Recovered_169
+  - first:
+      213: -6061884785674303819
+    second: Shot_01-Recovered_170
+  - first:
+      213: 4521105289438812831
+    second: Shot_01-Recovered_171
+  - first:
+      213: -2296414884642400192
+    second: Shot_01-Recovered_172
+  - first:
+      213: 3267866205761261594
+    second: Shot_01-Recovered_173
+  - first:
+      213: 7203429086098971661
+    second: Shot_01-Recovered_174
+  - first:
+      213: 5097663329947022769
+    second: Shot_01-Recovered_175
+  - first:
+      213: 292122847723341854
+    second: Shot_01-Recovered_176
+  - first:
+      213: 8964320456469477086
+    second: Shot_01-Recovered_177
+  - first:
+      213: 279014283037951130
+    second: Shot_01-Recovered_178
+  - first:
+      213: -900896192469782951
+    second: Shot_01-Recovered_179
+  - first:
+      213: -6769287468894227966
+    second: Shot_01-Recovered_180
+  - first:
+      213: -3785869255835632339
+    second: Shot_01-Recovered_181
+  - first:
+      213: -6029235540844054439
+    second: Shot_01-Recovered_182
+  - first:
+      213: -3307594560866902718
+    second: Shot_01-Recovered_183
+  - first:
+      213: -7184214519174251630
+    second: Shot_01-Recovered_184
+  - first:
+      213: -3279582289288688421
+    second: Shot_01-Recovered_185
+  - first:
+      213: 5524217937291171271
+    second: Shot_01-Recovered_186
+  - first:
+      213: -7547069815453430221
+    second: Shot_01-Recovered_187
+  - first:
+      213: 6836733582470035312
+    second: Shot_01-Recovered_188
+  - first:
+      213: -8300245314333272210
+    second: Shot_01-Recovered_189
+  - first:
+      213: -3947285322474636806
+    second: Shot_01-Recovered_190
+  - first:
+      213: 8733241969635309426
+    second: Shot_01-Recovered_191
+  - first:
+      213: -3546323729341000908
+    second: Shot_01-Recovered_192
+  - first:
+      213: -3086307860707953461
+    second: Shot_01-Recovered_193
+  - first:
+      213: 9105897005652439662
+    second: Shot_01-Recovered_194
+  - first:
+      213: 6982226856154423668
+    second: Shot_01-Recovered_195
+  - first:
+      213: 4926477571404956232
+    second: Shot_01-Recovered_196
+  - first:
+      213: -7600487985007011194
+    second: Shot_01-Recovered_197
+  - first:
+      213: 7551378601766041345
+    second: Shot_01-Recovered_198
+  - first:
+      213: 8379491454876782402
+    second: Shot_01-Recovered_199
+  - first:
+      213: -1878728655927058630
+    second: Shot_01-Recovered_200
+  - first:
+      213: 4500773282456358168
+    second: Shot_01-Recovered_201
+  - first:
+      213: 7170775056606103696
+    second: Shot_01-Recovered_202
+  - first:
+      213: 5747410041707436303
+    second: Shot_01-Recovered_203
+  - first:
+      213: -3942371678017992628
+    second: Shot_01-Recovered_204
+  - first:
+      213: 1473347076516474353
+    second: Shot_01-Recovered_205
+  - first:
+      213: -1891143835859155200
+    second: Shot_01-Recovered_206
+  - first:
+      213: 5228480994500228328
+    second: Shot_01-Recovered_207
+  - first:
+      213: -1063430221228776012
+    second: Shot_01-Recovered_208
+  - first:
+      213: -8964134702308500183
+    second: Shot_01-Recovered_209
+  - first:
+      213: -6803467929362715746
+    second: Shot_01-Recovered_210
+  - first:
+      213: -8890649846101176303
+    second: Shot_01-Recovered_211
+  - first:
+      213: -8364858183584784107
+    second: Shot_01-Recovered_212
+  - first:
+      213: 6206752743064770935
+    second: Shot_01-Recovered_213
+  - first:
+      213: -2882616214488546411
+    second: Shot_01-Recovered_214
+  - first:
+      213: 8618252775536620264
+    second: Shot_01-Recovered_215
+  - first:
+      213: -6337860731325903157
+    second: Shot_01-Recovered_216
+  - first:
+      213: 4737202721578905177
+    second: Shot_01-Recovered_217
+  - first:
+      213: -8990593909935829983
+    second: Shot_01-Recovered_218
+  - first:
+      213: 8006406227897984523
+    second: Shot_01-Recovered_219
+  - first:
+      213: -3471024068345308715
+    second: Shot_01-Recovered_220
+  - first:
+      213: -6405892759734038261
+    second: Shot_01-Recovered_221
+  - first:
+      213: 1823833752280940354
+    second: Shot_01-Recovered_222
+  - first:
+      213: -5993959388863391414
+    second: Shot_01-Recovered_223
+  - first:
+      213: -1876311145152299502
+    second: Shot_01-Recovered_224
+  - first:
+      213: -3465262832536555359
+    second: Shot_01-Recovered_225
+  - first:
+      213: -5295902523301836883
+    second: Shot_01-Recovered_226
+  - first:
+      213: -7244478950310241909
+    second: Shot_01-Recovered_227
+  - first:
+      213: -6774185307898575805
+    second: Shot_01-Recovered_228
+  - first:
+      213: -5024907908236556973
+    second: Shot_01-Recovered_229
+  - first:
+      213: -1605895293470064560
+    second: Shot_01-Recovered_230
+  - first:
+      213: 5121086432412249496
+    second: Shot_01-Recovered_231
+  - first:
+      213: 6262971251054997205
+    second: Shot_01-Recovered_232
+  - first:
+      213: 7017675578981461294
+    second: Shot_01-Recovered_233
+  - first:
+      213: -6002632866208496925
+    second: Shot_01-Recovered_234
+  - first:
+      213: 4120485497243031857
+    second: Shot_01-Recovered_235
+  - first:
+      213: 8109057715429331408
+    second: Shot_01-Recovered_236
+  - first:
+      213: -247849319780958543
+    second: Shot_01-Recovered_237
+  - first:
+      213: 2557197658457016827
+    second: Shot_01-Recovered_238
+  - first:
+      213: 833265949127137491
+    second: Shot_01-Recovered_239
+  - first:
+      213: -1634901455800574667
+    second: Shot_01-Recovered_240
+  - first:
+      213: 8043893826072066570
+    second: Shot_01-Recovered_241
+  - first:
+      213: 6038122088308448302
+    second: Shot_01-Recovered_242
+  - first:
+      213: 653592512437991893
+    second: Shot_01-Recovered_243
+  - first:
+      213: 9128303511960042729
+    second: Shot_01-Recovered_244
+  - first:
+      213: -4855215065346367846
+    second: Shot_01-Recovered_245
+  - first:
+      213: -6089138552127834522
+    second: Shot_01-Recovered_246
+  - first:
+      213: -4060286013805094093
+    second: Shot_01-Recovered_247
+  - first:
+      213: 5443515630455589937
+    second: Shot_01-Recovered_248
+  - first:
+      213: -4309691231017342988
+    second: Shot_01-Recovered_249
+  - first:
+      213: 4971779648821550495
+    second: Shot_01-Recovered_250
+  - first:
+      213: 7645782941294119163
+    second: Shot_01-Recovered_251
+  - first:
+      213: 5706909005741728905
+    second: Shot_01-Recovered_252
+  - first:
+      213: 594606107128702862
+    second: Shot_01-Recovered_253
+  - first:
+      213: -7438367073550576499
+    second: Shot_01-Recovered_254
+  - first:
+      213: -6327487006176747205
+    second: Shot_01-Recovered_255
+  - first:
+      213: 2727386287534965118
+    second: Shot_01-Recovered_256
+  - first:
+      213: -3622538942925684283
+    second: Shot_01-Recovered_257
+  - first:
+      213: 2555964468644454620
+    second: Shot_01-Recovered_258
+  - first:
+      213: 7579231974780316358
+    second: Shot_01-Recovered_259
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shot_01-Recovered_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1040
+        width: 577
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c89e626878d8000800000000000000
+      internalID: 39836981964409986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_1
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 0
+        width: 642
+        height: 1152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52816dbd46e7934c0800000000000000
+      internalID: -4307272596953098203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_2
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 1093
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49667f46c409f5d60800000000000000
+      internalID: 7881176530707506836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_3
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 0
+        width: 129
+        height: 1152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e87a9f041ba678e70800000000000000
+      internalID: 9117373280166717326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9996fce176261320800000000000000
+      internalID: 2528250511563856286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecaa49b74d6eca8b0800000000000000
+      internalID: -5139479274455782706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 376f786223a6e78d0800000000000000
+      internalID: -2846721150824221069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daac03a19abcc0310800000000000000
+      internalID: 1372695913590475437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab41fa8b39c84c6e0800000000000000
+      internalID: -1818173783464274758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ab600a748291700800000000000000
+      internalID: 511484320775846409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eac28c952347fd690800000000000000
+      internalID: -7575208288610407250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_11
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa654c78eb32b2c40800000000000000
+      internalID: 5488519872109631151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9735c2d9e35489c0800000000000000
+      internalID: -3925920711431604321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_13
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ba97a3bd3e78d300800000000000000
+      internalID: 277110180555496121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_14
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff53fd2df0ace1e0800000000000000
+      internalID: -2167180311413956620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_15
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51845af8eb2e29b00800000000000000
+      internalID: 833978189098600469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74f45c4e9b2222360800000000000000
+      internalID: 7143310140765458247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_17
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aec764cd054432670800000000000000
+      internalID: 8512722834744048874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_18
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7505960d78fcd6f60800000000000000
+      internalID: 8029301892895559767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_19
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f152c64f9f6973140800000000000000
+      internalID: 4699390736476153119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 014c99709e296a210800000000000000
+      internalID: 1343923068369224720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_21
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 991
+        width: 16
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceb49ca00464e02b0800000000000000
+      internalID: -5616474444411614228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_22
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4359ede7d96290160800000000000000
+      internalID: 6992162354349643060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_23
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b271b1d8dfe8bd4d0800000000000000
+      internalID: -3108733898123962581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_24
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfac43913d70b59f0800000000000000
+      internalID: -478780332142441731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_25
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a860fa4c7edeff790800000000000000
+      internalID: -7494009675228182902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_26
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: becd9f27ca7373980800000000000000
+      internalID: -8559311352991458069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_27
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d35f3ef49bea9900800000000000000
+      internalID: 692124517908042710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_28
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 024afdccf1582bd70800000000000000
+      internalID: 9057448172223177760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_29
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4299116c0e470030800000000000000
+      internalID: 3460820653733155402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_30
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d17297f75c1b420a0800000000000000
+      internalID: -6907200466674178275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_31
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81e23bdb6cde4d680800000000000000
+      internalID: -8731092339722605032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_32
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 882c60b6b98feb5c0800000000000000
+      internalID: -4197644456263499128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_33
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04fafd75a700300c0800000000000000
+      internalID: -4610841068036968640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_34
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c16c75c34faed7b0800000000000000
+      internalID: -5197524214328041015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_35
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b337af64f2a23090800000000000000
+      internalID: -8056197612683447367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_36
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15de27c9a171ea3c0800000000000000
+      internalID: -4346511187304583855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_37
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ad7f87371a2361b0800000000000000
+      internalID: -5664637627097186911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_38
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16aea5255fc0ce840800000000000000
+      internalID: 5254589113022736993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_39
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 991
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9254d093cd162c940800000000000000
+      internalID: 5314918108728476969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_40
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 1029
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdaecb7b5e1490ec0800000000000000
+      internalID: -3600273972220073252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b6fc32d44db93bd0800000000000000
+      internalID: -2649878802448189776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 879
+        width: 577
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2df93229762ff4510800000000000000
+      internalID: 1535712524603989970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_43
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d8f8782ffd91bb0800000000000000
+      internalID: -4964690881449849596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_44
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f543cbb803d2cbc10800000000000000
+      internalID: 2070579615209632863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_45
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3e7365e592766fb0800000000000000
+      internalID: -4654907176716632516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_46
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a2e1e4393228730800000000000000
+      internalID: 3999798534636186202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_47
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00e30f36a1f6cb170800000000000000
+      internalID: 8195547581043981824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_48
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3553a2f76296824f0800000000000000
+      internalID: -853316515323562669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_49
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7931df024706dba0800000000000000
+      internalID: -6064651867893188228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_50
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2060ea2fce999e5e0800000000000000
+      internalID: -1879802126487648766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_51
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdde4c3fc3a9c3a10800000000000000
+      internalID: 1890555530167250396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_52
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e62d80f9541687e0800000000000000
+      internalID: -1763699827548543255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_53
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a313e9a995fefe0800000000000000
+      internalID: -1157608058597066206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_54
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a374a84f3ba9d250800000000000000
+      internalID: 5969991069346329513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_55
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55dc5537810b17ec0800000000000000
+      internalID: -3570879410467386027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_56
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b32819740cc863c50800000000000000
+      internalID: 6644653057694073403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_57
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a04b602be803c900800000000000000
+      internalID: 703415772754165928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_58
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2983aa35b2e43ed30800000000000000
+      internalID: 4459494004021147794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_59
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff606bc923128b370800000000000000
+      internalID: 8338451211337729791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_60
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeb73b4fe1d37ea70800000000000000
+      internalID: 8856114395411086314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_61
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 274f7747172c38030800000000000000
+      internalID: 3495851528310748274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_62
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e069228645099f00800000000000000
+      internalID: 1123935382395248873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_63
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31b79dd6394880670800000000000000
+      internalID: 8505193665027210003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_64
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe35d0dbd9a5af850800000000000000
+      internalID: 6411536653043454959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_65
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 655c326c208cdf750800000000000000
+      internalID: 6340443764647249238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_66
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 969ee408e529f03f0800000000000000
+      internalID: -932365663265166999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_67
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b46503754a5f8330800000000000000
+      internalID: 3715287471932925112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_68
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0ddf28746349b8a0800000000000000
+      internalID: -6288921305853993717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_69
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6d1d609e2d6e7960800000000000000
+      internalID: 7601633267806969195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_70
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9040b7cd21d36ba60800000000000000
+      internalID: 7689400564999455753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_71
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd39dbe2a665c6b70800000000000000
+      internalID: 8893578378200585181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_72
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1442f281658f19db0800000000000000
+      internalID: -4786771880261508031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_73
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8675aa75037f3f410800000000000000
+      internalID: 1509822087100520296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_74
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8a3e88f043755280800000000000000
+      internalID: -9055204752873342321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_75
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cee69dbb58353ff60800000000000000
+      internalID: 8066883191398035180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_76
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f2d522bffdca060800000000000000
+      internalID: 6966188993341632340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_77
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7bf955cfaf2b0a50800000000000000
+      internalID: 6488332120134122364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_78
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 965
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e522ad346ad3a010800000000000000
+      internalID: 1199042049876305377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_79
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 901
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f60cdcc234d3e290800000000000000
+      internalID: -7862207209808328972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aae95ae6608ac3e0800000000000000
+      internalID: -2032671102297576794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_81
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cee67a3b88182fe00800000000000000
+      internalID: 1077065685024599788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_82
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a8f5fb3e069a3ba0800000000000000
+      internalID: -6108404956694972249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_83
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f53fa460b155cae10800000000000000
+      internalID: 2210235091690124127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_84
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 975f2ba6c920383f0800000000000000
+      internalID: -899872629715700359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_85
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c925607ee0a047410800000000000000
+      internalID: 1473814037178765980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_86
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a811ae6b89fef950800000000000000
+      internalID: 6484894890711914661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_87
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 607f4d006ded63370800000000000000
+      internalID: 8302067973822412550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_88
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ec8cba5d834e5740800000000000000
+      internalID: 5142622098895441128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_89
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1894c319eb0f5b0800000000000000
+      internalID: -5336556027443052091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_90
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5af2baabc7699f690800000000000000
+      internalID: -7567852236367515739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_91
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c98d013293dd61400800000000000000
+      internalID: 294666063110527132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_92
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f285236ac309266b0800000000000000
+      internalID: -5304518820928268241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_93
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a0e3017aba0c4b90800000000000000
+      internalID: -7256413103724437335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_94
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48571fd0c320c6b70800000000000000
+      internalID: 8893485821105108356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_95
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 454d2cac6baec23b0800000000000000
+      internalID: -5535791771138468780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_96
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fef55be60eac82f0800000000000000
+      internalID: -969208475050180877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_97
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06fbd7437fe9968f0800000000000000
+      internalID: -546731095174037664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_98
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd97ec1092a5e63c0800000000000000
+      internalID: -4364451856704964133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_99
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26606c3aa5046eab0800000000000000
+      internalID: -4979221579972606366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_100
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4173876f67dcae8b0800000000000000
+      internalID: -5122055715355609324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_101
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33110dbacc742fd80800000000000000
+      internalID: -8218427425616293581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_102
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b42c6ff232c744b0800000000000000
+      internalID: -5456178899246635850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_103
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7de383e35ab8bfd70800000000000000
+      internalID: 9078003015725104855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_104
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d007c67ffd20295a0800000000000000
+      internalID: -6516142549899644915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_105
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51f10c3198001c9f0800000000000000
+      internalID: -450077899018461419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_106
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46abe8aa60cdec0b0800000000000000
+      internalID: -5706381756642444700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_107
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1443b1e71abedf90800000000000000
+      internalID: -6926894565115608035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_108
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b243894bae01021d0800000000000000
+      internalID: -3377681120289606613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_109
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c3247f658027000800000000000000
+      internalID: 32097316953537609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_110
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de7e5a68aafa61950800000000000000
+      internalID: 6419511465801541613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_111
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed68650a02f2a5060800000000000000
+      internalID: 6942913592720525022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_112
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e0a951d815f2f60800000000000000
+      internalID: 8011711928510058034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_113
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f099f8880fc71510800000000000000
+      internalID: 1519911034825576696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_114
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1100a6f2fefb899c0800000000000000
+      internalID: -3920172441612451823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_115
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 848
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17a9330133fd461e0800000000000000
+      internalID: -2205392507096556943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_116
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 837
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd777892918329d0800000000000000
+      internalID: -2800252076671140361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_117
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 819
+        width: 289
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5a78cbf21823e450800000000000000
+      internalID: 6116776780898007643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_118
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f88fb2342f8a09e0800000000000000
+      internalID: -1654352527472228103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_119
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc4df6586973c1720800000000000000
+      internalID: 2818188586450408653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_120
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82b598cd06c783d20800000000000000
+      internalID: 3258491085861247784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_121
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a7aa95c54409fe0800000000000000
+      internalID: -1184371538566415788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_122
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7a5ba93ad797130800000000000000
+      internalID: 3565018721669195753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_123
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c042e258b37a6aab0800000000000000
+      internalID: -4997122862441683956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_124
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b9c6b4a9367fe610800000000000000
+      internalID: 1652669578216917433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_125
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ad64ded9744fcca0800000000000000
+      internalID: -5994497288786645598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_126
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7464de84061955030800000000000000
+      internalID: 3482849729567344199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_127
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5002809c5b7cabbb0800000000000000
+      internalID: -4919400059373084667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_128
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efba6a52fdc801400800000000000000
+      internalID: 292888865816357886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_129
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d19abcc5ddc4ffb0800000000000000
+      internalID: -4614837400001408558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_130
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 989ca55480b736160800000000000000
+      internalID: 7017587919826897289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_131
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f52005fa5d01490800000000000000
+      internalID: -7777481607530520769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_132
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85edcf4c31987ae90800000000000000
+      internalID: -7014487176603967912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_133
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d2d5b9dbe4c8530800000000000000
+      internalID: 3858545557012032903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_134
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75246d09ef9e18490800000000000000
+      internalID: -7745652604539616681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_135
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 819
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3b2ece29f9ff9d60800000000000000
+      internalID: 7899307120058575678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_136
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 773
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e0715d851a63bbc0800000000000000
+      internalID: -3768551822381190935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_137
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 785
+        width: 289
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dec5630b0380d510800000000000000
+      internalID: 1571900353277185748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_138
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da9384437734e5020800000000000000
+      internalID: 2332375836281813421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_139
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d38e8e1e54be8da40800000000000000
+      internalID: 5393319239151577149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_140
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 475a4b920d252fbe0800000000000000
+      internalID: -1445001476426128012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_141
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ca3c2d23182309c0800000000000000
+      internalID: -3962279184328541503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_142
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b7863ebb0261b960800000000000000
+      internalID: 7615976247435626423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_143
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db7562ddd60830c70800000000000000
+      internalID: 8936127294983264189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_144
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a87c20555ebab80800000000000000
+      internalID: -8382354128138433973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_145
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d15e9b08561f03750800000000000000
+      internalID: 6282786898435499293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_146
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf2609f5a8e28c3a0800000000000000
+      internalID: -6645010078341504261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_147
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebf0c92f15ee195b0800000000000000
+      internalID: -5363243645491474498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_148
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b3677839c875ca60800000000000000
+      internalID: 7693688344063468464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_149
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 331fa64432717af20800000000000000
+      internalID: 3433738681132446003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_150
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b3229d733346e8b0800000000000000
+      internalID: -5123333637658238030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_151
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdeaed7d7059a5780800000000000000
+      internalID: -8693472269766316321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_152
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf22894daba244b0800000000000000
+      internalID: -5457611037668659268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_153
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb6c1c2e3e6a84050800000000000000
+      internalID: 5785057219049539260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_154
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507cbddd8ac292050800000000000000
+      internalID: 5776197100867667717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_155
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 787
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11388f52fbcb70350800000000000000
+      internalID: 5982958159146812177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_156
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 703
+        width: 289
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5832ce5570a23b060800000000000000
+      internalID: 6967959259466965893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_157
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32ac29c5354860af0800000000000000
+      internalID: -430511220797027805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_158
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b83f69c1a925645f0800000000000000
+      internalID: -772839464189365365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_159
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6cc1d9a32e60dfe0800000000000000
+      internalID: -1166311204036948882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_160
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a44283acd3bc0ec0800000000000000
+      internalID: -3599304241958468442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_161
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9445a3075f4df2560800000000000000
+      internalID: 7291280472351069257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_162
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b3920a08a4ed99a0800000000000000
+      internalID: -6224567699582577742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_163
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 336c59041327f3930800000000000000
+      internalID: 4125141339557185075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_164
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a75d2d1a6c109bb40800000000000000
+      internalID: 5456394376166167930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_165
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ed860a704a135360800000000000000
+      internalID: 7157093097049329129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_166
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b46aa23e8ff9fe3b0800000000000000
+      internalID: -5480986330174675381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_167
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33e5536efa57f0fc0800000000000000
+      internalID: -3526470584865825229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_168
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b07819d866d84d70800000000000000
+      internalID: 9027701198871359672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_169
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09b09f1e3dbbc09a0800000000000000
+      internalID: -6265426462875513968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_170
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6c98897ebdfdba0800000000000000
+      internalID: -6061884785674303819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_171
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ad3219e413ebe30800000000000000
+      internalID: 4521105289438812831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_172
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04858ff44de7120e0800000000000000
+      internalID: -2296414884642400192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_173
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1057ef000bc95d20800000000000000
+      internalID: 3267866205761261594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_174
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 755
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0c55a1a698b7f360800000000000000
+      internalID: 7203429086098971661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_175
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 709
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b5f60e3ac98eb640800000000000000
+      internalID: 5097663329947022769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_176
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e184359ae24dd0400800000000000000
+      internalID: 292122847723341854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_177
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed671acc5f9a76c70800000000000000
+      internalID: 8964320456469477086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_178
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a94ccbb13024fd300800000000000000
+      internalID: 279014283037951130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_179
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95e2654afaf5f73f0800000000000000
+      internalID: -900896192469782951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_180
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2027e0a89e8ae02a0800000000000000
+      internalID: -6769287468894227966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_181
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2d38df58f3e57bc0800000000000000
+      internalID: -3785869255835632339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_182
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95874d8483ad35ca0800000000000000
+      internalID: -6029235540844054439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_183
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24d938275401912d0800000000000000
+      internalID: -3307594560866902718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_184
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29b3a6a55fa8c4c90800000000000000
+      internalID: -7184214519174251630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_185
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdc094ba8459c72d0800000000000000
+      internalID: -3279582289288688421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_186
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c5d41602f6f9ac40800000000000000
+      internalID: 5524217937291171271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_187
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33e43da2dfb634790800000000000000
+      internalID: -7547069815453430221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_188
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0773c1f78f4f0ee50800000000000000
+      internalID: 6836733582470035312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_189
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e67909afcda9fcc80800000000000000
+      internalID: -8300245314333272210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_190
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af939cea9ec6839c0800000000000000
+      internalID: -3947285322474636806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_191
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27735a9fc45b23970800000000000000
+      internalID: 8733241969635309426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_192
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 433571e7b5de8cec0800000000000000
+      internalID: -3546323729341000908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_193
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 723
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc4b1074a5b3b25d0800000000000000
+      internalID: -3086307860707953461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_194
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e62f43fd415ae5e70800000000000000
+      internalID: 9105897005652439662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_195
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 471e64e055ad5e060800000000000000
+      internalID: 6982226856154423668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_196
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8428585ef3d5e5440800000000000000
+      internalID: 4926477571404956232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_197
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a580e5274a58690800000000000000
+      internalID: -7600487985007011194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_198
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10730c254d2ebc860800000000000000
+      internalID: 7551378601766041345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_199
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24f0a5ee41fe94470800000000000000
+      internalID: 8379491454876782402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_200
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3fde1acd3a6de5e0800000000000000
+      internalID: -1878728655927058630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_201
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81d416b4475f57e30800000000000000
+      internalID: 4500773282456358168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_202
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0980d3debe5b38360800000000000000
+      internalID: 7170775056606103696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_203
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f091c7a5bf6e2cf40800000000000000
+      internalID: 5747410041707436303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_204
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c484d2fa8d1e949c0800000000000000
+      internalID: -3942371678017992628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_205
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fdef962c51627410800000000000000
+      internalID: 1473347076516474353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_206
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 007027473be41c5e0800000000000000
+      internalID: -1891143835859155200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_207
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e4311843cb4f8840800000000000000
+      internalID: 5228480994500228328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_208
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b56e3c19dfed31f0800000000000000
+      internalID: -1063430221228776012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_209
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d56267bfef89380800000000000000
+      internalID: -8964134702308500183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_210
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9ba29de6f93591a0800000000000000
+      internalID: -6803467929362715746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_211
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 691
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11012c4d1111e9480800000000000000
+      internalID: -8890649846101176303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_212
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 645
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 511e8ea0dcd0aeb80800000000000000
+      internalID: -8364858183584784107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_213
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7799e0b2cb0d22650800000000000000
+      internalID: 6206752743064770935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_214
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59301af53d3eef7d0800000000000000
+      internalID: -2882616214488546411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_215
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e27266ec3f2a9770800000000000000
+      internalID: 8618252775536620264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_216
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bce0c698e356b08a0800000000000000
+      internalID: -6337860731325903157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_217
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95e69b8c6ccedb140800000000000000
+      internalID: 4737202721578905177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_218
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12c0c7e197efa3380800000000000000
+      internalID: -8990593909935829983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_219
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b06a5556b087c1f60800000000000000
+      internalID: 8006406227897984523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_220
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d95277000274dfc0800000000000000
+      internalID: -3471024068345308715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_221
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b015ec29972b917a0800000000000000
+      internalID: -6405892759734038261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_222
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24fb216722f8f4910800000000000000
+      internalID: 1823833752280940354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_223
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a491ea471bd21dca0800000000000000
+      internalID: -5993959388863391414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_224
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e371164f006f5e0800000000000000
+      internalID: -1876311145152299502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_225
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a07b4540d9e8efc0800000000000000
+      internalID: -3465262832536555359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_226
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da7cf75c6bc2186b0800000000000000
+      internalID: -5295902523301836883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_227
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8996ff07c0767b90800000000000000
+      internalID: -7244478950310241909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_228
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34409088a524df1a0800000000000000
+      internalID: -6774185307898575805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_229
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 355428c61e0f34ab0800000000000000
+      internalID: -5024907908236556973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_230
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 050ce3e2db6b6b9e0800000000000000
+      internalID: -1605895293470064560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_231
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 581
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89d21044af0c11740800000000000000
+      internalID: 5121086432412249496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_232
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 517
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5deed919b2b8ae650800000000000000
+      internalID: 6262971251054997205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_233
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 453
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2daf1202cac36160800000000000000
+      internalID: 7017675578981461294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_234
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 389
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e2ce84263d52bca0800000000000000
+      internalID: -6002632866208496925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_235
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 325
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 139d15d7ab7ee2930800000000000000
+      internalID: 4120485497243031857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_236
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 261
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d15e4f4709298070800000000000000
+      internalID: 8109057715429331408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_237
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be32a85b567f8cf0800000000000000
+      internalID: -247849319780958543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_238
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf98ac4c8bdfc7320800000000000000
+      internalID: 2557197658457016827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_239
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d8d62547fa509b00800000000000000
+      internalID: 833265949127137491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_240
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53ddc3cb9c9af49e0800000000000000
+      internalID: -1634901455800574667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_241
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0abbf101d6a1af60800000000000000
+      internalID: 8043893826072066570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_242
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2c90184c08bbc350800000000000000
+      internalID: 6038122088308448302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_243
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d9b8bb5de6021900800000000000000
+      internalID: 653592512437991893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_244
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ec34582eaf3eae70800000000000000
+      internalID: 9128303511960042729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_245
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e97e14f9fce9cb0800000000000000
+      internalID: -4855215065346367846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_246
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 666b84c9fb80f7ba0800000000000000
+      internalID: -6089138552127834522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_247
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33b19acf167f6a7c0800000000000000
+      internalID: -4060286013805094093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_248
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13c879aff904b8b40800000000000000
+      internalID: 5443515630455589937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_249
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f7689bb8a6e034c0800000000000000
+      internalID: -4309691231017342988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_250
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9d568dbf3f4ff440800000000000000
+      internalID: 4971779648821550495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_251
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf8c39573174b1a60800000000000000
+      internalID: 7645782941294119163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_252
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 984a6b41183033f40800000000000000
+      internalID: 5706909005741728905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_253
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e872fa4aa17704800800000000000000
+      internalID: 594606107128702862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_254
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1
+        width: 14
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d845e088e8c95c890800000000000000
+      internalID: -7438367073550576499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_255
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 0
+        width: 866
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b316fe3a7104038a0800000000000000
+      internalID: -6327487006176747205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_256
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 197
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e710bc1d06f99d520800000000000000
+      internalID: 2727386287534965118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_257
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 133
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c145e146082abdc0800000000000000
+      internalID: -3622538942925684283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_258
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 69
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd0a214642c987320800000000000000
+      internalID: 2555964468644454620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shot_01-Recovered_259
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 5
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca20171357de2960800000000000000
+      internalID: 7579231974780316358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
