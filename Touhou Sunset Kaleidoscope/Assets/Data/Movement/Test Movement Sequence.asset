@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSteps:
   - pattern: {fileID: 11400000, guid: e6fe29bea6e0ea744996e0eb5735c37a, type: 2}
-    duration: 2
+    duration: 3
     delayBeforeNext: 0
   - pattern: {fileID: 11400000, guid: eaa31e7064b5a2c46b8a13046a9c5ce3, type: 2}
     duration: 2
-    delayBeforeNext: 1
+    delayBeforeNext: 0
   - pattern: {fileID: 11400000, guid: 64dcbf380a7eec74aa1ace72f7440a22, type: 2}
-    duration: 10
+    duration: 3
     delayBeforeNext: 0
   loopSequence: 0

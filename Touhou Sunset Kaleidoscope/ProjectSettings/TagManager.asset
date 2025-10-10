@@ -23,11 +23,11 @@ TagManager:
   - 
   - Water
   - UI
-  - Playable Area
+  - 
+  - 
   - Background
-  - Game Objects
-  - 
-  - 
+  - Player
+  - Enemies
   - 
   - 
   - 
@@ -50,17 +50,23 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
+  - name: Playable Area
     uniqueID: 653776647
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Game Objects
+  - name: Enemies
     uniqueID: 2981919301
     locked: 0
-  - name: Bullets
+  - name: Player
     uniqueID: 2683733143
+    locked: 0
+  - name: Out of Bounds
+    uniqueID: 1489019633
+    locked: 0
+  - name: UI
+    uniqueID: 1876629289
     locked: 0
   m_RenderingLayers:
   - Default

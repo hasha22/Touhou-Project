@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 693547507023586241}
   - component: {fileID: 7284270963906509354}
   - component: {fileID: 670845344966995518}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -59,21 +59,23 @@ MonoBehaviour:
   hasConvertedPower: 0
   powerItemCount: 7
   spreadDegrees: 120
-  startAngle: 0
   powerDeathVelocity: 200
   respawnDelay: 0.5
   respawnPoint: {fileID: 0}
   riseDistance: 1.5
   riseSpeed: 2
+  lowerLimit: 10
+  upperLimit: 100
+  canPullItems: 1
   invulnerabilityTime: 4
   flickeringDelay: 0.1
   autoCollectY: 2
+  wasAboveAutoCollect: 0
   bombParent: {fileID: 0}
   bombDelay: 0.5
   bombPrefab: {fileID: 0}
   playerCollider: {fileID: 0}
-  playerMagnet: {fileID: 0}
-  canMove: 1
+  playerMagnetTransform: {fileID: 0}
 --- !u!114 &7345670271713101541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,6 +90,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSpeed: 0
   playableArea: {fileID: 0}
+  minBounds: {x: 0, y: 0}
+  maxBounds: {x: 0, y: 0}
 --- !u!114 &6381575422958579412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,7 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 392670056430834070}
   - component: {fileID: 4176292569134389203}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Magnet Zone
   m_TagString: Player Magnet
   m_Icon: {fileID: 0}
@@ -393,7 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4576629774671143622}
   - component: {fileID: 5192311149699131359}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Player Collider
   m_TagString: Player Magnet
   m_Icon: {fileID: 0}

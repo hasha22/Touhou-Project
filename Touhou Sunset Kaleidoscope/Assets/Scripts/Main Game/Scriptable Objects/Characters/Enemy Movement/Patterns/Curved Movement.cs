@@ -7,9 +7,10 @@ namespace KH
         public float horizontalSpeed = 2f;
         public float verticalSpeed = 1f;
         public float curveFrequency = 2f;
-        public override Vector2 GetNextPosition(Transform enemyTransform, float deltaTime, float timeInPattern)
+        public override Vector2 GetTotalMovement(Transform enemyTransform, float deltaTime)
         {
-            float curve = Mathf.Sin(timeInPattern * curveFrequency) * horizontalSpeed;
+            // do not use this yet
+            float curve = Mathf.Sin(curveFrequency) * horizontalSpeed;
             return new Vector2(curve, -verticalSpeed) * deltaTime;
         }
         /*

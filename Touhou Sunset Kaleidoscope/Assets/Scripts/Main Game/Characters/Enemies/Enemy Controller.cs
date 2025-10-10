@@ -28,6 +28,7 @@ namespace KH
         private Transform playableArea;
         private Vector2 minBounds, maxBounds;
         private PlayerManager playerManager;
+
         private void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -42,8 +43,6 @@ namespace KH
             Bounds bounds = area.bounds;
             minBounds = bounds.min;
             maxBounds = bounds.max;
-
-            spriteRenderer.enabled = false;
         }
         private void OnEnable()
         {
@@ -61,12 +60,10 @@ namespace KH
                 {
                     StopCoroutine(AttackSequence());
                 }
-                spriteRenderer.enabled = false;
             }
             else if (attackCoroutine == null)
             {
                 timer += Time.deltaTime;
-                spriteRenderer.enabled = true;
 
                 if (timer > enemyData.delayBeforeAttack)
                 {
@@ -89,6 +86,8 @@ namespace KH
             currentAttackSequence = data.attackSequence;
 
             currentMovementSequence = data.movementSequence;
+
+            spriteRenderer.enabled = true;
         }
         public void InitializeAttackSequence(AttackSequence attackSequence)
         {
@@ -109,17 +108,30 @@ namespace KH
                 MovementStep step = currentMovementSequence.movementSteps[index];
                 float elapsed = 0f;
 
+                Vector2 startPosition = rb.position;
+
                 while (elapsed < step.duration)
                 {
-                    Vector2 offset = step.pattern.GetNextPosition(transform, Time.deltaTime, elapsed / step.duration);
-                    rb.MovePosition(rb.position + offset);
                     elapsed += Time.deltaTime;
+                    float t = Mathf.Clamp01(elapsed / step.duration);
+
+                    // get total movement
+                    Vector2 totalOffset = step.pattern.GetTotalMovement(transform, step.duration);
+                    Vector2 targetPosition = startPosition + totalOffset;
+
+                    // lerp to target position
+                    rb.MovePosition(Vector2.Lerp(startPosition, targetPosition, t));
+
                     yield return null;
                 }
+                // final check to ensure enemy is on target
+                Vector2 finalOffset = step.pattern.GetTotalMovement(transform, step.duration);
+                rb.MovePosition(startPosition + finalOffset);
+
                 if (step.delayBeforeNext > 0)
                     yield return new WaitForSeconds(step.delayBeforeNext);
-                index++;
 
+                index++;
                 if (index >= currentMovementSequence.movementSteps.Count)
                 {
                     if (currentMovementSequence.loopSequence)

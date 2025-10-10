@@ -6,14 +6,12 @@ namespace KH
     {
         public bool isMovingRight = true;
 
-        public override Vector2 GetNextPosition(Transform enemyTransform, float deltaTime, float timeInPattern)
+        public override Vector2 GetTotalMovement(Transform enemyTransform, float duration)
         {
             float horizontal = isMovingRight ? 1f : -1f;
-            float speed = moveSpeed * accelerationCurve.Evaluate(timeInPattern);
-
-            Vector2 direction = new Vector2(horizontal, 0f).normalized;
-
-            return direction * speed * deltaTime;
+            float totalDistance = moveSpeed * duration;
+            Vector2 direction = new Vector2(horizontal, 0f);
+            return direction * totalDistance;
         }
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6761688253801739693}
   - component: {fileID: 1764176293983299457}
   - component: {fileID: 2513538193388627034}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bomb Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7011211048420742404}
   - component: {fileID: 1960978928276779049}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

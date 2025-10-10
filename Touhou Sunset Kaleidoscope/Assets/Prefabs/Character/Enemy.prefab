@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1363743580092929292}
   - component: {fileID: 1351537361120914200}
   - component: {fileID: -7521221502336096494}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -53,6 +53,8 @@ MonoBehaviour:
   currentHealth: 0
   startOnEnable: 1
   fireOriginOffset: {x: 0, y: 0}
+  timer: 0
+  currentMovementSequence: {fileID: 0}
   hasDied: 0
 --- !u!95 &7282828294024160490
 Animator:
@@ -287,8 +289,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1313047995
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4e4b896ced6eefc4299b2fdfeea24dec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
