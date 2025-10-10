@@ -7,18 +7,24 @@ namespace KH
         public static ObjectPool instance { get; private set; }
 
         [Header("Object Pooling")]
-        private List<GameObject> pooledPlayerObjects = new List<GameObject>();
-        private List<GameObject> pooledEnemyObjects = new List<GameObject>();
+        private List<GameObject> pooledPlayerBullets = new List<GameObject>();
+        private List<GameObject> pooledEnemyBullets = new List<GameObject>();
         private List<GameObject> pooledItems = new List<GameObject>();
-        [SerializeField] private int amountToPool1 = 100;
-        [SerializeField] private int amountToPool2 = 100;
-        [SerializeField] private int amountToPool3 = 100;
+        private List<GameObject> pooledEnemyObjects = new List<GameObject>();
+        [SerializeField] private int playerBulletsToPool = 100;
+        [SerializeField] private int enemyBulletsToPool = 100;
+        [SerializeField] private int itemsToPool = 100;
+        [SerializeField] private int enemiesToPool = 100;
+        [Space]
         [SerializeField] private GameObject playerBulletPrefab;
         [SerializeField] private GameObject enemyBulletPrefab;
         [SerializeField] private GameObject itemPrefab;
+        [SerializeField] private GameObject enemyObjectPrefab;
+        [Space]
         [SerializeField] private Transform playerBulletsContainer;
         [SerializeField] private Transform enemyBulletsContainer;
         [SerializeField] private Transform itemContainer;
+        [SerializeField] private Transform enemyContainer;
 
         private void Awake()
         {
@@ -31,23 +37,23 @@ namespace KH
             {
                 Destroy(gameObject);
             }
-            for (int i = 0; i < amountToPool1; i++)
+            for (int i = 0; i < playerBulletsToPool; i++)
             {
                 GameObject bullet = Instantiate(playerBulletPrefab);
                 bullet.transform.SetParent(playerBulletsContainer);
 
                 bullet.SetActive(false);
-                pooledPlayerObjects.Add(bullet);
+                pooledPlayerBullets.Add(bullet);
             }
-            for (int i = 0; i < amountToPool2; i++)
+            for (int i = 0; i < enemyBulletsToPool; i++)
             {
                 GameObject bullet = Instantiate(enemyBulletPrefab);
                 bullet.transform.SetParent(enemyBulletsContainer);
 
                 bullet.SetActive(false);
-                pooledEnemyObjects.Add(bullet);
+                pooledEnemyBullets.Add(bullet);
             }
-            for (int i = 0; i < amountToPool3; i++)
+            for (int i = 0; i < itemsToPool; i++)
             {
                 GameObject item = Instantiate(itemPrefab);
                 item.transform.SetParent(itemContainer);
@@ -55,28 +61,35 @@ namespace KH
                 item.SetActive(false);
                 pooledItems.Add(item);
             }
+            for (int i = 0; i < enemiesToPool; i++)
+            {
+                GameObject enemy = Instantiate(enemyObjectPrefab);
+                enemy.transform.SetParent(enemyContainer);
+                enemy.SetActive(false);
+                pooledEnemyObjects.Add(enemy);
+            }
         }
 
         public GameObject GetPooledPlayerObject()
         {
-            for (int i = 0; i < pooledPlayerObjects.Count; i++)
+            for (int i = 0; i < pooledPlayerBullets.Count; i++)
             {
-                if (!pooledPlayerObjects[i].activeInHierarchy)
+                if (!pooledPlayerBullets[i].activeInHierarchy)
                 {
-                    pooledPlayerObjects[i].SetActive(true);
-                    return pooledPlayerObjects[i];
+                    pooledPlayerBullets[i].SetActive(true);
+                    return pooledPlayerBullets[i];
                 }
             }
             return null;
         }
-        public GameObject GetPooledEnemyObject()
+        public GameObject GetPooledEnemyBullet()
         {
-            for (int i = 0; i < pooledEnemyObjects.Count; i++)
+            for (int i = 0; i < pooledEnemyBullets.Count; i++)
             {
-                if (!pooledEnemyObjects[i].activeInHierarchy)
+                if (!pooledEnemyBullets[i].activeInHierarchy)
                 {
-                    pooledEnemyObjects[i].SetActive(true);
-                    return pooledEnemyObjects[i];
+                    pooledEnemyBullets[i].SetActive(true);
+                    return pooledEnemyBullets[i];
                 }
             }
             return null;
@@ -93,6 +106,17 @@ namespace KH
             }
             return null;
         }
+        public GameObject GetPooledEnemyObject()
+        {
+            for (int i = 0; i < pooledEnemyObjects.Count; i++)
+            {
+                if (!pooledEnemyObjects[i].activeInHierarchy)
+                {
+                    return pooledEnemyObjects[i];
+                }
+            }
+            return null;
+        }
         public void ReturnToPool(GameObject gameObject)
         {
             gameObject.SetActive(false);
@@ -103,7 +127,7 @@ namespace KH
         }
         public GameObject SpawnBullet(Vector2 worldPos)
         {
-            GameObject bullet = GetPooledEnemyObject();
+            GameObject bullet = GetPooledEnemyBullet();
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
             rb.position = worldPos;

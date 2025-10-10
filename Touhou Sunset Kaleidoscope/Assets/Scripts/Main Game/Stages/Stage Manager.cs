@@ -1,11 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
 namespace KH
 {
     public class StageManager : MonoBehaviour
     {
-        [Header("Data")]
-        [SerializeField] private Transform playableArea;
         public static StageManager instance { get; private set; }
+
+        [Header("Stage Data")]
+        public List<WaveTemplate> waves;
+        private int currentWaveIndex;
         private void Awake()
         {
             if (instance == null)
@@ -18,6 +21,22 @@ namespace KH
                 Destroy(gameObject);
             }
 
+        }
+        private void Start()
+        {
+            if (waves.Count > 0)
+            {
+                currentWaveIndex = 0;
+                WaveManager.instance.InitializeWave(waves[currentWaveIndex]);
+            }
+        }
+        private void Update()
+        {
+            if (WaveManager.instance.IsWaveFinished() && currentWaveIndex < waves.Count - 1)
+            {
+                currentWaveIndex++;
+                WaveManager.instance.InitializeWave(waves[currentWaveIndex]);
+            }
         }
 
     }

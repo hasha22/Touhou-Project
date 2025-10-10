@@ -208,5 +208,29 @@ namespace KH
                 itemController.currentPullRadius = itemController.defaultPullRadius;
             }
         }
+        public void SpawnItem(ItemToSpawn item, Vector3 spawnPosition)
+        {
+            switch (item)
+            {
+                case ItemToSpawn.Power:
+                    SpawnRegularPowerItem(spawnPosition);
+                    break;
+                case ItemToSpawn.GreatPower:
+                    SpawnGreatPowerItem(spawnPosition);
+                    break;
+                case ItemToSpawn.Score:
+                    SpawnRegularScoreItem(spawnPosition);
+                    break;
+                case ItemToSpawn.GreatScore:
+                    SpawnGreatPowerItem(spawnPosition);
+                    break;
+                case ItemToSpawn.FullPower:
+                    SpawnFullPowerItem(spawnPosition);
+                    break;
+                case ItemToSpawn.OneUp:
+                    Spawn1UpItem(spawnPosition);
+                    break;
+            }
+        }
     }
 }
