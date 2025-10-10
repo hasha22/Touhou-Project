@@ -4,20 +4,9 @@ namespace KH
     [CreateAssetMenu(menuName = "Movement/Patterns/Curved")]
     public class CurvedMovement : EnemyMovementPattern
     {
-        public float horizontalSpeed = 2f;
-        public float verticalSpeed = 1f;
-        public float curveFrequency = 2f;
-        public override Vector2 GetTotalMovement(Transform enemyTransform, float deltaTime)
-        {
-            // do not use this yet
-            float curve = Mathf.Sin(curveFrequency) * horizontalSpeed;
-            return new Vector2(curve, -verticalSpeed) * deltaTime;
-        }
-        /*
         public bool moveDown = true;
         public float curveAmplitude = 1f;
         public float curveFrequency = 2f;
-
         private float timeOffset;
         private float directionMultiplier;
 
@@ -28,15 +17,23 @@ namespace KH
             timeOffset = Random.Range(0f, 2f * Mathf.PI);
         }
 
-        public override Vector2 GetNextPosition(Transform enemyTransform, float deltaTime, float timeInPattern)
+        public override Vector2 GetTotalMovement(Transform enemyTransform, float duration)
         {
             float dirY = moveDown ? -1f : 1f;
-            float yMovement = dirY * moveSpeed * deltaTime;
 
-            float xMovement = Mathf.Sin(Time.time * curveFrequency + timeOffset) * curveAmplitude * deltaTime * directionMultiplier;
+            // Total vertical movement
+            float totalY = dirY * moveSpeed * duration;
 
-            return new Vector2(xMovement, yMovement);
-        }*/
+            // For horizontal: integrate the sine wave over the duration
+            // The integral of sin(x) is -cos(x)
+            float endPhase = curveFrequency * duration + timeOffset;
+            float startPhase = timeOffset;
+
+            float totalX = (Mathf.Cos(startPhase) - Mathf.Cos(endPhase)) *
+                           (curveAmplitude / curveFrequency) * directionMultiplier;
+
+            return new Vector2(totalX, totalY);
+        }
     }
 }
 

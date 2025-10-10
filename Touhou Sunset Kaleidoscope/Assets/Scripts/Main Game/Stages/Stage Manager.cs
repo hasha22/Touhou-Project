@@ -32,10 +32,13 @@ namespace KH
         }
         private void Update()
         {
-            if (WaveManager.instance.IsWaveFinished() && currentWaveIndex < waves.Count - 1)
+            if (WaveManager.instance.currentWave != null)
             {
-                currentWaveIndex++;
-                WaveManager.instance.InitializeWave(waves[currentWaveIndex]);
+                if (WaveManager.instance.IsWaveFinished() && currentWaveIndex < waves.Count - 1)
+                {
+                    currentWaveIndex++;
+                    WaveManager.instance.InitializeWave(waves[currentWaveIndex]);
+                }
             }
         }
 

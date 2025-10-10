@@ -8,7 +8,7 @@ namespace KH
         [Header("Wave Data")]
         [SerializeField] private float waveTimer = 0;
         private int nextSpawnIndex = 0;
-        [SerializeField] private WaveTemplate currentWave;
+        public WaveTemplate currentWave;
         private void Awake()
         {
             if (instance == null)
