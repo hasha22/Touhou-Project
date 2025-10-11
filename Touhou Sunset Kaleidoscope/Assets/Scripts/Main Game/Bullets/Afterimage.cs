@@ -19,12 +19,14 @@ namespace KH
         {
             rb.MovePosition(rb.position + direction * afterImageSpeed * Time.fixedDeltaTime);
         }
-        public void InitializeAfterImage(Vector2 dir, float speed, Sprite sprite, Vector2 position)
+        public void InitializeAfterImage(Vector2 dir, float speed, Sprite sprite, Vector2 position, Vector2 playerVelocity)
         {
             transform.position = new Vector2(position.x, position.y - yOffset);
             direction = dir.normalized;
             afterImageSpeed = speed;
             spriteRenderer.sprite = sprite;
+
+            //rb.linearVelocity = (direction.normalized * speed) - new Vector2(0f, playerVelocity.y);
         }
     }
 }

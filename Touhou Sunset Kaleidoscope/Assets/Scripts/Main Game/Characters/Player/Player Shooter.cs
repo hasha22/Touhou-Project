@@ -55,8 +55,6 @@ namespace KH
             Vector3 spawnPosition1 = transform.position + (Vector3)playerManager.characterData.shotType.spawnOffset1;
             Vector3 spawnPosition2 = transform.position + (Vector3)playerManager.characterData.shotType.spawnOffset2;
 
-            Debug.Log($"Player Velocity: {rb.linearVelocity} | Spawn Pos: {spawnPosition1}");
-
             // Grabs bullets from pool
             GameObject bulletObject1 = ObjectPool.instance.GetPooledPlayerObject();
             GameObject bulletObject2 = ObjectPool.instance.GetPooledPlayerObject();
@@ -75,14 +73,16 @@ namespace KH
                     playerManager.characterData.shotType.speed,
                     playerManager.characterData.shotType.sprite,
                     playerManager.characterData.shotType.spriteAfterImage,
-                    intDamage);
+                    intDamage,
+                    rb.linearVelocity);
 
                 BulletController bullet2 = bulletObject2.GetComponent<BulletController>();
                 bullet2.InitializePlayerBullet(Vector2.up,
                     playerManager.characterData.shotType.speed,
                     playerManager.characterData.shotType.sprite,
                     playerManager.characterData.shotType.spriteAfterImage,
-                    intDamage);
+                    intDamage,
+                    rb.linearVelocity);
 
             }
         }
