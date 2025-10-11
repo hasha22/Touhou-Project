@@ -22,7 +22,7 @@ namespace KH
                 GameObject bullet = ObjectPool.instance.SpawnBullet(origin);
 
                 BulletController bulletController = bullet.GetComponent<BulletController>();
-                bulletController.InitializeEnemyBullet(direction, defaultBulletSpeed, bulletSprite);
+                bulletController.InitializeEnemyBullet(direction, defaultBulletSpeed, bulletType.sprite, bulletType);
 
                 angle += step;
             }

@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96eb5869044a15f4294391deb0e9b68f, type: 3}
   m_Name: Targeted Bullet
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5088386342807039593, guid: 18855869719bb554d9e13a739b256eb0, type: 3}
-  bulletSprite: {fileID: 21300000, guid: 0f432b8045840f0469f753591a3f73b4, type: 3}
+  bulletType: {fileID: 11400000, guid: f99a85186606fd24b8760314f8a7c7b7, type: 2}
   defaultBulletSpeed: 3

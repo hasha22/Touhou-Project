@@ -5,6 +5,12 @@ namespace KH
     {
 
     }
+    public enum ColliderType
+    {
+        Box,
+        Circle,
+        Capsule
+    }
     public enum EnemyType
     {
         Fairy,

@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f11d96b8e82090c419759b60f961bc53, type: 3}
   m_Name: Ring Pattern
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5088386342807039593, guid: 18855869719bb554d9e13a739b256eb0, type: 3}
-  bulletSprite: {fileID: 21300000, guid: 5df9980d76aafed418f60553d18f48b8, type: 3}
+  bulletType: {fileID: 11400000, guid: 785b44ed690738a4aa069e96fcebf983, type: 2}
   defaultBulletSpeed: 3
   count: 36
   spreadDegrees: 360

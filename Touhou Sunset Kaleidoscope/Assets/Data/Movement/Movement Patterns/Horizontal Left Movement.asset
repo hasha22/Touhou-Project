@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Horizontal Left Movement
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  isMovingRight: 1
+  isMovingRight: 0

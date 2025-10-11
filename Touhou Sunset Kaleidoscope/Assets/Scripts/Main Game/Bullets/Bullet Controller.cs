@@ -41,10 +41,42 @@ namespace KH
             Afterimage img = afterImage.GetComponent<Afterimage>();
             img.InitializeAfterImage(Vector2.up, speed, afterImageSprite, transform.position, playerRb.linearVelocity);
         }
-        public void InitializeEnemyBullet(Vector2 dir, float speed, Sprite sprite)
+        public void InitializeEnemyBullet(Vector2 dir, float speed, Sprite sprite, BulletType bulletType)
         {
             rb.linearVelocity = dir.normalized * speed;
             spriteRenderer.sprite = sprite;
+
+            // Removes collider, then reapplies the proper one
+            Collider2D collider = GetComponent<Collider2D>();
+            DestroyImmediate(collider);
+
+            float spriteWidth = sprite.bounds.size.x;
+            float spriteHeight = sprite.bounds.size.y;
+
+            switch (bulletType.colliderType)
+            {
+                case ColliderType.Box:
+                    BoxCollider2D boxCol = gameObject.AddComponent<BoxCollider2D>();
+                    boxCol.isTrigger = true;
+                    boxCol.size = new Vector2(spriteWidth * bulletType.boxSize.x, spriteHeight * bulletType.boxSize.y);
+                    boxCol.offset = new Vector2(spriteWidth * bulletType.boxOffset.x, spriteHeight * bulletType.boxOffset.y);
+                    break;
+
+                case ColliderType.Circle:
+                    CircleCollider2D circleCol = gameObject.AddComponent<CircleCollider2D>();
+                    circleCol.isTrigger = true;
+                    circleCol.radius = Mathf.Max(spriteWidth, spriteHeight) * bulletType.circleRadius;
+                    circleCol.offset = new Vector2(spriteWidth * bulletType.circleOffset.x, spriteHeight * bulletType.circleOffset.y);
+                    break;
+
+                case ColliderType.Capsule:
+                    CapsuleCollider2D capsuleCol = gameObject.AddComponent<CapsuleCollider2D>();
+                    capsuleCol.isTrigger = true;
+                    capsuleCol.size = new Vector2(spriteWidth * bulletType.capsuleSize.x, spriteHeight * bulletType.capsuleSize.y);
+                    capsuleCol.offset = new Vector2(spriteWidth * bulletType.capsuleOffset.x, spriteHeight * bulletType.capsuleOffset.y);
+                    capsuleCol.direction = bulletType.capsuleDirection;
+                    break;
+            }
         }
 
     }

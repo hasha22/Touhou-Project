@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89cb18215e58aa64cb5d6befc7cdf952, type: 3}
-  m_Name: Singular Bullet
+  m_Script: {fileID: 11500000, guid: 35db7f9ce4c5c3b4e890c1274faa18d8, type: 3}
+  m_Name: Test Attack Sequence 2
   m_EditorClassIdentifier: 
-  bulletType: {fileID: 11400000, guid: 785b44ed690738a4aa069e96fcebf983, type: 2}
-  defaultBulletSpeed: 3
+  patternSteps:
+  - pattern: {fileID: 11400000, guid: 6c54d1c0f26700449be7e48bece1c012, type: 2}
+    delayBeforeNextPattern: 2.5
+  loopPattern: 1

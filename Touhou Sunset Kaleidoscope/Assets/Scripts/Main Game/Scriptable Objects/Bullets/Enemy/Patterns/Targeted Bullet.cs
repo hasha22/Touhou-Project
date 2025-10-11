@@ -18,7 +18,7 @@ namespace KH
             bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle - 90f); // subtracting by 90f because sprite is facing up.
 
             BulletController bulletController = bullet.GetComponent<BulletController>();
-            bulletController.InitializeEnemyBullet(directionToPlayer, defaultBulletSpeed, bulletSprite);
+            bulletController.InitializeEnemyBullet(directionToPlayer, defaultBulletSpeed, bulletType.sprite, bulletType);
         }
     }
 }

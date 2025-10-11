@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Test Combined Attack Sequence
   m_EditorClassIdentifier: 
   patternSteps:
-  - pattern: {fileID: 11400000, guid: f35b6982419af8a4391964e1d10db672, type: 2}
+  - pattern: {fileID: 11400000, guid: 0ef4014bacaa9c44890f936f5b9ff16d, type: 2}
     delayBeforeNextPattern: 0.5
-  - pattern: {fileID: 11400000, guid: f35b6982419af8a4391964e1d10db672, type: 2}
+  - pattern: {fileID: 11400000, guid: 0ef4014bacaa9c44890f936f5b9ff16d, type: 2}
     delayBeforeNextPattern: 0.5
-  - pattern: {fileID: 11400000, guid: f35b6982419af8a4391964e1d10db672, type: 2}
+  - pattern: {fileID: 11400000, guid: 0ef4014bacaa9c44890f936f5b9ff16d, type: 2}
     delayBeforeNextPattern: 0.5
-  - pattern: {fileID: 11400000, guid: f35b6982419af8a4391964e1d10db672, type: 2}
+  - pattern: {fileID: 11400000, guid: 6c54d1c0f26700449be7e48bece1c012, type: 2}
     delayBeforeNextPattern: 3
   - pattern: {fileID: 11400000, guid: f35b6982419af8a4391964e1d10db672, type: 2}
     delayBeforeNextPattern: 0.5
