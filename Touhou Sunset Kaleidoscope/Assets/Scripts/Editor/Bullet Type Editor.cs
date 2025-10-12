@@ -127,44 +127,49 @@ public class BulletTypeEditor : Editor
 
             GUI.DrawTexture(spriteRect, spriteTexture);
 
-            // Draw collider outline
-            DrawColliderOutline(spriteRect, bulletType);
+            // Draw hitbox collider (green)
+            DrawColliderOutline(spriteRect, bulletType, false);
+
+            // Draw graze collider (yellow)
+            DrawColliderOutline(spriteRect, bulletType, true);
         }
     }
 
-    private void DrawColliderOutline(Rect spriteRect, BulletType bulletType)
+    private void DrawColliderOutline(Rect spriteRect, BulletType bulletType, bool isGraze)
     {
         Vector2 spriteCenter = new Vector2(spriteRect.x + spriteRect.width / 2, spriteRect.y + spriteRect.height / 2);
 
-        Handles.color = new Color(0, 1, 0, 1);
+        // Green for hitbox, yellow for graze
+        Handles.color = isGraze ? new Color(1, 1, 0, 1) : new Color(0, 1, 0, 1);
 
-        switch (bulletType.colliderType)
+        ColliderType type = isGraze ? bulletType.grazeColliderType : bulletType.colliderType;
+
+        switch (type)
         {
             case ColliderType.Box:
-                DrawBoxColliderPreview(spriteRect, bulletType);
+                DrawBoxColliderPreview(spriteRect, bulletType, isGraze);
                 break;
 
             case ColliderType.Circle:
-                DrawCircleColliderPreview(spriteCenter, spriteRect, bulletType);
+                DrawCircleColliderPreview(spriteCenter, spriteRect, bulletType, isGraze);
                 break;
 
             case ColliderType.Capsule:
-                DrawCapsuleColliderPreview(spriteCenter, spriteRect, bulletType);
+                DrawCapsuleColliderPreview(spriteCenter, spriteRect, bulletType, isGraze);
                 break;
         }
     }
 
-    private void DrawBoxColliderPreview(Rect spriteRect, BulletType bulletType)
+    private void DrawBoxColliderPreview(Rect spriteRect, BulletType bulletType, bool isGraze)
     {
-        Sprite sprite = bulletType.sprite;
-        float spritePixelWidth = sprite.bounds.size.x;
-        float spritePixelHeight = sprite.bounds.size.y;
+        Vector2 size = isGraze ? bulletType.grazeBoxSize : bulletType.boxSize;
+        Vector2 offset = isGraze ? bulletType.grazeBoxOffset : bulletType.boxOffset;
 
-        float colliderWidth = spriteRect.width * bulletType.boxSize.x;
-        float colliderHeight = spriteRect.height * bulletType.boxSize.y;
+        float colliderWidth = spriteRect.width * size.x;
+        float colliderHeight = spriteRect.height * size.y;
 
-        float offsetX = spriteRect.x + (spriteRect.width / 2) + (spriteRect.width * bulletType.boxOffset.x);
-        float offsetY = spriteRect.y + (spriteRect.height / 2) - (spriteRect.height * bulletType.boxOffset.y);
+        float offsetX = spriteRect.x + (spriteRect.width / 2) + (spriteRect.width * offset.x);
+        float offsetY = spriteRect.y + (spriteRect.height / 2) - (spriteRect.height * offset.y);
 
         Rect colliderRect = new Rect(
             offsetX - colliderWidth / 2,
@@ -173,44 +178,56 @@ public class BulletTypeEditor : Editor
             colliderHeight
         );
 
-        Handles.DrawSolidRectangleWithOutline(colliderRect, new Color(0, 1, 0, 0.1f), new Color(0, 1, 0, 1));
+        Color outlineColor = isGraze ? new Color(1, 1, 0, 1) : new Color(0, 1, 0, 1);
+        Handles.DrawSolidRectangleWithOutline(colliderRect, new Color(outlineColor.r, outlineColor.g, outlineColor.b, 0.1f), outlineColor);
     }
 
-    private void DrawCircleColliderPreview(Vector2 center, Rect spriteRect, BulletType bulletType)
+    private void DrawCircleColliderPreview(Vector2 center, Rect spriteRect, BulletType bulletType, bool isGraze)
     {
         Sprite sprite = bulletType.sprite;
         float spritePixelWidth = sprite.bounds.size.x;
         float spritePixelHeight = sprite.bounds.size.y;
 
+        float radius = isGraze ? bulletType.grazeCircleRadius : bulletType.circleRadius;
+        Vector2 offset = isGraze ? bulletType.grazeCircleOffset : bulletType.circleOffset;
+
         Vector2 offsetPos = new Vector2(
-            center.x + (spriteRect.width * bulletType.circleOffset.x),
-            center.y - (spriteRect.height * bulletType.circleOffset.y)
+            center.x + (spriteRect.width * offset.x),
+            center.y - (spriteRect.height * offset.y)
         );
 
-        float radiusPixels = Mathf.Max(spriteRect.width, spriteRect.height) * bulletType.circleRadius;
+        float radiusPixels = Mathf.Max(spriteRect.width, spriteRect.height) * radius;
 
         Handles.DrawWireDisc(offsetPos, Vector3.forward, radiusPixels);
-        Handles.color = new Color(0, 1, 0, 0.1f);
+        Color outlineColor = isGraze ? new Color(1, 1, 0, 1) : new Color(0, 1, 0, 1);
+        Handles.color = new Color(outlineColor.r, outlineColor.g, outlineColor.b, 0.1f);
         Handles.DrawSolidDisc(offsetPos, Vector3.forward, radiusPixels);
     }
 
-    private void DrawCapsuleColliderPreview(Vector2 center, Rect spriteRect, BulletType bulletType)
+
+    private void DrawCapsuleColliderPreview(Vector2 center, Rect spriteRect, BulletType bulletType, bool isGraze)
     {
         Sprite sprite = bulletType.sprite;
         float spritePixelWidth = sprite.bounds.size.x;
         float spritePixelHeight = sprite.bounds.size.y;
 
-        float width = spriteRect.width * bulletType.capsuleSize.x;
-        float height = spriteRect.height * bulletType.capsuleSize.y;
+        Vector2 size = isGraze ? bulletType.grazeCapsuleSize : bulletType.capsuleSize;
+        Vector2 offset = isGraze ? bulletType.grazeCapsuleOffset : bulletType.capsuleOffset;
+        CapsuleDirection2D direction = isGraze ? bulletType.grazeCapsuleDirection : bulletType.capsuleDirection;
+
+        float width = spriteRect.width * size.x;
+        float height = spriteRect.height * size.y;
 
         Vector2 offsetPos = new Vector2(
-            center.x + (spriteRect.width * bulletType.capsuleOffset.x),
-            center.y - (spriteRect.height * bulletType.capsuleOffset.y)
+            center.x + (spriteRect.width * offset.x),
+            center.y - (spriteRect.height * offset.y)
         );
 
         float radius = Mathf.Min(width, height) / 2;
+        Color outlineColor = isGraze ? new Color(1, 1, 0, 1) : new Color(0, 1, 0, 1);
+        Handles.color = outlineColor;
 
-        if (bulletType.capsuleDirection == CapsuleDirection2D.Vertical)
+        if (direction == CapsuleDirection2D.Vertical)
         {
             float halfHeight = height / 2 - radius;
 

@@ -56,6 +56,7 @@ namespace KH
 
         private void Awake()
         {
+            playerCollider.isTrigger = true;
             spriteRenderer = GetComponent<SpriteRenderer>();
             playerMovement = GetComponent<PlayerMovement>();
 
@@ -115,10 +116,28 @@ namespace KH
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if ((collision.CompareTag("Enemy Bullet") || collision.CompareTag("Enemy")) && playerCollider.enabled)
+            if (playerCollider.enabled)
             {
-                Die();
-                if (collision.CompareTag("Enemy Bullet")) { ObjectPool.instance.ReturnToPool(collision.gameObject); }
+                if (collision.CompareTag("Enemy"))
+                {
+                    Die();
+                }
+                if (collision.CompareTag("Enemy Bullet"))
+                {
+                    BulletController bulletController = collision.GetComponent<BulletController>();
+                    BulletGrazing bulletGrazing = collision.GetComponent<BulletGrazing>();
+
+                    if (!bulletGrazing.hasBeenGrazed && collision == bulletGrazing.grazeCollider)
+                    {
+                        bulletGrazing.hasBeenGrazed = true;
+                        bulletGrazing.OnGrazed();
+                    }
+                    else if (collision == bulletController.bulletHitBox)
+                    {
+                        Die();
+                        ObjectPool.instance.ReturnToPool(collision.gameObject);
+                    }
+                }
             }
         }
         public void AddPower(float power)

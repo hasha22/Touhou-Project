@@ -15,6 +15,7 @@ namespace KH
 
         [Header("Faith Variables")]
         public int Faith;
+        [SerializeField] private int pointItemValue = 500; // base value for faith multiplier
         [SerializeField] private float faithUpdateSpeed = 5000f;
         [SerializeField] private int minFaith = 50000;
         [SerializeField] private int faithDecreaseAmount = 600;
@@ -27,6 +28,9 @@ namespace KH
         private bool passedThird = false; // 80 million
         private bool passedFourth = false; // 150 million
 
+        [Header("Grazing")]
+        [SerializeField] private int grazeCount = 0;
+
         [Header("References")]
         private SaveSystem saveSystem;
         private PlayerManager playerManager;
@@ -37,6 +41,7 @@ namespace KH
         private void Awake()
         {
             saveSystem = new SaveSystem();
+            grazeCount = 0;
             playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
             if (instance == null)
             {
@@ -73,7 +78,6 @@ namespace KH
 
                 UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
             }
-
             if (displayedFaith < Faith)
             {
                 displayedFaith += Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
@@ -122,6 +126,7 @@ namespace KH
                 playerManager.AddLife();
                 passedFourth = true;
             }
+
         }
         public void AddScore(int score)
         {
@@ -153,6 +158,24 @@ namespace KH
             }
 
             faithDecreaseCoroutine = null;
+        }
+        public void RegisterGraze()
+        {
+            grazeCount++;
+            UIManager.instance.UpdateGrazeUI(grazeCount);
+        }
+        public int GetAdjustedPointItemValue()
+        {
+            // Each 3 grazes adds 10 points to faith items. formula from Embodiment of Scarlet Devil, tweak later
+            return pointItemValue + (grazeCount / 3) * 10;
+        }
+        public void ResetGrazes()
+        {
+            grazeCount = 0;
+        }
+        public int GetGrazeCount()
+        {
+            return grazeCount;
         }
     }
 }

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636842db1aa54ed4582077a73b33bf96, type: 3}
   m_Name: Normal Targeted Bullet
   m_EditorClassIdentifier: 
+  bulletID: 1
   colliderType: 2
+  grazeColliderType: 2
   sprite: {fileID: 21300000, guid: 0f432b8045840f0469f753591a3f73b4, type: 3}
   colliderSize: {x: 1, y: 1}
   colliderOffset: {x: 0, y: 0}
@@ -23,3 +25,10 @@ MonoBehaviour:
   capsuleSize: {x: 0.98, y: 1}
   capsuleOffset: {x: 0, y: 0}
   capsuleDirection: 0
+  grazeBoxSize: {x: 1.5, y: 1.5}
+  grazeBoxOffset: {x: 0, y: 0}
+  grazeCircleRadius: 0
+  grazeCircleOffset: {x: 0, y: 0}
+  grazeCapsuleSize: {x: 2, y: 2}
+  grazeCapsuleOffset: {x: 0, y: 0}
+  grazeCapsuleDirection: 0

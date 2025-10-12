@@ -14,8 +14,8 @@ namespace KH
         private List<GameObject> pooledEnemyObjects = new List<GameObject>();
         [SerializeField] private int playerBulletsToPool = 100;
         [SerializeField] private int playerBulletAfterImagesToPool = 100;
-        [SerializeField] private int enemyBulletsToPool = 100;
-        [SerializeField] private int itemsToPool = 100;
+        [SerializeField] private int enemyBulletsToPool = 500;
+        [SerializeField] private int itemsToPool = 300;
         [SerializeField] private int enemiesToPool = 100;
         [Space]
         [SerializeField] private GameObject playerBulletPrefab;

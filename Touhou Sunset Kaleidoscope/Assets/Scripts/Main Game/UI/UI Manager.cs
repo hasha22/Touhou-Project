@@ -12,6 +12,7 @@ namespace KH
         public TextMeshProUGUI currentFaith;
         public TextMeshProUGUI hiScore;
         public TextMeshProUGUI powerScore;
+        public TextMeshProUGUI grazes;
         [Space]
         public GameObject lifePrefab;
         [SerializeField] private Transform lifeContainer;
@@ -29,7 +30,6 @@ namespace KH
                 Destroy(gameObject);
             }
         }
-
         public void UpdateScoreUI(int score, int highScore)
         {
             if (currentScore != null)
@@ -46,6 +46,11 @@ namespace KH
         {
             if (powerScore != null)
             { powerScore.text = $"{power:F2}"; }
+        }
+        public void UpdateGrazeUI(float graze)
+        {
+            if (grazes != null)
+            { grazes.text = $"{graze}"; }
         }
         public void AddLife()
         {
