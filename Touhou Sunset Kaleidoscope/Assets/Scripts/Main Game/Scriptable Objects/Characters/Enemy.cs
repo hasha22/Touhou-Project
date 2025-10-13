@@ -1,7 +1,7 @@
 using UnityEngine;
 namespace KH
 {
-    [CreateAssetMenu(menuName = "Enemy Data")]
+    [CreateAssetMenu(menuName = "Enemy/Regular Enemy")]
     public class Enemy : ScriptableObject
     {
         [Header("Enemy Information")]

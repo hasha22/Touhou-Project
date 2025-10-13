@@ -1,7 +1,7 @@
 using UnityEngine;
 namespace KH
 {
-    [CreateAssetMenu(menuName = "Stage/Spawn Event")]
+    [CreateAssetMenu(menuName = "Stage/Enemy Spawn Event")]
     public class SpawnEvent : ScriptableObject
     {
         public int enemyID;

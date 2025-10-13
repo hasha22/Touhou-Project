@@ -8,6 +8,7 @@ namespace KH
 
         [Header("Enemies")]
         public List<Enemy> enemies = new List<Enemy>();
+        public List<Boss> bosses = new List<Boss>();
         private void Awake()
         {
             if (instance == null)
@@ -31,6 +32,10 @@ namespace KH
 
             enemyPrefab.gameObject.SetActive(true);
         }
+        public void SpawnBoss(SpawnEvent data)
+        {
+
+        }
         public Enemy GetEnemyByID(int id)
         {
             foreach (Enemy enemy in enemies)
@@ -38,6 +43,17 @@ namespace KH
                 if (enemy.enemyID == id)
                 {
                     return enemy;
+                }
+            }
+            return null;
+        }
+        public Boss GetBossByID(int id)
+        {
+            foreach (Boss boss in bosses)
+            {
+                if (boss.bossID == id)
+                {
+                    return boss;
                 }
             }
             return null;

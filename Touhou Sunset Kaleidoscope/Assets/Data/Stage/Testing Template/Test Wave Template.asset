@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnEvents:
   - {fileID: 11400000, guid: d1b899be39cc7244da1608bc2cc665cc, type: 2}
+  delayBeforeNextWave: 6

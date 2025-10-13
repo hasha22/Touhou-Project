@@ -6,6 +6,7 @@ namespace KH
     public class WaveTemplate : ScriptableObject
     {
         public List<SpawnEvent> spawnEvents;
+        public float delayBeforeNextWave;
     }
 }
 

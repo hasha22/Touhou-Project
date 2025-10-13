@@ -24,7 +24,7 @@ namespace KH
         public void InitializeWave(WaveTemplate wave)
         {
             currentWave = wave;
-            waveTimer = 0f; // resets wave timer each wave
+            waveTimer = 0f; // resets wave timer each wave.
             nextSpawnIndex = 0;
         }
         void Update()

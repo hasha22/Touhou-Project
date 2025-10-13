@@ -9,8 +9,7 @@ namespace KH
         [SerializeField] private int currentHealth;
 
         [Header("Shooting")]
-        private AttackSequence currentAttackSequence;
-        public bool startOnEnable = true;
+        public AttackSequence currentAttackSequence;
         public Vector2 fireOriginOffset = Vector2.zero;
         public float timer = 0f;
 
@@ -50,6 +49,10 @@ namespace KH
             {
                 StartCoroutine(MovementSequence());
             }
+        }
+        private void OnDisable()
+        {
+            attackCoroutine = null;
         }
 
         private void Update()

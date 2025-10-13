@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35db7f9ce4c5c3b4e890c1274faa18d8, type: 3}
-  m_Name: Ring Pattern Attack Sequence
+  m_Script: {fileID: 11500000, guid: 51dc3ee6dba917a418aa9bfe4eda77a3, type: 3}
+  m_Name: Smartest Spell Card Phase
   m_EditorClassIdentifier: 
-  patternSteps:
-  - pattern: {fileID: 11400000, guid: 6c54d1c0f26700449be7e48bece1c012, type: 2}
-    delayBeforeNextPattern: 3
-  loopPattern: 1
+  phaseName: Hail Sign "Hailstorm"
+  duration: 35
+  isSpellCard: 1
+  phaseMovementSequence: {fileID: 0}
+  phaseAttackSequence: {fileID: 0}
