@@ -16,6 +16,7 @@ TagManager:
   - 1 Up
   - Faith
   - Indicator
+  - AfterImage
   layers:
   - Default
   - TransparentFX

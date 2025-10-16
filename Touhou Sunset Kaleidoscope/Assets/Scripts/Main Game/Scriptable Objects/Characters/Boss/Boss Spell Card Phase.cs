@@ -6,7 +6,6 @@ namespace KH
     {
         public override void StartPhase(BossManager boss)
         {
-            Debug.Log($"Starting Spell Card: {phaseName}");
             // make UI changes here
             // begin attack sequence here
         }

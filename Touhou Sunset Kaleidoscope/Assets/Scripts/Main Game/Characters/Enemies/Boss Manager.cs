@@ -7,12 +7,13 @@ namespace KH
         //here goes nothin...
         [Header("Boss Data")]
         [SerializeField] private Boss bossData;
-        [SerializeField] private int currentBossHealth;
+        [SerializeField] private int currentBossPhaseHealth;
 
         [Header("Phases")]
-        public BossPhase[] phases;
-        private int currentPhaseIndex = 0;
+        public int currentPhaseIndex = 0;
         private BossPhase currentPhase;
+        private bool phaseEndedEarly = false;
+        [SerializeField] private float timerBeforeAttackSequenceBegins = 0f;
 
         [Header("Movement")]
         [SerializeField] private MovementSequence currentMovementSequence;
@@ -20,45 +21,142 @@ namespace KH
         [Header("Boss Attacks")]
         [SerializeField] private AttackSequence currentAttackSequence;
 
+        [Header("References")]
+        private BoxCollider2D boxCollider2D;
+        private SpriteRenderer spriteRenderer;
+        private Transform playableArea;
+        private Vector2 minBounds, maxBounds;
+        private PlayerManager playerManager;
+        private Rigidbody2D rb;
+
+        [Header("Coroutines")]
         private Coroutine phaseRoutine;
-        private void Start()
+        private void Awake()
         {
+            rb = GetComponent<Rigidbody2D>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            boxCollider2D = GetComponent<BoxCollider2D>();
+
+            playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
+            PlayerMovement playerMovement = playerManager.GetComponent<PlayerMovement>();
+            playableArea = playerMovement.playableArea;
+
+            BoxCollider2D area = playableArea.GetComponent<BoxCollider2D>();
+            Bounds bounds = area.bounds;
+            minBounds = bounds.min;
+            maxBounds = bounds.max;
+        }
+        private void Update()
+        {
+            if (!IsInPlayableArea(transform.position))
+            {
+                if (phaseRoutine != null)
+                {
+                    StopCoroutine(PhaseRoutine(currentPhase));
+                }
+            }
+            if (bossData != null)
+            {
+                UIManager.instance.UpdateHealth(currentBossPhaseHealth);
+                UIManager.instance.UpdateTimer();
+            }
+        }
+        public void InitializeBoss(Boss bossData)
+        {
+            this.bossData = bossData;
+            transform.position = bossData.spawnPoint;
+            transform.rotation = Quaternion.identity;
+
+            boxCollider2D.size = bossData.colliderSize;
+            boxCollider2D.offset = bossData.colliderOffset;
+            spriteRenderer.sprite = bossData.bossSprite;
+
+            spriteRenderer.enabled = true;
+
             StartNextPhase();
+            UIManager.instance.InitializeBossUI(bossData);
         }
         public void StartNextPhase()
         {
-            if (currentPhaseIndex >= phases.Length)
+            if (currentPhaseIndex >= bossData.phases.Length)
             {
-                // defeat boss logic
+                OnBossDefeated();
                 return;
             }
 
-            currentPhase = phases[currentPhaseIndex];
-            currentPhaseIndex++;
+            currentPhase = bossData.phases[currentPhaseIndex];
+            currentBossPhaseHealth = bossData.phases[currentPhaseIndex].phaseBossHealth;
 
             phaseRoutine = StartCoroutine(PhaseRoutine(currentPhase));
         }
         private IEnumerator PhaseRoutine(BossPhase phase)
         {
-            //set boss phase hp
             phase.StartPhase(this);
+            UIManager.instance.StartBossPhase(phase);
 
             float timer = 0f;
-            while (timer < phase.duration) // && boss has health
+            phaseEndedEarly = false;
+
+            while (timer < phase.duration && !phaseEndedEarly)
             {
-                //phase.UpdatePhase(this, Time.deltaTime);
                 timer += Time.deltaTime;
                 yield return null;
             }
 
             phase.EndPhase(this);
-            yield return new WaitForSeconds(1f); // small delay between phases
+            if (phase.isSpellCard)
+            {
+                UIManager.instance.OnLifeLost(bossData.phases.Length / 2);
+            }
+            StartCoroutine(BossInvulnerabilityCoroutine());// small delay and boss invulnerability between phases
+            currentPhaseIndex++;
+            StartNextPhase();
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player Bullet"))
+            {
+                BulletController bullet = collision.GetComponent<BulletController>();
+                TakeDamage(bullet.bulletDamage);
+                ObjectPool.instance.ReturnToPool(collision.gameObject);
+            }
+            else if (collision.CompareTag("AfterImage"))
+            {
+                ObjectPool.instance.ReturnToPool(collision.gameObject);
+            }
+        }
 
-            StartNextPhase(); // starts next phase
+        public void TakeDamage(int damage)
+        {
+            currentBossPhaseHealth -= damage;
+            ScoreManager.instance.AddScore(bossData.hitScore * damage);
+
+            if (currentBossPhaseHealth <= 0 && !phaseEndedEarly)
+            {
+                phaseEndedEarly = true;
+                currentBossPhaseHealth = 0;
+                currentPhase.EndPhase(this);
+            }
+
         }
         private void OnBossDefeated()
         {
             // trigger items drops, spell card bonus, etc.
+            Debug.Log("Boss Defeated!");
+            UIManager.instance.HideBossUI();
+            StopAllCoroutines();
+            Destroy(gameObject, 0.5f);
+        }
+        private bool IsInPlayableArea(Vector3 worldPos)
+        {
+            return worldPos.x >= minBounds.x && worldPos.y >= minBounds.y && worldPos.x < maxBounds.x && worldPos.y < maxBounds.y;
+        }
+        private IEnumerator BossInvulnerabilityCoroutine()
+        {
+            boxCollider2D.enabled = false;
+            yield return new WaitForSeconds(currentPhase.delayBeforeNextPhase);
+            boxCollider2D.enabled = true;
+            phaseRoutine = StartCoroutine(PhaseRoutine(bossData.phases[currentPhaseIndex]));
         }
     }
 }

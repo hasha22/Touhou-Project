@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: Fastest Movement Sequence 1
   m_EditorClassIdentifier: 
   movementSteps:
-  - pattern: {fileID: 0}
-    duration: 0
+  - pattern: {fileID: 11400000, guid: eaa31e7064b5a2c46b8a13046a9c5ce3, type: 2}
+    duration: 60
     delayBeforeNext: 0
-  - pattern: {fileID: 0}
-    duration: 0
-    delayBeforeNext: 0
-  loopSequence: 0
+  loopSequence: 1

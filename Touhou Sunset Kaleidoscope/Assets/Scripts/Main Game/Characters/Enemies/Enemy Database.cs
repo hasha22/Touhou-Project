@@ -32,9 +32,14 @@ namespace KH
 
             enemyPrefab.gameObject.SetActive(true);
         }
-        public void SpawnBoss(SpawnEvent data)
+        public void SpawnBoss(Boss bossData)
         {
+            Boss boss = GetBossByID(bossData.bossID);
 
+            GameObject bossPrefab = Instantiate(bossData.bossPrefab, bossData.spawnPoint, Quaternion.identity);
+            bossPrefab.transform.SetParent(ObjectPool.instance.importantObjectsParent);
+            BossManager bossManager = bossPrefab.GetComponent<BossManager>();
+            bossManager.InitializeBoss(bossData);
         }
         public Enemy GetEnemyByID(int id)
         {

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51dc3ee6dba917a418aa9bfe4eda77a3, type: 3}
   m_Name: Smartest Spell Card Phase
   m_EditorClassIdentifier: 
+  phaseBossHealth: 5000
   phaseName: Hail Sign "Hailstorm"
   duration: 35
   isSpellCard: 1
-  phaseMovementSequence: {fileID: 0}
-  phaseAttackSequence: {fileID: 0}
+  phaseMovementSequence: {fileID: 11400000, guid: 3855c1232a0f60b479de0aa50b9a29fb, type: 2}
+  phaseAttackSequence: {fileID: 11400000, guid: 2a9e556e8417ac4418ae77642bf3dd5e, type: 2}
+  delayBeforeNextPhase: 0

@@ -181,6 +181,10 @@ namespace KH
                 TakeDamage(bullet.bulletDamage);
                 ObjectPool.instance.ReturnToPool(collision.gameObject);
             }
+            else if (collision.CompareTag("AfterImage"))
+            {
+                ObjectPool.instance.ReturnToPool(collision.gameObject);
+            }
         }
         public void TakeDamage(int damage)
         {

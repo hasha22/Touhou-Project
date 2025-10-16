@@ -29,6 +29,7 @@ namespace KH
         [SerializeField] private Transform enemyBulletsContainer;
         [SerializeField] private Transform itemContainer;
         [SerializeField] private Transform enemyContainer;
+        public Transform importantObjectsParent;
 
         private void Awake()
         {

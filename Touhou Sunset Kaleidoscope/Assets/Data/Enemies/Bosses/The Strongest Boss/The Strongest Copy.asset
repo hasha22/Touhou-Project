@@ -10,17 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8654be18167745041b3e9e571d237bce, type: 3}
-  m_Name: The Strongest
+  m_Name: The Strongest Copy
   m_EditorClassIdentifier: 
-  bossName: Cirno
+  bossName: Fake Cirno
   bossSprite: {fileID: 21300000, guid: 78cea6b315d64494e973559c23e4a8d4, type: 3}
-  bossID: 0
+  bossID: 1
   bossPrefab: {fileID: 1623289750752492140, guid: 63c6ce0abcb187644921927cc8f9da0f, type: 3}
   hitScore: 0
-  phases:
-  - {fileID: 11400000, guid: 2982884877e7f6f4597bcbfa50a8c412, type: 2}
-  - {fileID: 11400000, guid: 8279148b589c6a748829f8b31e21e5f1, type: 2}
-  colliderSize: {x: 0.6, y: 0.98}
-  colliderOffset: {x: -0.014, y: 0.05}
-  spawnTimeInStage: 5
+  phases: []
+  colliderSize: {x: 0, y: 0}
+  colliderOffset: {x: 0, y: 0}
+  spawnTimeInStage: 900
   spawnPoint: {x: -2.76, y: 3.13, z: 0}

@@ -17,6 +17,9 @@ namespace KH
         private int currentWaveIndex;
         [SerializeField] private float timerBetweenWaves = 0f;
         private bool waitingForNextWave = false;
+
+        private bool hasSpawnedFirstBoss = false;
+        private bool hasSpawnedSecondBoss = false;
         private void Awake()
         {
             if (instance == null)
@@ -50,6 +53,18 @@ namespace KH
                 timerBetweenWaves = 0;
             }
 
+            // Boss spawning - all stages have one midboss and one main boss, so SpawnBoss() is hardcoded
+            if (elapsedStageTime >= currentStage.bosses[0].spawnTimeInStage && !hasSpawnedFirstBoss)
+            {
+                TriggerBossEvent(currentStage.bosses[0]);
+                hasSpawnedFirstBoss = true;
+            }
+            else if (elapsedStageTime >= currentStage.bosses[1].spawnTimeInStage && !hasSpawnedSecondBoss)
+            {
+                TriggerBossEvent(currentStage.bosses[1]);
+                hasSpawnedSecondBoss = true;
+            }
+
             if (waitingForNextWave)
             {
                 timerBetweenWaves += Time.deltaTime;
@@ -67,7 +82,7 @@ namespace KH
                     }
                     else if (elapsedStageTime >= currentStage.stageDuration)
                     {
-                        OnStageCompleted();
+                        //OnStageCompleted();
                     }
                 }
             }
@@ -79,6 +94,9 @@ namespace KH
             currentWaveIndex = 0;
             elapsedStageTime = 0;
             currentStageName = currentStage.stageName;
+
+            hasSpawnedFirstBoss = false;
+            hasSpawnedSecondBoss = false;
 
             // Start first wave
             if (currentStage.waves.Count > 0)
@@ -99,6 +117,13 @@ namespace KH
                 currentStage = null;
                 elapsedStageTime = 0;
             }
+        }
+        private void TriggerBossEvent(Boss bossData)
+        {
+            EnemyDatabase.instance.SpawnBoss(bossData);
+            //UI Updates - timer, health bar, background
+            //VFX
+            //Trigger Boss Movement and patterns
         }
 
     }
