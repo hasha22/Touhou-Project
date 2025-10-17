@@ -25,24 +25,45 @@ namespace KH
 
         [Header("Boss UI References")]
         public TextMeshProUGUI bossNameText;
-        public TextMeshProUGUI spellNameText;
         public TextMeshProUGUI phaseTimerText;
         [Space]
         public Image attackHealthBar;
         public Image spellCardHealthBar;
+        [SerializeField] private float fillSpeed = 1.5f; // bar fill speed
         [Space]
         public Transform bossLivesParent;
         public GameObject bossLifePrefab;
 
         [Header("Boss UI Settings")]
-        public Color normalPhaseColor = Color.white;
-        public Color spellPhaseColor = new Color(0.7f, 0.3f, 1f);
-        public float phaseTransitionSpeed = 2f;
         private float currentHealth;
         private float maxHealth;
-        public float currentPhaseDuration = 0f;
+        [HideInInspector] public float currentPhaseDuration = 0f;
         private int currentLives;
         private bool isSpellPhase = false;
+
+        [Header("Boss Spell Card Cut-In")]
+        [SerializeField] private RectTransform cutInTransform;
+        [SerializeField] private CanvasGroup cutInGroup;
+        [SerializeField] private Image bossPortraitImage;
+        [SerializeField] private TextMeshProUGUI cutInSpellName;
+
+        [Header("Spell Sign UI Target (Top Slot)")]
+        [SerializeField] private RectTransform spellSignTransform;
+        [SerializeField] private TextMeshProUGUI spellSignText;
+
+        [Header("Cut-In Animation Settings")]
+        [SerializeField] private float startPosX;
+        [SerializeField] private float centerPosX;
+        [SerializeField] private float exitPosX;
+        [SerializeField] private float posY;
+        [SerializeField] private float moveDuration = 0.6f;
+        [SerializeField] private float holdDuration = 0.5f;
+        [SerializeField] private float fadeDuration = 0.4f;
+        [SerializeField] private float textMoveDuration = 0.7f;
+        [SerializeField] private float transparency = 0.8f;
+
+        [Header("Coroutines")]
+        private Coroutine fillRoutine;
 
         private void Awake()
         {
@@ -115,26 +136,145 @@ namespace KH
             currentLives = bossData.phases.Length / 2;
             CreateBossLifeIcons();
             ShowBossUI();
-
         }
         public void StartBossPhase(BossPhase bossPhase)
         {
+            attackHealthBar.gameObject.SetActive(true);
+            spellCardHealthBar.gameObject.SetActive(true);
+
+            if (bossPhase.isSpellCard) spellSignText.gameObject.SetActive(true);
+            else spellSignText.gameObject.SetActive(false);
+
+            spellSignText.text = "";
             isSpellPhase = bossPhase.isSpellCard;
-            spellNameText.text = isSpellPhase ? bossPhase.phaseName : "";
             maxHealth = bossPhase.phaseBossHealth;
             currentHealth = bossPhase.phaseBossHealth;
             currentPhaseDuration = bossPhase.duration;
 
-            attackHealthBar.fillAmount = isSpellPhase ? 0f : 1f;
-            spellCardHealthBar.fillAmount = isSpellPhase ? 1f : 0f;
-
-            attackHealthBar.gameObject.SetActive(true);
-            spellCardHealthBar.gameObject.SetActive(true);
         }
-        public void UpdateHealth(float newHealth)
+        public void PlaySpellCardCutIn(Sprite bossPortrait, string spellName)
         {
-            currentHealth = Mathf.Clamp(newHealth, 0f, maxHealth);
-            float fill = currentHealth / maxHealth;
+            StopAllCoroutines();
+            StartCoroutine(SpellCardCutInRoutine(bossPortrait, spellName));
+        }
+        private IEnumerator SpellCardCutInRoutine(Sprite portrait, string spellName)
+        {
+            // setup
+            cutInGroup.alpha = 0f;
+            cutInGroup.gameObject.SetActive(true);
+            bossPortraitImage.sprite = portrait;
+            cutInSpellName.text = spellName;
+            spellSignText.text = "";
+
+            // cut-in positions
+            Vector2 startPos = new Vector2(startPosX, posY);
+            Vector2 centerPos = new Vector2(centerPosX, posY);
+            Vector2 exitPos = new Vector2(exitPosX, posY);
+
+            cutInTransform.anchoredPosition = startPos;
+
+            float timer = 0f;
+            while (timer < moveDuration)
+            {
+                timer += Time.deltaTime;
+                float t = Mathf.Clamp01(timer / moveDuration);
+                float eased = Mathf.SmoothStep(0f, 1f, t);
+
+                cutInTransform.anchoredPosition = Vector2.Lerp(startPos, centerPos, eased);
+                cutInGroup.alpha = Mathf.Lerp(0f, transparency, eased);
+                yield return null;
+            }
+
+            cutInTransform.anchoredPosition = centerPos;
+
+            yield return new WaitForSeconds(holdDuration);
+
+            RectTransform cutInSpellTransform = cutInSpellName.rectTransform;
+            Vector2 startAnchor = cutInSpellTransform.anchoredPosition;
+
+            Vector3 targetWorldPos = spellSignTransform.position;
+            Vector3 localTargetPos = cutInSpellTransform.parent.InverseTransformPoint(targetWorldPos);
+            Vector2 targetAnchor = new Vector2(startAnchor.x, localTargetPos.y);
+
+            timer = 0f;
+            while (timer < textMoveDuration)
+            {
+                timer += Time.deltaTime;
+                float t = Mathf.Clamp01(timer / textMoveDuration);
+                float eased = EaseOutCubic(t);
+                cutInSpellTransform.anchoredPosition = Vector2.LerpUnclamped(startAnchor, targetAnchor, eased);
+                yield return null;
+            }
+
+            cutInSpellTransform.anchoredPosition = targetAnchor;
+
+            spellSignText.text = spellName;
+            cutInSpellName.text = "";
+
+            // reset cut-in text for next time
+            cutInSpellTransform.anchoredPosition = startAnchor;
+
+            // fade-out
+            timer = 0f;
+            while (timer < fadeDuration)
+            {
+                timer += Time.deltaTime;
+                float t = Mathf.Clamp01(timer / fadeDuration);
+                cutInGroup.alpha = Mathf.Lerp(transparency, 0f, t);
+                yield return null;
+            }
+
+            cutInGroup.gameObject.SetActive(false);
+        }
+        public void InitializeHealth(float current, float max)
+        {
+            float targetFill = Mathf.Clamp01(current / max);
+
+            attackHealthBar.fillAmount = 0f;
+            spellCardHealthBar.fillAmount = 0f;
+
+            if (fillRoutine != null) StopCoroutine(fillRoutine);
+
+            fillRoutine = StartCoroutine(FillHealthBarsSequential(targetFill));
+        }
+        private IEnumerator FillHealthBarsSequential(float targetFill)
+        {
+            float spellCardFill = spellCardHealthBar.fillAmount;
+            float attackFill = attackHealthBar.fillAmount;
+
+            yield return FillBar(spellCardHealthBar, targetFill);
+            yield return FillBar(attackHealthBar, targetFill);
+
+            spellCardHealthBar.fillAmount = targetFill;
+            attackHealthBar.fillAmount = targetFill;
+
+            fillRoutine = null;
+        }
+        private IEnumerator FillBar(Image bar, float targetFill)
+        {
+            float start = bar.fillAmount;
+            float t = 0f;
+
+            // If already at or above target, skip
+            if (Mathf.Approximately(start, targetFill) || start > targetFill)
+            {
+                bar.fillAmount = targetFill;
+                yield break;
+            }
+
+            while (t < 1f)
+            {
+                t += Time.deltaTime * fillSpeed;
+                float fill = Mathf.Lerp(start, targetFill, t);
+                bar.fillAmount = fill;
+                yield return null;
+            }
+
+            bar.fillAmount = targetFill;
+        }
+        public void UpdateHealthImmediate(float newHealth)
+        {
+            float fill = Mathf.Clamp01(newHealth / maxHealth);
 
             if (!isSpellPhase)
             {
@@ -175,7 +315,6 @@ namespace KH
         public void ShowBossUI()
         {
             bossNameText.gameObject.SetActive(true);
-            spellNameText.gameObject.SetActive(true);
             phaseTimerText.gameObject.SetActive(true);
 
             bossLivesParent.gameObject.SetActive(true);
@@ -186,7 +325,7 @@ namespace KH
         public void HideBossUI()
         {
             bossNameText.gameObject.SetActive(false);
-            spellNameText.gameObject.SetActive(false);
+            spellSignText.gameObject.SetActive(false);
             phaseTimerText.gameObject.SetActive(false);
 
             bossLivesParent.gameObject.SetActive(false);
@@ -206,6 +345,6 @@ namespace KH
             deathScreen.SetActive(true);
             AudioManager.instance.bgmSource.Stop();
         }
-
+        static float EaseOutCubic(float t) => 1f - Mathf.Pow(1f - t, 3f);
     }
 }

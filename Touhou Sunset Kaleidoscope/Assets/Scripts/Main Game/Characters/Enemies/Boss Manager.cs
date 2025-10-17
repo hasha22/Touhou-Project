@@ -11,8 +11,10 @@ namespace KH
 
         [Header("Phases")]
         public int currentPhaseIndex = 0;
+        private int helperIndex = 0;
         private BossPhase currentPhase;
         private bool phaseEndedEarly = false;
+        private bool isInvulnerable = false;
         [SerializeField] private float timerBeforeAttackSequenceBegins = 0f;
 
         [Header("Movement")]
@@ -28,6 +30,7 @@ namespace KH
         private Vector2 minBounds, maxBounds;
         private PlayerManager playerManager;
         private Rigidbody2D rb;
+        private PlayerShooter playerShooter;
 
         [Header("Coroutines")]
         private Coroutine phaseRoutine;
@@ -38,6 +41,7 @@ namespace KH
             boxCollider2D = GetComponent<BoxCollider2D>();
 
             playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
+            playerShooter = PlayerInputManager.instance.playerObject.GetComponent<PlayerShooter>();
             PlayerMovement playerMovement = playerManager.GetComponent<PlayerMovement>();
             playableArea = playerMovement.playableArea;
 
@@ -45,6 +49,8 @@ namespace KH
             Bounds bounds = area.bounds;
             minBounds = bounds.min;
             maxBounds = bounds.max;
+
+            helperIndex = 0;
         }
         private void Update()
         {
@@ -57,7 +63,6 @@ namespace KH
             }
             if (bossData != null)
             {
-                UIManager.instance.UpdateHealth(currentBossPhaseHealth);
                 UIManager.instance.UpdateTimer();
             }
         }
@@ -94,6 +99,16 @@ namespace KH
             phase.StartPhase(this);
             UIManager.instance.StartBossPhase(phase);
 
+            if (helperIndex % 2 == 0)
+            {
+                UIManager.instance.InitializeHealth(currentBossPhaseHealth, phase.phaseBossHealth);
+                yield return StartCoroutine(BossInvulnerabilityCoroutine(phase));
+            }
+            if (phase.isSpellCard)
+            {
+                UIManager.instance.PlaySpellCardCutIn(spriteRenderer.sprite, phase.phaseName);
+            }
+
             float timer = 0f;
             phaseEndedEarly = false;
 
@@ -108,8 +123,9 @@ namespace KH
             {
                 UIManager.instance.OnLifeLost(bossData.phases.Length / 2);
             }
-            StartCoroutine(BossInvulnerabilityCoroutine());// small delay and boss invulnerability between phases
+            yield return StartCoroutine(BossInvulnerabilityCoroutine(phase));// small delay and boss invulnerability between phases
             currentPhaseIndex++;
+            helperIndex++;
             StartNextPhase();
         }
         private void OnTriggerEnter2D(Collider2D collision)
@@ -128,8 +144,11 @@ namespace KH
 
         public void TakeDamage(int damage)
         {
+            if (isInvulnerable) return;
+
             currentBossPhaseHealth -= damage;
             ScoreManager.instance.AddScore(bossData.hitScore * damage);
+            UIManager.instance.UpdateHealthImmediate(currentBossPhaseHealth);
 
             if (currentBossPhaseHealth <= 0 && !phaseEndedEarly)
             {
@@ -151,12 +170,11 @@ namespace KH
         {
             return worldPos.x >= minBounds.x && worldPos.y >= minBounds.y && worldPos.x < maxBounds.x && worldPos.y < maxBounds.y;
         }
-        private IEnumerator BossInvulnerabilityCoroutine()
+        private IEnumerator BossInvulnerabilityCoroutine(BossPhase phase)
         {
-            boxCollider2D.enabled = false;
-            yield return new WaitForSeconds(currentPhase.delayBeforeNextPhase);
-            boxCollider2D.enabled = true;
-            phaseRoutine = StartCoroutine(PhaseRoutine(bossData.phases[currentPhaseIndex]));
+            isInvulnerable = true;
+            yield return new WaitForSeconds(phase.delayBeforeNextPhase);
+            isInvulnerable = false;
         }
     }
 }

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e25d78d7650000a47900b3b17742fedc, type: 3}
   m_Name: Strongest Attack Phase
   m_EditorClassIdentifier: 
-  phaseBossHealth: 3000
-  phaseName: Icicle Attack
+  phaseBossHealth: 500
+  phaseName: "\u300C Icicle Attack\u300D"
   duration: 30
   isSpellCard: 0
   phaseMovementSequence: {fileID: 11400000, guid: b671c67b01b5d634286a9a569ba1ee94, type: 2}
   phaseAttackSequence: {fileID: 11400000, guid: 2a9e556e8417ac4418ae77642bf3dd5e, type: 2}
-  delayBeforeNextPhase: 3
+  delayBeforeNextPhase: 1.5

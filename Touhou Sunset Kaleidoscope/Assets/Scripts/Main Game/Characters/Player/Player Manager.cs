@@ -151,7 +151,7 @@ namespace KH
         {
             hasDied = true;
             currentPlayerLives--;
-            AudioManager.instance.PlaySFX(AudioManager.instance.deathSFX, transform, 0.3f);
+            AudioManager.instance.PlaySFX(AudioManager.instance.deathSFX, transform, 0.1f);
             UIManager.instance.RemoveLife();
 
             LosePower();

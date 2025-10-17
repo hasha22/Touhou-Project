@@ -10,6 +10,7 @@ namespace KH
         private float fireTimer = 0f;
         private bool shootingInput = false;
         [SerializeField] private float damageMultiplier = 0.2f;
+        public int currentBulletDamage = 0;
 
         private Rigidbody2D rb;
 
@@ -64,7 +65,8 @@ namespace KH
                 bulletObject1.transform.position = spawnPosition1;
                 bulletObject2.transform.position = spawnPosition2;
 
-                float damage = playerManager.characterData.shotType.damage * (1 + playerManager.currentPower * damageMultiplier);
+                currentBulletDamage = playerManager.characterData.shotType.damage;
+                float damage = currentBulletDamage * (1 + playerManager.currentPower * damageMultiplier);
                 int intDamage = Mathf.RoundToInt(damage);
 
                 // Initializing bullet data

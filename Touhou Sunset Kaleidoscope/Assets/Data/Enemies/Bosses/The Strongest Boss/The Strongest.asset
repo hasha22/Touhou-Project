@@ -20,6 +20,8 @@ MonoBehaviour:
   phases:
   - {fileID: 11400000, guid: 2982884877e7f6f4597bcbfa50a8c412, type: 2}
   - {fileID: 11400000, guid: 8279148b589c6a748829f8b31e21e5f1, type: 2}
+  - {fileID: 11400000, guid: 2982884877e7f6f4597bcbfa50a8c412, type: 2}
+  - {fileID: 11400000, guid: 8279148b589c6a748829f8b31e21e5f1, type: 2}
   colliderSize: {x: 0.6, y: 0.98}
   colliderOffset: {x: -0.014, y: 0.05}
   spawnTimeInStage: 5
