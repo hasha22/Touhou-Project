@@ -14,6 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSteps:
   - pattern: {fileID: 11400000, guid: eaa31e7064b5a2c46b8a13046a9c5ce3, type: 2}
-    duration: 60
+    duration: 2
     delayBeforeNext: 0
+  - pattern: {fileID: 11400000, guid: 5a5b9b2cc9131c345a7c27c11698e133, type: 2}
+    duration: 0.5
+    delayBeforeNext: 0.5
+  - pattern: {fileID: 11400000, guid: 0ff94ec04bb94064b8691959681c9439, type: 2}
+    duration: 1
+    delayBeforeNext: 0.5
+  - pattern: {fileID: 11400000, guid: e5b00abca9b5c7e43827ffb56f1daf6b, type: 2}
+    duration: 0.5
+    delayBeforeNext: 0.5
+  - pattern: {fileID: 11400000, guid: 5a5b9b2cc9131c345a7c27c11698e133, type: 2}
+    duration: 0.5
+    delayBeforeNext: 0.5
   loopSequence: 1

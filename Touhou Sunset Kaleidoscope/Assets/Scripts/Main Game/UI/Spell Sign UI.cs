@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
+// DEPRECATED
 public class SpellSignUI : MonoBehaviour
 {
     [Header("References")]

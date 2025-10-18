@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb63a7a8f9f9b94991fb62e940d311b, type: 3}
+  m_Name: HailStorm
+  m_EditorClassIdentifier: Assembly-CSharp::KH.Hailstorm
+  bulletType: {fileID: 11400000, guid: f99a85186606fd24b8760314f8a7c7b7, type: 2}
+  defaultBulletSpeed: 4
+  numberOfBursts: 4
+  delayBetweenBursts: 0.5
+  spreadDegrees: 360
+  startAngle: 0
+  steps: 12
+  bulletsPerStep: 3
+  angleBetweenSteps: 30
+  bulletSpacing: 0.5
+  initialBulletDeceleration:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  decelerationDuration: 1
+  initialSpeed: 2
+  delayBeforeRedirect: 0.5
+  redirectSpeed: 3
+  redirectAngleOffset: 12

@@ -7,29 +7,45 @@ namespace KH
         public Collider2D bulletHitBox;
         [HideInInspector] public float bulletSpeed;
         private Vector2 direction;
+        private Vector2 currentDirection;
+
+        [Header("References")]
         private SpriteRenderer spriteRenderer;
         private Rigidbody2D rb;
-        private PlayerMovement playerMovement;
         private BulletType currentBulletType;
         private BulletGrazing bulletGrazing;
 
         [Header("Player Bullet")]
         [HideInInspector] public int bulletDamage;
+
+        [Header("Deceleration Bullet Behavior")]
+        private bool isDecelerating;
+        private float decelerationTimer;
+        private float decelerationDuration;
+        private AnimationCurve decelerationCurve;
+
+
         private void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             bulletGrazing = GetComponent<BulletGrazing>();
-            playerMovement = PlayerInputManager.instance.playerObject.GetComponent<PlayerMovement>();
             rb = GetComponent<Rigidbody2D>();
         }
         private void FixedUpdate()
         {
+            float currentSpeed = bulletSpeed;
 
-            if (gameObject.CompareTag("Player Bullet"))
+            if (isDecelerating)
             {
-                rb.MovePosition(rb.position + direction * bulletSpeed * Time.fixedDeltaTime);
-            }
+                decelerationTimer += Time.deltaTime;
+                float t = Mathf.Clamp01(decelerationTimer / decelerationDuration);
+                float curveValue = decelerationCurve.Evaluate(t);
+                currentSpeed = bulletSpeed * curveValue;
 
+                if (t >= 1f)
+                    isDecelerating = false;
+            }
+            rb.MovePosition(rb.position + direction * currentSpeed * Time.fixedDeltaTime);
         }
         public void InitializePlayerBullet(Vector2 dir, float speed, Sprite sprite, Sprite afterImageSprite, int damage, Vector2 playerVelocity)
         {
@@ -47,11 +63,16 @@ namespace KH
         }
         public void InitializeEnemyBullet(Vector2 dir, float speed, Sprite sprite, BulletType bulletType)
         {
-            rb.linearVelocity = dir.normalized * speed;
+            //rb.linearVelocity = dir.normalized * speed;
             spriteRenderer.sprite = sprite;
+            bulletSpeed = speed;
+            direction = dir.normalized;
 
             float spriteWidth = sprite.bounds.size.x;
             float spriteHeight = sprite.bounds.size.y;
+
+            currentDirection = direction;
+            isDecelerating = false;
 
             if (NeedsNewColliders(bulletType))
             {
@@ -130,6 +151,13 @@ namespace KH
 
             AddHitboxCollider(bulletType, spriteWidth, spriteHeight);
             AddGrazeCollider(bulletType, spriteWidth, spriteHeight);
+        }
+        public void StartDeceleration(AnimationCurve animationCurve, float duration)
+        {
+            decelerationCurve = animationCurve;
+            decelerationDuration = duration;
+            decelerationTimer = 0f;
+            isDecelerating = true;
         }
 
     }

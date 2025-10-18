@@ -4,7 +4,6 @@ namespace KH
 {
     public class BossManager : MonoBehaviour
     {
-        //here goes nothin...
         [Header("Boss Data")]
         [SerializeField] private Boss bossData;
         [SerializeField] private int currentBossPhaseHealth;
@@ -15,7 +14,7 @@ namespace KH
         private BossPhase currentPhase;
         private bool phaseEndedEarly = false;
         private bool isInvulnerable = false;
-        [SerializeField] private float timerBeforeAttackSequenceBegins = 0f;
+        //[SerializeField] private float timerBeforeAttackSequenceBegins = 0f;
 
         [Header("Movement")]
         [SerializeField] private MovementSequence currentMovementSequence;
@@ -29,7 +28,7 @@ namespace KH
         private Transform playableArea;
         private Vector2 minBounds, maxBounds;
         private PlayerManager playerManager;
-        private Rigidbody2D rb;
+        [HideInInspector] public Rigidbody2D rb;
         private PlayerShooter playerShooter;
 
         [Header("Coroutines")]

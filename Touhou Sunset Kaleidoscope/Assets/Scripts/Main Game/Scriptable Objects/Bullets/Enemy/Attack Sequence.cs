@@ -7,6 +7,7 @@ namespace KH
     {
         public List<PatternStep> patternSteps;
         public bool loopPattern = true;
+
     }
 
     // System.Serializable = struct

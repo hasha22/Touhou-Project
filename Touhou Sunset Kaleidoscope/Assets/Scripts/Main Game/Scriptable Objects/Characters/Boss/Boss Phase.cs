@@ -12,6 +12,10 @@ namespace KH
         public AttackSequence phaseAttackSequence;
         public float delayBeforeNextPhase;
 
+        [Header("Universal Routines")]
+        protected Coroutine attackRoutine;
+        protected Coroutine moveRoutine;
+
         public virtual void StartPhase(BossManager boss) { }
         public virtual void UpdatePhase(BossManager boss, float deltaTime) { }
         public virtual void EndPhase(BossManager boss) { }

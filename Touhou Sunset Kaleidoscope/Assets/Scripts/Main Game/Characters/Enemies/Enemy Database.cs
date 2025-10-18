@@ -9,6 +9,7 @@ namespace KH
         [Header("Enemies")]
         public List<Enemy> enemies = new List<Enemy>();
         public List<Boss> bosses = new List<Boss>();
+        public BossManager currentActiveBoss;
         private void Awake()
         {
             if (instance == null)
@@ -39,6 +40,7 @@ namespace KH
             GameObject bossPrefab = Instantiate(bossData.bossPrefab, bossData.spawnPoint, Quaternion.identity);
             bossPrefab.transform.SetParent(ObjectPool.instance.importantObjectsParent);
             BossManager bossManager = bossPrefab.GetComponent<BossManager>();
+            currentActiveBoss = bossManager;
             bossManager.InitializeBoss(bossData);
         }
         public Enemy GetEnemyByID(int id)
