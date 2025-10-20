@@ -35,7 +35,7 @@ namespace KH
             BulletController bulletController = bullet.GetComponent<BulletController>();
 
             // direction
-            float angle = laserDirectionAngle;
+            float angle = icicleDirectionAngle;
             float radians = angle * Mathf.Deg2Rad;
             Vector2 laserDirection = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
 
