@@ -9,7 +9,8 @@ namespace KH
     {
         Box,
         Circle,
-        Capsule
+        Capsule,
+        Polygon,
     }
     public enum EnemyType
     {

@@ -70,6 +70,11 @@ public class BulletTypeEditor : Editor
                 capsuleCol.offset = bulletType.capsuleOffset;
                 capsuleCol.direction = bulletType.capsuleDirection;
                 break;
+            case ColliderType.Polygon:
+                var poly = previewBullet.AddComponent<PolygonCollider2D>();
+                poly.points = bulletType.polygonPoints.ToArray();
+                poly.offset = bulletType.polygonOffset;
+                break;
         }
     }
 
@@ -156,6 +161,9 @@ public class BulletTypeEditor : Editor
 
             case ColliderType.Capsule:
                 DrawCapsuleColliderPreview(spriteCenter, spriteRect, bulletType, isGraze);
+                break;
+            case ColliderType.Polygon:
+                DrawPolygonColliderPreview(spriteCenter, spriteRect, bulletType, isGraze);
                 break;
         }
     }
@@ -247,6 +255,22 @@ public class BulletTypeEditor : Editor
             Handles.DrawLine(offsetPos + new Vector2(halfWidth, -radius), offsetPos + new Vector2(halfWidth, radius));
             Handles.DrawLine(offsetPos + new Vector2(-halfWidth, -radius), offsetPos + new Vector2(-halfWidth, radius));
         }
+    }
+    private void DrawPolygonColliderPreview(Vector2 center, Rect spriteRect, BulletType bulletType, bool isGraze)
+    {
+        var points = isGraze ? bulletType.grazePolygonPoints : bulletType.polygonPoints;
+        Vector2 offset = isGraze ? bulletType.grazePolygonOffset : bulletType.polygonOffset;
+        if (points == null || points.Count < 3) return;
+
+        Vector3[] scaledPoints = new Vector3[points.Count + 1];
+        for (int i = 0; i < points.Count; i++)
+        {
+            float x = center.x + spriteRect.width * (points[i].x + offset.x);
+            float y = center.y - spriteRect.height * (points[i].y + offset.y);
+            scaledPoints[i] = new Vector3(x, y, 0);
+        }
+        scaledPoints[points.Count] = scaledPoints[0];
+        Handles.DrawPolyLine(scaledPoints);
     }
 }
 #endif

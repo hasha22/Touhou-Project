@@ -160,6 +160,13 @@ namespace KH
         private void OnBossDefeated()
         {
             // trigger items drops, spell card bonus, etc.
+
+            // clear all bullets
+            foreach (GameObject bullet in ObjectPool.instance.GetPooledEnemyBullets())
+            {
+                // play disappearing vfx
+                ObjectPool.instance.ReturnToPool(bullet);
+            }
             Debug.Log("Boss Defeated!");
             UIManager.instance.HideBossUI();
             StopAllCoroutines();

@@ -29,6 +29,6 @@ MonoBehaviour:
   grazeBoxOffset: {x: 0, y: 0}
   grazeCircleRadius: 0
   grazeCircleOffset: {x: 0, y: 0}
-  grazeCapsuleSize: {x: 2, y: 2}
+  grazeCapsuleSize: {x: 1.8, y: 1.5}
   grazeCapsuleOffset: {x: 0, y: 0}
   grazeCapsuleDirection: 0

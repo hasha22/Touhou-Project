@@ -166,7 +166,7 @@ namespace KH
         }
         public int GetAdjustedPointItemValue()
         {
-            // Each 3 grazes adds 10 points to faith items. formula from Embodiment of Scarlet Devil, tweak later
+            // Each 3 grazes adds 10 points to score items. tweak later
             return pointItemValue + (grazeCount / 3) * 10;
         }
         public void ResetGrazes()

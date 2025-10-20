@@ -27,8 +27,8 @@ MonoBehaviour:
   capsuleDirection: 0
   grazeBoxSize: {x: 1.5, y: 1.5}
   grazeBoxOffset: {x: 0, y: 0}
-  grazeCircleRadius: 1.5
+  grazeCircleRadius: 1
   grazeCircleOffset: {x: 0, y: 0}
-  grazeCapsuleSize: {x: 0.75, y: 1.5}
+  grazeCapsuleSize: {x: 1, y: 1}
   grazeCapsuleOffset: {x: 0, y: 0}
   grazeCapsuleDirection: 0

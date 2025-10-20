@@ -8,6 +8,8 @@ namespace KH
         [HideInInspector] public float bulletSpeed;
         private Vector2 direction;
         private Vector2 currentDirection;
+        private bool stopMovement = false;
+        private float stopDuration;
 
         [Header("References")]
         private SpriteRenderer spriteRenderer;
@@ -23,6 +25,12 @@ namespace KH
         private float decelerationTimer;
         private float decelerationDuration;
         private AnimationCurve decelerationCurve;
+
+        [Header("Acceleration Bullet Behavior")]
+        private bool isAccelerating;
+        private float accelerationTimer;
+        private float accelerationDuration;
+        private AnimationCurve accelerationCurve;
 
 
         private void Awake()
@@ -45,7 +53,33 @@ namespace KH
                 if (t >= 1f)
                     isDecelerating = false;
             }
-            rb.MovePosition(rb.position + direction * currentSpeed * Time.fixedDeltaTime);
+            if (isAccelerating)
+            {
+                accelerationTimer += Time.deltaTime;
+                float t = Mathf.Clamp01(accelerationTimer / accelerationDuration);
+                float curveValue = accelerationCurve.Evaluate(t);
+                currentSpeed += bulletSpeed * curveValue;
+
+                if (t >= 1f)
+                    isAccelerating = false;
+            }
+            if (stopMovement)
+            {
+                float timer = 0;
+                timer += Time.deltaTime;
+                if (timer >= stopDuration)
+                    stopMovement = false;
+            }
+            else
+            {
+                rb.MovePosition(rb.position + direction * currentSpeed * Time.fixedDeltaTime);
+            }
+        }
+        private void OnDisable()
+        {
+            isAccelerating = false;
+            stopMovement = false;
+            isDecelerating = false;
         }
         public void InitializePlayerBullet(Vector2 dir, float speed, Sprite sprite, Sprite afterImageSprite, int damage, Vector2 playerVelocity)
         {
@@ -159,7 +193,18 @@ namespace KH
             decelerationTimer = 0f;
             isDecelerating = true;
         }
-
+        public void StartAcceleration(AnimationCurve animationCurve, float duration)
+        {
+            accelerationCurve = animationCurve;
+            accelerationDuration = duration;
+            accelerationTimer = 0f;
+            isAccelerating = true;
+        }
+        public void StopMovement(float duration)
+        {
+            stopMovement = false;
+            stopDuration = duration;
+        }
     }
 }
 

@@ -4,7 +4,7 @@ namespace KH
     [CreateAssetMenu(menuName = "Patterns/Targeted Pattern")]
     public class TargetedBullet : EnemyShotPattern
     {
-        public override void Fire(Vector2 origin)
+        public override void Fire(Vector2 origin, GameObject enemy)
         {
             // calculates direction towards player
             Vector2 playerPosition = PlayerInputManager.instance.playerObject.transform.position;

@@ -23,14 +23,6 @@ namespace KH
 
         public override void EndPhase(BossManager boss)
         {
-            // for loop to stop all pattern coroutines
-            foreach (PatternStep step in phaseAttackSequence.patternSteps)
-            {
-                if (step.pattern is Hailstorm hailStorm)
-                {
-                    hailStorm.StopPattern();
-                }
-            }
             boss.StopCoroutine(attackRoutine);
             boss.StopCoroutine(moveRoutine);
         }
@@ -43,7 +35,7 @@ namespace KH
             while (phaseAttackSequence.loopPattern || index < phaseAttackSequence.patternSteps.Count)
             {
                 PatternStep step = phaseAttackSequence.patternSteps[index];
-                step.pattern.Fire(boss.transform.position);
+                step.pattern.Fire(boss.transform.position, boss.gameObject);
 
                 yield return new WaitForSeconds(step.delayBeforeNextPattern);
 

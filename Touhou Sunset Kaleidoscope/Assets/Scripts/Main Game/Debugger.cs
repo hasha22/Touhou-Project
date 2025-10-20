@@ -86,7 +86,7 @@ public class Debugger : MonoBehaviour
         }
         if (enableEnemy)
         {
-            EnableEnemyObject();
+            //EnableEnemyObject();
             enableEnemy = !enableEnemy;
         }
         if (murderPlayer)

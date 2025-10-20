@@ -62,7 +62,8 @@ namespace KH
             {
                 if (attackCoroutine != null)
                 {
-                    StopCoroutine(AttackSequence());
+                    StopCoroutine(attackCoroutine);
+                    attackCoroutine = null; // important!
                 }
             }
             else if (attackCoroutine == null)
@@ -156,7 +157,7 @@ namespace KH
             while (currentAttackSequence.loopPattern || index < currentAttackSequence.patternSteps.Count)
             {
                 PatternStep step = currentAttackSequence.patternSteps[index];
-                step.pattern.Fire(transform.position);
+                step.pattern.Fire(transform.position, this.gameObject);
 
                 // waits before firing next attack
                 yield return new WaitForSeconds(step.delayBeforeNextPattern);

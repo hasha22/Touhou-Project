@@ -1,4 +1,5 @@
 using KH;
+using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "BulletType", menuName = "Bullet/Bullet Type")]
 public class BulletType : ScriptableObject
@@ -24,6 +25,16 @@ public class BulletType : ScriptableObject
     public Vector2 capsuleOffset = Vector2.zero;
     public CapsuleDirection2D capsuleDirection = CapsuleDirection2D.Vertical;
 
+    [Header("Polygon Collider")]
+    public List<Vector2> polygonPoints = new List<Vector2>()
+    {
+        new Vector2(-0.5f, -0.5f),
+        new Vector2(0.5f, -0.5f),
+        new Vector2(0.5f, 0.5f),
+        new Vector2(-0.5f, 0.5f)
+    };
+    public Vector2 polygonOffset = Vector2.zero;
+
     [Header("Box Graze Collider")]
     public Vector2 grazeBoxSize = Vector2.one * 1.5f;
     public Vector2 grazeBoxOffset = Vector2.zero;
@@ -36,4 +47,14 @@ public class BulletType : ScriptableObject
     public Vector2 grazeCapsuleSize = new Vector2(0.75f, 1.5f);
     public Vector2 grazeCapsuleOffset = Vector2.zero;
     public CapsuleDirection2D grazeCapsuleDirection = CapsuleDirection2D.Vertical;
+
+    [Header("Polygon Graze Collider")]
+    public List<Vector2> grazePolygonPoints = new List<Vector2>()
+    {
+        new Vector2(-0.75f, -0.75f),
+        new Vector2(0.75f, -0.75f),
+        new Vector2(0.75f, 0.75f),
+        new Vector2(-0.75f, 0.75f)
+    };
+    public Vector2 grazePolygonOffset = Vector2.zero;
 }

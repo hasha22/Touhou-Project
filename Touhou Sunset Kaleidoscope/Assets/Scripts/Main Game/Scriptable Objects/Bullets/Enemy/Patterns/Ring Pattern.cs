@@ -10,7 +10,7 @@ namespace KH
         public float startAngle = 0f;
 
         // Each bullet pattern will contain it's own trigonometrical calculations to fire its specific pattern
-        public override void Fire(Vector2 origin)
+        public override void Fire(Vector2 origin, GameObject enemy)
         {
             float angle = startAngle;
             float step = spreadDegrees / count;

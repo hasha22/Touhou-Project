@@ -162,5 +162,9 @@ namespace KH
             bullet.SetActive(true);
             return bullet;
         }
+        public List<GameObject> GetPooledEnemyBullets()
+        {
+            return pooledEnemyBullets;
+        }
     }
 }

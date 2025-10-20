@@ -135,7 +135,7 @@ namespace KH
                     else if (collision == bulletController.bulletHitBox)
                     {
                         Die();
-                        ObjectPool.instance.ReturnToPool(collision.gameObject);
+                        //ObjectPool.instance.ReturnToPool(collision.gameObject);
                     }
                 }
             }

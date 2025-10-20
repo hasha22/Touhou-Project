@@ -34,7 +34,7 @@ namespace KH
         private Coroutine hailStormRoutine;
         private bool stopHail;
 
-        public override void Fire(Vector2 origin)
+        public override void Fire(Vector2 origin, GameObject enemy)
         {
             BossManager boss = EnemyDatabase.instance.currentActiveBoss;
             if (hailStormRoutine == null)
@@ -53,7 +53,7 @@ namespace KH
             // loop for bursts
             for (int i = 0; i < numberOfBursts; i++)
             {
-                if (stopHail) yield break;
+                if (stopHail) break;
 
                 // small offset 
                 float horizontalDir = (Random.value < 0.5f) ? -1f : 1f;
@@ -64,7 +64,6 @@ namespace KH
                 // fire 12 steps = 360
                 for (int step = 0; step < steps; step++)
                 {
-                    if (stopHail) break;
                     //0, 30, 60, 90 etc.
                     float baseAngle = step * angleBetweenSteps;
 
