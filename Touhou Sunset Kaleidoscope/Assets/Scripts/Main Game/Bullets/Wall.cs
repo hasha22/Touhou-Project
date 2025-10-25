@@ -7,7 +7,8 @@ namespace KH
         {
             if (other.CompareTag("Player Bullet") ||
                 other.CompareTag("Enemy Bullet") ||
-                other.CompareTag("AfterImage"))
+                other.CompareTag("AfterImage") ||
+                other.CompareTag("LightZone"))
             {
                 ObjectPool.instance.ReturnToPool(other.gameObject);
             }

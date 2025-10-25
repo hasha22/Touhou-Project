@@ -7,9 +7,7 @@ namespace KH
         public static LightZoneManager instance { get; private set; }
 
         [Header("Setup")]
-        [SerializeField] private GameObject pillarZonePrefab;
-        [SerializeField] private GameObject followZonePrefab;
-        public List<LightZone> activeZones;
+        public List<ILuminousZone> activeZones = new List<ILuminousZone>();
         private void Awake()
         {
             if (instance == null)
@@ -17,25 +15,39 @@ namespace KH
                 instance = this;
                 DontDestroyOnLoad(gameObject);
             }
+            else
             {
                 Destroy(gameObject);
             }
         }
-        public LightZone SpawnFollowLightZone(Transform bulletTransform)
+        public LightZone_FollowBullet SpawnFollowLightZone(BulletType bullet, Transform bulletTransform)
         {
-            var zoneObj = Instantiate(followZonePrefab, bulletTransform.position, Quaternion.identity);
-            var zone = zoneObj.GetComponent<LightZone_FollowBullet>();
-            zone.AttachToBullet(bulletTransform);
-            activeZones.Add(zone);
-            return zone;
+            GameObject zone = ObjectPool.instance.GetPooledFollowZone_Capsule();
+            LightZone_FollowBullet lightZone = zone.GetComponent<LightZone_FollowBullet>();
+
+            lightZone.AttachToBullet(bulletTransform);
+            activeZones.Add(lightZone);
+            return lightZone;
         }
-        public LightZone SpawnPillarLightZone(Vector2 position)
+
+        public LightZoneBase SpawnPillar(Vector2 pos)
         {
-            var zoneObj = Instantiate(pillarZonePrefab, position, Quaternion.identity);
-            var zone = zoneObj.GetComponent<LightZone_PillarFormation>();
-            //zone.InitializeLightZone(position);
-            activeZones.Add(zone);
-            return zone;
+            GameObject zone = ObjectPool.instance.GetPooledPillarZone();
+            LightZone_Pillar lightZone = zone.GetComponent<LightZone_Pillar>();
+
+            activeZones.Add(lightZone);
+            return lightZone;
+        }
+        public bool IsInLight(Vector2 pos)
+        {
+            foreach (var z in activeZones)
+                if (z.ContainsPoint(pos))
+                    return true;
+            return false;
+        }
+        public void UnRegisterZone(ILuminousZone zone)
+        {
+            activeZones.Remove(zone);
         }
 
     }

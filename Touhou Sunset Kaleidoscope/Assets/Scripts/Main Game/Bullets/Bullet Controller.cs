@@ -32,6 +32,9 @@ namespace KH
         private float accelerationDuration;
         private AnimationCurve accelerationCurve;
 
+        [Header("Light Zone")]
+        private LightZone_FollowBullet currentLightZone;
+
 
         private void Awake()
         {
@@ -42,6 +45,11 @@ namespace KH
         private void FixedUpdate()
         {
             float currentSpeed = bulletSpeed;
+
+            if (currentBulletType.canEmitLight && currentLightZone == null)
+            {
+                currentLightZone = LightZoneManager.instance.SpawnFollowLightZone(currentBulletType, transform);
+            }
 
             if (isDecelerating)
             {
@@ -77,9 +85,14 @@ namespace KH
         }
         private void OnDisable()
         {
+            if (currentLightZone != null)
+            {
+                LightZoneManager.instance.UnRegisterZone(currentLightZone);
+            }
             isAccelerating = false;
             stopMovement = false;
             isDecelerating = false;
+            currentBulletType = null;
         }
         public void InitializePlayerBullet(Vector2 dir, float speed, Sprite sprite, Sprite afterImageSprite, int damage, Vector2 playerVelocity)
         {
@@ -183,6 +196,7 @@ namespace KH
             foreach (Collider2D col in colliders)
                 DestroyImmediate(col);
 
+            currentBulletType = bulletType;
             AddHitboxCollider(bulletType, spriteWidth, spriteHeight);
             AddGrazeCollider(bulletType, spriteWidth, spriteHeight);
         }

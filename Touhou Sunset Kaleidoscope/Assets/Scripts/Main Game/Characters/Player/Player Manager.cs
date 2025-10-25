@@ -45,6 +45,12 @@ namespace KH
         [SerializeField] private GameObject bombPrefab;
         private bool bombLocked = false;
         private bool bombInput = false;
+
+        [Header("Player Light Interaction")]
+        public float damageMultiplier = 1.5f;
+        public float scoreMultiplier = 2f;
+        private bool inLight = false;
+        private bool inShadow = true;
         // Add VFX and SFX later
 
         [Header("References")]
@@ -70,7 +76,24 @@ namespace KH
         private void Update()
         {
             bool isMaxPower = currentPower >= maxPower;
+            /*
+            Vector2 pos = transform.position;
+            inLight = LightZoneManager.instance.IsInLight(pos);
+            inShadow = ShadowManager.instance.IsBlockedByShadow(pos);
 
+            if (inShadow)
+            {
+                damageMultiplier = 0.5f;
+            }
+            else if (inLight)
+            {
+                damageMultiplier = 2.0f;
+            }
+            else
+            {
+                damageMultiplier = 1f;
+            }
+            */
             if (isMaxPower && !hasConvertedPower)
             {
                 ItemManager.instance.ConvertAllPowerItems();

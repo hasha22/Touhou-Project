@@ -25,6 +25,6 @@ MonoBehaviour:
   hitScore: 20
   colliderSize: {x: 0.261, y: 0.444}
   colliderOffset: {x: -0.02, y: 0.07}
-  attackSequence: {fileID: 11400000, guid: 2a9e556e8417ac4418ae77642bf3dd5e, type: 2}
+  attackSequence: {fileID: 11400000, guid: 43906ead4ede94e49b4c7a666ca4b43d, type: 2}
   delayBeforeAttack: 0.5
   movementSequence: {fileID: 11400000, guid: fc2bcaa5de86cc34ba4a09755955f452, type: 2}

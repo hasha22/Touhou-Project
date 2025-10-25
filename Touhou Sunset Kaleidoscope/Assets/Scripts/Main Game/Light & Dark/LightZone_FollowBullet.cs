@@ -1,25 +1,23 @@
 using UnityEngine;
 namespace KH
 {
-    public class LightZone_FollowBullet : LightZone
+    public class LightZone_FollowBullet : LightZoneBase
     {
-        private Transform targetBullet;
+        private Transform target;
         public float radius = 1.5f;
 
         public void AttachToBullet(Transform bullet)
         {
-            targetBullet = bullet;
+            target = bullet;
         }
-        protected override void InitializeLightZone(Vector2 position)
+        public override void Initialize(Vector2 position)
         {
             transform.position = position;
         }
-        private void Update()
+        private void LateUpdate()
         {
-            if (targetBullet != null)
-            {
-                transform.position = targetBullet.position;
-            }
+            if (target != null)
+                transform.position = target.position;
         }
     }
 }

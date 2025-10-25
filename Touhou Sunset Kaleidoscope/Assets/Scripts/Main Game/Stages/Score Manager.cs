@@ -15,12 +15,11 @@ namespace KH
 
         [Header("Faith Variables")]
         public int Faith;
-        [SerializeField] private int pointItemValue = 500; // base value for faith multiplier
-        [SerializeField] private float faithUpdateSpeed = 5000f;
-        [SerializeField] private int minFaith = 50000;
-        [SerializeField] private int faithDecreaseAmount = 600;
+        [SerializeField] private float faithUpdateSpeed = 1000f;
+        [SerializeField] private int minFaith = 0;
+        [SerializeField] private int faithDecreaseAmount = 100;
         [SerializeField] private float faithDecreaseInterval = 1f;
-        public int displayedFaith = 50000;
+        public int displayedFaith = 5000;
 
         [Header("Score Thresholds")]
         private bool passedFirst = false; // 20 million
@@ -55,7 +54,7 @@ namespace KH
         }
         private void Start()
         {
-            Faith = 50000;
+            Faith = displayedFaith;
             displayedHiScore = saveSystem.LoadScore();
             UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
         }
@@ -78,6 +77,8 @@ namespace KH
 
                 UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
             }
+            // need to move some faith logic to faith manager on player game object
+            /*
             if (displayedFaith < Faith)
             {
                 displayedFaith += Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
@@ -104,7 +105,7 @@ namespace KH
                     faithDecreaseCoroutine = StartCoroutine(FaithDecayRoutine());
                 }
             }
-
+            */
             // Life Updates
             if (CurrentScore >= 20000000 && !passedFirst)
             {
@@ -167,7 +168,7 @@ namespace KH
         public int GetAdjustedPointItemValue()
         {
             // Each 3 grazes adds 10 points to score items. tweak later
-            return pointItemValue + (grazeCount / 3) * 10;
+            return (grazeCount / 3) * 10;
         }
         public void ResetGrazes()
         {

@@ -17,6 +17,7 @@ TagManager:
   - Faith
   - Indicator
   - AfterImage
+  - LightZone
   layers:
   - Default
   - TransparentFX

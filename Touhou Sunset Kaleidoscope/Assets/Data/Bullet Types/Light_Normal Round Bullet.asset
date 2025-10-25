@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 636842db1aa54ed4582077a73b33bf96, type: 3}
+  m_Name: Light_Normal Round Bullet
+  m_EditorClassIdentifier: 
+  bulletID: 4
+  colliderType: 1
+  grazeColliderType: 1
+  sprite: {fileID: 21300000, guid: 5df9980d76aafed418f60553d18f48b8, type: 3}
+  canEmitLight: 1
+  colliderSize: {x: 1, y: 1}
+  colliderOffset: {x: 0, y: 0}
+  boxSize: {x: 1, y: 1}
+  boxOffset: {x: 0, y: 0}
+  circleRadius: 0.5
+  circleOffset: {x: 0, y: 0}
+  capsuleSize: {x: 1, y: 1}
+  capsuleOffset: {x: 0, y: 0}
+  capsuleDirection: 0
+  polygonPoints:
+  - {x: -0.5, y: -0.5}
+  - {x: 0.5, y: -0.5}
+  - {x: 0.5, y: 0.5}
+  - {x: -0.5, y: 0.5}
+  polygonOffset: {x: 0, y: 0}
+  grazeBoxSize: {x: 1.5, y: 1.5}
+  grazeBoxOffset: {x: 0, y: 0}
+  grazeCircleRadius: 1
+  grazeCircleOffset: {x: 0, y: 0}
+  grazeCapsuleSize: {x: 1, y: 1}
+  grazeCapsuleOffset: {x: 0, y: 0}
+  grazeCapsuleDirection: 0
+  grazePolygonPoints:
+  - {x: -0.75, y: -0.75}
+  - {x: 0.75, y: -0.75}
+  - {x: 0.75, y: 0.75}
+  - {x: -0.75, y: 0.75}
+  grazePolygonOffset: {x: 0, y: 0}

@@ -1,12 +1,13 @@
 using UnityEngine;
 namespace KH
 {
-    public class LightZone_PillarFormation : LightZone
+    public class LightZone_Pillar : LightZoneBase
     {
-        public float fallSpeed = 2f;
-        public float width = 1f;
+        public float width = 2f;
+        public float height = 10f;
+        public float fallSpeed = 3f;
 
-        protected override void InitializeLightZone(Vector2 position)
+        public override void Initialize(Vector2 position)
         {
             transform.position = position;
         }

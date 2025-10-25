@@ -12,23 +12,37 @@ namespace KH
         private List<GameObject> pooledEnemyBullets = new List<GameObject>();
         private List<GameObject> pooledItems = new List<GameObject>();
         private List<GameObject> pooledEnemyObjects = new List<GameObject>();
+        private List<GameObject> pooledPillarZones = new List<GameObject>();
+        private List<GameObject> pooledFollowZones_Capsule = new List<GameObject>();
+        private List<GameObject> pooledFollowZones_Circle = new List<GameObject>();
+        private List<GameObject> pooledShadowZones = new List<GameObject>();
         [SerializeField] private int playerBulletsToPool = 100;
         [SerializeField] private int playerBulletAfterImagesToPool = 100;
         [SerializeField] private int enemyBulletsToPool = 500;
         [SerializeField] private int itemsToPool = 300;
         [SerializeField] private int enemiesToPool = 100;
+        [SerializeField] private int pillarZonesToPool = 50;
+        [SerializeField] private int followZonesToPool_Capsule = 50;
+        [SerializeField] private int followZonesToPool_Circle = 500;
+        [SerializeField] private int shadowZonesToPool = 50;
         [Space]
         [SerializeField] private GameObject playerBulletPrefab;
         [SerializeField] private GameObject playerBulletAfterImagePrefab;
         [SerializeField] private GameObject enemyBulletPrefab;
         [SerializeField] private GameObject itemPrefab;
         [SerializeField] private GameObject enemyObjectPrefab;
+        [SerializeField] private GameObject pillarZonePrefab;
+        [SerializeField] private GameObject followZonePrefab_Capsule;
+        [SerializeField] private GameObject followZonePrefab_Circle;
+        [SerializeField] private GameObject shadowZonePrefab;
         [Space]
         [SerializeField] private Transform playerBulletsContainer;
         [SerializeField] private Transform playerBulletAfterImagesContainer;
         [SerializeField] private Transform enemyBulletsContainer;
         [SerializeField] private Transform itemContainer;
         [SerializeField] private Transform enemyContainer;
+        [SerializeField] private Transform lightZoneContainer;
+        [SerializeField] private Transform shadowZoneContainer;
         public Transform importantObjectsParent;
 
         private void Awake()
@@ -81,6 +95,38 @@ namespace KH
 
                 afterImage.SetActive(false);
                 pooledPlayerBulletAfterImages.Add(afterImage);
+            }
+            for (int i = 0; i < pillarZonesToPool; i++)
+            {
+                GameObject lightZone = Instantiate(pillarZonePrefab);
+                lightZone.transform.SetParent(lightZoneContainer);
+
+                lightZone.SetActive(false);
+                pooledPillarZones.Add(lightZone);
+            }
+            for (int i = 0; i < followZonesToPool_Capsule; i++)
+            {
+                GameObject lightZone = Instantiate(followZonePrefab_Capsule);
+                lightZone.transform.SetParent(lightZoneContainer);
+
+                lightZone.SetActive(false);
+                pooledFollowZones_Capsule.Add(lightZone);
+            }
+            for (int i = 0; i < followZonesToPool_Circle; i++)
+            {
+                GameObject lightZone = Instantiate(followZonePrefab_Circle);
+                lightZone.transform.SetParent(lightZoneContainer);
+
+                lightZone.SetActive(false);
+                pooledFollowZones_Circle.Add(lightZone);
+            }
+            for (int i = 0; i < shadowZonesToPool; i++)
+            {
+                GameObject shadowZone = Instantiate(shadowZonePrefab);
+                shadowZone.transform.SetParent(shadowZoneContainer);
+
+                shadowZone.SetActive(false);
+                pooledShadowZones.Add(shadowZone);
             }
         }
 
@@ -139,6 +185,56 @@ namespace KH
                 {
                     pooledPlayerBulletAfterImages[i].SetActive(true);
                     return pooledPlayerBulletAfterImages[i];
+                }
+            }
+            return null;
+        }
+        public GameObject GetPooledPillarZone()
+        {
+            for (int i = 0; i < pooledPillarZones.Count; i++)
+            {
+                if (!pooledPillarZones[i].activeInHierarchy)
+                {
+                    pooledPillarZones[i].SetActive(true);
+                    return pooledPillarZones[i];
+                }
+            }
+            return null;
+        }
+        public GameObject GetPooledFollowZone_Capsule()
+        {
+            for (int i = 0; i < pooledFollowZones_Capsule.Count; i++)
+            {
+                if (!pooledFollowZones_Capsule[i].activeInHierarchy)
+                {
+
+                    pooledFollowZones_Capsule[i].SetActive(true);
+                    return pooledFollowZones_Capsule[i];
+                }
+            }
+            return null;
+        }
+        public GameObject GetPooledFollowZone_Circle()
+        {
+            for (int i = 0; i < pooledFollowZones_Circle.Count; i++)
+            {
+                if (!pooledFollowZones_Circle[i].activeInHierarchy)
+                {
+
+                    pooledFollowZones_Circle[i].SetActive(true);
+                    return pooledFollowZones_Circle[i];
+                }
+            }
+            return null;
+        }
+        public GameObject GetPooledShadowZone()
+        {
+            for (int i = 0; i < pooledShadowZones.Count; i++)
+            {
+                if (!pooledShadowZones[i].activeInHierarchy)
+                {
+                    pooledShadowZones[i].SetActive(true);
+                    return pooledShadowZones[i];
                 }
             }
             return null;

@@ -9,6 +9,7 @@ public class BulletType : ScriptableObject
     public ColliderType colliderType;
     public ColliderType grazeColliderType;
     public Sprite sprite;
+    public bool canEmitLight;
     public Vector2 colliderSize = Vector2.one;
     public Vector2 colliderOffset = Vector2.zero;
 
