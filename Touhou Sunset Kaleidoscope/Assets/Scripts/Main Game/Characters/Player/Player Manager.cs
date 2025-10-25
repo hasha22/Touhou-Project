@@ -48,7 +48,9 @@ namespace KH
 
         [Header("Player Light Interaction")]
         public float damageMultiplier = 1.5f;
-        public float scoreMultiplier = 2f;
+        public int scoreMultiplier = 2;
+        private float multiplier1 = 1.5f;
+        private int multiplier2 = 2;
         private bool inLight = false;
         private bool inShadow = true;
         // Add VFX and SFX later
@@ -63,6 +65,8 @@ namespace KH
         private void Awake()
         {
             playerCollider.isTrigger = true;
+            multiplier1 = damageMultiplier;
+            multiplier2 = scoreMultiplier;
             spriteRenderer = GetComponent<SpriteRenderer>();
             playerMovement = GetComponent<PlayerMovement>();
 
@@ -76,24 +80,21 @@ namespace KH
         private void Update()
         {
             bool isMaxPower = currentPower >= maxPower;
-            /*
+
             Vector2 pos = transform.position;
             inLight = LightZoneManager.instance.IsInLight(pos);
-            inShadow = ShadowManager.instance.IsBlockedByShadow(pos);
 
-            if (inShadow)
+            if (inLight)
             {
-                damageMultiplier = 0.5f;
-            }
-            else if (inLight)
-            {
-                damageMultiplier = 2.0f;
+                damageMultiplier = multiplier1;
+                scoreMultiplier = multiplier2;
             }
             else
             {
                 damageMultiplier = 1f;
+                scoreMultiplier = 1;
             }
-            */
+
             if (isMaxPower && !hasConvertedPower)
             {
                 ItemManager.instance.ConvertAllPowerItems();

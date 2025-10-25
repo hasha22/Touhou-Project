@@ -66,7 +66,7 @@ namespace KH
                 bulletObject2.transform.position = spawnPosition2;
 
                 currentBulletDamage = playerManager.characterData.shotType.damage;
-                float damage = currentBulletDamage * (1 + playerManager.currentPower * damageMultiplier);
+                float damage = currentBulletDamage * (1 + playerManager.currentPower * damageMultiplier) * playerManager.damageMultiplier;
                 int intDamage = Mathf.RoundToInt(damage);
 
                 // Initializing bullet data

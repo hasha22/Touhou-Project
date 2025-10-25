@@ -131,7 +131,13 @@ namespace KH
         }
         public void AddScore(int score)
         {
-            CurrentScore += score;
+            int grazeMultiplier = GetAdjustedPointItemValue();
+            int lightMultiplier = playerManager.scoreMultiplier;
+            int finalScore = (score * lightMultiplier) + grazeMultiplier;
+
+            Debug.Log(finalScore);
+
+            CurrentScore += finalScore;
 
             if (CurrentScore >= HiScore)
             {

@@ -21,6 +21,12 @@ namespace KH
         Kedama,
         Raven,
     }
+    public enum LightZoneSize
+    {
+        Small,
+        Medium,
+        Large,
+    }
     public enum ItemToSpawn
     {
         Power,

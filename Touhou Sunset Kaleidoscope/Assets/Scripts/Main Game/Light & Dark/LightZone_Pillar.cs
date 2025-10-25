@@ -7,7 +7,7 @@ namespace KH
         public float height = 10f;
         public float fallSpeed = 3f;
 
-        public override void Initialize(Vector2 position)
+        public override void Initialize(Vector2 position, LightZoneSize zoneSize)
         {
             transform.position = position;
         }

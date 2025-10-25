@@ -184,8 +184,7 @@ namespace KH
                 }
                 if (gameObject.CompareTag("Score"))
                 {
-                    int grazeMultiplier = ScoreManager.instance.GetAdjustedPointItemValue();
-                    ScoreManager.instance.AddScore(addedScore + grazeMultiplier);
+                    ScoreManager.instance.AddScore(addedScore);
                 }
                 if (gameObject.CompareTag("Faith"))
                 {

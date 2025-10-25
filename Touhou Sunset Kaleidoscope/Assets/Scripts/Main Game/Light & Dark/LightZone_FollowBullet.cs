@@ -10,7 +10,7 @@ namespace KH
         {
             target = bullet;
         }
-        public override void Initialize(Vector2 position)
+        public override void Initialize(Vector2 position, LightZoneSize zoneSize)
         {
             transform.position = position;
         }

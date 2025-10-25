@@ -14,4 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnEvents:
   - {fileID: 11400000, guid: d1b899be39cc7244da1608bc2cc665cc, type: 2}
+  circularLightSpawnEvents:
+  - {fileID: 11400000, guid: 8bce0ff3afdce0a47a8086a62a5ebe6e, type: 2}
+  - {fileID: 11400000, guid: 6062ba5032a7a9a4d825f6fa1c40e003, type: 2}
+  - {fileID: 11400000, guid: 381079f15a8c38d46afe7c22be1201dd, type: 2}
+  - {fileID: 11400000, guid: 96e2ef6b821db2d46890f0ad336efd96, type: 2}
+  - {fileID: 11400000, guid: 6e72c3a9390db644387b5200c9b778a1, type: 2}
+  - {fileID: 11400000, guid: 6d883b092a71c9a40b57f46adf5624c6, type: 2}
   delayBeforeNextWave: 6

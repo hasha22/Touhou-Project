@@ -16,7 +16,7 @@ MonoBehaviour:
   bossSprite: {fileID: 21300000, guid: 78cea6b315d64494e973559c23e4a8d4, type: 3}
   bossID: 0
   bossPrefab: {fileID: 1623289750752492140, guid: 63c6ce0abcb187644921927cc8f9da0f, type: 3}
-  hitScore: 0
+  hitScore: 30
   phases:
   - {fileID: 11400000, guid: 2982884877e7f6f4597bcbfa50a8c412, type: 2}
   - {fileID: 11400000, guid: 8279148b589c6a748829f8b31e21e5f1, type: 2}
@@ -24,5 +24,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8279148b589c6a748829f8b31e21e5f1, type: 2}
   colliderSize: {x: 0.6, y: 0.98}
   colliderOffset: {x: -0.014, y: 0.05}
-  spawnTimeInStage: 500
+  spawnTimeInStage: 5
   spawnPoint: {x: -2.76, y: 3.13, z: 0}

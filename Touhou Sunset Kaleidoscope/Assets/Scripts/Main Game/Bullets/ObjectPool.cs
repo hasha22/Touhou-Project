@@ -13,6 +13,7 @@ namespace KH
         private List<GameObject> pooledItems = new List<GameObject>();
         private List<GameObject> pooledEnemyObjects = new List<GameObject>();
         private List<GameObject> pooledPillarZones = new List<GameObject>();
+        private List<GameObject> pooledCircularZones = new List<GameObject>();
         private List<GameObject> pooledFollowZones_Capsule = new List<GameObject>();
         private List<GameObject> pooledFollowZones_Circle = new List<GameObject>();
         private List<GameObject> pooledShadowZones = new List<GameObject>();
@@ -22,6 +23,7 @@ namespace KH
         [SerializeField] private int itemsToPool = 300;
         [SerializeField] private int enemiesToPool = 100;
         [SerializeField] private int pillarZonesToPool = 50;
+        [SerializeField] private int circularZonesToPool = 50;
         [SerializeField] private int followZonesToPool_Capsule = 50;
         [SerializeField] private int followZonesToPool_Circle = 500;
         [SerializeField] private int shadowZonesToPool = 50;
@@ -32,6 +34,7 @@ namespace KH
         [SerializeField] private GameObject itemPrefab;
         [SerializeField] private GameObject enemyObjectPrefab;
         [SerializeField] private GameObject pillarZonePrefab;
+        [SerializeField] private GameObject circularZonePrefab;
         [SerializeField] private GameObject followZonePrefab_Capsule;
         [SerializeField] private GameObject followZonePrefab_Circle;
         [SerializeField] private GameObject shadowZonePrefab;
@@ -42,6 +45,7 @@ namespace KH
         [SerializeField] private Transform itemContainer;
         [SerializeField] private Transform enemyContainer;
         [SerializeField] private Transform lightZoneContainer;
+        [SerializeField] private Transform followZoneContainer;
         [SerializeField] private Transform shadowZoneContainer;
         public Transform importantObjectsParent;
 
@@ -104,10 +108,18 @@ namespace KH
                 lightZone.SetActive(false);
                 pooledPillarZones.Add(lightZone);
             }
+            for (int i = 0; i < circularZonesToPool; i++)
+            {
+                GameObject lightZone = Instantiate(circularZonePrefab);
+                lightZone.transform.SetParent(lightZoneContainer);
+
+                lightZone.SetActive(false);
+                pooledCircularZones.Add(lightZone);
+            }
             for (int i = 0; i < followZonesToPool_Capsule; i++)
             {
                 GameObject lightZone = Instantiate(followZonePrefab_Capsule);
-                lightZone.transform.SetParent(lightZoneContainer);
+                lightZone.transform.SetParent(followZoneContainer);
 
                 lightZone.SetActive(false);
                 pooledFollowZones_Capsule.Add(lightZone);
@@ -115,7 +127,7 @@ namespace KH
             for (int i = 0; i < followZonesToPool_Circle; i++)
             {
                 GameObject lightZone = Instantiate(followZonePrefab_Circle);
-                lightZone.transform.SetParent(lightZoneContainer);
+                lightZone.transform.SetParent(followZoneContainer);
 
                 lightZone.SetActive(false);
                 pooledFollowZones_Circle.Add(lightZone);
@@ -197,6 +209,18 @@ namespace KH
                 {
                     pooledPillarZones[i].SetActive(true);
                     return pooledPillarZones[i];
+                }
+            }
+            return null;
+        }
+        public GameObject GetPooledCircularZone()
+        {
+            for (int i = 0; i < pooledCircularZones.Count; i++)
+            {
+                if (!pooledCircularZones[i].activeInHierarchy)
+                {
+                    pooledCircularZones[i].SetActive(true);
+                    return pooledCircularZones[i];
                 }
             }
             return null;

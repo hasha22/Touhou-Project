@@ -38,6 +38,14 @@ namespace KH
             activeZones.Add(lightZone);
             return lightZone;
         }
+        public void SpawnCircularZone(Vector2 pos, LightZoneSize zoneSize)
+        {
+            GameObject zone = ObjectPool.instance.GetPooledCircularZone();
+            LightZone_Circular lightZone = zone.GetComponent<LightZone_Circular>();
+
+            activeZones.Add(lightZone);
+            lightZone.Initialize(pos, zoneSize);
+        }
         public bool IsInLight(Vector2 pos)
         {
             foreach (var z in activeZones)
