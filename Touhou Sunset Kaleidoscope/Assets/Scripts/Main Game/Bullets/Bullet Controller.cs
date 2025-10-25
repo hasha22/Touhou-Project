@@ -45,12 +45,12 @@ namespace KH
         private void FixedUpdate()
         {
             float currentSpeed = bulletSpeed;
-
+            /*
             if (currentBulletType.canEmitLight && currentLightZone == null)
             {
                 currentLightZone = LightZoneManager.instance.SpawnFollowLightZone(currentBulletType, transform);
             }
-
+            */
             if (isDecelerating)
             {
                 decelerationTimer += Time.deltaTime;
