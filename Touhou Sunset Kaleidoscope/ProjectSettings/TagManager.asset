@@ -61,6 +61,9 @@ TagManager:
   - name: Enemies
     uniqueID: 2981919301
     locked: 0
+  - name: Light
+    uniqueID: 1195320533
+    locked: 0
   - name: Player
     uniqueID: 2683733143
     locked: 0

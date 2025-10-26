@@ -30,13 +30,14 @@ namespace KH
             return lightZone;
         }
 
-        public LightZoneBase SpawnPillar(Vector2 pos)
+        public void SpawnPillarZone(Vector2 pos, LightZoneSize zoneSize, Vector2 direction)
         {
             GameObject zone = ObjectPool.instance.GetPooledPillarZone();
             LightZone_Pillar lightZone = zone.GetComponent<LightZone_Pillar>();
 
             activeZones.Add(lightZone);
-            return lightZone;
+            lightZone.SetDirection(direction);
+            lightZone.Initialize(pos, zoneSize);
         }
         public void SpawnCircularZone(Vector2 pos, LightZoneSize zoneSize)
         {

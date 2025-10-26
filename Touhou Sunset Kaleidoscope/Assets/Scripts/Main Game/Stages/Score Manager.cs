@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 namespace KH
 {
@@ -12,14 +11,6 @@ namespace KH
         [SerializeField] private float scoreUpdateSpeed = 5000f;
         private int displayedCurrentScore = 0;
         private int displayedHiScore = 0;
-
-        [Header("Faith Variables")]
-        public int Faith;
-        [SerializeField] private float faithUpdateSpeed = 1000f;
-        [SerializeField] private int minFaith = 0;
-        [SerializeField] private int faithDecreaseAmount = 100;
-        [SerializeField] private float faithDecreaseInterval = 1f;
-        public int displayedFaith = 5000;
 
         [Header("Score Thresholds")]
         private bool passedFirst = false; // 20 million
@@ -54,7 +45,6 @@ namespace KH
         }
         private void Start()
         {
-            Faith = displayedFaith;
             displayedHiScore = saveSystem.LoadScore();
             UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
         }
@@ -135,8 +125,6 @@ namespace KH
             int lightMultiplier = playerManager.scoreMultiplier;
             int finalScore = (score * lightMultiplier) + grazeMultiplier;
 
-            Debug.Log(finalScore);
-
             CurrentScore += finalScore;
 
             if (CurrentScore >= HiScore)
@@ -146,16 +134,7 @@ namespace KH
             }
             UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
         }
-        public void AddFaith(int faith)
-        {
-            Faith += faith;
-            UIManager.instance.UpdateFaithUI(displayedFaith);
-        }
-        public void DecreaseFaith(int faith)
-        {
-            Faith -= faith;
-            if (Faith < minFaith) { Faith = minFaith; }
-        }
+        /*
         private IEnumerator FaithDecayRoutine()
         {
             yield return new WaitForSeconds(faithDecreaseInterval);
@@ -165,7 +144,7 @@ namespace KH
             }
 
             faithDecreaseCoroutine = null;
-        }
+        }*/
         public void RegisterGraze()
         {
             grazeCount++;

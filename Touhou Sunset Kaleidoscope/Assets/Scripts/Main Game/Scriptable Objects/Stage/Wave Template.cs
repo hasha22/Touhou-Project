@@ -7,6 +7,7 @@ namespace KH
     {
         public List<SpawnEvent> spawnEvents;
         public List<CircularLightSpawnEvent> circularLightSpawnEvents;
+        public List<PillarLightSpawnEvent> pillarLightSpawnEvents;
         public float delayBeforeNextWave;
     }
 }

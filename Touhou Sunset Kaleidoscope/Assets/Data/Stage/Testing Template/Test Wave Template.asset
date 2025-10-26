@@ -21,4 +21,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 96e2ef6b821db2d46890f0ad336efd96, type: 2}
   - {fileID: 11400000, guid: 6e72c3a9390db644387b5200c9b778a1, type: 2}
   - {fileID: 11400000, guid: 6d883b092a71c9a40b57f46adf5624c6, type: 2}
+  - {fileID: 11400000, guid: e0cab996fa8f61e4bb64bb5f79f3d82a, type: 2}
+  - {fileID: 11400000, guid: 84053595df8341540b38f35f5787f577, type: 2}
+  - {fileID: 11400000, guid: 4428645c45ff2e844a3399f024ab8acd, type: 2}
+  pillarLightSpawnEvents:
+  - {fileID: 11400000, guid: b7c9dce1e7e398f4fbddd1ea87c79205, type: 2}
+  - {fileID: 11400000, guid: 881e0fa7e8513824d871536a4e20706e, type: 2}
+  - {fileID: 11400000, guid: b11e7b2c403f3ef42a635ce1a74a0ec2, type: 2}
+  - {fileID: 11400000, guid: dcb4dffc72fba674e9465e870fbba406, type: 2}
   delayBeforeNextWave: 6

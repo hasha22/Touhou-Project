@@ -188,7 +188,7 @@ namespace KH
                 }
                 if (gameObject.CompareTag("Faith"))
                 {
-                    ScoreManager.instance.AddFaith(addedFaith);
+                    FaithManager.instance.AddFaith(addedFaith);
                 }
                 if (gameObject.CompareTag("1 Up"))
                 {

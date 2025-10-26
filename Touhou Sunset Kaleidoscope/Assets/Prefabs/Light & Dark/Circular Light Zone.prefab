@@ -106,8 +106,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KH.LightZone_Circular
   intensity: 1
   zoneColor: {r: 1, g: 1, b: 1, a: 1}
-  scaleX: 0.4
-  scaleY: 0.4
   fadeInDuration: 1.5
   fadeOutDuration: 2
 --- !u!58 &834774819267466377

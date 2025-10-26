@@ -69,7 +69,6 @@ namespace KH
             multiplier2 = scoreMultiplier;
             spriteRenderer = GetComponent<SpriteRenderer>();
             playerMovement = GetComponent<PlayerMovement>();
-
         }
         private void Start()
         {

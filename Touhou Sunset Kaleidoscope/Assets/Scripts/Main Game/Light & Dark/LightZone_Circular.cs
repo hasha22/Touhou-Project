@@ -11,11 +11,6 @@ namespace KH
         [Header("References")]
         private Coroutine alphaCoroutine;
         private SpriteRenderer spriteRenderer;
-
-        protected override void OnEnable()
-        {
-
-        }
         private void OnDisable()
         {
             if (alphaCoroutine != null)
@@ -23,7 +18,6 @@ namespace KH
 
             alphaCoroutine = null;
         }
-
         public override void Initialize(Vector2 position, LightZoneSize zoneSize)
         {
             SetNewSize(zoneSize);

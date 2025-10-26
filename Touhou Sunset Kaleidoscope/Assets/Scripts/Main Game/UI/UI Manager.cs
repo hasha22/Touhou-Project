@@ -345,6 +345,6 @@ namespace KH
             deathScreen.SetActive(true);
             AudioManager.instance.bgmSource.Stop();
         }
-        static float EaseOutCubic(float t) => 1f - Mathf.Pow(1f - t, 3f);
+        private float EaseOutCubic(float t) => 1f - Mathf.Pow(1f - t, 3f);
     }
 }

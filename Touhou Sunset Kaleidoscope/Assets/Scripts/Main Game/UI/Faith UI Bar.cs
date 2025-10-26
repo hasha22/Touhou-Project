@@ -7,8 +7,8 @@ namespace KH
         [Header("Slider Setup")]
         public Slider faithSlider;
         public float sliderSpeed = 50f;
-        private int minFaith = 50000;
-        private int maxFaith = 100000;
+        private int minFaith = 0;
+        private int maxFaith = 10000;
 
         private void Awake()
         {
@@ -22,7 +22,7 @@ namespace KH
         }
         private void Update()
         {
-            int currentFaith = ScoreManager.instance.displayedFaith;
+            int currentFaith = FaithManager.instance.currentFaith;
 
             bool shouldShow = currentFaith > minFaith;
 
