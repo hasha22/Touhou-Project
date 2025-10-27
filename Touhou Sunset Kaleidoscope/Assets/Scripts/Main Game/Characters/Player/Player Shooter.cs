@@ -57,13 +57,16 @@ namespace KH
             Vector3 spawnPosition2 = transform.position + (Vector3)playerManager.characterData.shotType.spawnOffset2;
 
             // Grabs bullets from pool
-            GameObject bulletObject1 = ObjectPool.instance.GetPooledPlayerObject();
-            GameObject bulletObject2 = ObjectPool.instance.GetPooledPlayerObject();
+            GameObject bulletObject1 = ObjectPool.instance.GetPooledPlayerBullet();
+            GameObject bulletObject2 = ObjectPool.instance.GetPooledPlayerBullet();
 
             if (bulletObject1 != null && bulletObject2 != null)
             {
                 bulletObject1.transform.position = spawnPosition1;
                 bulletObject2.transform.position = spawnPosition2;
+
+                bulletObject1.SetActive(true);
+                bulletObject2.SetActive(true);
 
                 currentBulletDamage = playerManager.characterData.shotType.damage;
                 float damage = currentBulletDamage * (1 + playerManager.currentPower * damageMultiplier) * playerManager.damageMultiplier;

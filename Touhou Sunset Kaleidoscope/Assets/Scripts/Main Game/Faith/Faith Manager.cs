@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 namespace KH
 {
@@ -7,6 +8,7 @@ namespace KH
 
         [Header("Faith Values")]
         public int currentFaith = 5000;
+        [HideInInspector] public int displayedFaith;
         [SerializeField] private int maxFaith = 10000;
         [SerializeField] private int minFaith = 0;
 
@@ -17,14 +19,25 @@ namespace KH
 
         [Header("Visuals")]
         [SerializeField] private UnityEngine.Rendering.Universal.Light2D globalLight;
+        [SerializeField] private int faithUpdateSpeed = 200;
 
         [Header("Thresholds")]
         [SerializeField] private int auraThreshold = 8000;
 
-        private bool auraActive = false;
-        private bool playerInLight = false;
+        [Header("Coroutines")]
+        private Coroutine faithDecayCoroutine;
+
+        [Header("Flags")]
+        public bool auraActive = false;
+        public bool playerInLight = false;
+        public bool isPlayerDead = false;
+
+        [Header("References")]
+        private PlayerManager playerManager;
         private void Awake()
         {
+            displayedFaith = currentFaith;
+            playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
             if (instance == null)
             {
                 instance = this;
@@ -37,53 +50,97 @@ namespace KH
         }
         private void Update()
         {
+            //testing
             if (Input.GetKey(KeyCode.W))
-                AddFaith(500);
-            if (Input.GetKey(KeyCode.S))
-                RemoveFaith(500);
-            UpdateLightningVisuals();
+                AddFaith(100);
+
             UpdateFaithDecay();
+            UpdateLightningVisuals();
+            UpdateFaithVisuals();
         }
         public void AddFaith(int amount)
         {
-            //+= Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
+            currentFaith += amount;
+            if (currentFaith >= maxFaith) currentFaith = maxFaith;
 
-            currentFaith = Mathf.Clamp(currentFaith + amount, minFaith, maxFaith);
-            UIManager.instance.UpdateFaithUI(currentFaith);
             timeSinceLastLight = 0f;
             CheckThreshold();
         }
         public void RemoveFaith(int amount)
         {
-            currentFaith = Mathf.Clamp(currentFaith - amount, minFaith, maxFaith);
+            currentFaith -= amount;
             if (currentFaith <= 0) currentFaith = minFaith;
-            UIManager.instance.UpdateFaithUI(currentFaith);
+
             CheckThreshold();
         }
         private void UpdateFaithDecay()
         {
+            playerInLight = playerManager.inLight;
+
             if (!playerInLight)
                 timeSinceLastLight += Time.deltaTime;
             else
                 timeSinceLastLight = 0f;
 
-            if (timeSinceLastLight > decayDelay)
+            if (playerInLight && faithDecayCoroutine != null)
             {
-                RemoveFaith(decayRate);
+                StopCoroutine(faithDecayCoroutine);
+                faithDecayCoroutine = null;
             }
 
-            if (currentFaith <= 0)
+            if (timeSinceLastLight > decayDelay && faithDecayCoroutine == null)
             {
-                // handle death to darkness here
+                faithDecayCoroutine = StartCoroutine(FaithDecayRoutine());
             }
+
+            // handle death to darkness here
+            if (currentFaith <= 0 && !isPlayerDead)
+            {
+                isPlayerDead = true;
+                playerManager.Die();
+                AddFaith(1000);
+                isPlayerDead = false;
+            }
+        }
+        private void UpdateFaithVisuals()
+        {
+            if (displayedFaith < currentFaith)
+            {
+                displayedFaith += Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
+
+                if (displayedFaith > currentFaith) { displayedFaith = currentFaith; }
+
+                UIManager.instance.UpdateFaithUI(displayedFaith);
+
+                if (faithDecayCoroutine != null)
+                {
+                    StopCoroutine(faithDecayCoroutine);
+                    faithDecayCoroutine = null;
+                }
+
+            }
+            else if (displayedFaith > currentFaith)
+            {
+                displayedFaith -= Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
+                UIManager.instance.UpdateFaithUI(displayedFaith);
+            }
+        }
+        private IEnumerator FaithDecayRoutine()
+        {
+            while (currentFaith > minFaith)
+            {
+                RemoveFaith(Mathf.CeilToInt(decayRate * Time.deltaTime));
+                yield return null;
+            }
+
+            faithDecayCoroutine = null;
         }
         private void UpdateLightningVisuals()
         {
-            float t = currentFaith / maxFaith;
+            float t = (float)currentFaith / maxFaith;
 
             // smoothly adjust intensity
-            globalLight.intensity = Mathf.Lerp(globalLight.intensity, Mathf.Lerp(0.1f, 1f, t), Time.deltaTime * 2f);
-            //globalLight.intensity = Mathf.Lerp(0.1f, 1f, t);
+            globalLight.intensity = Mathf.Lerp(globalLight.intensity, Mathf.Lerp(0.1f, 1f, t), Time.deltaTime);
 
             // optionally change color tone (warm for high faith, cool for low)
             Color brightColor = Color.Lerp(new Color(0.2f, 0.4f, 1f), Color.white, t);

@@ -142,7 +142,7 @@ namespace KH
             }
         }
 
-        public GameObject GetPooledPlayerObject()
+        public GameObject GetPooledPlayerBullet()
         {
             for (int i = 0; i < pooledPlayerBullets.Count; i++)
             {
@@ -160,7 +160,6 @@ namespace KH
             {
                 if (!pooledEnemyBullets[i].activeInHierarchy)
                 {
-                    pooledEnemyBullets[i].SetActive(true);
                     return pooledEnemyBullets[i];
                 }
             }
@@ -172,7 +171,6 @@ namespace KH
             {
                 if (!pooledItems[i].activeInHierarchy)
                 {
-                    pooledItems[i].SetActive(true);
                     return pooledItems[i];
                 }
             }
@@ -207,7 +205,6 @@ namespace KH
             {
                 if (!pooledPillarZones[i].activeInHierarchy)
                 {
-                    pooledPillarZones[i].SetActive(true);
                     return pooledPillarZones[i];
                 }
             }
@@ -219,7 +216,6 @@ namespace KH
             {
                 if (!pooledCircularZones[i].activeInHierarchy)
                 {
-                    pooledCircularZones[i].SetActive(true);
                     return pooledCircularZones[i];
                 }
             }
@@ -231,8 +227,6 @@ namespace KH
             {
                 if (!pooledFollowZones_Capsule[i].activeInHierarchy)
                 {
-
-                    pooledFollowZones_Capsule[i].SetActive(true);
                     return pooledFollowZones_Capsule[i];
                 }
             }
@@ -245,7 +239,6 @@ namespace KH
                 if (!pooledFollowZones_Circle[i].activeInHierarchy)
                 {
 
-                    pooledFollowZones_Circle[i].SetActive(true);
                     return pooledFollowZones_Circle[i];
                 }
             }
@@ -257,7 +250,6 @@ namespace KH
             {
                 if (!pooledShadowZones[i].activeInHierarchy)
                 {
-                    pooledShadowZones[i].SetActive(true);
                     return pooledShadowZones[i];
                 }
             }
@@ -276,7 +268,9 @@ namespace KH
             GameObject bullet = GetPooledEnemyBullet();
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
-            rb.position = worldPos;
+            Debug.Log(worldPos);
+
+            bullet.transform.position = worldPos;
             rb.linearVelocity = Vector2.zero;
 
             bullet.SetActive(true);

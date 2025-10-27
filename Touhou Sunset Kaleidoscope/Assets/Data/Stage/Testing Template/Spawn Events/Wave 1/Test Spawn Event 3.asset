@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9835e7e1202c98846896ca4445a76cad, type: 3}
-  m_Name: Test Spawn Event 4
+  m_Name: Test Spawn Event 3
   m_EditorClassIdentifier: 
-  enemyID: 3
-  spawnPoint: {x: -8, y: 3.7, z: 0}
-  spawnTime: 8
+  enemyID: 2
+  spawnPoint: {x: -8, y: 2.7, z: 0}
+  spawnTime: 3

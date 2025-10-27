@@ -25,6 +25,7 @@ namespace KH
             GameObject zone = ObjectPool.instance.GetPooledFollowZone_Capsule();
             LightZone_FollowBullet lightZone = zone.GetComponent<LightZone_FollowBullet>();
 
+            //make sure to set active
             lightZone.AttachToBullet(bulletTransform);
             activeZones.Add(lightZone);
             return lightZone;

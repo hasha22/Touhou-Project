@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Testing Light Spawn Event 6
   m_EditorClassIdentifier: Assembly-CSharp::KH.CircularLightSpawnEvent
   circularZoneSize: 0
-  spawnPosition: {x: -2.6, y: -4, z: 0}
+  spawnPosition: {x: -3.6, y: -3.34, z: 0}
   spawnTime: 20

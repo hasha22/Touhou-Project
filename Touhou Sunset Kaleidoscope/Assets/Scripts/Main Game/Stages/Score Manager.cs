@@ -50,7 +50,7 @@ namespace KH
         }
         private void Update()
         {
-            // Score & Faith UI Updates
+            // Score UI Updates
             if (displayedCurrentScore < CurrentScore)
             {
                 displayedCurrentScore += Mathf.CeilToInt(scoreUpdateSpeed * Time.deltaTime);
@@ -67,35 +67,7 @@ namespace KH
 
                 UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
             }
-            // need to move some faith logic to faith manager on player game object
-            /*
-            if (displayedFaith < Faith)
-            {
-                displayedFaith += Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
 
-                if (displayedFaith > Faith) { displayedFaith = Faith; }
-
-                UIManager.instance.UpdateFaithUI(displayedFaith);
-
-                if (faithDecreaseCoroutine != null)
-                {
-                    StopCoroutine(faithDecreaseCoroutine);
-                    faithDecreaseCoroutine = null;
-                }
-            }
-            else if (displayedFaith > Faith)
-            {
-                displayedFaith -= Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
-                UIManager.instance.UpdateFaithUI(displayedFaith);
-            }
-            else
-            {
-                if (Faith > minFaith && faithDecreaseCoroutine == null)
-                {
-                    faithDecreaseCoroutine = StartCoroutine(FaithDecayRoutine());
-                }
-            }
-            */
             // Life Updates
             if (CurrentScore >= 20000000 && !passedFirst)
             {

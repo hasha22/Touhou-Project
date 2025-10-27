@@ -14,14 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KH.Hailstorm
   bulletType: {fileID: 11400000, guid: f99a85186606fd24b8760314f8a7c7b7, type: 2}
   defaultBulletSpeed: 4
-  numberOfBursts: 4
-  delayBetweenBursts: 0.5
+  numberOfBursts: 3
+  delayBetweenBursts: 0.8
   spreadDegrees: 360
   startAngle: 0
+  minBurstOffset: 0.2
+  maxBurstOffset: 0.4
   steps: 12
   bulletsPerStep: 3
   angleBetweenSteps: 30
-  bulletSpacing: 0.5
+  bulletSpacing: 0.6
   initialBulletDeceleration:
     serializedVersion: 2
     m_Curve:

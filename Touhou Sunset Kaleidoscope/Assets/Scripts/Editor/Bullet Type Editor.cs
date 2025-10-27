@@ -1,5 +1,5 @@
-#if UNITY_EDITOR
 using KH;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 

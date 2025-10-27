@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d9d84aeb9c25584aa5cf70e8a2233c1, type: 3}
   m_Name: Testing Light Spawn Event
   m_EditorClassIdentifier: Assembly-CSharp::KH.CircularLightSpawnEvent
+  circularZoneSize: 1
   spawnPosition: {x: -5.6, y: -3.34, z: 0}
   spawnTime: 3

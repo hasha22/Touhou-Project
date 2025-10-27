@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 333ac7b32919e9e429f4a4244c2e9097, type: 3}
-  m_Name: Test Movement Sequence 5
+  m_Script: {fileID: 11500000, guid: 9835e7e1202c98846896ca4445a76cad, type: 3}
+  m_Name: Test Spawn Event 4
   m_EditorClassIdentifier: 
-  movementSteps:
-  - pattern: {fileID: 11400000, guid: 5a5b9b2cc9131c345a7c27c11698e133, type: 2}
-    duration: 10
-    delayBeforeNext: 0
-  loopSequence: 0
+  enemyID: 3
+  spawnPoint: {x: 2.8, y: 0.7, z: 0}
+  spawnTime: 3.3

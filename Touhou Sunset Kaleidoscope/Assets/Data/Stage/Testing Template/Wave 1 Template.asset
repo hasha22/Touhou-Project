@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42a326601bea4ea48bb7ba1d3d6c1b48, type: 3}
-  m_Name: Test Wave Template
+  m_Name: Wave 1 Template
   m_EditorClassIdentifier: 
   spawnEvents:
   - {fileID: 11400000, guid: d1b899be39cc7244da1608bc2cc665cc, type: 2}
+  - {fileID: 11400000, guid: 5deb5973a5c901047a5914b45dfed839, type: 2}
+  - {fileID: 11400000, guid: 905718112446955479896c1b7de0b61b, type: 2}
+  - {fileID: 11400000, guid: a7c9efdef6774504693b627345bbbcd3, type: 2}
   circularLightSpawnEvents:
   - {fileID: 11400000, guid: 8bce0ff3afdce0a47a8086a62a5ebe6e, type: 2}
   - {fileID: 11400000, guid: 6062ba5032a7a9a4d825f6fa1c40e003, type: 2}
@@ -29,4 +32,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 881e0fa7e8513824d871536a4e20706e, type: 2}
   - {fileID: 11400000, guid: b11e7b2c403f3ef42a635ce1a74a0ec2, type: 2}
   - {fileID: 11400000, guid: dcb4dffc72fba674e9465e870fbba406, type: 2}
+  - {fileID: 11400000, guid: c0a3699ab8c13c8478bcee611af151a1, type: 2}
+  - {fileID: 11400000, guid: a10255c8a98fc1f41b50c45afc5acd3c, type: 2}
+  - {fileID: 11400000, guid: 6b0570a14c2084643a2ffef225767ce7, type: 2}
   delayBeforeNextWave: 6

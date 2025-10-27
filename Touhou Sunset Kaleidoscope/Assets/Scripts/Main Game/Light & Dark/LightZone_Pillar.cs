@@ -31,6 +31,8 @@ namespace KH
         public override void Initialize(Vector2 position, LightZoneSize zoneSize)
         {
             SetNewSize(zoneSize);
+            transform.position = position;
+            gameObject.SetActive(true);
 
             spriteRenderer = GetComponent<SpriteRenderer>();
             zoneCollider = GetComponent<Collider2D>();
@@ -40,8 +42,6 @@ namespace KH
             // start the fade loop
             if (alphaCoroutine != null) StopCoroutine(alphaCoroutine);
             alphaCoroutine = StartCoroutine(FadeCoroutine());
-
-            transform.position = position;
         }
         private IEnumerator FadeCoroutine()
         {

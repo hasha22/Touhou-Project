@@ -25,6 +25,8 @@ namespace KH
 
             GameObject sphere = ObjectPool.instance.GetPooledShadowZone();
             activeShadows.Add(sphere.GetComponent<ShadowSphere>());
+
+            sphere.SetActive(true);
             return sphere.GetComponent<ShadowSphere>();
 
         }

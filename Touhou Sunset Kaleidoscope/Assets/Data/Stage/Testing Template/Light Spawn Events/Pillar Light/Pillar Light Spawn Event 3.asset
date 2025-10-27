@@ -15,4 +15,4 @@ MonoBehaviour:
   pillarZoneSize: 0
   direction: {x: -0.5, y: -0.5}
   spawnPosition: {x: 2.8, y: 3.2, z: 0}
-  spawnTime: 8
+  spawnTime: 13

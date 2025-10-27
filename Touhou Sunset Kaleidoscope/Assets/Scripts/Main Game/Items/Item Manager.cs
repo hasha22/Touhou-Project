@@ -61,6 +61,8 @@ namespace KH
             scoreItem.transform.localScale = new Vector3(1, 1, 1);
             ItemController itemController = scoreItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.Score, regularScore, 0, 0, regularScoreSprite);
+
+            scoreItem.SetActive(true);
         }
         public void SpawnGreatScoreItem(Vector3 spawnPos)
         {
@@ -69,6 +71,8 @@ namespace KH
             scoreItem.transform.localScale = new Vector3(1, 1, 1);
             ItemController itemController = scoreItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.Score, greatScore, 0, 0, greatScoreSprite);
+
+            scoreItem.SetActive(true);
         }
         public void SpawnSmallFaithItem(Vector3 spawnPos)
         {
@@ -77,6 +81,8 @@ namespace KH
             faithItem.transform.localScale = new Vector3(1, 1, 1);
             ItemController itemController = faithItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.Faith, 0, 0, smallFaithMultiplier, smallFaithSprite);
+
+            faithItem.SetActive(true);
         }
         public void SpawnStarFaithItem(Vector3 spawnPos)
         {
@@ -85,6 +91,8 @@ namespace KH
             faithItem.transform.localScale = new Vector3(1, 1, 1);
             ItemController itemController = faithItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.Faith, 0, 0, starFaithMultiplier, starFaithSprite);
+
+            faithItem.SetActive(true);
         }
         public void SpawnRegularPowerItem(Vector3 spawnPos)
         {
@@ -99,6 +107,7 @@ namespace KH
             {
                 ConvertPowerItemToScore(itemController);
             }
+            powerItem.SetActive(true);
         }
         public void SpawnGreatPowerItem(Vector3 spawnPos)
         {
@@ -113,6 +122,7 @@ namespace KH
             {
                 ConvertPowerItemToScore(itemController);
             }
+            powerItem.SetActive(true);
         }
         public void SpawnFullPowerItem(Vector3 spawnPos)
         {
@@ -127,6 +137,7 @@ namespace KH
             {
                 ConvertPowerItemToScore(itemController);
             }
+            powerItem.SetActive(true);
         }
         public void Spawn1UpItem(Vector3 spawnPos)
         {
@@ -135,6 +146,8 @@ namespace KH
             oneUpItem.transform.localScale = new Vector3(1, 1, 1);
             ItemController itemController = oneUpItem.GetComponent<ItemController>();
             itemController.InitializeItem(ItemType.OneUp, 0, 0, 0, oneUpSprite);
+
+            oneUpItem.SetActive(true);
         }
         public GameObject InitializePlayerDeathItem(int parity, Vector3 spawnPos)
         {
@@ -149,6 +162,7 @@ namespace KH
                 powerItem.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
                 itemController.InitializeItem(ItemType.Power, 0, greatPower, 0, powerSprite);
             }
+            powerItem.SetActive(true);
 
             return powerItem;
         }
@@ -218,14 +232,20 @@ namespace KH
                 case ItemToSpawn.GreatPower:
                     SpawnGreatPowerItem(spawnPosition);
                     break;
+                case ItemToSpawn.FullPower:
+                    SpawnFullPowerItem(spawnPosition);
+                    break;
                 case ItemToSpawn.Score:
                     SpawnRegularScoreItem(spawnPosition);
                     break;
                 case ItemToSpawn.GreatScore:
                     SpawnGreatPowerItem(spawnPosition);
                     break;
-                case ItemToSpawn.FullPower:
-                    SpawnFullPowerItem(spawnPosition);
+                case ItemToSpawn.Faith:
+                    SpawnSmallFaithItem(spawnPosition);
+                    break;
+                case ItemToSpawn.StarFaith:
+                    SpawnStarFaithItem(spawnPosition);
                     break;
                 case ItemToSpawn.OneUp:
                     Spawn1UpItem(spawnPosition);
