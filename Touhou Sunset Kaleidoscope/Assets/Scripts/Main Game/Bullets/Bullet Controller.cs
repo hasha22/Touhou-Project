@@ -32,6 +32,10 @@ namespace KH
         private float accelerationDuration;
         private AnimationCurve accelerationCurve;
 
+        [Header("Player Aura Slowdown")]
+        private float speedMultiplier = 1f;
+        private float initialSpeed;
+
         [Header("Light Zone")]
         private LightZone_FollowBullet currentLightZone;
 
@@ -113,6 +117,7 @@ namespace KH
             //rb.linearVelocity = dir.normalized * speed;
             spriteRenderer.sprite = sprite;
             bulletSpeed = speed;
+            initialSpeed = speed;
             direction = dir.normalized;
 
             float spriteWidth = sprite.bounds.size.x;
@@ -213,6 +218,17 @@ namespace KH
             accelerationDuration = duration;
             accelerationTimer = 0f;
             isAccelerating = true;
+        }
+
+        public void ApplySpeedMultiplier(float multiplier)
+        {
+            speedMultiplier = Mathf.Min(speedMultiplier, multiplier);
+            bulletSpeed = initialSpeed * speedMultiplier;
+        }
+        public void ResetSpeed()
+        {
+            speedMultiplier = 1f;
+            bulletSpeed = initialSpeed;
         }
         public void StopMovement(float duration)
         {

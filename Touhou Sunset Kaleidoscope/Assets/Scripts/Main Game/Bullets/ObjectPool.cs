@@ -268,8 +268,6 @@ namespace KH
             GameObject bullet = GetPooledEnemyBullet();
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
-            Debug.Log(worldPos);
-
             bullet.transform.position = worldPos;
             rb.linearVelocity = Vector2.zero;
 

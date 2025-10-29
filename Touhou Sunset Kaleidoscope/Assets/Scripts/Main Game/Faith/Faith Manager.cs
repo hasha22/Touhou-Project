@@ -21,9 +21,6 @@ namespace KH
         [SerializeField] private UnityEngine.Rendering.Universal.Light2D globalLight;
         [SerializeField] private int faithUpdateSpeed = 200;
 
-        [Header("Thresholds")]
-        [SerializeField] private int auraThreshold = 8000;
-
         [Header("Coroutines")]
         private Coroutine faithDecayCoroutine;
 
@@ -34,6 +31,7 @@ namespace KH
 
         [Header("References")]
         private PlayerManager playerManager;
+        [SerializeField] private PlayerAuraController playerAuraController;
         private void Awake()
         {
             displayedFaith = currentFaith;
@@ -148,11 +146,11 @@ namespace KH
         }
         private void CheckThreshold()
         {
-            if (currentFaith >= auraThreshold && !auraActive)
+            if (currentFaith >= playerAuraController.auraActivationThreshold && !auraActive)
             {
                 auraActive = true;
             }
-            else if (currentFaith < auraThreshold)
+            else if (currentFaith < playerAuraController.auraActivationThreshold)
             {
                 auraActive = false;
             }
