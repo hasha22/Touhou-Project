@@ -1,12 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 namespace KH
 {
     [CreateAssetMenu(menuName = "Patterns/Singular Laser")]
     public class SingularLaser : EnemyShotPattern
     {
         [Header("Laser Data")]
-        public float laserDirectionAngle;
+        public Vector2 laserDirectionAngle;
 
         [Header("Laser Acceleration")]
         public AnimationCurve initialBulletAcceleration = AnimationCurve.EaseInOut(0, 0, 1, 1);
@@ -30,9 +31,16 @@ namespace KH
             BulletController bulletController = bullet.GetComponent<BulletController>();
 
             // direction
-            float angle = laserDirectionAngle;
-            float radians = angle * Mathf.Deg2Rad;
-            Vector2 laserDirection = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
+            Vector3 meowDirection;
+            if (laserDirectionAngle == Vector2.zero)
+            {
+                meowDirection = PlayerInputManager.instance.playerObject.transform.position - bullet.transform.position;
+            }
+            else
+            {
+                meowDirection = laserDirectionAngle;
+            }
+            Vector2 laserDirection = meowDirection.normalized;
 
             // bullet rotation 
             float rotationAngle = Mathf.Atan2(laserDirection.y, laserDirection.x) * Mathf.Rad2Deg;

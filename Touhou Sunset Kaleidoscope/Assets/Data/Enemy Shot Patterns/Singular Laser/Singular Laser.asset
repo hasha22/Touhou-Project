@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KH.SingularLaser
   bulletType: {fileID: 11400000, guid: 89038d311fe1b7c439a9f0a86f843cdf, type: 2}
   defaultBulletSpeed: 3
-  laserDirectionAngle: 270
+  laserDirectionAngle: {x: 0, y: -1}
   initialBulletAcceleration:
     serializedVersion: 2
     m_Curve:
