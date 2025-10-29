@@ -24,5 +24,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8279148b589c6a748829f8b31e21e5f1, type: 2}
   colliderSize: {x: 0.6, y: 0.98}
   colliderOffset: {x: -0.014, y: 0.05}
-  spawnTimeInStage: 8
+  spawnTimeInStage: 20
   spawnPoint: {x: -2.76, y: 3.13, z: 0}

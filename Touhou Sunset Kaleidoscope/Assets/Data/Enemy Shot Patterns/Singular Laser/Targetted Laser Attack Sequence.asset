@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35db7f9ce4c5c3b4e890c1274faa18d8, type: 3}
+  m_Name: Targetted Laser Attack Sequence
+  m_EditorClassIdentifier: Assembly-CSharp::KH.AttackSequence
+  patternSteps:
+  - pattern: {fileID: 11400000, guid: b4ea48b2aec26a34b89fa70fe7e7422c, type: 2}
+    delayBeforeNextPattern: 2
+  loopPattern: 0

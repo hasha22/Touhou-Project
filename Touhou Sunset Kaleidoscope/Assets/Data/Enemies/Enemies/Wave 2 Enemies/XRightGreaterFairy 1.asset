@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86c106116faf604da8bc28eb5568742, type: 3}
+  m_Name: XRightGreaterFairy 1
+  m_EditorClassIdentifier: Assembly-CSharp::KH.Enemy
+  enemyName: X Greater Fairy Right
+  enemyHealth: 250
+  enemyID: 8
+  healthResetValue: 0
+  enemySprite: {fileID: 21300000, guid: 706020b5b11d84f4792eec898988eff8, type: 3}
+  enemyPrefab: {fileID: 1623289750752492140, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
+  enemyType: 1
+  itemToSpawn: 1
+  numberOfItemsToSpawn: 1
+  deathScore: 300
+  hitScore: 5
+  colliderSize: {x: 0.48, y: 0.48}
+  colliderOffset: {x: 1.49, y: -0.01}
+  attackSequence: {fileID: 11400000, guid: 52391950526ec3945a356ec6f0774a44, type: 2}
+  delayBeforeAttack: 1
+  movementSequence: {fileID: 11400000, guid: 5c117f489ea02e34d9c5e73104f61d83, type: 2}

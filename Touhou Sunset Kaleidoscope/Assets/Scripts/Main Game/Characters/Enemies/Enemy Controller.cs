@@ -206,6 +206,7 @@ namespace KH
             { StopCoroutine(AttackSequence()); }
 
             ItemManager.instance.SpawnItem(enemyData.itemToSpawn, transform.position);
+            Debug.Log("meow");
             ObjectPool.instance.ReturnToPool(gameObject);
         }
         public bool IsInPlayableArea(Vector3 worldPos)

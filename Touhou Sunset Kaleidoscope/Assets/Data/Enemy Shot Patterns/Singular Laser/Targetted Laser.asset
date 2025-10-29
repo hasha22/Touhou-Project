@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b6adbfedd7b57d4f9bfdab280fc2bf0, type: 3}
-  m_Name: Singular Laser
+  m_Name: Targetted Laser
   m_EditorClassIdentifier: Assembly-CSharp::KH.SingularLaser
   bulletType: {fileID: 11400000, guid: 89038d311fe1b7c439a9f0a86f843cdf, type: 2}
   defaultBulletSpeed: 3
-  laserDirectionAngle: {x: 0, y: -1}
+  laserDirectionAngle: 0
   initialBulletAcceleration:
     serializedVersion: 2
     m_Curve:
