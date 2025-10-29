@@ -2176,6 +2176,47 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!21 &364210228
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _WidthHeightRadius: {r: 153.5, g: 10, b: 10, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &368341736
 GameObject:
   m_ObjectHideFlags: 0
@@ -5271,47 +5312,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!21 &790443878
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _WidthHeightRadius: {r: 153.5, g: 10, b: 10, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &793171093
 GameObject:
   m_ObjectHideFlags: 0
@@ -12263,7 +12263,7 @@ Transform:
   m_GameObject: {fileID: 2056835470}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0283, y: -0.0604, z: 0}
+  m_LocalPosition: {x: 0.04, y: 0, z: 0}
   m_LocalScale: {x: 8.595664, y: 8.948249, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14074,7 +14074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 790443878}
+  m_Material: {fileID: 364210228}
   m_Color: {r: 0.69813055, g: 0.83396226, b: 0.6718904, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -14569,7 +14569,7 @@ PrefabInstance:
       objectReference: {fileID: 1979090760}
     - target: {fileID: 3256224395682587303, guid: 0498691643690a846ab8387c6f7ab89f, type: 3}
       propertyPath: currentFaith
-      value: 5000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 3256224395682587303, guid: 0498691643690a846ab8387c6f7ab89f, type: 3}
       propertyPath: faithUpdateSpeed
@@ -15115,7 +15115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3596797710595360170, guid: 236dabef9a023f84aaac31481069a736, type: 3}
       propertyPath: enemies.Array.size
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3596797710595360170, guid: 236dabef9a023f84aaac31481069a736, type: 3}
       propertyPath: 'bosses.Array.data[0]'
@@ -15141,6 +15141,22 @@ PrefabInstance:
       propertyPath: 'enemies.Array.data[3]'
       value: 
       objectReference: {fileID: 11400000, guid: 1306dac1cad2bd445b69dce49733c831, type: 2}
+    - target: {fileID: 3596797710595360170, guid: 236dabef9a023f84aaac31481069a736, type: 3}
+      propertyPath: 'enemies.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 06246f94862d0f3439c53ad58c8eaea7, type: 2}
+    - target: {fileID: 3596797710595360170, guid: 236dabef9a023f84aaac31481069a736, type: 3}
+      propertyPath: 'enemies.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a98557e73f6b68b4994af44e687c05ae, type: 2}
+    - target: {fileID: 3596797710595360170, guid: 236dabef9a023f84aaac31481069a736, type: 3}
+      propertyPath: 'enemies.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: df2fed9f132041644af9c6a35bfbe1fd, type: 2}
+    - target: {fileID: 3596797710595360170, guid: 236dabef9a023f84aaac31481069a736, type: 3}
+      propertyPath: 'enemies.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 46c4f3d6fbf3d644eaaa09b82ba5e2af, type: 2}
     - target: {fileID: 4131350692067938188, guid: 236dabef9a023f84aaac31481069a736, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
