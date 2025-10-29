@@ -18,6 +18,8 @@ namespace KH
         [SerializeField] private float timerBetweenWaves = 0f;
         private bool waitingForNextWave = false;
 
+        [Header("Flags")]
+        public bool isPaused = false;
         private bool hasSpawnedFirstBoss = false;
         private bool hasSpawnedSecondBoss = false;
         private void Awake()
@@ -43,6 +45,7 @@ namespace KH
         }
         private void Update()
         {
+            if (isPaused) return;
             if (currentStage == null) return;
 
             elapsedStageTime += Time.deltaTime;

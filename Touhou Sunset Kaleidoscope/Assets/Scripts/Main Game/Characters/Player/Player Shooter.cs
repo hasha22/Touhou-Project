@@ -12,6 +12,9 @@ namespace KH
         [SerializeField] private float damageMultiplier = 0.2f;
         public int currentBulletDamage = 0;
 
+        [Header("Flags")]
+        public bool isPaused = false;
+
         private Rigidbody2D rb;
 
         // It is crucial to separate input, which needs to be detected every frame, from shooting
@@ -27,6 +30,7 @@ namespace KH
         }
         void Update()
         {
+            if (isPaused) return;
             shootingInput = PlayerInputManager.instance.isShooting;
         }
         private void FixedUpdate()

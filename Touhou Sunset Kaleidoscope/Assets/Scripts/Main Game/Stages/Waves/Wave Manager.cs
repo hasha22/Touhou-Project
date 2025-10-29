@@ -12,6 +12,9 @@ namespace KH
         private int nextPillarLightSpawnIndex = 0;
         public WaveTemplate currentWave;
 
+        [Header("Flags")]
+        public bool isPaused = false;
+
         private void Awake()
         {
             if (instance == null)
@@ -34,7 +37,9 @@ namespace KH
         }
         void Update()
         {
+            if (isPaused) return;
             if (currentWave == null) return;
+
             waveTimer += Time.deltaTime;
 
             // spawns all enemies in the wave at their assigned time

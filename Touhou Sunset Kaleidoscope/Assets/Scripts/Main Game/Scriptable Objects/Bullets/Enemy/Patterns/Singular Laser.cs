@@ -31,6 +31,7 @@ namespace KH
 
             // direction
             float angle = laserDirectionAngle;
+
             float radians = angle * Mathf.Deg2Rad;
             Vector2 laserDirection = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
 
