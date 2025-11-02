@@ -41,6 +41,7 @@ namespace KH
             bossPrefab.transform.SetParent(ObjectPool.instance.importantObjectsParent);
             BossManager bossManager = bossPrefab.GetComponent<BossManager>();
             currentActiveBoss = bossManager;
+            currentActiveBoss.isPaused = true;
             bossManager.InitializeBoss(bossData);
         }
         public Enemy GetEnemyByID(int id)

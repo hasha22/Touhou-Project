@@ -51,10 +51,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 0}
   currentHealth: 0
-  startOnEnable: 1
+  currentAttackSequence: {fileID: 0}
   fireOriginOffset: {x: 0, y: 0}
   timer: 0
   currentMovementSequence: {fileID: 0}
+  itemAngleOffset: 12
+  itemVelocity: 2
+  itemLaunchDuration: 1
   hasDied: 0
 --- !u!95 &7282828294024160490
 Animator:
@@ -268,6 +271,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -289,6 +294,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1313047995
   m_SortingLayer: 1
   m_SortingOrder: 0

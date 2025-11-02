@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 namespace KH
 {
@@ -19,8 +20,12 @@ namespace KH
         public Vector2 colliderOffset;
 
         [Header("Spawn Settings")]
-        public float spawnTimeInStage;
+        public float spawnAfterWaveIndex;
         public Vector3 spawnPoint;
+
+        [Header("Dialogue Sequences")]
+        public bool shouldHaveInitialDialogue;
+        public List<DialogueSequence> dialogueSequences;
     }
 }
 

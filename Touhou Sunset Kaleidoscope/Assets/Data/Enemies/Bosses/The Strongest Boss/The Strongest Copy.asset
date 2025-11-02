@@ -20,5 +20,5 @@ MonoBehaviour:
   phases: []
   colliderSize: {x: 0, y: 0}
   colliderOffset: {x: 0, y: 0}
-  spawnTimeInStage: 900
+  spawnAfterWaveIndex: 600
   spawnPoint: {x: -2.76, y: 3.13, z: 0}

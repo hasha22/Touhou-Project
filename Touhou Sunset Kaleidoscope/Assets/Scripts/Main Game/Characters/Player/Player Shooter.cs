@@ -30,7 +30,11 @@ namespace KH
         }
         void Update()
         {
-            if (isPaused) return;
+            if (isPaused)
+            {
+                shootingInput = false;
+                return;
+            }
             shootingInput = PlayerInputManager.instance.isShooting;
         }
         private void FixedUpdate()

@@ -28,6 +28,7 @@ namespace KH
         public bool auraActive = false;
         public bool playerInLight = false;
         public bool isPlayerDead = false;
+        public bool isPaused = false;
 
         [Header("References")]
         private PlayerManager playerManager;
@@ -51,6 +52,8 @@ namespace KH
             //testing
             if (Input.GetKey(KeyCode.W))
                 AddFaith(100);
+
+            if (isPaused) return;
 
             UpdateFaithDecay();
             UpdateLightningVisuals();

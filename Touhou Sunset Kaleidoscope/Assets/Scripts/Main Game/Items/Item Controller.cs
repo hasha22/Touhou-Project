@@ -29,8 +29,8 @@ namespace KH
 
         [Header("Launch Settings")]
         [SerializeField] private bool isLaunched = false;
-        [SerializeField] private float launchTimer = 3f;
-        private float launchTimerReset;
+        private float launchTimer;
+        private float launchTimerReset = 0f;
 
         [Header("Offscreen Settings")]
         [SerializeField] private GameObject indicatorPrefab;
@@ -54,7 +54,6 @@ namespace KH
             indicatorSpriteRenderer = indicatorPrefab.GetComponent<SpriteRenderer>();
 
             playerMagnet = playerManager.playerMagnetTransform;
-            launchTimerReset = launchTimer;
 
             BoxCollider2D area = playableArea.GetComponent<BoxCollider2D>();
             Bounds bounds = area.bounds;
@@ -167,9 +166,12 @@ namespace KH
                     break;
             }
         }
-        public void LaunchItem(Vector2 direction, float speed)
+        public void LaunchItem(Vector2 direction, float speed, float duration)
         {
             isLaunched = true;
+
+            launchTimer = duration;
+            launchTimerReset = launchTimer;
 
             rb = GetComponent<Rigidbody2D>();
             rb.linearVelocity = direction.normalized * speed;

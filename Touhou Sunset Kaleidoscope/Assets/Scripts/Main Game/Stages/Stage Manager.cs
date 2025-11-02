@@ -8,18 +8,18 @@ namespace KH
 
         [Header("Stage Data")]
         public List<StageTemplate> stages;
-        private StageTemplate currentStage;
+        public int currentStageIndex = 0;
         [SerializeField] private string currentStageName;
         [SerializeField] private float elapsedStageTime;
-        public int currentStageIndex = 0;
+        private StageTemplate currentStage;
 
         [Header("Current Wave Information")]
         private int currentWaveIndex;
         [SerializeField] private float timerBetweenWaves = 0f;
-        private bool waitingForNextWave = false;
 
         [Header("Flags")]
         public bool isPaused = false;
+        private bool waitingForNextWave = false;
         private bool hasSpawnedFirstBoss = false;
         private bool hasSpawnedSecondBoss = false;
         private void Awake()
@@ -49,23 +49,12 @@ namespace KH
             if (currentStage == null) return;
 
             elapsedStageTime += Time.deltaTime;
+
             // If the wave just finished, start the waiting timer
             if (WaveManager.instance.IsWaveFinished() && !waitingForNextWave)
             {
                 waitingForNextWave = true;
                 timerBetweenWaves = 0;
-            }
-
-            // Boss spawning - all stages have one midboss and one main boss, so SpawnBoss() is hardcoded
-            if (elapsedStageTime >= currentStage.bosses[0].spawnTimeInStage && !hasSpawnedFirstBoss)
-            {
-                TriggerBossEvent(currentStage.bosses[0]);
-                hasSpawnedFirstBoss = true;
-            }
-            else if (elapsedStageTime >= currentStage.bosses[1].spawnTimeInStage && !hasSpawnedSecondBoss)
-            {
-                TriggerBossEvent(currentStage.bosses[1]);
-                hasSpawnedSecondBoss = true;
             }
 
             if (waitingForNextWave)
@@ -76,6 +65,20 @@ namespace KH
                 {
                     waitingForNextWave = false;
                     timerBetweenWaves = 0;
+
+                    // Boss spawning - all stages have one midboss and one main boss, so SpawnBoss() is hardcoded
+                    if (currentStage.bosses[0].spawnAfterWaveIndex == currentWaveIndex + 1 && !hasSpawnedFirstBoss)
+                    {
+                        TriggerBossEvent(currentStage.bosses[0]);
+                        hasSpawnedFirstBoss = true;
+                        return;
+                    }
+                    else if (currentStage.bosses[1].spawnAfterWaveIndex == currentWaveIndex + 1 && !hasSpawnedSecondBoss)
+                    {
+                        TriggerBossEvent(currentStage.bosses[1]);
+                        hasSpawnedSecondBoss = true;
+                        return;
+                    }
 
                     // Move to next wave or finish stage
                     if (currentWaveIndex < currentStage.waves.Count - 1)

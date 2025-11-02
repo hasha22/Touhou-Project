@@ -26,6 +26,7 @@ namespace KH
         [SerializeField] private float riseSpeed = 2f;
         [SerializeField] private float lowerLimit = 10f;
         [SerializeField] private float upperLimit = 100f;
+        [SerializeField] private float itemLaunchDuration = 3f;
         private bool hasDied = false;
         public bool canPullItems = true;
 
@@ -208,7 +209,7 @@ namespace KH
                 GameObject powerItem = ItemManager.instance.InitializePlayerDeathItem(i, transform.position + new Vector3(0, 0.5f, 0));
 
                 ItemController itemController = powerItem.GetComponent<ItemController>();
-                itemController.LaunchItem(direction, powerDeathVelocity);
+                itemController.LaunchItem(direction, powerDeathVelocity, itemLaunchDuration);
 
                 angle += degrees;
             }

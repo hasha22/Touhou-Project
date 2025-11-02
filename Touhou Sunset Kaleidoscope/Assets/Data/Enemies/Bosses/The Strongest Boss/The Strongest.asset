@@ -24,5 +24,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8279148b589c6a748829f8b31e21e5f1, type: 2}
   colliderSize: {x: 0.6, y: 0.98}
   colliderOffset: {x: -0.014, y: 0.05}
-  spawnTimeInStage: 20
+  spawnAfterWaveIndex: 2
   spawnPoint: {x: -2.76, y: 3.13, z: 0}
+  shouldHaveInitialDialogue: 1
+  dialogueSequences:
+  - {fileID: 11400000, guid: 31e005cb3804e2947bb252b7546d0546, type: 2}

@@ -54,7 +54,7 @@ namespace KH
                 Destroy(gameObject);
             }
         }
-        public void SpawnRegularScoreItem(Vector3 spawnPos)
+        public GameObject SpawnRegularScoreItem(Vector3 spawnPos)
         {
             GameObject scoreItem = ObjectPool.instance.GetPooledItem();
             scoreItem.transform.position = spawnPos;
@@ -63,8 +63,9 @@ namespace KH
             itemController.InitializeItem(ItemType.Score, regularScore, 0, 0, regularScoreSprite);
 
             scoreItem.SetActive(true);
+            return scoreItem;
         }
-        public void SpawnGreatScoreItem(Vector3 spawnPos)
+        public GameObject SpawnGreatScoreItem(Vector3 spawnPos)
         {
             GameObject scoreItem = ObjectPool.instance.GetPooledItem();
             scoreItem.transform.position = spawnPos;
@@ -73,8 +74,9 @@ namespace KH
             itemController.InitializeItem(ItemType.Score, greatScore, 0, 0, greatScoreSprite);
 
             scoreItem.SetActive(true);
+            return scoreItem;
         }
-        public void SpawnSmallFaithItem(Vector3 spawnPos)
+        public GameObject SpawnSmallFaithItem(Vector3 spawnPos)
         {
             GameObject faithItem = ObjectPool.instance.GetPooledItem();
             faithItem.transform.position = spawnPos;
@@ -83,8 +85,9 @@ namespace KH
             itemController.InitializeItem(ItemType.Faith, 0, 0, smallFaithMultiplier, smallFaithSprite);
 
             faithItem.SetActive(true);
+            return faithItem;
         }
-        public void SpawnStarFaithItem(Vector3 spawnPos)
+        public GameObject SpawnStarFaithItem(Vector3 spawnPos)
         {
             GameObject faithItem = ObjectPool.instance.GetPooledItem();
             faithItem.transform.position = spawnPos;
@@ -93,8 +96,9 @@ namespace KH
             itemController.InitializeItem(ItemType.Faith, 0, 0, starFaithMultiplier, starFaithSprite);
 
             faithItem.SetActive(true);
+            return faithItem;
         }
-        public void SpawnRegularPowerItem(Vector3 spawnPos)
+        public GameObject SpawnRegularPowerItem(Vector3 spawnPos)
         {
             GameObject powerItem = ObjectPool.instance.GetPooledItem();
             powerItem.transform.position = spawnPos;
@@ -108,8 +112,9 @@ namespace KH
                 ConvertPowerItemToScore(itemController);
             }
             powerItem.SetActive(true);
+            return powerItem;
         }
-        public void SpawnGreatPowerItem(Vector3 spawnPos)
+        public GameObject SpawnGreatPowerItem(Vector3 spawnPos)
         {
             GameObject powerItem = ObjectPool.instance.GetPooledItem();
             powerItem.transform.position = spawnPos;
@@ -123,8 +128,9 @@ namespace KH
                 ConvertPowerItemToScore(itemController);
             }
             powerItem.SetActive(true);
+            return powerItem;
         }
-        public void SpawnFullPowerItem(Vector3 spawnPos)
+        public GameObject SpawnFullPowerItem(Vector3 spawnPos)
         {
             GameObject powerItem = ObjectPool.instance.GetPooledItem();
             powerItem.transform.position = spawnPos;
@@ -138,8 +144,9 @@ namespace KH
                 ConvertPowerItemToScore(itemController);
             }
             powerItem.SetActive(true);
+            return powerItem;
         }
-        public void Spawn1UpItem(Vector3 spawnPos)
+        public GameObject Spawn1UpItem(Vector3 spawnPos)
         {
             GameObject oneUpItem = ObjectPool.instance.GetPooledItem();
             oneUpItem.transform.position = spawnPos;
@@ -148,6 +155,7 @@ namespace KH
             itemController.InitializeItem(ItemType.OneUp, 0, 0, 0, oneUpSprite);
 
             oneUpItem.SetActive(true);
+            return oneUpItem;
         }
         public GameObject InitializePlayerDeathItem(int parity, Vector3 spawnPos)
         {
@@ -222,35 +230,41 @@ namespace KH
                 itemController.currentPullRadius = itemController.defaultPullRadius;
             }
         }
-        public void SpawnItem(ItemToSpawn item, Vector3 spawnPosition)
+        public GameObject SpawnItem(ItemToSpawn item, Vector3 spawnPosition)
         {
+            GameObject spawnedItem = null;
             switch (item)
             {
                 case ItemToSpawn.Power:
-                    SpawnRegularPowerItem(spawnPosition);
+                    spawnedItem = SpawnRegularPowerItem(spawnPosition);
                     break;
                 case ItemToSpawn.GreatPower:
-                    SpawnGreatPowerItem(spawnPosition);
+                    spawnedItem = SpawnGreatPowerItem(spawnPosition);
                     break;
                 case ItemToSpawn.FullPower:
-                    SpawnFullPowerItem(spawnPosition);
+                    spawnedItem = SpawnFullPowerItem(spawnPosition);
                     break;
                 case ItemToSpawn.Score:
-                    SpawnRegularScoreItem(spawnPosition);
+                    spawnedItem = SpawnRegularScoreItem(spawnPosition);
                     break;
                 case ItemToSpawn.GreatScore:
-                    SpawnGreatPowerItem(spawnPosition);
+                    spawnedItem = SpawnGreatScoreItem(spawnPosition);
                     break;
                 case ItemToSpawn.Faith:
-                    SpawnSmallFaithItem(spawnPosition);
+                    spawnedItem = SpawnSmallFaithItem(spawnPosition);
                     break;
                 case ItemToSpawn.StarFaith:
-                    SpawnStarFaithItem(spawnPosition);
+                    spawnedItem = SpawnStarFaithItem(spawnPosition);
                     break;
                 case ItemToSpawn.OneUp:
-                    Spawn1UpItem(spawnPosition);
+                    spawnedItem = Spawn1UpItem(spawnPosition);
                     break;
             }
+            return spawnedItem;
+        }
+        public void LaunchItem(ItemToSpawn item, Vector2 spawnPos, Vector2 direction)
+        {
+
         }
     }
 }

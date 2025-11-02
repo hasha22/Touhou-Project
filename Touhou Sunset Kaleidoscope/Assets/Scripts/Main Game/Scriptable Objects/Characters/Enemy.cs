@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 namespace KH
 {
@@ -12,8 +13,7 @@ namespace KH
         public Sprite enemySprite;
         public GameObject enemyPrefab;
         public EnemyType enemyType;
-        public ItemToSpawn itemToSpawn;
-        public int numberOfItemsToSpawn;
+        public List<ItemToSpawn> itemsToSpawn;
 
         [Header("Score")]
         public int deathScore;

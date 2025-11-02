@@ -17,6 +17,7 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: 7ca06f82f0157f84488d87af69ca6f59, type: 2}
   - {fileID: 11400000, guid: 32610c56d45f5bd4b8e896fe75ea8041, type: 2}
+  - {fileID: 11400000, guid: 58bfb77bb2d47c644932d1e982ffa01e, type: 2}
   bosses:
   - {fileID: 11400000, guid: b2605123e8cfcf543b3529efcbfeea66, type: 2}
   - {fileID: 11400000, guid: 22a1681f7b164ae4da123b1c7fa0114d, type: 2}

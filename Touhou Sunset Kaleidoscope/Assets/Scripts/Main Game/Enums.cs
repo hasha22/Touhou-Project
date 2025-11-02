@@ -12,6 +12,11 @@ namespace KH
         Capsule,
         Polygon,
     }
+    public enum DialogueSpeaker
+    {
+        Player,
+        Boss
+    }
     public enum EnemyType
     {
         Fairy,

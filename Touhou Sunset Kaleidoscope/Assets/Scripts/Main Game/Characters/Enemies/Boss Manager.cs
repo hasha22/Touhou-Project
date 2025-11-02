@@ -11,16 +11,20 @@ namespace KH
         [Header("Phases")]
         public int currentPhaseIndex = 0;
         private int helperIndex = 0;
+        private int currentDialogueIndex = 0;
         private BossPhase currentPhase;
-        private bool phaseEndedEarly = false;
-        private bool isInvulnerable = false;
-        //[SerializeField] private float timerBeforeAttackSequenceBegins = 0f;
 
         [Header("Movement")]
         [SerializeField] private MovementSequence currentMovementSequence;
 
         [Header("Boss Attacks")]
         [SerializeField] private AttackSequence currentAttackSequence;
+
+        [Header("Flags")]
+        public bool isPaused = false;
+        public bool isWaitingForDialogue = true;
+        private bool phaseEndedEarly = false;
+        private bool isInvulnerable = false;
 
         [Header("References")]
         private BoxCollider2D boxCollider2D;
@@ -50,6 +54,7 @@ namespace KH
             maxBounds = bounds.max;
 
             helperIndex = 0;
+            currentDialogueIndex = 0;
         }
         private void Update()
         {
@@ -77,8 +82,18 @@ namespace KH
 
             spriteRenderer.enabled = true;
 
-            StartNextPhase();
             UIManager.instance.InitializeBossUI(bossData);
+            if (bossData.shouldHaveInitialDialogue)
+            {
+                isWaitingForDialogue = true;
+                isPaused = true;
+                DialogueManager.instance.StartDialogue(this.bossData.dialogueSequences[currentDialogueIndex]);
+                currentDialogueIndex++;
+            }
+            else
+            {
+                StartNextPhase();
+            }
         }
         public void StartNextPhase()
         {
@@ -129,7 +144,7 @@ namespace KH
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Player Bullet"))
+            if (collision.CompareTag("Player Bullet") && !isPaused && !isWaitingForDialogue)
             {
                 BulletController bullet = collision.GetComponent<BulletController>();
                 TakeDamage(bullet.bulletDamage);

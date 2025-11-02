@@ -16,6 +16,11 @@ namespace KH
         [Header("Movement")]
         public MovementSequence currentMovementSequence;
 
+        [Header("Enemy Item Settings")]
+        [SerializeField] private float itemAngleOffset = 30f;
+        [SerializeField] private float itemVelocity = 2f;
+        [SerializeField] private float itemLaunchDuration = 1f;
+
         [Header("Bool")]
         [HideInInspector] public bool hasDied = false;
 
@@ -205,9 +210,36 @@ namespace KH
             if (attackCoroutine != null)
             { StopCoroutine(AttackSequence()); }
 
-            ItemManager.instance.SpawnItem(enemyData.itemToSpawn, transform.position);
-            Debug.Log("meow");
+            SpawnItems();
             ObjectPool.instance.ReturnToPool(gameObject);
+        }
+        private void SpawnItems()
+        {
+            /*
+            if (enemyData.itemsToSpawn.Count == 1)
+            { 
+                ItemManager.instance.SpawnItem(enemyData.itemsToSpawn[0], transform.position);
+                return;
+            }
+            */
+
+            float angleStep = 360f / itemAngleOffset;
+            float radius = 0.2f;
+
+            for (int i = 0; i < enemyData.itemsToSpawn.Count; i++)
+            {
+                ItemToSpawn itemType = enemyData.itemsToSpawn[i];
+                float angle = i * angleStep * Mathf.Deg2Rad;
+                Vector2 direction = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle));
+
+                Vector2 spawnPos = transform.position + (Vector3)direction * radius;
+
+                GameObject spawnedItem = ItemManager.instance.SpawnItem(itemType, spawnPos);
+
+                ItemController itemController = spawnedItem.GetComponent<ItemController>();
+                Vector2 launchDirection = (direction + Vector2.up).normalized;
+                itemController.LaunchItem(launchDirection, itemVelocity, itemLaunchDuration);
+            }
         }
         public bool IsInPlayableArea(Vector3 worldPos)
         {

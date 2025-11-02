@@ -9,6 +9,7 @@ namespace KH
         public static DialogueManager instance { get; private set; }
 
         [Header("UI References")]
+        public GameObject dialogueBox;
         public Image playerPortrait;
         public Image bossPortrait;
         public TMP_Text speakerName;
@@ -17,11 +18,22 @@ namespace KH
         [Header("Typing Settings")]
         public float typingSpeed = 0.03f;
 
+        [Header("Highlight Settings")]
+        public float fadeSpeed = 6f;
+        public Vector2 playerOffset = new Vector2(-60f, 0f);
+        public Vector2 bossOffset = new Vector2(60f, 0f);
+        public Color dimColor = new Color(0.4f, 0.4f, 0.4f, 1f);
+        public Color normalColor = Color.white;
+        private Vector3 playerBasePos;
+        private Vector3 bossBasePos;
+
         [Header("References")]
         private int currentLine = 0;
-        private DialogueSequence currentSequence;
+        [SerializeField] private DialogueSequence currentSequence;
+        private Coroutine highlightRoutine;
 
         [Header("Flags")]
+        private bool isActive = false;
         private bool isTyping = false;
         private bool lineComplete = false;
         private void Awake()
@@ -36,12 +48,19 @@ namespace KH
                 Destroy(gameObject);
             }
         }
+        private void Start()
+        {
+            playerBasePos = playerPortrait.rectTransform.anchoredPosition;
+            bossBasePos = bossPortrait.rectTransform.anchoredPosition;
+        }
         private void Update()
         {
+            if (!isActive || !dialogueBox.activeInHierarchy) return;
+
             if (Input.GetKeyDown(KeyCode.Z) && lineComplete)
             {
                 currentLine++;
-                if (currentLine < currentSequence.lines.Count)
+                if (currentLine < currentSequence.lines.Count && isActive)
                     ShowLine();
                 else
                     EndDialogue();
@@ -49,25 +68,72 @@ namespace KH
         }
         public void StartDialogue(DialogueSequence sequence)
         {
-            WaveManager.instance.isPaused = true;
-            StageManager.instance.isPaused = true;
+            if (isActive) return;
 
+            dialogueBox.SetActive(true);
+            isActive = true;
             currentSequence = sequence;
             currentLine = 0;
+
+            PlayerShooter playerShooter = PlayerInputManager.instance.playerObject.GetComponent<PlayerShooter>();
+            WaveManager.instance.isPaused = true;
+            StageManager.instance.isPaused = true;
+            FaithManager.instance.isPaused = true;
+            playerShooter.isPaused = true;
+
             ShowLine();
         }
         private void ShowLine()
         {
+            if (currentSequence == null) return;
+
             StopAllCoroutines();
             DialogueLine line = currentSequence.lines[currentLine];
 
-            playerPortrait.sprite = line.isPlayer ? line.portraitSprite : null;
-            bossPortrait.sprite = line.isPlayer ? null : line.portraitSprite;
+            playerPortrait.sprite = line.playerPortraitSprite;
+            bossPortrait.sprite = line.bossPortraitSprite;
 
-            speakerName.text = line.speakerName;
+            //speakerName.text = line.speakerName;
             dialogueText.text = "";
 
+            if (highlightRoutine != null)
+                StopCoroutine(highlightRoutine);
+
+            highlightRoutine = StartCoroutine(HighlightSpeaker(line.speakerType));
+
             StartCoroutine(TypeText(line.text));
+        }
+        private IEnumerator HighlightSpeaker(DialogueSpeaker speaker)
+        {
+            // Capture targets
+            bool playerSpeaking = speaker == DialogueSpeaker.Player ? true : false;
+
+            Image active = playerSpeaking ? playerPortrait : bossPortrait;
+            Image inactive = playerSpeaking ? bossPortrait : playerPortrait;
+
+            float t = 0f;
+            Color startActiveColor = active.color;
+            Color startInactiveColor = inactive.color;
+
+            Vector3 playerStartPos = playerPortrait.rectTransform.anchoredPosition;
+            Vector3 bossStartPos = bossPortrait.rectTransform.anchoredPosition;
+
+            Vector3 playerTargetPos = playerBasePos + (playerSpeaking ? Vector3.zero : (Vector3)playerOffset);
+            Vector3 bossTargetPos = bossBasePos + (playerSpeaking ? (Vector3)bossOffset : Vector3.zero);
+
+            while (t < 1f)
+            {
+                t += Time.deltaTime * fadeSpeed;
+
+                active.color = Color.Lerp(startActiveColor, normalColor, t);
+                inactive.color = Color.Lerp(startInactiveColor, dimColor, t);
+
+                playerPortrait.rectTransform.anchoredPosition = Vector3.Lerp(playerStartPos, playerTargetPos, t);
+                bossPortrait.rectTransform.anchoredPosition = Vector3.Lerp(bossStartPos, bossTargetPos, t);
+
+
+                yield return null;
+            }
         }
         private IEnumerator TypeText(string text)
         {
@@ -87,11 +153,19 @@ namespace KH
         {
             PlayerShooter playerShooter = PlayerInputManager.instance.playerObject.GetComponent<PlayerShooter>();
 
+            dialogueBox.SetActive(false);
             playerShooter.isPaused = false;
             WaveManager.instance.isPaused = false;
             StageManager.instance.isPaused = false;
+            FaithManager.instance.isPaused = false;
 
-            Debug.Log("Dialogue Ended!");
+            BossManager boss = EnemyDatabase.instance.currentActiveBoss;
+            boss.isPaused = false;
+            boss.isWaitingForDialogue = false;
+            boss.StartNextPhase();
+
+            isActive = false;
+
         }
 
     }

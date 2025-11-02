@@ -19,8 +19,7 @@ MonoBehaviour:
   enemySprite: {fileID: 21300000, guid: 4e4b896ced6eefc4299b2fdfeea24dec, type: 3}
   enemyPrefab: {fileID: 1623289750752492140, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
   enemyType: 0
-  itemToSpawn: 6
-  numberOfItemsToSpawn: 1
+  itemsToSpawn: 060000000600000006000000
   deathScore: 1000
   hitScore: 60
   colliderSize: {x: 0.261, y: 0.444}
