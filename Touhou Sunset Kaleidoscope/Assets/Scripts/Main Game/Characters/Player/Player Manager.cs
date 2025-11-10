@@ -28,6 +28,7 @@ namespace KH
         [SerializeField] private float upperLimit = 100f;
         [SerializeField] private float itemLaunchDuration = 3f;
         private bool hasDied = false;
+        [HideInInspector] public bool isDead = false;
         public bool canPullItems = true;
 
         [Header("Player Invulnerability")]
@@ -105,7 +106,7 @@ namespace KH
                 hasConvertedPower = false;
             }
 
-            bombInput = PlayerInputManager.instance.isBombing;
+            //bombInput = PlayerInputManager.instance.isBombing;
 
             bool nowAbove = transform.position.y >= autoCollectY;
 
@@ -174,6 +175,7 @@ namespace KH
         public void Die()
         {
             hasDied = true;
+            isDead = true;
             currentPlayerLives--;
             AudioManager.instance.PlaySFX(AudioManager.instance.deathSFX, transform, 0.1f);
             UIManager.instance.RemoveLife();
@@ -292,9 +294,23 @@ namespace KH
                 elapsed += 0.2f;
             }
 
+            isDead = false;
             if (spriteRenderer != null) spriteRenderer.enabled = true;
             playerCollider.enabled = true;
             spriteRenderer.color = Color.white;
+        }
+        public void ResetPlayer()
+        {
+            gameObject.SetActive(true);
+            currentPlayerLives = 3;
+            currentPower = 1f;
+            UIManager.instance.UpdatePowerUI(currentPower);
+            for (int i = 0; i < currentPlayerLives - 1; i++)
+            {
+                UIManager.instance.AddLife();
+            }
+            PlayerInputManager.instance.DisableInput();
+            StartCoroutine(RespawnCoroutine());
         }
     }
 }

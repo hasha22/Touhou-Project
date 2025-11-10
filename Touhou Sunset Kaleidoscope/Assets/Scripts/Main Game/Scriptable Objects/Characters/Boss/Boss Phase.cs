@@ -17,7 +17,6 @@ namespace KH
         protected Coroutine moveRoutine;
 
         public virtual void StartPhase(BossManager boss) { }
-        public virtual void UpdatePhase(BossManager boss, float deltaTime) { }
         public virtual void EndPhase(BossManager boss) { }
     }
 }

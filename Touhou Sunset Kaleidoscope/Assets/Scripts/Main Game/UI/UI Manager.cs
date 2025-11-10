@@ -19,6 +19,9 @@ namespace KH
 
         [Header("Death Screen UI")]
         [SerializeField] private GameObject deathScreen;
+        [SerializeField] private GameObject retryButton;
+        private bool isInDeathScreen = false;
+        private bool hasEnabledMenu = false;
 
         [Header("Playable Area UI")]
         public TextMeshProUGUI currentFaith;
@@ -83,6 +86,20 @@ namespace KH
         }
         private void Update()
         {
+
+            if (isInDeathScreen)
+            {
+                if (Input.GetKeyDown(KeyCode.Z))
+                {
+                    if (!hasEnabledMenu)
+                    {
+                        retryButton.SetActive(true);
+                    }
+                    hasEnabledMenu = true;
+                }
+                isInDeathScreen = false;
+            }
+
             if (currentPhaseDuration > 0)
             {
                 currentPhaseDuration -= Time.deltaTime;
@@ -341,9 +358,31 @@ namespace KH
         private IEnumerator EnableDeathScreen()
         {
             yield return new WaitForSeconds(1);
+            isInDeathScreen = true;
             Time.timeScale = 0f;
             deathScreen.SetActive(true);
             AudioManager.instance.bgmSource.Stop();
+        }
+        public void OnRetryButtonPressed()
+        {
+            Time.timeScale = 1f;
+            deathScreen.SetActive(false);
+            hasEnabledMenu = false;
+            isInDeathScreen = false;
+
+            ScoreManager.instance.ResetScore();
+            EnemyDatabase.instance.ClearAllEnemies();
+            LightZoneManager.instance.RemoveAllZones();
+            ItemManager.instance.RemoveAllItems();
+            WaveManager.instance.ResetWave();
+            StageManager.instance.ResetStage();
+            FaithManager.instance.ResetFaith();
+            AudioManager.instance.ResetAudioManager();
+            ObjectPool.instance.RemoveAllBullets();
+            HideBossUI();
+
+            PlayerManager player = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
+            player.ResetPlayer();
         }
         private float EaseOutCubic(float t) => 1f - Mathf.Pow(1f - t, 3f);
     }

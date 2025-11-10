@@ -262,9 +262,17 @@ namespace KH
             }
             return spawnedItem;
         }
-        public void LaunchItem(ItemToSpawn item, Vector2 spawnPos, Vector2 direction)
+        public void RemoveAllItems()
         {
+            List<GameObject> items = ObjectPool.instance.GetPooledItems();
 
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i].activeInHierarchy)
+                {
+                    ObjectPool.instance.ReturnToPool(items[i]);
+                }
+            }
         }
     }
 }

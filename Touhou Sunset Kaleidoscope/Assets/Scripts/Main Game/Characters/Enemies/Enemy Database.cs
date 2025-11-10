@@ -66,6 +66,24 @@ namespace KH
             }
             return null;
         }
+        public void ClearAllEnemies()
+        {
+            List<GameObject> enemies = ObjectPool.instance.GetPooledEnemyObjects();
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                if (enemies[i].activeInHierarchy)
+                {
+                    ObjectPool.instance.ReturnToPool(enemies[i]);
+                }
+            }
+
+            BossManager[] bosses = FindObjectsByType<BossManager>(FindObjectsSortMode.None);
+
+            foreach (BossManager boss in bosses)
+            {
+                Destroy(boss.gameObject);
+            }
+        }
     }
 }
 

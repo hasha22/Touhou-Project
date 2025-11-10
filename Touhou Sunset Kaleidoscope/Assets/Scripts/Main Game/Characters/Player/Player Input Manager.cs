@@ -19,7 +19,7 @@ namespace KH
         [Header("Player Actions")]
         public bool isShooting = false;
         public bool isInPrecision = false;
-        public bool isBombing = false;
+        //public bool isBombing = false;
 
         [Header("Player Reference")]
         public GameObject playerObject;
@@ -87,7 +87,7 @@ namespace KH
         }
         public void OnBomb(InputAction.CallbackContext context)
         {
-            isBombing = 0 < context.ReadValue<float>();
+            //isBombing = 0 < context.ReadValue<float>();
         }
         public void DisableInput()
         {
@@ -95,7 +95,7 @@ namespace KH
             movementInput = Vector2.zero;
             isShooting = false;
             isInPrecision = false;
-            isBombing = false;
+            //isBombing = false;
         }
         public void EnableInput()
         {

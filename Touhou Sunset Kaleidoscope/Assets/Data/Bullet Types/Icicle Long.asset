@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636842db1aa54ed4582077a73b33bf96, type: 3}
   m_Name: Icicle Long
   m_EditorClassIdentifier: Assembly-CSharp::BulletType
-  bulletID: 4
+  bulletID: 5
   colliderType: 2
   grazeColliderType: 2
   sprite: {fileID: 21300000, guid: 101de32fabbd76643a6dfe60d38cd3fe, type: 3}
+  canEmitLight: 0
   colliderSize: {x: 1, y: 1}
   colliderOffset: {x: 0, y: 0}
   boxSize: {x: 1, y: 1}

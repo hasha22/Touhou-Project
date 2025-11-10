@@ -29,6 +29,12 @@ namespace KH
             {
                 PatternStep step = phaseAttackSequence.patternSteps[index];
                 step.pattern.Fire(boss.transform.position, boss.gameObject);
+
+                if (step.pattern.attackSound != null)
+                {
+                    AudioManager.instance.PlaySFX(step.pattern.attackSound, boss.transform, step.pattern.attackSoundVolume);
+                }
+
                 yield return new WaitForSeconds(step.delayBeforeNextPattern);
 
                 index++;

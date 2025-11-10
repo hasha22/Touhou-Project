@@ -131,6 +131,12 @@ namespace KH
             //VFX
             //Trigger Boss Movement and patterns
         }
+        public void ResetStage()
+        {
+            timerBetweenWaves = 0;
+            waitingForNextWave = false;
+            InitializeStage(0);
+        }
 
     }
 }

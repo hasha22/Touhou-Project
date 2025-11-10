@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f11d96b8e82090c419759b60f961bc53, type: 3}
   m_Name: Ring Pattern
   m_EditorClassIdentifier: 
-  bulletType: {fileID: 11400000, guid: 785b44ed690738a4aa069e96fcebf983, type: 2}
+  bulletType: {fileID: 11400000, guid: e8589aef98d4ab04a9c39a5d2fb796bb, type: 2}
   defaultBulletSpeed: 3
+  attackSound: {fileID: 8300000, guid: 59351effb7091174c857853b2e2c73e2, type: 3}
   count: 36
   spreadDegrees: 360
   startAngle: 0

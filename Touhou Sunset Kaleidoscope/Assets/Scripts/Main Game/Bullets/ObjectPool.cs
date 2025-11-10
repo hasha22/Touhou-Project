@@ -14,9 +14,9 @@ namespace KH
         private List<GameObject> pooledEnemyObjects = new List<GameObject>();
         private List<GameObject> pooledPillarZones = new List<GameObject>();
         private List<GameObject> pooledCircularZones = new List<GameObject>();
-        private List<GameObject> pooledFollowZones_Capsule = new List<GameObject>();
-        private List<GameObject> pooledFollowZones_Circle = new List<GameObject>();
-        private List<GameObject> pooledShadowZones = new List<GameObject>();
+        private List<GameObject> pooledFollowZones_Capsule = new List<GameObject>(); //
+        private List<GameObject> pooledFollowZones_Circle = new List<GameObject>(); // CURRENTLY NOT IN USE
+        private List<GameObject> pooledShadowZones = new List<GameObject>();        //
         [SerializeField] private int playerBulletsToPool = 100;
         [SerializeField] private int playerBulletAfterImagesToPool = 100;
         [SerializeField] private int enemyBulletsToPool = 500;
@@ -54,7 +54,7 @@ namespace KH
             if (instance == null)
             {
                 instance = this;
-                DontDestroyOnLoad(gameObject);
+                //DontDestroyOnLoad(gameObject);
             }
             else
             {
@@ -277,6 +277,46 @@ namespace KH
         public List<GameObject> GetPooledEnemyBullets()
         {
             return pooledEnemyBullets;
+        }
+        public List<GameObject> GetPooledEnemyObjects()
+        {
+            return pooledEnemyObjects;
+        }
+        public List<GameObject> GetPooledCircularObjects()
+        {
+            return pooledCircularZones;
+        }
+        public List<GameObject> GetPooledPillarObjects()
+        {
+            return pooledPillarZones;
+        }
+        public List<GameObject> GetPooledItems()
+        {
+            return pooledItems;
+        }
+        public void RemoveAllBullets()
+        {
+            for (int i = 0; i < pooledEnemyBullets.Count; i++)
+            {
+                if (pooledEnemyBullets[i].activeInHierarchy)
+                {
+                    ReturnToPool(pooledEnemyBullets[i]);
+                }
+            }
+            for (int i = 0; i < pooledPlayerBullets.Count; i++)
+            {
+                if (pooledPlayerBullets[i].activeInHierarchy)
+                {
+                    ReturnToPool(pooledPlayerBullets[i]);
+                }
+            }
+            for (int i = 0; i < pooledPlayerBulletAfterImages.Count; i++)
+            {
+                if (pooledPlayerBulletAfterImages[i].activeInHierarchy)
+                {
+                    ReturnToPool(pooledPlayerBulletAfterImages[i]);
+                }
+            }
         }
     }
 }

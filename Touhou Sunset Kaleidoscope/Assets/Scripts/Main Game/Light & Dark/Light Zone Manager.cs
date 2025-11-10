@@ -59,6 +59,26 @@ namespace KH
         {
             activeZones.Remove(zone);
         }
+        public void RemoveAllZones()
+        {
+            List<GameObject> pooledCircularZones = ObjectPool.instance.GetPooledCircularObjects();
+            List<GameObject> pooledPillarZones = ObjectPool.instance.GetPooledPillarObjects();
+
+            for (int i = 0; i < pooledCircularZones.Count; i++)
+            {
+                if (pooledCircularZones[i].activeInHierarchy)
+                {
+                    ObjectPool.instance.ReturnToPool(pooledCircularZones[i]);
+                }
+            }
+            for (int i = 0; i < pooledPillarZones.Count; i++)
+            {
+                if (pooledPillarZones[i].activeInHierarchy)
+                {
+                    ObjectPool.instance.ReturnToPool(pooledPillarZones[i]);
+                }
+            }
+        }
 
     }
 }

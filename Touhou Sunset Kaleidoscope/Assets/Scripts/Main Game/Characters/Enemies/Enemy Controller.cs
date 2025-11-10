@@ -21,8 +21,8 @@ namespace KH
         [SerializeField] private float itemVelocity = 2f;
         [SerializeField] private float itemLaunchDuration = 1f;
 
-        [Header("Bool")]
-        [HideInInspector] public bool hasDied = false;
+        [Header("Flags")]
+        public bool hasDied = false;
 
         [Header("References")]
         private SpriteRenderer spriteRenderer;
@@ -85,6 +85,7 @@ namespace KH
         public void InitializeEnemy(Enemy data, Vector2 spawnPosition)
         {
             enemyData = data;
+            hasDied = false;
             transform.position = spawnPosition;
             transform.rotation = Quaternion.identity;
 

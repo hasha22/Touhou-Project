@@ -12,6 +12,10 @@ namespace KH
         [SerializeField] private float damageMultiplier = 0.2f;
         public int currentBulletDamage = 0;
 
+        [Header("Light Bullets")]
+        [SerializeField] private Vector2 lightBulletDirection1;
+        [SerializeField] private Vector2 lightBulletDirection2;
+
         [Header("Flags")]
         public bool isPaused = false;
 
@@ -80,23 +84,63 @@ namespace KH
                 float damage = currentBulletDamage * (1 + playerManager.currentPower * damageMultiplier) * playerManager.damageMultiplier;
                 int intDamage = Mathf.RoundToInt(damage);
 
+                Sprite mainBulletSprite = !LightZoneManager.instance.IsInLight(transform.position) ? playerManager.characterData.shotType.sprite : playerManager.characterData.shotType.empoweredSprite;
+                Sprite mainBulletAfterImage = !LightZoneManager.instance.IsInLight(transform.position) ? playerManager.characterData.shotType.spriteAfterImage : playerManager.characterData.shotType.empoweredSpriteAfterImage;
+
                 // Initializing bullet data
                 BulletController bullet1 = bulletObject1.GetComponent<BulletController>();
                 bullet1.InitializePlayerBullet(Vector2.up,
                     playerManager.characterData.shotType.speed,
-                    playerManager.characterData.shotType.sprite,
-                    playerManager.characterData.shotType.spriteAfterImage,
+                    mainBulletSprite,
+                    mainBulletAfterImage,
                     intDamage,
                     rb.linearVelocity);
 
                 BulletController bullet2 = bulletObject2.GetComponent<BulletController>();
                 bullet2.InitializePlayerBullet(Vector2.up,
                     playerManager.characterData.shotType.speed,
-                    playerManager.characterData.shotType.sprite,
-                    playerManager.characterData.shotType.spriteAfterImage,
+                    mainBulletSprite,
+                    mainBulletAfterImage,
                     intDamage,
                     rb.linearVelocity);
 
+            }
+            if (LightZoneManager.instance.IsInLight(transform.position))
+            {
+                Vector3 spawnPosition3 = transform.position + (Vector3)playerManager.characterData.shotType.spawnOffset3;
+                Vector3 spawnPosition4 = transform.position + (Vector3)playerManager.characterData.shotType.spawnOffset4;
+
+                GameObject bulletObject3 = ObjectPool.instance.GetPooledPlayerBullet();
+                GameObject bulletObject4 = ObjectPool.instance.GetPooledPlayerBullet();
+
+                currentBulletDamage = playerManager.characterData.shotType.damage;
+                float damage = currentBulletDamage * (1 + playerManager.currentPower * damageMultiplier) * playerManager.damageMultiplier;
+                int intDamage = Mathf.RoundToInt(damage);
+
+                if (bulletObject3 != null && bulletObject4 != null)
+                {
+                    bulletObject3.transform.position = spawnPosition3;
+                    bulletObject4.transform.position = spawnPosition4;
+
+                    bulletObject3.SetActive(true);
+                    bulletObject4.SetActive(true);
+
+                    BulletController bullet3 = bulletObject3.GetComponent<BulletController>();
+                    bullet3.InitializePlayerBullet(lightBulletDirection1,
+                        playerManager.characterData.shotType.speed,
+                        playerManager.characterData.shotType.sprite,
+                        playerManager.characterData.shotType.spriteAfterImage,
+                        intDamage,
+                        rb.linearVelocity);
+
+                    BulletController bullet4 = bulletObject4.GetComponent<BulletController>();
+                    bullet4.InitializePlayerBullet(lightBulletDirection2,
+                        playerManager.characterData.shotType.speed,
+                        playerManager.characterData.shotType.sprite,
+                        playerManager.characterData.shotType.spriteAfterImage,
+                        intDamage,
+                        rb.linearVelocity);
+                }
             }
         }
     }

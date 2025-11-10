@@ -11,6 +11,7 @@ namespace KH
         [HideInInspector] public int displayedFaith;
         [SerializeField] private int maxFaith = 10000;
         [SerializeField] private int minFaith = 0;
+        [SerializeField] private int respawnFaith = 5000;
 
         [Header("Decay Settings")]
         [SerializeField] private int decayRate = 250; // faith per second
@@ -18,6 +19,7 @@ namespace KH
         private float timeSinceLastLight = 0f;
 
         [Header("Visuals")]
+        [SerializeField] private Renderer bgRenderer;
         [SerializeField] private UnityEngine.Rendering.Universal.Light2D globalLight;
         [SerializeField] private int faithUpdateSpeed = 200;
 
@@ -99,7 +101,8 @@ namespace KH
             {
                 isPlayerDead = true;
                 playerManager.Die();
-                AddFaith(1000);
+                AddFaith(respawnFaith);
+                timeSinceLastLight = 1;
                 isPlayerDead = false;
             }
         }
@@ -140,12 +143,14 @@ namespace KH
         {
             float t = (float)currentFaith / maxFaith;
 
-            // smoothly adjust intensity
+            // Update global light
             globalLight.intensity = Mathf.Lerp(globalLight.intensity, Mathf.Lerp(0.1f, 1f, t), Time.deltaTime);
-
-            // optionally change color tone (warm for high faith, cool for low)
             Color brightColor = Color.Lerp(new Color(0.2f, 0.4f, 1f), Color.white, t);
             globalLight.color = brightColor;
+
+            // Also update background color to match lighting
+            //Color bgColor = Color.Lerp(new Color(0.2f, 0.4f, 1f), Color.white, t);
+            //bgRenderer.material.color = Color.Lerp(bgRenderer.material.color, brightColor, Time.deltaTime);
         }
         private void CheckThreshold()
         {
@@ -157,6 +162,16 @@ namespace KH
             {
                 auraActive = false;
             }
+        }
+        public void ResetFaith()
+        {
+            currentFaith = 10000;
+            displayedFaith = currentFaith;
+            timeSinceLastLight = 0;
+            faithDecayCoroutine = null;
+            auraActive = false;
+            playerInLight = false;
+            isPlayerDead = false;
         }
     }
 }

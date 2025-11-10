@@ -135,5 +135,18 @@ namespace KH
         {
             return grazeCount;
         }
+        public void ResetScore()
+        {
+            grazeCount = 0;
+            UIManager.instance.UpdateGrazeUI(grazeCount);
+            CurrentScore = 0;
+            displayedCurrentScore = 0;
+            displayedHiScore = 0;
+
+            passedFirst = false;
+            passedSecond = false;
+            passedThird = false;
+            passedFourth = false;
+        }
     }
 }

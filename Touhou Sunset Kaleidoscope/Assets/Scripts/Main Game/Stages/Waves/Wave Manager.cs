@@ -75,6 +75,14 @@ namespace KH
                 nextCircularLightSpawnIndex >= currentWave.circularLightSpawnEvents.Count &&
                 nextPillarLightSpawnIndex >= currentWave.pillarLightSpawnEvents.Count;
         }
+        public void ResetWave()
+        {
+            currentWave = null;
+            waveTimer = 0;
+            nextSpawnIndex = 0;
+            nextCircularLightSpawnIndex = 0;
+            nextPillarLightSpawnIndex = 0;
+        }
     }
 
 }

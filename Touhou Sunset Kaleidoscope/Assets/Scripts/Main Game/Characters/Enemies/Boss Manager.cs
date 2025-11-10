@@ -106,6 +106,7 @@ namespace KH
             currentPhase = bossData.phases[currentPhaseIndex];
             currentBossPhaseHealth = bossData.phases[currentPhaseIndex].phaseBossHealth;
 
+
             phaseRoutine = StartCoroutine(PhaseRoutine(currentPhase));
         }
         private IEnumerator PhaseRoutine(BossPhase phase)

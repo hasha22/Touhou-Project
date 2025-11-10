@@ -110,7 +110,7 @@ namespace KH
 
             GameObject afterImage = ObjectPool.instance.GetPooledPlayerBulletAfterImage();
             Afterimage img = afterImage.GetComponent<Afterimage>();
-            img.InitializeAfterImage(Vector2.up, speed, afterImageSprite, transform.position, playerRb.linearVelocity);
+            img.InitializeAfterImage(dir, speed, afterImageSprite, transform.position, playerRb.linearVelocity);
         }
         public void InitializeEnemyBullet(Vector2 dir, float speed, Sprite sprite, BulletType bulletType)
         {
