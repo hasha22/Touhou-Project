@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c86c106116faf604da8bc28eb5568742, type: 3}
-  m_Name: Prototype Enemy 2
+  m_Name: Prototype Enemy 6
   m_EditorClassIdentifier: 
   enemyName: Rumia
   enemyHealth: 40
-  enemyID: 1
+  enemyID: 10
   healthResetValue: 40
   enemySprite: {fileID: 21300000, guid: 0838c28f723d4914c88e406269708edf, type: 3}
   enemyPrefab: {fileID: 1623289750752492140, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
@@ -24,6 +24,6 @@ MonoBehaviour:
   hitScore: 60
   colliderSize: {x: 0.261, y: 0.444}
   colliderOffset: {x: -0.02, y: 0.07}
-  attackSequence: {fileID: 11400000, guid: 85717a2165ebd694a8615c47ef968cf7, type: 2}
+  attackSequence: {fileID: 11400000, guid: b34e13999a88aa941a93d2e29fb45775, type: 2}
   delayBeforeAttack: 0.5
   movementSequence: {fileID: 11400000, guid: c58ce09b27f071c4a817a67c3657c54a, type: 2}

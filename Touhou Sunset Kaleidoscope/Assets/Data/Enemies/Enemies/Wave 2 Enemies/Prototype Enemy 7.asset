@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c86c106116faf604da8bc28eb5568742, type: 3}
-  m_Name: Prototype Enemy 2
+  m_Name: Prototype Enemy 7
   m_EditorClassIdentifier: 
   enemyName: Rumia
   enemyHealth: 40
-  enemyID: 1
+  enemyID: 11
   healthResetValue: 40
   enemySprite: {fileID: 21300000, guid: 0838c28f723d4914c88e406269708edf, type: 3}
   enemyPrefab: {fileID: 1623289750752492140, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}

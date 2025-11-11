@@ -26,5 +26,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fa7036e34ecf56c4eaf8e2adeae37c8c, type: 2}
   - {fileID: 11400000, guid: 5523d3ac32325754e9da4fef37df5522, type: 2}
   circularLightSpawnEvents: []
-  pillarLightSpawnEvents: []
+  pillarLightSpawnEvents:
+  - {fileID: 11400000, guid: cbee1ebab567e3040997614c05bd8424, type: 2}
   delayBeforeNextWave: 5

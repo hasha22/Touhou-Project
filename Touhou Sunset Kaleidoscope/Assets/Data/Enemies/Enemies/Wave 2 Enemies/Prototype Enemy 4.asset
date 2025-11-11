@@ -16,7 +16,7 @@ MonoBehaviour:
   enemyHealth: 40
   enemyID: 3
   healthResetValue: 40
-  enemySprite: {fileID: 21300000, guid: 4e4b896ced6eefc4299b2fdfeea24dec, type: 3}
+  enemySprite: {fileID: 21300000, guid: 0838c28f723d4914c88e406269708edf, type: 3}
   enemyPrefab: {fileID: 1623289750752492140, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
   enemyType: 0
   itemsToSpawn: 060000000600000006000000

@@ -17,6 +17,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5deb5973a5c901047a5914b45dfed839, type: 2}
   - {fileID: 11400000, guid: 905718112446955479896c1b7de0b61b, type: 2}
   - {fileID: 11400000, guid: a7c9efdef6774504693b627345bbbcd3, type: 2}
+  - {fileID: 11400000, guid: c08c01c07eca781449abfbaa986e9e34, type: 2}
+  - {fileID: 11400000, guid: 5cb82da588eda37459c903f18e8735c5, type: 2}
+  - {fileID: 11400000, guid: d00045060712b824690b49c78a561442, type: 2}
+  - {fileID: 11400000, guid: 536f1385c4af19d4fb01f0ca5736808a, type: 2}
   circularLightSpawnEvents:
   - {fileID: 11400000, guid: 8bce0ff3afdce0a47a8086a62a5ebe6e, type: 2}
   - {fileID: 11400000, guid: 6062ba5032a7a9a4d825f6fa1c40e003, type: 2}
