@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Prototype Enemy 6
   m_EditorClassIdentifier: 
   enemyName: Rumia
-  enemyHealth: 40
+  enemyHealth: 200
   enemyID: 10
-  healthResetValue: 40
+  healthResetValue: 200
   enemySprite: {fileID: 21300000, guid: 0838c28f723d4914c88e406269708edf, type: 3}
   enemyPrefab: {fileID: 1623289750752492140, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
   enemyType: 0
-  itemsToSpawn: 060000000600000006000000
+  itemsToSpawn: 000000000000000000000000
   deathScore: 1000
   hitScore: 60
   colliderSize: {x: 0.261, y: 0.444}

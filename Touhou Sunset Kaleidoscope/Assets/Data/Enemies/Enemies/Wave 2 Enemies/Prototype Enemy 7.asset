@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Prototype Enemy 7
   m_EditorClassIdentifier: 
   enemyName: Rumia
-  enemyHealth: 40
+  enemyHealth: 200
   enemyID: 11
-  healthResetValue: 40
+  healthResetValue: 200
   enemySprite: {fileID: 21300000, guid: 0838c28f723d4914c88e406269708edf, type: 3}
   enemyPrefab: {fileID: 1623289750752492140, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
   enemyType: 0
-  itemsToSpawn: 060000000600000006000000
+  itemsToSpawn: 030000000300000003000000
   deathScore: 1000
   hitScore: 60
   colliderSize: {x: 0.261, y: 0.444}
   colliderOffset: {x: -0.02, y: 0.07}
   attackSequence: {fileID: 11400000, guid: 85717a2165ebd694a8615c47ef968cf7, type: 2}
   delayBeforeAttack: 0.5
-  movementSequence: {fileID: 11400000, guid: c58ce09b27f071c4a817a67c3657c54a, type: 2}
+  movementSequence: {fileID: 11400000, guid: 49c27ff471ce9354b86a7f8c943477cd, type: 2}
