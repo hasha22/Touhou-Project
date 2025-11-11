@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KH.Hailstorm
   bulletType: {fileID: 11400000, guid: f99a85186606fd24b8760314f8a7c7b7, type: 2}
   defaultBulletSpeed: 4
+  attackSound: {fileID: 8300000, guid: f590afc0e7190ef49afc928d8592f3dc, type: 3}
+  attackSoundVolume: 0.05
   numberOfBursts: 3
   delayBetweenBursts: 0.8
   spreadDegrees: 360

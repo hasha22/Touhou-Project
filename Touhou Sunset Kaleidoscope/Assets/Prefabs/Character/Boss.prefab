@@ -301,7 +301,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KH.BossManager
   bossData: {fileID: 0}
   currentBossPhaseHealth: 0
-  timerBeforeAttackSequenceBegins: 0
-  currentPhaseTimer: 0
+  slowDownTime: 0.2
+  currentPhaseIndex: 0
   currentMovementSequence: {fileID: 0}
   currentAttackSequence: {fileID: 0}
+  isPaused: 0
+  isWaitingForDialogue: 1
+  rb: {fileID: 0}
+  deathSFX: {fileID: 8300000, guid: d046a2ae7a94483489615fc193ac0bb7, type: 3}
+  deathSFXVolume: 0.1

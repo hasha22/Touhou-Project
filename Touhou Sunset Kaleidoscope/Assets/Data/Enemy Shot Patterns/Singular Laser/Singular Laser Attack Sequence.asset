@@ -15,4 +15,4 @@ MonoBehaviour:
   patternSteps:
   - pattern: {fileID: 11400000, guid: abae6e2a428082b479340591021e51e1, type: 2}
     delayBeforeNextPattern: 0.5
-  loopPattern: 1
+  loopPattern: 0

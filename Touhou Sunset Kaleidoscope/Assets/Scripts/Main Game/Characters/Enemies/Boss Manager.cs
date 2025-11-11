@@ -7,6 +7,7 @@ namespace KH
         [Header("Boss Data")]
         [SerializeField] private Boss bossData;
         [SerializeField] private int currentBossPhaseHealth;
+        [SerializeField] private float slowDownTime = 0.75f;
 
         [Header("Phases")]
         public int currentPhaseIndex = 0;
@@ -34,6 +35,10 @@ namespace KH
         private PlayerManager playerManager;
         [HideInInspector] public Rigidbody2D rb;
         private PlayerShooter playerShooter;
+
+        [Header("Boss SFX")]
+        [SerializeField] private AudioClip deathSFX;
+        [SerializeField][Range(0, 1)] private float deathSFXVolume = 0.1f;
 
         [Header("Coroutines")]
         private Coroutine phaseRoutine;
@@ -176,21 +181,27 @@ namespace KH
         private void OnBossDefeated()
         {
             // trigger items drops, spell card bonus, etc.
-
+            StopAllCoroutines();
             // clear all bullets
             foreach (GameObject bullet in ObjectPool.instance.GetPooledEnemyBullets())
             {
                 // play disappearing vfx
                 ObjectPool.instance.ReturnToPool(bullet);
             }
-            Debug.Log("Boss Defeated!");
+            AudioManager.instance.PlaySFX(deathSFX, transform, deathSFXVolume);
+            //StartCoroutine(SlowDownCoroutine());
             UIManager.instance.HideBossUI();
-            StopAllCoroutines();
             Destroy(gameObject, 0.5f);
         }
         private bool IsInPlayableArea(Vector3 worldPos)
         {
             return worldPos.x >= minBounds.x && worldPos.y >= minBounds.y && worldPos.x < maxBounds.x && worldPos.y < maxBounds.y;
+        }
+        private IEnumerator SlowDownCoroutine()
+        {
+            Time.timeScale = 0.5f;
+            yield return new WaitForSecondsRealtime(slowDownTime);
+            Time.timeScale = 1f;
         }
         private IEnumerator BossInvulnerabilityCoroutine(BossPhase phase)
         {

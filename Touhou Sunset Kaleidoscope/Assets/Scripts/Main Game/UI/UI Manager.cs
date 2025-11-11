@@ -17,11 +17,15 @@ namespace KH
         public GameObject lifePrefab;
         [SerializeField] private Transform lifeContainer;
 
+        [Header("Pause Menu UI")]
+        [SerializeField] private GameObject pauseMenu;
+        public bool isInPauseMenu = false;
+
         [Header("Death Screen UI")]
         [SerializeField] private GameObject deathScreen;
         [SerializeField] private GameObject retryButton;
         private bool isInDeathScreen = false;
-        private bool hasEnabledMenu = false;
+        private bool isInDeathMenu = false;
 
         [Header("Playable Area UI")]
         public TextMeshProUGUI currentFaith;
@@ -65,6 +69,10 @@ namespace KH
         [SerializeField] private float textMoveDuration = 0.7f;
         [SerializeField] private float transparency = 0.8f;
 
+        [Header("Menu SFX")]
+        [SerializeField] private AudioClip pauseMenuSFX;
+        [SerializeField][Range(0, 1)] private float pauseMenuVolume = 1f;
+
         [Header("Coroutines")]
         private Coroutine fillRoutine;
 
@@ -91,13 +99,18 @@ namespace KH
             {
                 if (Input.GetKeyDown(KeyCode.Z))
                 {
-                    if (!hasEnabledMenu)
+                    if (!isInDeathMenu)
                     {
                         retryButton.SetActive(true);
                     }
-                    hasEnabledMenu = true;
+                    isInDeathMenu = true;
                 }
                 isInDeathScreen = false;
+            }
+            if (Input.GetKeyDown(KeyCode.Escape) && !isInPauseMenu)
+            {
+                EnablePauseMenu();
+                AudioManager.instance.PlaySFX(pauseMenuSFX, pauseMenu.transform, pauseMenuVolume);
             }
 
             if (currentPhaseDuration > 0)
@@ -363,11 +376,25 @@ namespace KH
             deathScreen.SetActive(true);
             AudioManager.instance.bgmSource.Stop();
         }
+        public void EnablePauseMenu()
+        {
+            isInPauseMenu = true;
+            Time.timeScale = 0f;
+            pauseMenu.SetActive(true);
+            AudioManager.instance.bgmSource.Stop();
+        }
+        public void DisablePauseMenu()
+        {
+            isInPauseMenu = false;
+            Time.timeScale = 1f;
+            pauseMenu.SetActive(false);
+            AudioManager.instance.bgmSource.Play();
+        }
         public void OnRetryButtonPressed()
         {
             Time.timeScale = 1f;
             deathScreen.SetActive(false);
-            hasEnabledMenu = false;
+            isInDeathMenu = false;
             isInDeathScreen = false;
 
             ScoreManager.instance.ResetScore();

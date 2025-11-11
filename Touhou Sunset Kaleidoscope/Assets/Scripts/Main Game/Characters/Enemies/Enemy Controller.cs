@@ -165,6 +165,11 @@ namespace KH
                 PatternStep step = currentAttackSequence.patternSteps[index];
                 step.pattern.Fire(transform.position, this.gameObject);
 
+                if (step.pattern.attackSound != null)
+                {
+                    AudioManager.instance.PlaySFX(step.pattern.attackSound, transform, step.pattern.attackSoundVolume);
+                }
+
                 // waits before firing next attack
                 yield return new WaitForSeconds(step.delayBeforeNextPattern);
 

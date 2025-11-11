@@ -51,7 +51,7 @@ namespace KH
         private void Update()
         {
 
-            if (PlayerInputManager.instance.isShooting && !playerManager.isDead && !playerShooter.isPaused)
+            if (PlayerInputManager.instance.isShooting && !playerManager.isDead && !playerShooter.isPaused && !UIManager.instance.isInPauseMenu)
             {
                 playerShootingSource.volume = shootingVolume;
             }

@@ -61,6 +61,11 @@ namespace KH
                 Vector2 burstOffset = new Vector2(horizontalDir * horizontalOffsetAmount, 0f);
                 Vector2 burstOrigin = origin + burstOffset;
 
+                if (attackSound != null)
+                {
+                    AudioManager.instance.PlaySFX(attackSound, boss.transform, attackSoundVolume);
+                }
+
                 // fire 12 steps = 360
                 for (int step = 0; step < steps; step++)
                 {
