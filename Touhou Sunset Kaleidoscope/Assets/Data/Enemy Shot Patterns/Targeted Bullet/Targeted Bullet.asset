@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletType: {fileID: 11400000, guid: f99a85186606fd24b8760314f8a7c7b7, type: 2}
   defaultBulletSpeed: 3
+  attackSound: {fileID: 0}
+  attackSoundVolume: 0.05

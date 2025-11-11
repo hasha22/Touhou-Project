@@ -190,6 +190,7 @@ namespace KH
         private IEnumerator SpellCardCutInRoutine(Sprite portrait, string spellName)
         {
             // setup
+            AudioManager.instance.PlaySFX(AudioManager.instance.spellCardSFX, EnemyDatabase.instance.currentActiveBoss.transform, AudioManager.instance.spellCardSFXVolume);
             cutInGroup.alpha = 0f;
             cutInGroup.gameObject.SetActive(true);
             bossPortraitImage.sprite = portrait;
