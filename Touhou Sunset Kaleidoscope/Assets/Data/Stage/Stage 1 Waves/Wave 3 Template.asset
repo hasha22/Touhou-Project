@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KH.WaveTemplate
   spawnEvents:
   - {fileID: 11400000, guid: b2ba33f42432d6b4ab88f825bfb463b8, type: 2}
-  - {fileID: 11400000, guid: a502d5ddf4f76654587ca92ef453d4fb, type: 2}
   - {fileID: 11400000, guid: 3061580cd122eca48849346f32ea80ff, type: 2}
+  - {fileID: 11400000, guid: a502d5ddf4f76654587ca92ef453d4fb, type: 2}
   - {fileID: 11400000, guid: 82471ad42bfca49409943c4d1b73b95e, type: 2}
   circularLightSpawnEvents:
   - {fileID: 11400000, guid: 8bce0ff3afdce0a47a8086a62a5ebe6e, type: 2}

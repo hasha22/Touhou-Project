@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Wave 1 Template
   m_EditorClassIdentifier: Assembly-CSharp::KH.WaveTemplate
   spawnEvents:
+  - {fileID: 11400000, guid: 5c0658640a36d5841883bd11e2285587, type: 2}
   - {fileID: 11400000, guid: 2eba61d82dc683047ad04c88de2d23e2, type: 2}
   - {fileID: 11400000, guid: 50b4a4eac7ea7c84680c12ab5b23c913, type: 2}
   - {fileID: 11400000, guid: 20c061269449cd84e8222be424b3addd, type: 2}

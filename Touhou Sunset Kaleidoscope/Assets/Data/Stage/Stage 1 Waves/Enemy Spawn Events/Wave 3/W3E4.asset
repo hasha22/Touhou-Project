@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KH.SpawnEvent
   enemyID: 9
   spawnPoint: {x: 2.8, y: 1.77, z: 0}
-  spawnTime: 3.2
+  spawnTime: 3.5

@@ -196,7 +196,7 @@ namespace KH
         {
             currentFaith = 10000;
             displayedFaith = currentFaith;
-            timeSinceLastLight = 0;
+            timeSinceLastLight = 2;
             faithDecayCoroutine = null;
             auraActive = false;
             playerInLight = false;

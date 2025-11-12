@@ -24,7 +24,6 @@ namespace KH
         [Header("References")]
         private SaveSystem saveSystem;
         private PlayerManager playerManager;
-        public bool hasRestarted = true;
 
         [Header("Coroutines")]
         private Coroutine faithDecreaseCoroutine;
@@ -62,20 +61,11 @@ namespace KH
             }
             if (displayedHiScore < HiScore)
             {
-                if (!hasRestarted)
-                {
-                    displayedHiScore += Mathf.CeilToInt(scoreUpdateSpeed * Time.deltaTime);
+                displayedHiScore += Mathf.CeilToInt(scoreUpdateSpeed * Time.deltaTime);
 
-                    if (displayedHiScore > HiScore) { displayedHiScore = HiScore; }
+                if (displayedHiScore > HiScore) { displayedHiScore = HiScore; }
 
-                    UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
-                }
-                else
-                {
-                    if (displayedHiScore > HiScore) { displayedHiScore = HiScore; }
-                    UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
-                    hasRestarted = false;
-                }
+                UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
             }
 
             // Life Updates
@@ -116,17 +106,6 @@ namespace KH
             }
             UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
         }
-        /*
-        private IEnumerator FaithDecayRoutine()
-        {
-            yield return new WaitForSeconds(faithDecreaseInterval);
-            while (Faith > minFaith)
-            {
-                DecreaseFaith(faithDecreaseAmount);
-            }
-
-            faithDecreaseCoroutine = null;
-        }*/
         public void RegisterGraze()
         {
             grazeCount++;
@@ -151,8 +130,6 @@ namespace KH
             UIManager.instance.UpdateGrazeUI(grazeCount);
             CurrentScore = 0;
             displayedCurrentScore = 0;
-            displayedHiScore = 0;
-            hasRestarted = true;
 
             passedFirst = false;
             passedSecond = false;

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Wave 3 Enemy 1
   m_EditorClassIdentifier: Assembly-CSharp::KH.Enemy
   enemyName: Fairy
-  enemyHealth: 30
+  enemyHealth: 50
   enemyID: 4
-  healthResetValue: 30
+  healthResetValue: 50
   enemySprite: {fileID: 21300000, guid: 0838c28f723d4914c88e406269708edf, type: 3}
   enemyPrefab: {fileID: 1623289750752492140, guid: c14c9101585a9a846aa8cf34b138f1e3, type: 3}
   enemyType: 0
