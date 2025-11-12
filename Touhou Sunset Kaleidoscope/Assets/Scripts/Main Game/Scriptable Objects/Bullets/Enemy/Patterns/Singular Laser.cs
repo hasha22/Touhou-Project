@@ -14,16 +14,10 @@ namespace KH
         public float delayBeforeAcceleration = 1f;
         public float accelerationSpeed = 3f;
 
-        [Header("Routines")]
-        private Coroutine laserRoutine;
         public override void Fire(Vector2 origin, GameObject enemy)
         {
             EnemyController enemyController = enemy.GetComponent<EnemyController>();
-            if (laserRoutine == null)
-            {
-                Debug.Log("meow");
-                laserRoutine = enemyController.StartCoroutine(FireLaser(origin));
-            }
+            enemyController.StartCoroutine(FireLaser(origin));
         }
         private IEnumerator FireLaser(Vector2 origin)
         {
@@ -33,13 +27,10 @@ namespace KH
             // direction
             Vector3 meowDirection;
             if (laserDirectionAngle == Vector2.zero)
-            {
                 meowDirection = PlayerInputManager.instance.playerObject.transform.position - bullet.transform.position;
-            }
             else
-            {
                 meowDirection = laserDirectionAngle;
-            }
+
             Vector2 laserDirection = meowDirection.normalized;
 
             // bullet rotation 
@@ -53,8 +44,6 @@ namespace KH
 
             bulletController.StartAcceleration(initialBulletAcceleration, accelerationDuration);
             bulletController.InitializeEnemyBullet(laserDirection, accelerationSpeed, bulletType.sprite, bulletType);
-
-            laserRoutine = null;
         }
     }
 }
