@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
 namespace KH
 {
     [CreateAssetMenu(menuName = "Patterns/Singular Laser")]
@@ -22,6 +21,7 @@ namespace KH
             EnemyController enemyController = enemy.GetComponent<EnemyController>();
             if (laserRoutine == null)
             {
+                Debug.Log("meow");
                 laserRoutine = enemyController.StartCoroutine(FireLaser(origin));
             }
         }

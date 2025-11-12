@@ -31,7 +31,7 @@ namespace KH
         public float redirectAngleOffset = 15f;
 
         [Header("Routines")]
-        private Coroutine hailStormRoutine;
+        public Coroutine hailStormRoutine;
         private bool stopHail;
 
         public override void Fire(Vector2 origin, GameObject enemy)
@@ -143,11 +143,13 @@ namespace KH
         public void StartPattern(Vector2 origin)
         {
             BossManager boss = EnemyDatabase.instance.currentActiveBoss;
+            hailStormRoutine = boss.StartCoroutine(HailStormRoutine(origin));
+            /*
             if (hailStormRoutine == null)
             {
                 hailStormRoutine = boss.StartCoroutine(HailStormRoutine(origin));
             }
-
+            */
             stopHail = false;
         }
     }

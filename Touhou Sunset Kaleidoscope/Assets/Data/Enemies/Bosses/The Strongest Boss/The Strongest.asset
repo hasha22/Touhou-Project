@@ -25,7 +25,7 @@ MonoBehaviour:
   colliderSize: {x: 0.6, y: 0.98}
   colliderOffset: {x: -0.014, y: 0.05}
   spawnAfterWaveIndex: 2
-  delayBeforeSpawn: 3
+  delayBeforeSpawn: 2
   spawnPoint: {x: -2.76, y: 3.13, z: 0}
   shouldHaveInitialDialogue: 1
   dialogueSequences:

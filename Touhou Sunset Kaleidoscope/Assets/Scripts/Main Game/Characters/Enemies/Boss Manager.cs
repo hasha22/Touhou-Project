@@ -5,7 +5,7 @@ namespace KH
     public class BossManager : MonoBehaviour
     {
         [Header("Boss Data")]
-        [SerializeField] private Boss bossData;
+        public Boss bossData;
         [SerializeField] private int currentBossPhaseHealth;
         [SerializeField] private float slowDownTime = 0.75f;
 
@@ -87,7 +87,6 @@ namespace KH
 
             spriteRenderer.enabled = true;
 
-            UIManager.instance.InitializeBossUI(bossData);
             if (bossData.shouldHaveInitialDialogue)
             {
                 isWaitingForDialogue = true;
@@ -97,6 +96,7 @@ namespace KH
             }
             else
             {
+                UIManager.instance.InitializeBossUI(bossData);
                 StartNextPhase();
             }
         }
@@ -109,8 +109,10 @@ namespace KH
             }
 
             currentPhase = bossData.phases[currentPhaseIndex];
-            currentBossPhaseHealth = bossData.phases[currentPhaseIndex].phaseBossHealth;
 
+            currentMovementSequence = bossData.phases[currentPhaseIndex].phaseMovementSequence;
+            currentAttackSequence = bossData.phases[currentPhaseIndex].phaseAttackSequence;
+            currentBossPhaseHealth = bossData.phases[currentPhaseIndex].phaseBossHealth;
 
             phaseRoutine = StartCoroutine(PhaseRoutine(currentPhase));
         }
@@ -188,6 +190,7 @@ namespace KH
                 // play disappearing vfx
                 ObjectPool.instance.ReturnToPool(bullet);
             }
+            currentPhase.EndPhase(this);
             AudioManager.instance.PlaySFX(deathSFX, transform, deathSFXVolume);
             //StartCoroutine(SlowDownCoroutine());
             UIManager.instance.HideBossUI();

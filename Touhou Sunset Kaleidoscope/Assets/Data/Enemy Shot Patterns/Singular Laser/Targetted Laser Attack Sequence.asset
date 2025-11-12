@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KH.AttackSequence
   patternSteps:
   - pattern: {fileID: 11400000, guid: b4ea48b2aec26a34b89fa70fe7e7422c, type: 2}
-    delayBeforeNextPattern: 2
+    delayBeforeNextPattern: 0
   loopPattern: 0

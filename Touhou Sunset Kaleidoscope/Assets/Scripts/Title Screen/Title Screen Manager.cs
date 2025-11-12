@@ -7,7 +7,11 @@ namespace KH
     {
 
         [Header("Scene Indexes")]
-        [SerializeField] public int gameSceneIndex = 1;
+        public int gameSceneIndex = 1;
+
+        [Header("Menus")]
+        [SerializeField] private GameObject mainMenu;
+        [SerializeField] private GameObject controlsMenu;
         public void QuitGame()
         {
             Application.Quit();
@@ -20,6 +24,16 @@ namespace KH
         {
             AsyncOperation loadOperation = SceneManager.LoadSceneAsync(gameSceneIndex);
             yield return null;
+        }
+        public void EnableControlsMenu()
+        {
+            mainMenu.SetActive(false);
+            controlsMenu.SetActive(true);
+        }
+        public void DisableControlsMenu()
+        {
+            mainMenu.SetActive(true);
+            controlsMenu.SetActive(false);
         }
     }
 }

@@ -17,6 +17,8 @@ namespace KH
 
         [Header("Typing Settings")]
         public float typingSpeed = 0.03f;
+        [SerializeField] private float autoAdvanceDelay = 2f;
+        private Coroutine autoAdvanceRoutine;
 
         [Header("Highlight Settings")]
         public float fadeSpeed = 6f;
@@ -151,11 +153,30 @@ namespace KH
 
             isTyping = false;
             lineComplete = true;
+
+            if (autoAdvanceRoutine != null)
+                StopCoroutine(autoAdvanceRoutine);
+
+            autoAdvanceRoutine = StartCoroutine(AutoAdvanceAfterDelay());
+        }
+        private IEnumerator AutoAdvanceAfterDelay()
+        {
+            yield return new WaitForSeconds(autoAdvanceDelay);
+
+            if (!isTyping && lineComplete && isActive)
+            {
+                currentLine++;
+                if (currentLine < currentSequence.lines.Count)
+                    ShowLine();
+                else
+                    EndDialogue();
+            }
         }
         private void EndDialogue()
         {
             PlayerShooter playerShooter = PlayerInputManager.instance.playerObject.GetComponent<PlayerShooter>();
 
+            UIManager.instance.InitializeBossUI(EnemyDatabase.instance.currentActiveBoss.bossData);
             dialogueBox.SetActive(false);
             playerShooter.isPaused = false;
             playerManager.playerCollider.enabled = true;

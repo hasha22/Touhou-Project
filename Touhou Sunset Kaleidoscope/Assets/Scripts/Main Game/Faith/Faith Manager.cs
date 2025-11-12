@@ -31,6 +31,7 @@ namespace KH
         public bool playerInLight = false;
         public bool isPlayerDead = false;
         public bool isPaused = false;
+        public bool isRestarted = false;
 
         [Header("References")]
         private PlayerManager playerManager;
@@ -55,7 +56,12 @@ namespace KH
             if (Input.GetKey(KeyCode.W))
                 AddFaith(100);
 
-            if (isPaused) return;
+            if (isPaused)
+            {
+                if (faithDecayCoroutine != null)
+                { StopCoroutine(faithDecayCoroutine); }
+                return;
+            }
 
             UpdateFaithDecay();
             UpdateLightningVisuals();
@@ -110,23 +116,46 @@ namespace KH
         {
             if (displayedFaith < currentFaith)
             {
-                displayedFaith += Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
-
-                if (displayedFaith > currentFaith) { displayedFaith = currentFaith; }
-
-                UIManager.instance.UpdateFaithUI(displayedFaith);
-
-                if (faithDecayCoroutine != null)
+                if (!isRestarted)
                 {
-                    StopCoroutine(faithDecayCoroutine);
-                    faithDecayCoroutine = null;
-                }
+                    displayedFaith += Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
 
+                    if (displayedFaith > currentFaith) { displayedFaith = currentFaith; }
+
+                    UIManager.instance.UpdateFaithUI(displayedFaith);
+
+                    if (faithDecayCoroutine != null)
+                    {
+                        StopCoroutine(faithDecayCoroutine);
+                        faithDecayCoroutine = null;
+                    }
+                }
+                else
+                {
+                    if (displayedFaith > currentFaith) { displayedFaith = currentFaith; }
+
+                    UIManager.instance.UpdateFaithUI(displayedFaith);
+
+                    if (faithDecayCoroutine != null)
+                    {
+                        StopCoroutine(faithDecayCoroutine);
+                        faithDecayCoroutine = null;
+                    }
+                    isRestarted = false;
+                }
             }
             else if (displayedFaith > currentFaith)
             {
-                displayedFaith -= Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
-                UIManager.instance.UpdateFaithUI(displayedFaith);
+                if (!isRestarted)
+                {
+                    displayedFaith -= Mathf.CeilToInt(faithUpdateSpeed * Time.deltaTime);
+                    UIManager.instance.UpdateFaithUI(displayedFaith);
+                }
+                else
+                {
+                    UIManager.instance.UpdateFaithUI(displayedFaith);
+                    isRestarted = false;
+                }
             }
         }
         private IEnumerator FaithDecayRoutine()
@@ -172,6 +201,7 @@ namespace KH
             auraActive = false;
             playerInLight = false;
             isPlayerDead = false;
+            isRestarted = true;
         }
     }
 }

@@ -22,7 +22,14 @@ namespace KH
         }
 
         public override void EndPhase(BossManager boss)
-        {
+        {/*
+            foreach (PatternStep step in phaseAttackSequence.patternSteps)
+            {
+                if (step.pattern is Hailstorm hailStorm)
+                {
+                    hailStorm.StopPattern();
+                }
+            }*/
             boss.StopCoroutine(attackRoutine);
             boss.StopCoroutine(moveRoutine);
         }

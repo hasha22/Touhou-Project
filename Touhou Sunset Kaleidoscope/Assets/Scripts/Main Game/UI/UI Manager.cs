@@ -25,11 +25,13 @@ namespace KH
         [SerializeField] private GameObject deathScreen;
         [SerializeField] private GameObject retryButton;
         [SerializeField] private bool isInDeathScreen = false;
+        [SerializeField] private float delayBeforeDeathScreen = 1f;
 
         [Header("Victory Screen UI")]
         [SerializeField] private GameObject victoryScreen;
         [SerializeField] private GameObject playAgainButton;
         [SerializeField] private bool isInVictoryScreen = false;
+        [SerializeField] private float delayBeforeVictoryScreen = 2f;
 
         [Header("Playable Area UI")]
         public TextMeshProUGUI currentFaith;
@@ -51,6 +53,13 @@ namespace KH
         [HideInInspector] public float currentPhaseDuration = 0f;
         private int currentLives;
         private bool isSpellPhase = false;
+
+        [Header("Point of Collection UI")]
+        [SerializeField] private GameObject pointOfCollection;
+        [SerializeField] private float flickerDuration = 3f;
+        [SerializeField] private float flickerInterval = 0.2f;
+        [SerializeField] private float delayBeforeFlicker = 2f;
+        private CanvasGroup pocCanvasGroup;
 
         [Header("Boss Spell Card Cut-In")]
         [SerializeField] private RectTransform cutInTransform;
@@ -79,6 +88,7 @@ namespace KH
 
         [Header("Coroutines")]
         private Coroutine fillRoutine;
+        private Coroutine pointOfCollectionRoutine;
 
         private void Awake()
         {
@@ -91,10 +101,16 @@ namespace KH
             {
                 Destroy(gameObject);
             }
+            pocCanvasGroup = pointOfCollection.GetComponent<CanvasGroup>();
         }
         private void Start()
         {
             HideBossUI();
+            if (pointOfCollectionRoutine != null)
+            {
+                StopCoroutine(pointOfCollectionRoutine);
+            }
+            pointOfCollectionRoutine = StartCoroutine(PointOfCollectionFlicker());
         }
         private void Update()
         {
@@ -177,6 +193,27 @@ namespace KH
         {
             StopAllCoroutines();
             StartCoroutine(SpellCardCutInRoutine(bossPortrait, spellName));
+        }
+        private IEnumerator PointOfCollectionFlicker()
+        {
+            yield return new WaitForSeconds(delayBeforeFlicker);
+            pointOfCollection.SetActive(true);
+            float elapsed = 0f;
+            bool visible = true;
+
+            while (elapsed < flickerDuration)
+            {
+                // Toggle visibility by adjusting alpha
+                visible = !visible;
+                pocCanvasGroup.alpha = visible ? 1f : 0f;
+
+                yield return new WaitForSeconds(flickerInterval);
+                elapsed += flickerInterval;
+            }
+
+            // Hide completely at the end
+            pocCanvasGroup.alpha = 0f;
+            pointOfCollection.SetActive(false);
         }
         private IEnumerator SpellCardCutInRoutine(Sprite portrait, string spellName)
         {
@@ -366,7 +403,7 @@ namespace KH
         }
         private IEnumerator EnableVictoryScreen()
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(delayBeforeVictoryScreen);
             isInVictoryScreen = true;
             Time.timeScale = 0f;
             victoryScreen.SetActive(true);
@@ -374,7 +411,7 @@ namespace KH
         }
         private IEnumerator EnableDeathScreen()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(delayBeforeDeathScreen);
             isInDeathScreen = true;
             Time.timeScale = 0f;
             deathScreen.SetActive(true);
@@ -385,14 +422,14 @@ namespace KH
             isInPauseMenu = true;
             Time.timeScale = 0f;
             pauseMenu.SetActive(true);
-            AudioManager.instance.bgmSource.Stop();
+            AudioManager.instance.bgmSource.Pause();
         }
         public void DisablePauseMenu()
         {
             isInPauseMenu = false;
             Time.timeScale = 1f;
             pauseMenu.SetActive(false);
-            AudioManager.instance.bgmSource.Play();
+            AudioManager.instance.bgmSource.UnPause();
         }
         public void OnRetryButtonPressed()
         {
@@ -400,6 +437,9 @@ namespace KH
             deathScreen.SetActive(false);
             victoryScreen.SetActive(false);
             isInDeathScreen = false;
+
+            attackHealthBar.fillAmount = 1f;
+            spellCardHealthBar.fillAmount = 1f;
 
             ScoreManager.instance.ResetScore();
             EnemyDatabase.instance.ClearAllEnemies();
@@ -410,6 +450,11 @@ namespace KH
             AudioManager.instance.ResetAudioManager();
             ObjectPool.instance.RemoveAllBullets();
             HideBossUI();
+            if (pointOfCollectionRoutine != null)
+            {
+                StopCoroutine(pointOfCollectionRoutine);
+            }
+            pointOfCollectionRoutine = StartCoroutine(PointOfCollectionFlicker());
 
             PlayerManager player = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
             player.ResetPlayer();

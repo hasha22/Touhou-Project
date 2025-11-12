@@ -15,7 +15,7 @@ MonoBehaviour:
   bulletType: {fileID: 11400000, guid: 89038d311fe1b7c439a9f0a86f843cdf, type: 2}
   defaultBulletSpeed: 3
   attackSound: {fileID: 8300000, guid: 5449bbeab069cc44098d063ad10c6182, type: 3}
-  attackSoundVolume: 0.1
+  attackSoundVolume: 0.5
   laserDirectionAngle: {x: 0, y: 0}
   initialBulletAcceleration:
     serializedVersion: 2
