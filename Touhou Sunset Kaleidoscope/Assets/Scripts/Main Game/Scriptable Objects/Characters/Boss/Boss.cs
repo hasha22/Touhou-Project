@@ -21,6 +21,7 @@ namespace KH
 
         [Header("Spawn Settings")]
         public float spawnAfterWaveIndex;
+        public float delayBeforeSpawn;
         public Vector3 spawnPoint;
 
         [Header("Dialogue Sequences")]

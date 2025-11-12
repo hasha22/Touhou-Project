@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace KH
@@ -11,6 +12,7 @@ namespace KH
         public int currentStageIndex = 0;
         [SerializeField] private string currentStageName;
         [SerializeField] private float elapsedStageTime;
+        [SerializeField] private float initialWaveDelay = 5f;
         private StageTemplate currentStage;
 
         [Header("Current Wave Information")]
@@ -40,13 +42,23 @@ namespace KH
             // Initializes first stage
             if (stages.Count > 0)
             {
-                InitializeStage(0);
+                StartStage();
             }
+        }
+        public void StartStage()
+        {
+            StartCoroutine(InitialWaveDelayCoroutine(initialWaveDelay));
+        }
+        private IEnumerator InitialWaveDelayCoroutine(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            InitializeStage(0);
         }
         private void Update()
         {
             if (isPaused) return;
             if (currentStage == null) return;
+            if (WaveManager.instance.currentWave == null) return;
 
             elapsedStageTime += Time.deltaTime;
 
@@ -69,7 +81,7 @@ namespace KH
                     // Boss spawning - all stages have one midboss and one main boss, so SpawnBoss() is hardcoded
                     if (currentStage.bosses[0].spawnAfterWaveIndex == currentWaveIndex + 1 && !hasSpawnedFirstBoss)
                     {
-                        TriggerBossEvent(currentStage.bosses[0]);
+                        StartCoroutine(SpawnBossWithDelay(currentStage.bosses[0], currentStage.bosses[0].delayBeforeSpawn));
                         hasSpawnedFirstBoss = true;
                         return;
                     }
@@ -92,6 +104,11 @@ namespace KH
                     }
                 }
             }
+        }
+        private IEnumerator SpawnBossWithDelay(Boss bossData, float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            TriggerBossEvent(bossData);
         }
         public void InitializeStage(int index)
         {
@@ -134,8 +151,9 @@ namespace KH
         public void ResetStage()
         {
             timerBetweenWaves = 0;
-            waitingForNextWave = false;
-            InitializeStage(0);
+            waitingForNextWave = true;
+            WaveManager.instance.ResetWave();
+            StartStage();
         }
 
     }

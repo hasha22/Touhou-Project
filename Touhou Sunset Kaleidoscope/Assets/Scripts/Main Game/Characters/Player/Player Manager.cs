@@ -58,7 +58,7 @@ namespace KH
         // Add VFX and SFX later
 
         [Header("References")]
-        [SerializeField] private Collider2D playerCollider;
+        public Collider2D playerCollider;
         public Transform playerMagnetTransform;
 
         private SpriteRenderer spriteRenderer;

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0d7d49ef57f28646aebc6dfb8dc4303, type: 3}
+  m_Name: Stage 1 Template
+  m_EditorClassIdentifier: 
+  stageName: 'Prototype '
+  stageDuration: 200
+  waves:
+  - {fileID: 11400000, guid: 7ca06f82f0157f84488d87af69ca6f59, type: 2}
+  - {fileID: 11400000, guid: 32610c56d45f5bd4b8e896fe75ea8041, type: 2}
+  - {fileID: 11400000, guid: 58bfb77bb2d47c644932d1e982ffa01e, type: 2}
+  bosses:
+  - {fileID: 11400000, guid: b2605123e8cfcf543b3529efcbfeea66, type: 2}
+  - {fileID: 11400000, guid: 22a1681f7b164ae4da123b1c7fa0114d, type: 2}

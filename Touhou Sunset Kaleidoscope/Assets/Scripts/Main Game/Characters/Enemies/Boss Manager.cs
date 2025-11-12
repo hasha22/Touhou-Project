@@ -192,6 +192,7 @@ namespace KH
             //StartCoroutine(SlowDownCoroutine());
             UIManager.instance.HideBossUI();
             Destroy(gameObject, 0.5f);
+            UIManager.instance.StartVictoryScreenCoroutine();
         }
         private bool IsInPlayableArea(Vector3 worldPos)
         {

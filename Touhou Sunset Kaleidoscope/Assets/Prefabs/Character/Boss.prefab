@@ -309,4 +309,4 @@ MonoBehaviour:
   isWaitingForDialogue: 1
   rb: {fileID: 0}
   deathSFX: {fileID: 8300000, guid: d046a2ae7a94483489615fc193ac0bb7, type: 3}
-  deathSFXVolume: 0.1
+  deathSFXVolume: 0.05

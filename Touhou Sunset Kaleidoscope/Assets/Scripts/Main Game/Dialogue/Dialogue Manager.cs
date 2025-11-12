@@ -31,6 +31,7 @@ namespace KH
         private int currentLine = 0;
         [SerializeField] private DialogueSequence currentSequence;
         private Coroutine highlightRoutine;
+        private PlayerManager playerManager;
 
         [Header("Flags")]
         private bool isActive = false;
@@ -47,6 +48,7 @@ namespace KH
             {
                 Destroy(gameObject);
             }
+            playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
         }
         private void Start()
         {
@@ -76,6 +78,7 @@ namespace KH
             currentLine = 0;
 
             PlayerShooter playerShooter = PlayerInputManager.instance.playerObject.GetComponent<PlayerShooter>();
+            playerManager.playerCollider.enabled = false;
             WaveManager.instance.isPaused = true;
             StageManager.instance.isPaused = true;
             FaithManager.instance.isPaused = true;
@@ -155,6 +158,7 @@ namespace KH
 
             dialogueBox.SetActive(false);
             playerShooter.isPaused = false;
+            playerManager.playerCollider.enabled = true;
             WaveManager.instance.isPaused = false;
             StageManager.instance.isPaused = false;
             FaithManager.instance.isPaused = false;

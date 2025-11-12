@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 namespace KH
 {
@@ -19,12 +20,16 @@ namespace KH
 
         [Header("Stage Music")]
         public AudioSource bgmSource;
+        public AudioClip herLastTwilight;
+        public AudioClip introBGM;
         public AudioClip mainBGM;
+        public float number = 2.5f;
         [SerializeField][Range(0, 1)] private float bgmVolume = 1f;
 
         [Header("References")]
         private PlayerManager playerManager;
         private PlayerShooter playerShooter;
+        private Coroutine bgmCoroutine;
         private void Awake()
         {
             if (instance == null)
@@ -32,19 +37,19 @@ namespace KH
                 instance = this;
                 DontDestroyOnLoad(gameObject);
 
+                introBGM.LoadAudioData();
+                mainBGM.LoadAudioData();
+
                 playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
                 playerShooter = PlayerInputManager.instance.playerObject.GetComponent<PlayerShooter>();
 
-                bgmSource.clip = mainBGM;
                 playerShootingSource.clip = playerShootingSFX;
-
-                bgmSource.loop = true;
                 playerShootingSource.loop = true;
 
                 bgmSource.volume = bgmVolume;
                 playerShootingSource.volume = shootingVolume;
 
-                PlayBGM(mainBGM);
+                PlayBGM(herLastTwilight);
                 PlayPlayerShooting(playerShootingSFX);
             }
             else
@@ -54,7 +59,6 @@ namespace KH
         }
         private void Update()
         {
-
             if (PlayerInputManager.instance.isShooting && !playerManager.isDead && !playerShooter.isPaused && !UIManager.instance.isInPauseMenu)
             {
                 playerShootingSource.volume = shootingVolume;
@@ -64,10 +68,39 @@ namespace KH
                 playerShootingSource.volume = 0f;
             }
         }
-        public void PlayBGM(AudioClip bgmClip)
+        public void PlayBGM(AudioClip shootingClip)
         {
             if (bgmSource.isPlaying) bgmSource.Stop();
-            bgmSource.clip = bgmClip;
+            bgmSource.clip = herLastTwilight;
+            bgmSource.Play();
+        }
+        public void PlayBGMWithIntro()
+        {
+            if (bgmCoroutine != null)
+                StopCoroutine(bgmCoroutine);
+
+            bgmCoroutine = StartCoroutine(PlayIntroThenBGM());
+        }
+        private IEnumerator PlayIntroThenBGM()
+        {
+            bgmSource.loop = false;
+            bgmSource.clip = introBGM;
+            bgmSource.Play();
+
+
+            // Wait until intro is almost done
+            yield return new WaitForSeconds(introBGM.length - 0.1f);
+
+            // Preload the main BGM clip
+            bgmSource.clip = mainBGM;
+
+            // Wait for the intro to actually finish
+            while (bgmSource.time > 0 && bgmSource.isPlaying)
+            {
+                yield return null;
+            }
+
+            bgmSource.loop = true;
             bgmSource.Play();
         }
         public void PlayPlayerShooting(AudioClip shootingClip)
@@ -86,7 +119,7 @@ namespace KH
         }
         public void ResetAudioManager()
         {
-            PlayBGM(mainBGM);
+            PlayBGM(herLastTwilight);
         }
     }
 }

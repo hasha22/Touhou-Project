@@ -24,8 +24,12 @@ namespace KH
         [Header("Death Screen UI")]
         [SerializeField] private GameObject deathScreen;
         [SerializeField] private GameObject retryButton;
-        private bool isInDeathScreen = false;
-        private bool isInDeathMenu = false;
+        [SerializeField] private bool isInDeathScreen = false;
+
+        [Header("Victory Screen UI")]
+        [SerializeField] private GameObject victoryScreen;
+        [SerializeField] private GameObject playAgainButton;
+        [SerializeField] private bool isInVictoryScreen = false;
 
         [Header("Playable Area UI")]
         public TextMeshProUGUI currentFaith;
@@ -94,20 +98,7 @@ namespace KH
         }
         private void Update()
         {
-
-            if (isInDeathScreen)
-            {
-                if (Input.GetKeyDown(KeyCode.Z))
-                {
-                    if (!isInDeathMenu)
-                    {
-                        retryButton.SetActive(true);
-                    }
-                    isInDeathMenu = true;
-                }
-                isInDeathScreen = false;
-            }
-            if (Input.GetKeyDown(KeyCode.Escape) && !isInPauseMenu)
+            if (Input.GetKeyDown(KeyCode.Escape) && !isInPauseMenu && !isInDeathScreen && !isInVictoryScreen)
             {
                 EnablePauseMenu();
                 AudioManager.instance.PlaySFX(pauseMenuSFX, pauseMenu.transform, pauseMenuVolume);
@@ -364,10 +355,22 @@ namespace KH
             attackHealthBar.gameObject.SetActive(false);
             spellCardHealthBar.gameObject.SetActive(false);
         }
+        public void StartVictoryScreenCoroutine()
+        {
+            StartCoroutine(EnableVictoryScreen());
+        }
         #endregion
         public void StartDeathScreenCoroutine()
         {
             StartCoroutine(EnableDeathScreen());
+        }
+        private IEnumerator EnableVictoryScreen()
+        {
+            yield return new WaitForSeconds(2);
+            isInVictoryScreen = true;
+            Time.timeScale = 0f;
+            victoryScreen.SetActive(true);
+            AudioManager.instance.bgmSource.Stop();
         }
         private IEnumerator EnableDeathScreen()
         {
@@ -395,14 +398,13 @@ namespace KH
         {
             Time.timeScale = 1f;
             deathScreen.SetActive(false);
-            isInDeathMenu = false;
+            victoryScreen.SetActive(false);
             isInDeathScreen = false;
 
             ScoreManager.instance.ResetScore();
             EnemyDatabase.instance.ClearAllEnemies();
             LightZoneManager.instance.RemoveAllZones();
             ItemManager.instance.RemoveAllItems();
-            WaveManager.instance.ResetWave();
             StageManager.instance.ResetStage();
             FaithManager.instance.ResetFaith();
             AudioManager.instance.ResetAudioManager();
