@@ -36,6 +36,7 @@ namespace KH
         [Header("References")]
         private PlayerManager playerManager;
         [SerializeField] private PlayerAuraController playerAuraController;
+        [SerializeField] private BackgroundScroller backgroundScroller;
         private void Awake()
         {
             displayedFaith = currentFaith;
@@ -177,9 +178,7 @@ namespace KH
             Color brightColor = Color.Lerp(new Color(0.2f, 0.4f, 1f), Color.white, t);
             globalLight.color = brightColor;
 
-            // Also update background color to match lighting
-            //Color bgColor = Color.Lerp(new Color(0.2f, 0.4f, 1f), Color.white, t);
-            //bgRenderer.material.color = Color.Lerp(bgRenderer.material.color, brightColor, Time.deltaTime);
+            backgroundScroller.UpdateBackgroundBrightness(t);
         }
         private void CheckThreshold()
         {
