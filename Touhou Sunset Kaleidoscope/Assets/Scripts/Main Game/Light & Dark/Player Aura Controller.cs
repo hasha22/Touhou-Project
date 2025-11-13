@@ -13,6 +13,7 @@ namespace KH
 
         [Header("References")]
         public SpriteRenderer auraVisual;
+        public SpriteRenderer gradientVisual;
         private float auraTimer;
         private bool auraActive = false;
         private Coroutine auraFadeCoroutine;
@@ -21,6 +22,7 @@ namespace KH
         {
             playerTransform = PlayerInputManager.instance.playerObject.transform;
             auraVisual.enabled = false;
+            gradientVisual.enabled = false;
         }
 
         private void Update()
@@ -79,6 +81,7 @@ namespace KH
 
 
             auraVisual.enabled = true;
+            gradientVisual.enabled = true;
             auraFadeCoroutine = StartCoroutine(FadeAura(true));
         }
         private void DeactivateAura()
@@ -88,20 +91,16 @@ namespace KH
                 StopCoroutine(auraFadeCoroutine);
 
             auraFadeCoroutine = StartCoroutine(FadeAura(false));
-
-            // add coroutine for fading out here and resetting bullet speed
         }
         private IEnumerator FadeAura(bool fadeIn)
         {
             float duration = 0.75f;
             float elapsed = 0f;
-            UnityEngine.Color color = auraVisual.color;
-            //float faithFactor = Mathf.InverseLerp(8000, 10000, FaithManager.instance.currentFaith);
+            UnityEngine.Color auraColor = auraVisual.color;
+            UnityEngine.Color gradientColor = gradientVisual.color;
 
             float startAlpha = fadeIn ? 0f : 1f;
             float targetAlpha = fadeIn ? 1f : 0f;
-            //float startScale = fadeIn ? 0.8f : 1f;
-            //float targetScale = fadeIn ? 1f : 0.8f;
 
             while (elapsed < duration)
             {
@@ -109,20 +108,22 @@ namespace KH
                 float t = elapsed / duration;
 
                 float alpha = Mathf.Lerp(startAlpha, targetAlpha, Mathf.SmoothStep(0f, 1f, t));
-                //float scale = Mathf.Lerp(startScale, targetScale, Mathf.SmoothStep(0f, 1f, t));
 
-                auraVisual.color = new UnityEngine.Color(color.r, color.g, color.b, alpha);
+                auraVisual.color = new UnityEngine.Color(auraColor.r, auraColor.g, auraColor.b, alpha);
+                gradientVisual.color = new UnityEngine.Color(gradientColor.r, gradientColor.g, gradientColor.b, alpha);
 
-                //auraVisual.color = new Color(color.r, color.g, color.b, alpha);
-                //transform.localScale = Vector3.one * scale;
 
                 yield return null;
             }
 
-            auraVisual.color = new UnityEngine.Color(color.r, color.g, color.b, targetAlpha);
+            auraVisual.color = new UnityEngine.Color(auraColor.r, auraColor.g, auraColor.b, targetAlpha);
+            gradientVisual.color = new UnityEngine.Color(gradientColor.r, gradientColor.g, gradientColor.b, targetAlpha);
 
             if (!fadeIn)
+            {
                 auraVisual.enabled = false;
+                gradientVisual.enabled = false;
+            }
         }
     }
 }

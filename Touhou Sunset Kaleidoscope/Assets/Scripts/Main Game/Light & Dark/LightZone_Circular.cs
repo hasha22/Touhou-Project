@@ -39,13 +39,13 @@ namespace KH
             switch (zoneSize)
             {
                 case LightZoneSize.Large:
-                    transform.localScale = new Vector3(0.5f, 0.5f, 1);
+                    transform.localScale = new Vector3(1.4f, 1.4f, 1);
                     break;
                 case LightZoneSize.Medium:
-                    transform.localScale = new Vector3(0.4f, 0.4f, 1);
+                    transform.localScale = new Vector3(1.2f, 1.2f, 1);
                     break;
                 case LightZoneSize.Small:
-                    transform.localScale = new Vector3(0.3f, 0.3f, 1);
+                    transform.localScale = new Vector3(1f, 1f, 1);
                     break;
             }
         }
@@ -60,7 +60,7 @@ namespace KH
             while (elapsed < fadeInDuration)
             {
                 elapsed += Time.deltaTime;
-                float alpha = Mathf.Lerp(0f, 0.5f, elapsed / fadeInDuration);
+                float alpha = Mathf.Lerp(0f, 0.9f, elapsed / fadeInDuration);
                 SetAlpha(alpha);
                 yield return null;
             }
@@ -69,7 +69,7 @@ namespace KH
             while (elapsed < fadeOutDuration)
             {
                 elapsed += Time.deltaTime;
-                float alpha = Mathf.Lerp(0.5f, 0f, elapsed / fadeOutDuration);
+                float alpha = Mathf.Lerp(0.9f, 0f, elapsed / fadeOutDuration);
                 SetAlpha(alpha);
                 yield return null;
             }
