@@ -60,7 +60,7 @@ namespace KH
             while (elapsed < fadeInDuration)
             {
                 elapsed += Time.deltaTime;
-                float alpha = Mathf.Lerp(0f, 0.9f, elapsed / fadeInDuration);
+                float alpha = Mathf.Lerp(0f, 0.8f, elapsed / fadeInDuration);
                 SetAlpha(alpha);
                 yield return null;
             }
@@ -69,7 +69,7 @@ namespace KH
             while (elapsed < fadeOutDuration)
             {
                 elapsed += Time.deltaTime;
-                float alpha = Mathf.Lerp(0.9f, 0f, elapsed / fadeOutDuration);
+                float alpha = Mathf.Lerp(0.8f, 0f, elapsed / fadeOutDuration);
                 SetAlpha(alpha);
                 yield return null;
             }

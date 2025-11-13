@@ -177,8 +177,11 @@ namespace KH
             globalLight.intensity = Mathf.Lerp(globalLight.intensity, Mathf.Lerp(0.1f, 1f, t), Time.deltaTime);
             Color brightColor = Color.Lerp(new Color(0.2f, 0.4f, 1f), Color.white, t);
             globalLight.color = brightColor;
-
-            backgroundScroller.UpdateBackgroundBrightness(t);
+            /*
+            if (backgroundScroller.enabled)
+            {
+                backgroundScroller.UpdateBackgroundBrightness(t);
+            }*/
         }
         private void CheckThreshold()
         {

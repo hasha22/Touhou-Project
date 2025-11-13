@@ -13,6 +13,7 @@ namespace KH
         private Material material;
         private Vector2 offset;
         private Color currentColor;
+        public bool isPaused = false;
 
         void Start()
         {
@@ -23,7 +24,7 @@ namespace KH
 
         void Update()
         {
-            // Handle scrolling
+            if (isPaused) return;
             offset.y += scrollSpeed * Time.deltaTime;
             material.mainTextureOffset = offset;
         }
@@ -34,6 +35,10 @@ namespace KH
             currentColor = Color.Lerp(currentColor, targetColor, Time.deltaTime * 2f);
 
             material.SetColor("_LightningColor", currentColor);
+        }
+        public void RefreshMaterial()
+        {
+            material = GetComponent<Renderer>().material;
         }
     }
 }

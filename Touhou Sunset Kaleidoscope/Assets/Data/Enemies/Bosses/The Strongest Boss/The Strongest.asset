@@ -30,3 +30,4 @@ MonoBehaviour:
   shouldHaveInitialDialogue: 1
   dialogueSequences:
   - {fileID: 11400000, guid: 31e005cb3804e2947bb252b7546d0546, type: 2}
+  bossBackgroundMaterial: {fileID: 2100000, guid: 89c2719f2a3923b47a85b706aba67fb0, type: 2}

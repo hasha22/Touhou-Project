@@ -27,6 +27,9 @@ namespace KH
         [Header("Dialogue Sequences")]
         public bool shouldHaveInitialDialogue;
         public List<DialogueSequence> dialogueSequences;
+
+        [Header("Boss Backgrounds")]
+        public Material bossBackgroundMaterial;
     }
 }
 

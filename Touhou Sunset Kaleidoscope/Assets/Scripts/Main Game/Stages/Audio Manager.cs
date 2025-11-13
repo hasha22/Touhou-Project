@@ -25,6 +25,8 @@ namespace KH
         public AudioClip mainBGM;
         public float number = 2.5f;
         [SerializeField][Range(0, 1)] private float bgmVolume = 1f;
+        public float loopStartTime = 63f;
+        public float loopEndTime = 111.3f;
 
         [Header("References")]
         private PlayerManager playerManager;
@@ -67,6 +69,10 @@ namespace KH
             {
                 playerShootingSource.volume = 0f;
             }
+            if (bgmSource.time >= loopEndTime)
+            {
+                bgmSource.time = loopStartTime;
+            }
         }
         public void PlayBGM(AudioClip shootingClip)
         {
@@ -79,7 +85,7 @@ namespace KH
             if (bgmCoroutine != null)
                 StopCoroutine(bgmCoroutine);
 
-            bgmCoroutine = StartCoroutine(PlayIntroThenBGM());
+            //bgmCoroutine = StartCoroutine(PlayIntroThenBGM());
         }
         private IEnumerator PlayIntroThenBGM()
         {

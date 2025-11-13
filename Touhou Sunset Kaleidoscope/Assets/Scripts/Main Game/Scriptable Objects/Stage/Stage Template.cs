@@ -14,5 +14,8 @@ namespace KH
 
         [Header("Bosses")]
         public List<Boss> bosses;
+
+        [Header("Background")]
+        public Material stageBackgroundMaterial;
     }
 }

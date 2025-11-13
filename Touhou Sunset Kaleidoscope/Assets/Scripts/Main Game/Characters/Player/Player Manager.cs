@@ -54,7 +54,7 @@ namespace KH
         private float multiplier1 = 1.5f;
         private int multiplier2 = 2;
         public bool inLight = false;
-        private bool inShadow = true;
+        //private bool inShadow = true;
         // Add VFX and SFX later
 
         [Header("References")]

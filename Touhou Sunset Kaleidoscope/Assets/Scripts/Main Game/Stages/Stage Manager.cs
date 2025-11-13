@@ -47,6 +47,7 @@ namespace KH
         }
         public void StartStage()
         {
+            BackgroundManager.instance.SwitchBackground(stages[0].stageBackgroundMaterial);
             StartCoroutine(InitialWaveDelayCoroutine(initialWaveDelay));
         }
         private IEnumerator InitialWaveDelayCoroutine(float delay)
@@ -87,7 +88,7 @@ namespace KH
                     }
                     else if (currentStage.bosses[1].spawnAfterWaveIndex == currentWaveIndex + 1 && !hasSpawnedSecondBoss)
                     {
-                        TriggerBossEvent(currentStage.bosses[1]);
+                        StartCoroutine(SpawnBossWithDelay(currentStage.bosses[1], currentStage.bosses[1].delayBeforeSpawn));
                         hasSpawnedSecondBoss = true;
                         return;
                     }
@@ -108,6 +109,7 @@ namespace KH
         private IEnumerator SpawnBossWithDelay(Boss bossData, float delay)
         {
             yield return new WaitForSeconds(delay);
+            BackgroundManager.instance.SwitchBackground(currentStage.bosses[0].bossBackgroundMaterial);
             TriggerBossEvent(bossData);
         }
         public void InitializeStage(int index)

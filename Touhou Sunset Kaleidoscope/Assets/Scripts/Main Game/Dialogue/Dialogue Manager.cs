@@ -32,8 +32,10 @@ namespace KH
         [Header("References")]
         private int currentLine = 0;
         [SerializeField] private DialogueSequence currentSequence;
+        [SerializeField] private BackgroundScroller backgroundScroller;
         private Coroutine highlightRoutine;
         private PlayerManager playerManager;
+
 
         [Header("Flags")]
         private bool isActive = false;
@@ -79,6 +81,7 @@ namespace KH
             currentSequence = sequence;
             currentLine = 0;
 
+            backgroundScroller.isPaused = true;
             PlayerShooter playerShooter = PlayerInputManager.instance.playerObject.GetComponent<PlayerShooter>();
             playerManager.playerCollider.enabled = false;
             WaveManager.instance.isPaused = true;
@@ -178,6 +181,7 @@ namespace KH
 
             UIManager.instance.InitializeBossUI(EnemyDatabase.instance.currentActiveBoss.bossData);
             dialogueBox.SetActive(false);
+            backgroundScroller.isPaused = false;
             playerShooter.isPaused = false;
             playerManager.playerCollider.enabled = true;
             WaveManager.instance.isPaused = false;
