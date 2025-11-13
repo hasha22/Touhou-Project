@@ -437,6 +437,7 @@ namespace KH
             deathScreen.SetActive(false);
             victoryScreen.SetActive(false);
             isInDeathScreen = false;
+            isInVictoryScreen = false;
 
             attackHealthBar.fillAmount = 1f;
             spellCardHealthBar.fillAmount = 1f;
