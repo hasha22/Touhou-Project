@@ -30,4 +30,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cbee1ebab567e3040997614c05bd8424, type: 2}
   - {fileID: 11400000, guid: 7972c728927bbc846820815b50e5df17, type: 2}
   - {fileID: 11400000, guid: d2296ab45df97d44db4cf7f528e76afb, type: 2}
-  delayBeforeNextWave: 4
+  delayBeforeNextWave: 7

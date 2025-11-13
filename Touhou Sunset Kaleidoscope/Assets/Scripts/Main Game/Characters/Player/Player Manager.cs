@@ -305,6 +305,7 @@ namespace KH
             currentPlayerLives = 3;
             currentPower = 1f;
             UIManager.instance.UpdatePowerUI(currentPower);
+            UIManager.instance.RemoveAllLives();
             for (int i = 0; i < currentPlayerLives - 1; i++)
             {
                 UIManager.instance.AddLife();

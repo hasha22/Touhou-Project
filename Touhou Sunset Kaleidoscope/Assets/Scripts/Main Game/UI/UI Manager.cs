@@ -164,6 +164,13 @@ namespace KH
                 break;
             }
         }
+        public void RemoveAllLives()
+        {
+            foreach (Transform transform in lifeContainer)
+            {
+                Destroy(transform.gameObject);
+            }
+        }
         #endregion
 
         #region Boss UI

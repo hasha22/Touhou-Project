@@ -196,8 +196,10 @@ namespace KH
         }
         public void ResetFaith()
         {
+            StopAllCoroutines();
             currentFaith = 10000;
             displayedFaith = currentFaith;
+            decayRate = 250;
             timeSinceLastLight = 2;
             faithDecayCoroutine = null;
             auraActive = false;
