@@ -79,8 +79,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -1313047995
-  m_SortingLayer: 1
+  m_SortingLayerID: 1195320533
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c21e1636ac368194ab92d093ac4bffbb, type: 3}
   m_Color: {r: 0.90943396, g: 0.70524025, b: 0.70524025, a: 1}
@@ -147,6 +147,7 @@ MonoBehaviour:
   auraActivationThreshold: 8000
   bulletsBeingSlowed: []
   auraVisual: {fileID: 0}
+  gradientVisual: {fileID: 0}
 --- !u!1 &5341682829171865755
 GameObject:
   m_ObjectHideFlags: 0
