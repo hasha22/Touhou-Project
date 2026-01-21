@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11d96b8e82090c419759b60f961bc53, type: 3}
+  m_Name: Light_Ring Pattern
+  m_EditorClassIdentifier: Assembly-CSharp::KH.RingPattern
+  bulletType: {fileID: 11400000, guid: 1fe14db902ba4a6458c0a2a3d115aa3c, type: 2}
+  defaultBulletSpeed: 3
+  count: 36
+  spreadDegrees: 360
+  startAngle: 0
