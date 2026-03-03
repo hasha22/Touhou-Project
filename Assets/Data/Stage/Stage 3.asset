@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0d7d49ef57f28646aebc6dfb8dc4303, type: 3}
-  m_Name: Stage 2 Template
+  m_Name: Stage 3
   m_EditorClassIdentifier: Assembly-CSharp::KH.StageTemplate
-  stageName: 
-  stageDuration: 0
-  waves: []
-  bosses: []
+  stageName: Stage 3
+  waves:
+  - {fileID: 11400000, guid: 7ca06f82f0157f84488d87af69ca6f59, type: 2}
+  boss: {fileID: 0}
   stageBackgroundMaterial: {fileID: 0}

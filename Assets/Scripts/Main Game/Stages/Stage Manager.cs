@@ -22,7 +22,7 @@ namespace KH
         [Header("Flags")]
         public bool isPaused = false;
         private bool waitingForNextWave = false;
-        private bool hasSpawnedBoss = false;
+        [SerializeField] private bool hasSpawnedBoss = false;
         public bool isStageBossDefeated = false;
         private void Awake()
         {
@@ -42,19 +42,20 @@ namespace KH
             // Initializes first stage
             if (stages.Count > 0)
             {
-                StartStage();
+                StartStage(0);
             }
         }
-        public void StartStage()
+        public void StartStage(int stageIndex)
         {
-            currentStageName = stages[0].name;
-            BackgroundManager.instance.SwitchBackground(stages[0].stageBackgroundMaterial);
-            StartCoroutine(InitialWaveDelayCoroutine(initialWaveDelay));
+            currentStageName = stages[stageIndex].name;
+            BackgroundManager.instance.SwitchBackground(stages[stageIndex].stageBackgroundMaterial);
+            if (stages[stageIndex].initialDelay > 0f) StartCoroutine(InitialWaveDelayCoroutine(stages[stageIndex].initialDelay, stageIndex));
+            else InitializeStage(stageIndex);
         }
-        private IEnumerator InitialWaveDelayCoroutine(float delay)
+        private IEnumerator InitialWaveDelayCoroutine(float delay, int index)
         {
             yield return new WaitForSeconds(delay);
-            InitializeStage(0);
+            InitializeStage(index);
         }
         private void Update()
         {
@@ -94,6 +95,11 @@ namespace KH
                         currentWaveIndex++;
                         WaveManager.instance.InitializeWave(currentStage.waves[currentWaveIndex]);
                     }
+                    else if (isStageBossDefeated)
+                    {
+                        OnStageCompleted();
+                        isStageBossDefeated = false;
+                    }
                 }
             }
         }
@@ -116,17 +122,20 @@ namespace KH
             // Start first wave
             if (currentStage.waves.Count > 0)
                 WaveManager.instance.InitializeWave(currentStage.waves[currentWaveIndex]);
-
         }
         private void OnStageCompleted()
         {
             // Advance to next stage if any
+
+            //Play fade out animations
+            //Show text on screen
             if (currentStageIndex < stages.Count - 1)
             {
-                InitializeStage(currentStageIndex + 1);
+                StartStage(currentStageIndex + 1);
             }
             else
             {
+                UIManager.instance.StartVictoryScreenCoroutine();
                 currentStage = null;
                 elapsedStageTime = 0;
             }
@@ -143,7 +152,7 @@ namespace KH
             timerBetweenWaves = 0;
             waitingForNextWave = true;
             WaveManager.instance.ResetWave();
-            StartStage();
+            StartStage(currentStageIndex);
         }
 
     }

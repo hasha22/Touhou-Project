@@ -7,6 +7,7 @@ namespace KH
     {
         [Header("Stage Info")]
         public string stageName;
+        public float initialDelay;
 
         [Header("Waves in this Stage")]
         public List<WaveTemplate> waves;

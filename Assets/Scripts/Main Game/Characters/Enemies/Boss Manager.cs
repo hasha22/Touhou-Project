@@ -196,6 +196,7 @@ namespace KH
             //StartCoroutine(SlowDownCoroutine());
             UIManager.instance.HideBossUI();
             Destroy(gameObject, 0.5f);
+            StageManager.instance.isStageBossDefeated = true;
         }
         private bool IsInPlayableArea(Vector3 worldPos)
         {

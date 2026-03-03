@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51dc3ee6dba917a418aa9bfe4eda77a3, type: 3}
   m_Name: Smartest Spell Card Phase
   m_EditorClassIdentifier: 
-  phaseBossHealth: 2500
+  phaseBossHealth: 200
   phaseName: "Hail Sign \u300C Hailstorm \u300D"
   duration: 35
   isSpellCard: 1

@@ -32,22 +32,6 @@ public class BackgroundManager : MonoBehaviour
     }
     private IEnumerator FadeCoroutine(Material newMaterial)
     {
-        /*
-        Texture oldTexture = backgroundRenderer.material.GetTexture("_MainTex");
-        backgroundRenderer.material.SetTexture("_BlendTex", newTexture);
-
-        float t = 0f;
-        while (t < transitionDuration)
-        {
-            t += Time.deltaTime;
-            backgroundRenderer.material.SetFloat("_Blend", t);
-            yield return null;
-        }
-
-        backgroundRenderer.material.SetTexture("_MainTex", newTexture);
-        backgroundRenderer.material.SetFloat("_Blend", 0f);
-        */
-
         backgroundRenderer.material = newMaterial;
 
         Color color = backgroundRenderer.material.GetColor("_LightningColor");
