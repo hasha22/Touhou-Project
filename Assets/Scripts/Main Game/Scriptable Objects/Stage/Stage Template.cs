@@ -7,13 +7,12 @@ namespace KH
     {
         [Header("Stage Info")]
         public string stageName;
-        public float stageDuration;
 
         [Header("Waves in this Stage")]
         public List<WaveTemplate> waves;
 
         [Header("Bosses")]
-        public List<Boss> bosses;
+        public Boss boss;
 
         [Header("Background")]
         public Material stageBackgroundMaterial;

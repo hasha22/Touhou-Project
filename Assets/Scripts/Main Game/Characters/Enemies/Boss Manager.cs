@@ -26,6 +26,7 @@ namespace KH
         public bool isWaitingForDialogue = true;
         private bool phaseEndedEarly = false;
         private bool isInvulnerable = false;
+        public bool isBossDefeated = false;
 
         [Header("References")]
         private BoxCollider2D boxCollider2D;
@@ -195,7 +196,6 @@ namespace KH
             //StartCoroutine(SlowDownCoroutine());
             UIManager.instance.HideBossUI();
             Destroy(gameObject, 0.5f);
-            UIManager.instance.StartVictoryScreenCoroutine();
         }
         private bool IsInPlayableArea(Vector3 worldPos)
         {

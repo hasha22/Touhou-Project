@@ -22,8 +22,8 @@ namespace KH
         [Header("Flags")]
         public bool isPaused = false;
         private bool waitingForNextWave = false;
-        private bool hasSpawnedFirstBoss = false;
-        private bool hasSpawnedSecondBoss = false;
+        private bool hasSpawnedBoss = false;
+        public bool isStageBossDefeated = false;
         private void Awake()
         {
             if (instance == null)
@@ -47,6 +47,7 @@ namespace KH
         }
         public void StartStage()
         {
+            currentStageName = stages[0].name;
             BackgroundManager.instance.SwitchBackground(stages[0].stageBackgroundMaterial);
             StartCoroutine(InitialWaveDelayCoroutine(initialWaveDelay));
         }
@@ -79,17 +80,11 @@ namespace KH
                     waitingForNextWave = false;
                     timerBetweenWaves = 0;
 
-                    // Boss spawning - all stages have one midboss and one main boss, so SpawnBoss() is hardcoded
-                    if (currentStage.bosses[0].spawnAfterWaveIndex == currentWaveIndex + 1 && !hasSpawnedFirstBoss)
+                    // Boss spawning - changed all stages to have one boss due to project new project scope
+                    if (currentStage.boss.spawnAfterWaveIndex == currentWaveIndex + 1 && !hasSpawnedBoss)
                     {
-                        StartCoroutine(SpawnBossWithDelay(currentStage.bosses[0], currentStage.bosses[0].delayBeforeSpawn));
-                        hasSpawnedFirstBoss = true;
-                        return;
-                    }
-                    else if (currentStage.bosses[1].spawnAfterWaveIndex == currentWaveIndex + 1 && !hasSpawnedSecondBoss)
-                    {
-                        StartCoroutine(SpawnBossWithDelay(currentStage.bosses[1], currentStage.bosses[1].delayBeforeSpawn));
-                        hasSpawnedSecondBoss = true;
+                        StartCoroutine(SpawnBossWithDelay(currentStage.boss, currentStage.boss.delayBeforeSpawn));
+                        hasSpawnedBoss = true;
                         return;
                     }
 
@@ -99,17 +94,13 @@ namespace KH
                         currentWaveIndex++;
                         WaveManager.instance.InitializeWave(currentStage.waves[currentWaveIndex]);
                     }
-                    else if (elapsedStageTime >= currentStage.stageDuration)
-                    {
-                        //OnStageCompleted();
-                    }
                 }
             }
         }
         private IEnumerator SpawnBossWithDelay(Boss bossData, float delay)
         {
             yield return new WaitForSeconds(delay);
-            BackgroundManager.instance.SwitchBackground(currentStage.bosses[0].bossBackgroundMaterial);
+            BackgroundManager.instance.SwitchBackground(currentStage.boss.bossBackgroundMaterial);
             TriggerBossEvent(bossData);
         }
         public void InitializeStage(int index)
@@ -120,8 +111,7 @@ namespace KH
             elapsedStageTime = 0;
             currentStageName = currentStage.stageName;
 
-            hasSpawnedFirstBoss = false;
-            hasSpawnedSecondBoss = false;
+            hasSpawnedBoss = false;
 
             // Start first wave
             if (currentStage.waves.Count > 0)
@@ -130,8 +120,6 @@ namespace KH
         }
         private void OnStageCompleted()
         {
-            Debug.Log($"Stage {currentStage.stageName} completed!");
-
             // Advance to next stage if any
             if (currentStageIndex < stages.Count - 1)
             {
