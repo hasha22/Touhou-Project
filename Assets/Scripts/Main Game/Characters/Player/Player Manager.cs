@@ -160,7 +160,11 @@ namespace KH
                     else if (collision == bulletController.bulletHitBox)
                     {
                         Die();
-                        //ObjectPool.instance.ReturnToPool(collision.gameObject);
+
+                        if (!StageManager.instance.isStageBossDefeated && EnemyDatabase.instance.currentActiveBoss.isInSpellCardPhase)
+                        {
+                            EnemyDatabase.instance.currentActiveBoss.MakePlayerIneligibleForSpellCardBonus();
+                        }
                     }
                 }
             }

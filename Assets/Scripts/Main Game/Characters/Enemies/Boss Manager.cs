@@ -27,6 +27,7 @@ namespace KH
         private bool phaseEndedEarly = false;
         private bool isInvulnerable = false;
         public bool isBossDefeated = false;
+        public bool isInSpellCardPhase = false;
 
         [Header("References")]
         private BoxCollider2D boxCollider2D;
@@ -122,6 +123,8 @@ namespace KH
             phase.StartPhase(this);
             UIManager.instance.StartBossPhase(phase);
 
+            isInSpellCardPhase = false;
+
             if (helperIndex % 2 == 0)
             {
                 UIManager.instance.InitializeHealth(currentBossPhaseHealth, phase.phaseBossHealth);
@@ -129,6 +132,7 @@ namespace KH
             }
             if (phase.isSpellCard)
             {
+                isInSpellCardPhase = true;
                 UIManager.instance.PlaySpellCardCutIn(spriteRenderer.sprite, phase.phaseName);
             }
 
@@ -145,6 +149,15 @@ namespace KH
             if (phase.isSpellCard)
             {
                 UIManager.instance.OnLifeLost(bossData.phases.Length / 2);
+
+                BossSpellCardPhase bossSpellCardPhase = (BossSpellCardPhase)phase;
+                if (!bossSpellCardPhase.playerHasDied)
+                {
+                    UIManager.instance.ShowSpellCardBonus(bossSpellCardPhase.spellCardBonus);
+                    ScoreManager.instance.AwardSpellCardBonus(bossSpellCardPhase.spellCardBonus);
+                    //show UI
+                    // award score
+                }
             }
             yield return StartCoroutine(BossInvulnerabilityCoroutine(phase));// small delay and boss invulnerability between phases
             currentPhaseIndex++;
@@ -213,6 +226,11 @@ namespace KH
             isInvulnerable = true;
             yield return new WaitForSeconds(phase.delayBeforeNextPhase);
             isInvulnerable = false;
+        }
+        public void MakePlayerIneligibleForSpellCardBonus()
+        {
+            BossSpellCardPhase bossSpellCardPhase = (BossSpellCardPhase)currentPhase;
+            bossSpellCardPhase.playerHasDied = true;
         }
     }
 }

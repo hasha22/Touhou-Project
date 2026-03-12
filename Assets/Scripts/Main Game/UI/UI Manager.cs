@@ -36,6 +36,10 @@ namespace KH
         [Header("Playable Area UI")]
         public TextMeshProUGUI currentFaith;
 
+        [Header("Stage UI")]
+        [SerializeField] private GameObject spellCardBonusUI;
+        [SerializeField] private TextMeshProUGUI spellCardBonus;
+
         [Header("Boss UI References")]
         public TextMeshProUGUI bossNameText;
         public TextMeshProUGUI phaseTimerText;
@@ -89,7 +93,6 @@ namespace KH
         [Header("Coroutines")]
         private Coroutine fillRoutine;
         private Coroutine pointOfCollectionRoutine;
-
         private void Awake()
         {
             if (instance == null)
@@ -101,6 +104,7 @@ namespace KH
             {
                 Destroy(gameObject);
             }
+            spellCardBonusUI.SetActive(false);
             pocCanvasGroup = pointOfCollection.GetComponent<CanvasGroup>();
         }
         private void Start()
@@ -404,6 +408,25 @@ namespace KH
             StartCoroutine(EnableVictoryScreen());
         }
         #endregion
+
+        #region Stage UI
+        public void ShowSpellCardBonus(float bonus)
+        {
+            StartCoroutine(ShowSpellCardBonusRoutine(bonus));
+        }
+        private IEnumerator ShowSpellCardBonusRoutine(float bonus)
+        {
+            spellCardBonusUI.SetActive(true);
+            spellCardBonus.text = bonus.ToString();
+
+            yield return new WaitForSeconds(2f);
+
+            spellCardBonusUI.SetActive(false);
+        }
+        #endregion
+
+        #region Menu UI
+
         public void StartDeathScreenCoroutine()
         {
             StartCoroutine(EnableDeathScreen());
@@ -469,6 +492,10 @@ namespace KH
             PlayerManager player = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
             player.ResetPlayer();
         }
+        #endregion
+
+        #region Helper Methods
         private float EaseOutCubic(float t) => 1f - Mathf.Pow(1f - t, 3f);
+        #endregion
     }
 }

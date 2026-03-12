@@ -53,7 +53,10 @@ namespace KH
             // Score UI Updates
             if (displayedCurrentScore < CurrentScore)
             {
-                displayedCurrentScore += Mathf.CeilToInt(scoreUpdateSpeed * Time.deltaTime);
+                int difference = CurrentScore - displayedCurrentScore;
+                int step = Mathf.CeilToInt(Mathf.Max(scoreUpdateSpeed * Time.deltaTime, (int)(difference * 0.1)));
+
+                displayedCurrentScore += step;
 
                 if (displayedCurrentScore > CurrentScore) { displayedCurrentScore = CurrentScore; }
 
@@ -61,7 +64,10 @@ namespace KH
             }
             if (displayedHiScore < HiScore)
             {
-                displayedHiScore += Mathf.CeilToInt(scoreUpdateSpeed * Time.deltaTime);
+                int difference = HiScore - displayedHiScore;
+                int step = Mathf.CeilToInt(Mathf.Max(scoreUpdateSpeed * Time.deltaTime, (int)(difference * 0.1)));
+
+                displayedHiScore += step;
 
                 if (displayedHiScore > HiScore) { displayedHiScore = HiScore; }
 
@@ -123,6 +129,17 @@ namespace KH
         public int GetGrazeCount()
         {
             return grazeCount;
+        }
+        public void AwardSpellCardBonus(int bonus)
+        {
+            CurrentScore += bonus;
+
+            if (CurrentScore >= HiScore)
+            {
+                HiScore = CurrentScore;
+                saveSystem.SaveScore(HiScore);
+            }
+            UIManager.instance.UpdateScoreUI(displayedCurrentScore, displayedHiScore);
         }
         public void ResetScore()
         {

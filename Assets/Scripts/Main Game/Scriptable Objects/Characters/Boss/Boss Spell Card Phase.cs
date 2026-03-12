@@ -6,8 +6,13 @@ namespace KH
     public class BossSpellCardPhase : BossPhase
     {
         private Coroutine currentPatternRoutine;
+
+        [Header("Spell Card Data")]
+        public int spellCardBonus;
+        public bool playerHasDied = false;
         public override void StartPhase(BossManager boss)
         {
+            playerHasDied = false;
             // for loop to start all pattern coroutines
             foreach (PatternStep step in phaseAttackSequence.patternSteps)
             {
