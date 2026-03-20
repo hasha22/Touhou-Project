@@ -113,6 +113,12 @@ namespace KH
         {
             currentStageIndex = index;
             currentStage = stages[currentStageIndex];
+
+            if (currentStage != null && currentStage.presentationText != null && currentStage.stageName != null && currentStage.stageNameKanji != null)
+            {
+                UIManager.instance.ShowStagePresentation(currentStage.presentationText, currentStage.stageName, currentStage.stageNameKanji);
+            }
+
             currentWaveIndex = 0;
             elapsedStageTime = 0;
             currentStageName = currentStage.stageName;
@@ -131,6 +137,7 @@ namespace KH
             //Show text on screen
             if (currentStageIndex < stages.Count - 1)
             {
+                UIManager.instance.ShowStageBonus(currentStage.stageBonus);
                 StartStage(currentStageIndex + 1);
             }
             else

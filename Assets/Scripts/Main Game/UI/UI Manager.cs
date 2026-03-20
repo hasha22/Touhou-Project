@@ -39,6 +39,14 @@ namespace KH
         [Header("Stage UI")]
         [SerializeField] private GameObject spellCardBonusUI;
         [SerializeField] private TextMeshProUGUI spellCardBonus;
+        [Space]
+        [SerializeField] private GameObject stageBonusUI;
+        [SerializeField] private TextMeshProUGUI stageBonus;
+        [Space]
+        [SerializeField] private GameObject stagePresentationUI;
+        [SerializeField] private TextMeshProUGUI stagePresentationText;
+        [SerializeField] private TextMeshProUGUI stagePresentationTitle;
+        [SerializeField] private TextMeshProUGUI stagePresentationKanji;
 
         [Header("Boss UI References")]
         public TextMeshProUGUI bossNameText;
@@ -105,6 +113,8 @@ namespace KH
                 Destroy(gameObject);
             }
             spellCardBonusUI.SetActive(false);
+            stageBonusUI.SetActive(false);
+            stagePresentationUI.SetActive(false);
             pocCanvasGroup = pointOfCollection.GetComponent<CanvasGroup>();
         }
         private void Start()
@@ -410,18 +420,53 @@ namespace KH
         #endregion
 
         #region Stage UI
+        public void ShowStagePresentation(string body, string title, string kanji)
+        {
+            StartCoroutine(ShowStagePresentationRoutine(body, title, kanji));
+        }
+        public void ShowStageBonus(float bonus)
+        {
+            StartCoroutine(ShowStageBonusRoutine(bonus));
+        }
         public void ShowSpellCardBonus(float bonus)
         {
             StartCoroutine(ShowSpellCardBonusRoutine(bonus));
         }
         private IEnumerator ShowSpellCardBonusRoutine(float bonus)
         {
+            yield return new WaitForSeconds(2f);
+
             spellCardBonusUI.SetActive(true);
             spellCardBonus.text = bonus.ToString();
 
             yield return new WaitForSeconds(2f);
 
             spellCardBonusUI.SetActive(false);
+        }
+        private IEnumerator ShowStageBonusRoutine(float bonus)
+        {
+            yield return new WaitForSeconds(2f);
+
+            stageBonusUI.SetActive(true);
+            stageBonus.text = bonus.ToString();
+
+            yield return new WaitForSeconds(2f);
+
+            stageBonusUI.SetActive(false);
+        }
+        private IEnumerator ShowStagePresentationRoutine(string body, string title, string kanji)
+        {
+            yield return new WaitForSeconds(1f);
+
+            stagePresentationUI.SetActive(true);
+
+            stagePresentationText.text = body;
+            stagePresentationKanji.text = kanji;
+            stagePresentationTitle.text = title;
+
+            yield return new WaitForSeconds(5f);
+
+            stagePresentationUI.SetActive(false);
         }
         #endregion
 

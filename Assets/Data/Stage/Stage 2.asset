@@ -13,8 +13,14 @@ MonoBehaviour:
   m_Name: Stage 2
   m_EditorClassIdentifier: Assembly-CSharp::KH.StageTemplate
   stageName: Stage 2
+  stageNameKanji: "\u6F22\u5B57"
   initialDelay: 5
+  stageBonus: 0
   waves:
   - {fileID: 11400000, guid: 7ca06f82f0157f84488d87af69ca6f59, type: 2}
   boss: {fileID: 11400000, guid: b2605123e8cfcf543b3529efcbfeea66, type: 2}
   stageBackgroundMaterial: {fileID: 2100000, guid: 04a7b7afa09323548b7c6c3bcca31f34, type: 2}
+  presentationText: This is stage 2. Stage 2 is a beautiful and magnanimous stage.
+    Don't you love stage 2? I love stage 2. Stage 2 is the best. You know who is
+    also the best? My gremlin grumpylein. She's the dumbest, most intelligent and
+    prettiest ice fairy of them all. yeah. she's awesome. Right?
