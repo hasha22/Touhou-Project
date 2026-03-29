@@ -32,6 +32,7 @@ namespace KH
         public bool isPlayerDead = false;
         public bool isPaused = false;
         public bool isRestarted = false;
+        public bool isStageBeingDelayed = false;
 
         [Header("References")]
         private PlayerManager playerManager;
@@ -58,6 +59,13 @@ namespace KH
                 AddFaith(100);
 
             if (isPaused)
+            {
+                if (faithDecayCoroutine != null)
+                { StopCoroutine(faithDecayCoroutine); }
+                return;
+            }
+
+            if (isStageBeingDelayed)
             {
                 if (faithDecayCoroutine != null)
                 { StopCoroutine(faithDecayCoroutine); }

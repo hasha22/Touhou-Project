@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e25d78d7650000a47900b3b17742fedc, type: 3}
   m_Name: Strongest Attack Phase
   m_EditorClassIdentifier: 
-  phaseBossHealth: 200
+  phaseBossHealth: 2000
   phaseName: "\u300C Icicle Attack\u300D"
   duration: 30
   isSpellCard: 0

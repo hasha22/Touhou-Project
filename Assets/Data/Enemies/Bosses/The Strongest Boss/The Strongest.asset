@@ -20,12 +20,17 @@ MonoBehaviour:
   phases:
   - {fileID: 11400000, guid: 2982884877e7f6f4597bcbfa50a8c412, type: 2}
   - {fileID: 11400000, guid: 8279148b589c6a748829f8b31e21e5f1, type: 2}
+  - {fileID: 11400000, guid: 2982884877e7f6f4597bcbfa50a8c412, type: 2}
+  - {fileID: 11400000, guid: 8279148b589c6a748829f8b31e21e5f1, type: 2}
   colliderSize: {x: 0.6, y: 0.98}
   colliderOffset: {x: -0.014, y: 0.05}
-  spawnAfterWaveIndex: 1
+  spawnAfterWaveIndex: 2
   delayBeforeSpawn: 3
   spawnPoint: {x: -2.76, y: 3.13, z: 0}
   shouldHaveInitialDialogue: 1
-  dialogueSequences:
-  - {fileID: 11400000, guid: 31e005cb3804e2947bb252b7546d0546, type: 2}
+  shouldHaveMidFightDialogue: 0
+  shouldHaveDefeatedDialogue: 1
+  initialDialogueSequence: {fileID: 11400000, guid: 31e005cb3804e2947bb252b7546d0546, type: 2}
+  midFightDialogueSequences: []
+  defeatedDialogueSequence: {fileID: 11400000, guid: fb6cf28d06e83a342a0ffd85b6bc05e2, type: 2}
   bossBackgroundMaterial: {fileID: 2100000, guid: 89c2719f2a3923b47a85b706aba67fb0, type: 2}

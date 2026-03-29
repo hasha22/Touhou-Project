@@ -40,10 +40,16 @@ namespace KH
             bulletController.InitializeEnemyBullet(laserDirection, defaultBulletSpeed, bulletType.sprite, bulletType);
             bulletController.StopMovement(delayBeforeAcceleration);
 
+            if (attackSound != null)
+            {
+                AudioManager.instance.PlaySFX(attackSound, AudioManager.instance.enemyAudioSource.transform, attackSoundVolume);
+            }
+
             yield return new WaitForSeconds(delayBeforeAcceleration);
 
             bulletController.StartAcceleration(initialBulletAcceleration, accelerationDuration);
             bulletController.InitializeEnemyBullet(laserDirection, accelerationSpeed, bulletType.sprite, bulletType);
+
         }
     }
 }

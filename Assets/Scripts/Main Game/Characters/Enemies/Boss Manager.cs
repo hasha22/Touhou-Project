@@ -7,7 +7,6 @@ namespace KH
         [Header("Boss Data")]
         public Boss bossData;
         [SerializeField] private int currentBossPhaseHealth;
-        [SerializeField] private float slowDownTime = 0.75f;
 
         [Header("Phases")]
         public int currentPhaseIndex = 0;
@@ -93,7 +92,7 @@ namespace KH
             {
                 isWaitingForDialogue = true;
                 isPaused = true;
-                DialogueManager.instance.StartDialogue(this.bossData.dialogueSequences[currentDialogueIndex]);
+                DialogueManager.instance.StartDialogue(this.bossData.initialDialogueSequence);
                 currentDialogueIndex++;
             }
             else
@@ -110,6 +109,10 @@ namespace KH
                 return;
             }
 
+            if (bossData.shouldHaveMidFightDialogue)
+            {
+                //play midfight dialogue, stop all other logic.
+            }
             currentPhase = bossData.phases[currentPhaseIndex];
 
             currentMovementSequence = bossData.phases[currentPhaseIndex].phaseMovementSequence;
@@ -204,22 +207,21 @@ namespace KH
                 // play disappearing vfx
                 ObjectPool.instance.ReturnToPool(bullet);
             }
+            LightZoneManager.instance.RemoveAllZones();
             currentPhase.EndPhase(this);
             AudioManager.instance.PlaySFX(deathSFX, transform, deathSFXVolume);
-            //StartCoroutine(SlowDownCoroutine());
             UIManager.instance.HideBossUI();
             Destroy(gameObject, 0.5f);
             StageManager.instance.isStageBossDefeated = true;
+
+            if (bossData.shouldHaveDefeatedDialogue)
+            {
+                DialogueManager.instance.StartDialogue(bossData.defeatedDialogueSequence);
+            }
         }
         private bool IsInPlayableArea(Vector3 worldPos)
         {
             return worldPos.x >= minBounds.x && worldPos.y >= minBounds.y && worldPos.x < maxBounds.x && worldPos.y < maxBounds.y;
-        }
-        private IEnumerator SlowDownCoroutine()
-        {
-            Time.timeScale = 0.5f;
-            yield return new WaitForSecondsRealtime(slowDownTime);
-            Time.timeScale = 1f;
         }
         private IEnumerator BossInvulnerabilityCoroutine(BossPhase phase)
         {

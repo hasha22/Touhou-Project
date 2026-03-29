@@ -15,4 +15,4 @@ MonoBehaviour:
   bulletType: {fileID: 11400000, guid: 785b44ed690738a4aa069e96fcebf983, type: 2}
   defaultBulletSpeed: 3
   attackSound: {fileID: 8300000, guid: 7aee474747b30cd4899a3862285939d5, type: 3}
-  attackSoundVolume: 0.05
+  attackSoundVolume: 0.01

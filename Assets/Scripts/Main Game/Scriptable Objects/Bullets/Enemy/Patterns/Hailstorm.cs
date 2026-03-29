@@ -129,27 +129,10 @@ namespace KH
             hailStormRoutine = null;
             stopHail = false;
         }
-        public void StopPattern()
-        {
-            BossManager boss = EnemyDatabase.instance.currentActiveBoss;
-            if (hailStormRoutine != null)
-            {
-                boss.StopCoroutine(hailStormRoutine);
-                hailStormRoutine = null;
-            }
-
-            stopHail = true;
-        }
         public void StartPattern(Vector2 origin)
         {
             BossManager boss = EnemyDatabase.instance.currentActiveBoss;
             hailStormRoutine = boss.StartCoroutine(HailStormRoutine(origin));
-            /*
-            if (hailStormRoutine == null)
-            {
-                hailStormRoutine = boss.StartCoroutine(HailStormRoutine(origin));
-            }
-            */
             stopHail = false;
         }
     }

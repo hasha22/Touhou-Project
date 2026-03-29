@@ -161,7 +161,7 @@ namespace KH
                     {
                         Die();
 
-                        if (!StageManager.instance.isStageBossDefeated && EnemyDatabase.instance.currentActiveBoss.isInSpellCardPhase)
+                        if (!StageManager.instance.isStageBossDefeated && (EnemyDatabase.instance.currentActiveBoss != null && EnemyDatabase.instance.currentActiveBoss.isInSpellCardPhase))
                         {
                             EnemyDatabase.instance.currentActiveBoss.MakePlayerIneligibleForSpellCardBonus();
                         }

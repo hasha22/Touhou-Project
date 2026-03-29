@@ -189,9 +189,16 @@ namespace KH
             FaithManager.instance.isPaused = false;
 
             BossManager boss = EnemyDatabase.instance.currentActiveBoss;
-            boss.isPaused = false;
-            boss.isWaitingForDialogue = false;
-            boss.StartNextPhase();
+            if (boss != null)
+            {
+                boss.isPaused = false;
+                boss.isWaitingForDialogue = false;
+                boss.StartNextPhase();
+            }
+            else
+            {
+                UIManager.instance.HideBossUI();
+            }
 
             isActive = false;
 

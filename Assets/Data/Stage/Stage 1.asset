@@ -14,13 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageName: Stage 1
   stageNameKanji: "\u6F22\u5B57"
-  initialDelay: 5
-  stageBonus: 0
+  initialDelay: 12
+  stageBonus: 10000
   waves:
   - {fileID: 11400000, guid: 7ca06f82f0157f84488d87af69ca6f59, type: 2}
+  - {fileID: 11400000, guid: 32610c56d45f5bd4b8e896fe75ea8041, type: 2}
+  - {fileID: 11400000, guid: 58bfb77bb2d47c644932d1e982ffa01e, type: 2}
   boss: {fileID: 11400000, guid: b2605123e8cfcf543b3529efcbfeea66, type: 2}
   stageBackgroundMaterial: {fileID: 2100000, guid: 04a7b7afa09323548b7c6c3bcca31f34, type: 2}
-  presentationText: This is stage 1. Stage 1 is a beautiful and magnanimous stage.
-    Don't you love stage 1? I love stage 1. Stage 1 is the best. You know who is
-    also the best? My gremlin grumpylein. She's the dumbest, most intelligent and
-    prettiest ice fairy of them all. yeah. she's awesome. Right?
+  presentationText: Light is fading away from the mystical land of Gensokyo. Reimu
+    Hakurei, Shrine Maiden and Protector of this land, heads out to investigate what's
+    going on. Her first stop is the Scarlet Devil Mansion, where she suspects the
+    vampires might have something to do with it. But first, she must pass the Misty
+    Lake on her way there...

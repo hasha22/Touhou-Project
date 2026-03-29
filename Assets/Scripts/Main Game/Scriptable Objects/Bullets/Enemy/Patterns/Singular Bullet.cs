@@ -9,6 +9,11 @@ namespace KH
             GameObject bullet = ObjectPool.instance.SpawnBullet(origin);
             BulletController bulletController = bullet.GetComponent<BulletController>();
             bulletController.InitializeEnemyBullet(new Vector2(0, -1), defaultBulletSpeed, bulletType.sprite, bulletType);
+
+            if (attackSound != null)
+            {
+                AudioManager.instance.PlaySFX(attackSound, AudioManager.instance.enemyAudioSource.transform, attackSoundVolume);
+            }
         }
     }
 }

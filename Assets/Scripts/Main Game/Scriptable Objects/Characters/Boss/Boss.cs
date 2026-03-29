@@ -26,7 +26,11 @@ namespace KH
 
         [Header("Dialogue Sequences")]
         public bool shouldHaveInitialDialogue;
-        public List<DialogueSequence> dialogueSequences;
+        public bool shouldHaveMidFightDialogue;
+        public bool shouldHaveDefeatedDialogue;
+        public DialogueSequence initialDialogueSequence;
+        public List<DialogueSequence> midFightDialogueSequences;
+        public DialogueSequence defeatedDialogueSequence;
 
         [Header("Boss Backgrounds")]
         public Material bossBackgroundMaterial;

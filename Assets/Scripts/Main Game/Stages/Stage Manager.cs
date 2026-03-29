@@ -11,8 +11,8 @@ namespace KH
         public List<StageTemplate> stages;
         public int currentStageIndex = 0;
         [SerializeField] private string currentStageName;
-        [SerializeField] private float elapsedStageTime;
-        [SerializeField] private float initialWaveDelay = 5f;
+        public float elapsedStageTime;
+        [SerializeField] private float delayInBetweenStages = 3f;
         private StageTemplate currentStage;
 
         [Header("Current Wave Information")]
@@ -47,14 +47,22 @@ namespace KH
         }
         public void StartStage(int stageIndex)
         {
-            currentStageName = stages[stageIndex].name;
-            BackgroundManager.instance.SwitchBackground(stages[stageIndex].stageBackgroundMaterial);
+            AudioManager.instance.PlayBGM(AudioManager.instance.herLastTwilight);
+            UIManager.instance.HideBossUI();
+            currentStageIndex = stageIndex;
+            currentStage = stages[currentStageIndex];
+
+            BackgroundManager.instance.SwitchBackground(currentStage.stageBackgroundMaterial);
+            UIManager.instance.ShowStagePresentation(currentStage.presentationText, currentStage.stageName, currentStage.stageNameKanji, currentStage.initialDelay);
+
             if (stages[stageIndex].initialDelay > 0f) StartCoroutine(InitialWaveDelayCoroutine(stages[stageIndex].initialDelay, stageIndex));
             else InitializeStage(stageIndex);
         }
         private IEnumerator InitialWaveDelayCoroutine(float delay, int index)
         {
+            FaithManager.instance.isStageBeingDelayed = true;
             yield return new WaitForSeconds(delay);
+            FaithManager.instance.isStageBeingDelayed = false;
             InitializeStage(index);
         }
         private void Update()
@@ -90,15 +98,15 @@ namespace KH
                     }
 
                     // Move to next wave or finish stage
-                    if (currentWaveIndex < currentStage.waves.Count - 1)
-                    {
-                        currentWaveIndex++;
-                        WaveManager.instance.InitializeWave(currentStage.waves[currentWaveIndex]);
-                    }
-                    else if (isStageBossDefeated)
+                    if (isStageBossDefeated)
                     {
                         OnStageCompleted();
                         isStageBossDefeated = false;
+                    }
+                    else if (currentWaveIndex < currentStage.waves.Count - 1 && !isStageBossDefeated)
+                    {
+                        currentWaveIndex++;
+                        WaveManager.instance.InitializeWave(currentStage.waves[currentWaveIndex]);
                     }
                 }
             }
@@ -111,14 +119,6 @@ namespace KH
         }
         public void InitializeStage(int index)
         {
-            currentStageIndex = index;
-            currentStage = stages[currentStageIndex];
-
-            if (currentStage != null && currentStage.presentationText != null && currentStage.stageName != null && currentStage.stageNameKanji != null)
-            {
-                UIManager.instance.ShowStagePresentation(currentStage.presentationText, currentStage.stageName, currentStage.stageNameKanji);
-            }
-
             currentWaveIndex = 0;
             elapsedStageTime = 0;
             currentStageName = currentStage.stageName;
@@ -131,14 +131,12 @@ namespace KH
         }
         private void OnStageCompleted()
         {
-            // Advance to next stage if any
-
-            //Play fade out animations
-            //Show text on screen
             if (currentStageIndex < stages.Count - 1)
             {
+                //Fade out and advance to next stage
                 UIManager.instance.ShowStageBonus(currentStage.stageBonus);
-                StartStage(currentStageIndex + 1);
+
+                StartCoroutine(DelayStageCoroutine());
             }
             else
             {
@@ -147,12 +145,14 @@ namespace KH
                 elapsedStageTime = 0;
             }
         }
+        private IEnumerator DelayStageCoroutine()
+        {
+            yield return new WaitForSeconds(delayInBetweenStages);
+            StartStage(currentStageIndex + 1);
+        }
         private void TriggerBossEvent(Boss bossData)
         {
             EnemyDatabase.instance.SpawnBoss(bossData);
-            //UI Updates - timer, health bar, background
-            //VFX
-            //Trigger Boss Movement and patterns
         }
         public void ResetStage()
         {

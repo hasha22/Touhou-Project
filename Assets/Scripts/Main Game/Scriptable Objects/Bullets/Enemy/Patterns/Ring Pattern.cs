@@ -24,6 +24,11 @@ namespace KH
                 BulletController bulletController = bullet.GetComponent<BulletController>();
                 bulletController.InitializeEnemyBullet(direction, defaultBulletSpeed, bulletType.sprite, bulletType);
 
+                if (attackSound != null)
+                {
+                    AudioManager.instance.PlaySFX(attackSound, AudioManager.instance.enemyAudioSource.transform, attackSoundVolume);
+                }
+
                 angle += step;
             }
         }

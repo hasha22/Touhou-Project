@@ -7,8 +7,8 @@ namespace KH
     public class DialogueSequence : ScriptableObject
     {
         public List<DialogueLine> lines;
-        [Tooltip("If it's supposed to trigger after wave 2, set it's value to 2.")]
-        public float triggerAfterWaveIndex;
+        [Tooltip("If it's supposed to trigger after wave 2, set it's value to 2. Currently unused")]
+        public float triggerAfterWaveIndex; // currently unused
         public float delayBeforeDialogueBegins = 2f;
     }
 }

@@ -42,6 +42,7 @@ namespace KH
         [Space]
         [SerializeField] private GameObject stageBonusUI;
         [SerializeField] private TextMeshProUGUI stageBonus;
+        [SerializeField] private TextMeshProUGUI stageClearTime;
         [Space]
         [SerializeField] private GameObject stagePresentationUI;
         [SerializeField] private TextMeshProUGUI stagePresentationText;
@@ -420,9 +421,9 @@ namespace KH
         #endregion
 
         #region Stage UI
-        public void ShowStagePresentation(string body, string title, string kanji)
+        public void ShowStagePresentation(string body, string title, string kanji, float delay)
         {
-            StartCoroutine(ShowStagePresentationRoutine(body, title, kanji));
+            StartCoroutine(ShowStagePresentationRoutine(body, title, kanji, delay));
         }
         public void ShowStageBonus(float bonus)
         {
@@ -445,16 +446,19 @@ namespace KH
         }
         private IEnumerator ShowStageBonusRoutine(float bonus)
         {
-            yield return new WaitForSeconds(2f);
-
             stageBonusUI.SetActive(true);
             stageBonus.text = bonus.ToString();
 
-            yield return new WaitForSeconds(2f);
+            float elapsedTime = StageManager.instance.elapsedStageTime;
+            int minutes = Mathf.FloorToInt(elapsedTime / 60);
+            int seconds = Mathf.FloorToInt(elapsedTime % 60);
+            stageClearTime.text = string.Format("{00:00}:{1:00}", minutes, seconds);
+
+            yield return new WaitForSeconds(3f);
 
             stageBonusUI.SetActive(false);
         }
-        private IEnumerator ShowStagePresentationRoutine(string body, string title, string kanji)
+        private IEnumerator ShowStagePresentationRoutine(string body, string title, string kanji, float delay)
         {
             yield return new WaitForSeconds(1f);
 
@@ -464,7 +468,7 @@ namespace KH
             stagePresentationKanji.text = kanji;
             stagePresentationTitle.text = title;
 
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(delay - 1f);
 
             stagePresentationUI.SetActive(false);
         }

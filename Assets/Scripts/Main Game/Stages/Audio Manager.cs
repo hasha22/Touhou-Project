@@ -14,9 +14,10 @@ namespace KH
         public AudioClip playerShootingSFX;
         [SerializeField][Range(0, 1)] private float shootingVolume = 1f;
 
-        [Header("Boss SFX")]
+        [Header("Enemy SFX")]
         public AudioClip spellCardSFX;
         [Range(0, 1)] public float spellCardSFXVolume = 0.05f;
+        public GameObject enemyAudioSource;
 
         [Header("Stage Music")]
         public AudioSource bgmSource;
