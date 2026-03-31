@@ -10,7 +10,7 @@ namespace KH
         [Header("Stage Data")]
         public List<StageTemplate> stages;
         public int currentStageIndex = 0;
-        [SerializeField] private string currentStageName;
+        [SerializeField] private string currentStageName; // visualizer
         public float elapsedStageTime;
         [SerializeField] private float delayInBetweenStages = 3f;
         private StageTemplate currentStage;

@@ -39,7 +39,6 @@ namespace KH
         public float autoCollectY = 2.0f;
         public bool wasAboveAutoCollect = false;
         private float autoCollectTimer = 0f;
-        public bool InCollectionZone => transform.position.y >= autoCollectY;
 
         [Header("Bomb Settings")]
         [SerializeField] private Transform bombParent;
@@ -54,8 +53,7 @@ namespace KH
         private float multiplier1 = 1.5f;
         private int multiplier2 = 2;
         public bool inLight = false;
-        //private bool inShadow = true;
-        // Add VFX and SFX later
+        // Add VFX and SFX later. Perhaps logic for shadows?
 
         [Header("References")]
         public Collider2D playerCollider;
@@ -105,8 +103,6 @@ namespace KH
             {
                 hasConvertedPower = false;
             }
-
-            //bombInput = PlayerInputManager.instance.isBombing;
 
             bool nowAbove = transform.position.y >= autoCollectY;
 

@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: b28bc31d1b78b9e46a1cb1a58a587d6f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7306171891006789818
+    second: dot_junko_auraless_0
+  - first:
+      213: -1706079465803611455
+    second: dot_junko_auraless_1
+  - first:
+      213: 4057489602180605254
+    second: dot_junko_auraless_2
+  - first:
+      213: 4574557457993652700
+    second: dot_junko_auraless_3
+  - first:
+      213: 5343339793940256375
+    second: dot_junko_auraless_4
+  - first:
+      213: -7208027117515756612
+    second: dot_junko_auraless_5
+  - first:
+      213: -2157496501194050043
+    second: dot_junko_auraless_6
+  - first:
+      213: -7095430238107107470
+    second: dot_junko_auraless_7
+  - first:
+      213: 8316348122042130790
+    second: dot_junko_auraless_8
+  - first:
+      213: 2018926680309660081
+    second: dot_junko_auraless_9
+  - first:
+      213: 8581940988700657606
+    second: dot_junko_auraless_10
+  - first:
+      213: -6287372655055391231
+    second: dot_junko_auraless_11
+  - first:
+      213: -1062860975374115094
+    second: dot_junko_auraless_12
+  - first:
+      213: 3844616725520140948
+    second: dot_junko_auraless_13
+  - first:
+      213: -3746008370470276584
+    second: dot_junko_auraless_14
+  - first:
+      213: 5469016060188411043
+    second: dot_junko_auraless_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dot_junko_auraless_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 418
+        width: 36
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab8576700acb46560800000000000000
+      internalID: 7306171891006789818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_junko_auraless_1
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 418
+        width: 36
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c2003ad3c9c258e0800000000000000
+      internalID: -1706079465803611455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_junko_auraless_2
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 418
+        width: 36
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645e0d1bb491f4830800000000000000
+      internalID: 4057489602180605254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_junko_auraless_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 418
+        width: 36
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd9535065c71c7f30800000000000000
+      internalID: 4574557457993652700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_junko_auraless_4
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 418
+        width: 36
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 776940c7b3b572a40800000000000000
+      internalID: 5343339793940256375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_junko_auraless_5
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 290
+        width: 36
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbb2711c681f7fb90800000000000000
+      internalID: -7208027117515756612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_junko_auraless_6
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 290
+        width: 36
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5063e22fc580f02e0800000000000000
+      internalID: -2157496501194050043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_junko_auraless_7
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 290
+        width: 36
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27f7f09aac7f78d90800000000000000
+      internalID: -7095430238107107470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_junko_auraless_8
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 290
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 661eeca1e8a996370800000000000000
+      internalID: 8316348122042130790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_junko_auraless_9
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 290
+        width: 40
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b97a677e1ba40c10800000000000000
+      internalID: 2018926680309660081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_junko_auraless_10
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 162
+        width: 36
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c70ed23cdd291770800000000000000
+      internalID: 8581940988700657606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_junko_auraless_11
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 162
+        width: 36
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1063be4d1e3ceb8a0800000000000000
+      internalID: -6287372655055391231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_junko_auraless_12
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 162
+        width: 42
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aee533df295ff31f0800000000000000
+      internalID: -1062860975374115094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_junko_auraless_13
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 207
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49a472eca82da5530800000000000000
+      internalID: 3844616725520140948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_junko_auraless_14
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 162
+        width: 42
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 812ba78fb31830cc0800000000000000
+      internalID: -3746008370470276584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dot_junko_auraless_15
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 34
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a4cf627129d5eb40800000000000000
+      internalID: 5469016060188411043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      dot_junko_auraless_0: 7306171891006789818
+      dot_junko_auraless_1: -1706079465803611455
+      dot_junko_auraless_10: 8581940988700657606
+      dot_junko_auraless_11: -6287372655055391231
+      dot_junko_auraless_12: -1062860975374115094
+      dot_junko_auraless_13: 3844616725520140948
+      dot_junko_auraless_14: -3746008370470276584
+      dot_junko_auraless_15: 5469016060188411043
+      dot_junko_auraless_2: 4057489602180605254
+      dot_junko_auraless_3: 4574557457993652700
+      dot_junko_auraless_4: 5343339793940256375
+      dot_junko_auraless_5: -7208027117515756612
+      dot_junko_auraless_6: -2157496501194050043
+      dot_junko_auraless_7: -7095430238107107470
+      dot_junko_auraless_8: 8316348122042130790
+      dot_junko_auraless_9: 2018926680309660081
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

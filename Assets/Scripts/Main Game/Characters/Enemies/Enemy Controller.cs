@@ -59,7 +59,6 @@ namespace KH
         {
             attackCoroutine = null;
         }
-
         private void Update()
         {
             // Attacking is only enabled once they enter the playable area
@@ -164,12 +163,7 @@ namespace KH
             {
                 PatternStep step = currentAttackSequence.patternSteps[index];
                 step.pattern.Fire(transform.position, this.gameObject);
-                /*
-                if (step.pattern.attackSound != null)
-                {
-                    AudioManager.instance.PlaySFX(step.pattern.attackSound, transform, step.pattern.attackSoundVolume);
-                }
-                */
+
                 // waits before firing next attack
                 yield return new WaitForSeconds(step.delayBeforeNextPattern);
 
@@ -221,14 +215,6 @@ namespace KH
         }
         private void SpawnItems()
         {
-            /*
-            if (enemyData.itemsToSpawn.Count == 1)
-            { 
-                ItemManager.instance.SpawnItem(enemyData.itemsToSpawn[0], transform.position);
-                return;
-            }
-            */
-
             float angleStep = 360f / itemAngleOffset;
             float radius = 0.2f;
 

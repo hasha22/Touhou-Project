@@ -512,7 +512,7 @@ namespace KH
         }
         public void OnRetryButtonPressed()
         {
-            // Note - this, in essence, restarts the entire game, but only restarts the current stage. once multiple stags are fully implemented
+            // Note - this, in essence, restarts the entire game, but only restarts the current stage. once multiple stages are fully implemented
             // a method for separately restarting the entire game and restarting just the current stage should be implemented.
             Time.timeScale = 1f;
             deathScreen.SetActive(false);

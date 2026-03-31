@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "Input Controls",
     "maps": [
         {
@@ -27,15 +28,6 @@
                     "name": "Shoot",
                     "type": "Value",
                     "id": "3b24d31f-4efa-4775-a213-7660c58fb773",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Bomb",
-                    "type": "Value",
-                    "id": "2706ca2c-2cb8-4047-b2ba-41d1eb5c6e21",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -106,17 +98,6 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Precision",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bdc7149e-c269-4023-ad8d-8f57ca8d1f6c",
-                    "path": "<Keyboard>/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Bomb",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

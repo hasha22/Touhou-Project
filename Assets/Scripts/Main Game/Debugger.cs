@@ -23,8 +23,6 @@ public class Debugger : MonoBehaviour
     [Space]
     [SerializeField] private bool oneUpItem = false;
     [Space]
-    [SerializeField] private bool enableEnemy = false;
-    [Space]
     [SerializeField] private bool scoreItemOutside = false;
 
     [Header("Murder")]
@@ -83,11 +81,6 @@ public class Debugger : MonoBehaviour
         {
             Spawn1UpItem();
             oneUpItem = !oneUpItem;
-        }
-        if (enableEnemy)
-        {
-            //EnableEnemyObject();
-            enableEnemy = !enableEnemy;
         }
         if (murderPlayer)
         {
@@ -148,16 +141,6 @@ public class Debugger : MonoBehaviour
     {
         Vector3 spawnPoint = offScreenSpawnPoint.position + new Vector3(Random.Range(-horizontalRange, horizontalRange), 0f, 0f);
         ItemManager.instance.SpawnRegularScoreItem(spawnPoint);
-    }
-    private void EnableEnemyObject()
-    {
-        enemyObject.SetActive(true);
-
-        EnemyController enemyController = enemyObject.GetComponent<EnemyController>();
-        enemyController.hasDied = false;
-
-        Enemy enemy = enemyController.GetEnemyData();
-        enemy.enemyHealth = enemy.healthResetValue;
     }
     private void KillPlayer()
     {

@@ -4,6 +4,7 @@ namespace KH
 {
     public class FaithUIBar : MonoBehaviour
     {
+        //FIX THIS DAMN THING
         [Header("Slider Setup")]
         public Slider faithSlider;
         public float sliderSpeed = 50f;

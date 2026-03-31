@@ -11,14 +11,13 @@ namespace KH
         [Header("Phases")]
         public int currentPhaseIndex = 0;
         private int helperIndex = 0;
-        private int currentDialogueIndex = 0;
         private BossPhase currentPhase;
 
         [Header("Movement")]
-        [SerializeField] private MovementSequence currentMovementSequence;
+        [SerializeField] private MovementSequence currentMovementSequence; // visualizer
 
         [Header("Boss Attacks")]
-        [SerializeField] private AttackSequence currentAttackSequence;
+        [SerializeField] private AttackSequence currentAttackSequence; // visualizer
 
         [Header("Flags")]
         public bool isPaused = false;
@@ -35,7 +34,6 @@ namespace KH
         private Vector2 minBounds, maxBounds;
         private PlayerManager playerManager;
         [HideInInspector] public Rigidbody2D rb;
-        private PlayerShooter playerShooter;
 
         [Header("Boss SFX")]
         [SerializeField] private AudioClip deathSFX;
@@ -50,7 +48,6 @@ namespace KH
             boxCollider2D = GetComponent<BoxCollider2D>();
 
             playerManager = PlayerInputManager.instance.playerObject.GetComponent<PlayerManager>();
-            playerShooter = PlayerInputManager.instance.playerObject.GetComponent<PlayerShooter>();
             PlayerMovement playerMovement = playerManager.GetComponent<PlayerMovement>();
             playableArea = playerMovement.playableArea;
 
@@ -60,7 +57,6 @@ namespace KH
             maxBounds = bounds.max;
 
             helperIndex = 0;
-            currentDialogueIndex = 0;
         }
         private void Update()
         {
@@ -93,7 +89,6 @@ namespace KH
                 isWaitingForDialogue = true;
                 isPaused = true;
                 DialogueManager.instance.StartDialogue(this.bossData.initialDialogueSequence);
-                currentDialogueIndex++;
             }
             else
             {

@@ -1,9 +1,9 @@
-using System.Collections;
 using UnityEngine;
 namespace KH
 {
     public class AudioManager : MonoBehaviour
     {
+        //FIX THE LOOP ON THIS DAMN THING
         public static AudioManager instance { get; private set; }
 
         [SerializeField] private AudioSource audioPrefab;
@@ -85,30 +85,6 @@ namespace KH
         {
             if (bgmCoroutine != null)
                 StopCoroutine(bgmCoroutine);
-
-            //bgmCoroutine = StartCoroutine(PlayIntroThenBGM());
-        }
-        private IEnumerator PlayIntroThenBGM()
-        {
-            bgmSource.loop = false;
-            bgmSource.clip = introBGM;
-            bgmSource.Play();
-
-
-            // Wait until intro is almost done
-            yield return new WaitForSeconds(introBGM.length - 0.1f);
-
-            // Preload the main BGM clip
-            bgmSource.clip = mainBGM;
-
-            // Wait for the intro to actually finish
-            while (bgmSource.time > 0 && bgmSource.isPlaying)
-            {
-                yield return null;
-            }
-
-            bgmSource.loop = true;
-            bgmSource.Play();
         }
         public void PlayPlayerShooting(AudioClip shootingClip)
         {

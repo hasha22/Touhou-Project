@@ -25,9 +25,6 @@ namespace KH
         private SaveSystem saveSystem;
         private PlayerManager playerManager;
 
-        [Header("Coroutines")]
-        private Coroutine faithDecreaseCoroutine;
-
         private void Awake()
         {
             saveSystem = new SaveSystem();
