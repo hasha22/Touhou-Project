@@ -17,10 +17,11 @@ MonoBehaviour:
   bossID: 1
   bossPrefab: {fileID: 1623289750752492140, guid: 63c6ce0abcb187644921927cc8f9da0f, type: 3}
   hitScore: 30
-  phases: []
+  phases:
+  - {fileID: 0}
   colliderSize: {x: 0.9, y: 1.4}
   colliderOffset: {x: 0, y: 0}
-  spawnAfterWaveIndex: 1
+  spawnAfterWaveIndex: 3
   delayBeforeSpawn: 5
   spawnPoint: {x: -2.76, y: 3.13, z: 0}
   shouldHaveInitialDialogue: 1

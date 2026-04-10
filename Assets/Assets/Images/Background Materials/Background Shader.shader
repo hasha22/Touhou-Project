@@ -51,15 +51,6 @@ Shader "Custom/LightningBackground"
             
             fixed4 frag (v2f i) : SV_Target
             {
-                /*
-                fixed4 baseCol = tex2D(_MainTex, i.uv);
-                fixed4 blendCol = tex2D(_BlendTex, i.uv2);  
-                
-                fixed4 col = lerp(baseCol, blendCol, _Blend);
-                col.rgb *= _LightningColor.rgb;
-                
-                return col;*/
-
                 fixed4 col = tex2D(_MainTex, i.uv);
                 col.rgb *= _LightningColor.rgb;
                 col.a *= _LightningColor.a;  
