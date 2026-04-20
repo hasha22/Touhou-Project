@@ -21,7 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 32610c56d45f5bd4b8e896fe75ea8041, type: 2}
   - {fileID: 11400000, guid: 58bfb77bb2d47c644932d1e982ffa01e, type: 2}
   boss: {fileID: 11400000, guid: b2605123e8cfcf543b3529efcbfeea66, type: 2}
-  stageBackgroundMaterial: {fileID: 2100000, guid: 04a7b7afa09323548b7c6c3bcca31f34, type: 2}
+  stageBackgroundMaterial: {fileID: 2100000, guid: da0a96babf778eb49bdc4755b4a382f9, type: 2}
   presentationText: Light is fading away from the mystical land of Gensokyo. Reimu
     Hakurei, Shrine Maiden and Protector of this land, heads out to investigate what's
     going on. Her first stop is the Scarlet Devil Mansion, where she suspects the

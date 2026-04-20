@@ -28,7 +28,7 @@ public class BackgroundManager : MonoBehaviour
         if (newMaterial == backgroundRenderer.material) return;
 
         StopAllCoroutines();
-        StartCoroutine(FadeCoroutine(newMaterial));
+        //StartCoroutine(FadeCoroutine(newMaterial));
     }
     private IEnumerator FadeCoroutine(Material newMaterial)
     {
