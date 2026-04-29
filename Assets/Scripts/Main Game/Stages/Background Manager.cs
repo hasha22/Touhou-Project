@@ -28,15 +28,15 @@ public class BackgroundManager : MonoBehaviour
         if (newMaterial == backgroundRenderer.material) return;
 
         StopAllCoroutines();
-        //StartCoroutine(FadeCoroutine(newMaterial));
+        StartCoroutine(FadeCoroutine(newMaterial));
     }
     private IEnumerator FadeCoroutine(Material newMaterial)
     {
         backgroundRenderer.material = newMaterial;
 
-        Color color = backgroundRenderer.material.GetColor("_LightningColor");
+        Color color = backgroundRenderer.material.GetColor("_Base_Color");
         color.a = 0f;
-        backgroundRenderer.material.SetColor("_LightningColor", color);
+        backgroundRenderer.material.SetColor("_Base_Color", color);
 
         float t = 0f;
         while (t < transitionDuration)
@@ -45,13 +45,13 @@ public class BackgroundManager : MonoBehaviour
             float lerp = Mathf.Clamp01(t / transitionDuration);
 
             color.a = lerp;
-            backgroundRenderer.material.SetColor("_LightningColor", color);
+            backgroundRenderer.material.SetColor("_Base_Color", color);
 
             yield return null;
         }
 
         color.a = 1f;
-        backgroundRenderer.material.SetColor("_LightningColor", color);
+        backgroundRenderer.material.SetColor("_Base_Color", color);
         backgroundScroller.RefreshMaterial();
     }
 }

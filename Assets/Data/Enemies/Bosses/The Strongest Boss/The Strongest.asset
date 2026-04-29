@@ -33,4 +33,4 @@ MonoBehaviour:
   initialDialogueSequence: {fileID: 11400000, guid: 31e005cb3804e2947bb252b7546d0546, type: 2}
   midFightDialogueSequences: []
   defeatedDialogueSequence: {fileID: 11400000, guid: fb6cf28d06e83a342a0ffd85b6bc05e2, type: 2}
-  bossBackgroundMaterial: {fileID: 2100000, guid: 89c2719f2a3923b47a85b706aba67fb0, type: 2}
+  bossBackgroundMaterial: {fileID: 2100000, guid: 6a76f389fa8cc1a40a66d0ac896caa91, type: 2}
