@@ -36,8 +36,8 @@ namespace KH
 
         public override void Fire(Vector2 origin, GameObject enemy)
         {
-            BossManager boss = EnemyDatabase.instance.currentActiveBoss;
-            if (hailStormRoutine == null)
+            BossManager boss = enemy.GetComponent<BossManager>();
+            if (hailStormRoutine == null && boss != null)
             {
                 hailStormRoutine = boss.StartCoroutine(HailStormRoutine(origin));
             }

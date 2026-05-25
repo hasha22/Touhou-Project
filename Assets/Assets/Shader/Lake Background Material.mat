@@ -61,8 +61,8 @@ Material:
     - _EnableExternalAlpha: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Wave_Speed: 0.2
-    - _Wave_Strength: 0.4
+    - _Wave_Speed: 0.25
+    - _Wave_Strength: 0.45
     - _ZWrite: 0
     m_Colors:
     - _Base_Color: {r: 1, g: 1, b: 1, a: 1}

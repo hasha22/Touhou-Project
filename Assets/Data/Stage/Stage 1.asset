@@ -18,10 +18,8 @@ MonoBehaviour:
   stageBonus: 10000
   waves:
   - {fileID: 11400000, guid: 7ca06f82f0157f84488d87af69ca6f59, type: 2}
-  - {fileID: 11400000, guid: 32610c56d45f5bd4b8e896fe75ea8041, type: 2}
-  - {fileID: 11400000, guid: 58bfb77bb2d47c644932d1e982ffa01e, type: 2}
   boss: {fileID: 11400000, guid: b2605123e8cfcf543b3529efcbfeea66, type: 2}
-  stageBackgroundMaterial: {fileID: 2100000, guid: 383e844dca9f2b342840efbf60e6b68f, type: 2}
+  stageBackgroundMaterial: {fileID: 2100000, guid: 6a76f389fa8cc1a40a66d0ac896caa91, type: 2}
   presentationText: Light is fading away from the mystical land of Gensokyo. Reimu
     Hakurei, Shrine Maiden and Protector of this land, heads out to investigate what's
     going on. Her first stop is the Scarlet Devil Mansion, where she suspects the
