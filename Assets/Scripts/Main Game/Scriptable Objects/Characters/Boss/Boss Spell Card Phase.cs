@@ -12,14 +12,7 @@ namespace KH
         public override void StartPhase(BossManager boss)
         {
             playerHasDied = false;
-            // for loop to start all pattern coroutines
-            foreach (PatternStep step in phaseAttackSequence.patternSteps)
-            {
-                if (step.pattern is Hailstorm hailStorm)
-                {
-                    hailStorm.StartPattern(boss.transform.position);
-                }
-            }
+
             // same logic as enemy controller sequences
             attackRoutine = boss.StartCoroutine(AttackSequence(boss.transform.position, boss));
             moveRoutine = boss.StartCoroutine(MovementSequence(boss.transform.position, boss, boss.rb));

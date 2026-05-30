@@ -18,16 +18,17 @@ MonoBehaviour:
   bossPrefab: {fileID: 1623289750752492140, guid: 63c6ce0abcb187644921927cc8f9da0f, type: 3}
   hitScore: 30
   phases:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 2982884877e7f6f4597bcbfa50a8c412, type: 2}
+  - {fileID: 11400000, guid: 8279148b589c6a748829f8b31e21e5f1, type: 2}
   colliderSize: {x: 0.9, y: 1.4}
   colliderOffset: {x: 0, y: 0}
-  spawnAfterWaveIndex: 3
-  delayBeforeSpawn: 5
+  spawnAfterWaveIndex: 1
+  delayBeforeSpawn: 1
   spawnPoint: {x: -2.76, y: 3.13, z: 0}
   shouldHaveInitialDialogue: 1
   shouldHaveMidFightDialogue: 0
-  shouldHaveDefeatedDialogue: 1
-  initialDialogueSequence: {fileID: 0}
+  shouldHaveDefeatedDialogue: 0
+  initialDialogueSequence: {fileID: 11400000, guid: f2b1859f2dbab654d851bae18d5eb838, type: 2}
   midFightDialogueSequences: []
   defeatedDialogueSequence: {fileID: 0}
-  bossBackgroundMaterial: {fileID: 0}
+  bossBackgroundMaterial: {fileID: 2100000, guid: 6a76f389fa8cc1a40a66d0ac896caa91, type: 2}

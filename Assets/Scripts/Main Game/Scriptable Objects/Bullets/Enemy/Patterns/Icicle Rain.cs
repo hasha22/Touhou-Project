@@ -43,13 +43,13 @@ namespace KH
             float rotationAngle = Mathf.Atan2(laserDirection.y, laserDirection.x) * Mathf.Rad2Deg;
             bullet.transform.rotation = Quaternion.Euler(0f, 0f, rotationAngle - 90f);
 
-            bulletController.InitializeEnemyBullet(laserDirection, defaultBulletSpeed, bulletType.sprite, bulletType);
+            bulletController.InitializeEnemyBullet(laserDirection, defaultBulletSpeed, bulletTypes[0].sprite, bulletTypes[0]);
             bulletController.StopMovement(delayBeforeAcceleration);
 
             yield return new WaitForSeconds(delayBeforeAcceleration);
 
             bulletController.StartAcceleration(initialBulletAcceleration, accelerationDuration);
-            bulletController.InitializeEnemyBullet(laserDirection, accelerationSpeed, bulletType.sprite, bulletType);
+            bulletController.InitializeEnemyBullet(laserDirection, accelerationSpeed, bulletTypes[0].sprite, bulletTypes[0]);
 
             laserRoutine = null;
 

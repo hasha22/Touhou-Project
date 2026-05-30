@@ -34,6 +34,7 @@ namespace KH
         private Vector2 minBounds, maxBounds;
         private PlayerManager playerManager;
         [HideInInspector] public Rigidbody2D rb;
+        private Vector3 lastKnownPosition;
 
         [Header("Boss SFX")]
         [SerializeField] private AudioClip deathSFX;
@@ -175,7 +176,6 @@ namespace KH
                 ObjectPool.instance.ReturnToPool(collision.gameObject);
             }
         }
-
         public void TakeDamage(int damage)
         {
             if (isInvulnerable) return;
@@ -190,7 +190,6 @@ namespace KH
                 currentBossPhaseHealth = 0;
                 currentPhase.EndPhase(this);
             }
-
         }
         private void OnBossDefeated()
         {
@@ -228,6 +227,15 @@ namespace KH
         {
             BossSpellCardPhase bossSpellCardPhase = (BossSpellCardPhase)currentPhase;
             bossSpellCardPhase.playerHasDied = true;
+        }
+        public void HideBoss()
+        {
+            lastKnownPosition = this.transform.position;
+            this.transform.position = ObjectPool.instance.hideBossPosition.transform.position;
+        }
+        public void RevealBoss()
+        {
+            this.transform.position = lastKnownPosition;
         }
     }
 }

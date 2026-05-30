@@ -18,11 +18,11 @@ namespace KH
             bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle - 90f); // subtracting by 90f because sprite is facing up.
 
             BulletController bulletController = bullet.GetComponent<BulletController>();
-            bulletController.InitializeEnemyBullet(directionToPlayer, defaultBulletSpeed, bulletType.sprite, bulletType);
+            bulletController.InitializeEnemyBullet(directionToPlayer, defaultBulletSpeed, bulletTypes[0].sprite, bulletTypes[0]);
 
-            if (attackSound != null)
+            if (attackSounds[0] != null)
             {
-                AudioManager.instance.PlaySFX(attackSound, AudioManager.instance.enemyAudioSource.transform, attackSoundVolume);
+                AudioManager.instance.PlaySFX(attackSounds[0], AudioManager.instance.enemyAudioSource.transform, attackSoundVolume);
             }
         }
     }

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96eb5869044a15f4294391deb0e9b68f, type: 3}
   m_Name: Targeted Bullet
   m_EditorClassIdentifier: 
-  bulletType: {fileID: 11400000, guid: f99a85186606fd24b8760314f8a7c7b7, type: 2}
+  bulletTypes:
+  - {fileID: 11400000, guid: e8589aef98d4ab04a9c39a5d2fb796bb, type: 2}
   defaultBulletSpeed: 3
-  attackSound: {fileID: 0}
+  attackSounds:
+  - {fileID: 0}
   attackSoundVolume: 0.05

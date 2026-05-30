@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa52f05b9382e724291722bbd9407972, type: 3}
+  m_Name: PoL Initial Dialogue Sequence
+  m_EditorClassIdentifier: Assembly-CSharp::KH.DialogueSequence
+  lines:
+  - speakerName: Patron of Light
+    speakerType: 1
+    text: ...
+    playerPortraitSprite: {fileID: 21300000, guid: 5aaf9e47cd173bd4fb104f1c15c3a829, type: 3}
+    bossPortraitSprite: {fileID: 21300000, guid: 85bc8e0437a6ad444991816899da63e1, type: 3}
+  - speakerName: Patron of Light
+    speakerType: 1
+    text: Oh, it's you. I was wondering when you'd arrive.
+    playerPortraitSprite: {fileID: 21300000, guid: 5aaf9e47cd173bd4fb104f1c15c3a829, type: 3}
+    bossPortraitSprite: {fileID: 21300000, guid: 85bc8e0437a6ad444991816899da63e1, type: 3}
+  - speakerName: Reimu Hakurei
+    speakerType: 0
+    text: Look, miss, I can't say I'm very familiar with your powers...
+    playerPortraitSprite: {fileID: 21300000, guid: 5aaf9e47cd173bd4fb104f1c15c3a829, type: 3}
+    bossPortraitSprite: {fileID: 21300000, guid: 85bc8e0437a6ad444991816899da63e1, type: 3}
+  - speakerName: Reimu Hakurei
+    speakerType: 0
+    text: But you need to stop whatever it is that you're doing, for Gensokyo's sake.
+    playerPortraitSprite: {fileID: 21300000, guid: 5aaf9e47cd173bd4fb104f1c15c3a829, type: 3}
+    bossPortraitSprite: {fileID: 21300000, guid: 85bc8e0437a6ad444991816899da63e1, type: 3}
+  - speakerName: Patron of Light
+    speakerType: 1
+    text: Gensokyo does not deserve my light...
+    playerPortraitSprite: {fileID: 21300000, guid: 5aaf9e47cd173bd4fb104f1c15c3a829, type: 3}
+    bossPortraitSprite: {fileID: 21300000, guid: 85bc8e0437a6ad444991816899da63e1, type: 3}
+  triggerAfterWaveIndex: 1
+  delayBeforeDialogueBegins: 2
+  firstSpeaker: Reimu Hakurei
+  secondSpeaker: Meirei

@@ -10,6 +10,8 @@ namespace KH
         [Tooltip("If it's supposed to trigger after wave 2, set it's value to 2. Currently unused")]
         public float triggerAfterWaveIndex; // currently unused
         public float delayBeforeDialogueBegins = 2f;
+        public string firstSpeaker;
+        public string secondSpeaker;
     }
 }
 [System.Serializable]

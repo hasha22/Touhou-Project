@@ -22,11 +22,11 @@ namespace KH
                 GameObject bullet = ObjectPool.instance.SpawnBullet(origin);
 
                 BulletController bulletController = bullet.GetComponent<BulletController>();
-                bulletController.InitializeEnemyBullet(direction, defaultBulletSpeed, bulletType.sprite, bulletType);
+                bulletController.InitializeEnemyBullet(direction, defaultBulletSpeed, bulletTypes[0].sprite, bulletTypes[0]);
 
-                if (attackSound != null)
+                if (attackSounds[0] != null)
                 {
-                    AudioManager.instance.PlaySFX(attackSound, AudioManager.instance.enemyAudioSource.transform, attackSoundVolume);
+                    AudioManager.instance.PlaySFX(attackSounds[0], AudioManager.instance.enemyAudioSource.transform, attackSoundVolume);
                 }
 
                 angle += step;

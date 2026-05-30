@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb63a7a8f9f9b94991fb62e940d311b, type: 3}
   m_Name: HailStorm
   m_EditorClassIdentifier: Assembly-CSharp::KH.Hailstorm
-  bulletType: {fileID: 11400000, guid: f99a85186606fd24b8760314f8a7c7b7, type: 2}
+  bulletTypes:
+  - {fileID: 11400000, guid: f99a85186606fd24b8760314f8a7c7b7, type: 2}
   defaultBulletSpeed: 4
-  attackSound: {fileID: 8300000, guid: f590afc0e7190ef49afc928d8592f3dc, type: 3}
+  attackSounds:
+  - {fileID: 8300000, guid: 3371c90212f02f84eb72be0986ff6a7f, type: 3}
   attackSoundVolume: 0.05
   numberOfBursts: 3
   delayBetweenBursts: 0.8

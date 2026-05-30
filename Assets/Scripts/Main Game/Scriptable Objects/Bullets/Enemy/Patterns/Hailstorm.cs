@@ -61,9 +61,9 @@ namespace KH
                 Vector2 burstOffset = new Vector2(horizontalDir * horizontalOffsetAmount, 0f);
                 Vector2 burstOrigin = origin + burstOffset;
 
-                if (attackSound != null)
+                if (attackSounds[0] != null)
                 {
-                    AudioManager.instance.PlaySFX(attackSound, boss.transform, attackSoundVolume);
+                    AudioManager.instance.PlaySFX(attackSounds[0], boss.transform, attackSoundVolume);
                 }
 
                 // fire 12 steps = 360
@@ -93,7 +93,7 @@ namespace KH
                         float rotationAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                         bullet.transform.rotation = Quaternion.Euler(0f, 0f, rotationAngle - 90f);
 
-                        bulletController.InitializeEnemyBullet(direction, initialSpeed, bulletType.sprite, bulletType);
+                        bulletController.InitializeEnemyBullet(direction, initialSpeed, bulletTypes[0].sprite, bulletTypes[0]);
                         bulletController.StartDeceleration(initialBulletDeceleration, decelerationDuration);
                     }
                 }
@@ -124,15 +124,9 @@ namespace KH
                 float rotationAngle = Mathf.Atan2(newDir.y, newDir.x) * Mathf.Rad2Deg;
                 bc.transform.rotation = Quaternion.Euler(0f, 0f, rotationAngle - 90f);
 
-                bc.InitializeEnemyBullet(newDir, redirectSpeed, bulletType.sprite, bulletType);
+                bc.InitializeEnemyBullet(newDir, redirectSpeed, bulletTypes[0].sprite, bulletTypes[0]);
             }
             hailStormRoutine = null;
-            stopHail = false;
-        }
-        public void StartPattern(Vector2 origin)
-        {
-            BossManager boss = EnemyDatabase.instance.currentActiveBoss;
-            hailStormRoutine = boss.StartCoroutine(HailStormRoutine(origin));
             stopHail = false;
         }
     }

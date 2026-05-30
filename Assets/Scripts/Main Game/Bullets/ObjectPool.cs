@@ -47,6 +47,14 @@ namespace KH
         [SerializeField] private Transform lightZoneContainer;
         [SerializeField] private Transform followZoneContainer;
         [SerializeField] private Transform shadowZoneContainer;
+
+        [Header("Other Containers")]
+        public List<Transform> horizontalPillarSpawns;
+        public List<Transform> verticalPillarSpawns;
+        public List<Transform> diagonalRightPillarSpawns;
+        public List<Transform> diagonalLeftPillarSpawns;
+        public List<Transform> targetedPillarTransforms;
+        public Transform hideBossPosition;
         public Transform importantObjectsParent;
 
         private void Awake()

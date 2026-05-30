@@ -37,18 +37,18 @@ namespace KH
             float rotationAngle = Mathf.Atan2(laserDirection.y, laserDirection.x) * Mathf.Rad2Deg;
             bullet.transform.rotation = Quaternion.Euler(0f, 0f, rotationAngle - 90f);
 
-            bulletController.InitializeEnemyBullet(laserDirection, defaultBulletSpeed, bulletType.sprite, bulletType);
+            bulletController.InitializeEnemyBullet(laserDirection, defaultBulletSpeed, bulletTypes[0].sprite, bulletTypes[0]);
             bulletController.StopMovement(delayBeforeAcceleration);
 
-            if (attackSound != null)
+            if (attackSounds[0] != null)
             {
-                AudioManager.instance.PlaySFX(attackSound, AudioManager.instance.enemyAudioSource.transform, attackSoundVolume);
+                AudioManager.instance.PlaySFX(attackSounds[0], AudioManager.instance.enemyAudioSource.transform, attackSoundVolume);
             }
 
             yield return new WaitForSeconds(delayBeforeAcceleration);
 
             bulletController.StartAcceleration(initialBulletAcceleration, accelerationDuration);
-            bulletController.InitializeEnemyBullet(laserDirection, accelerationSpeed, bulletType.sprite, bulletType);
+            bulletController.InitializeEnemyBullet(laserDirection, accelerationSpeed, bulletTypes[0].sprite, bulletTypes[0]);
 
         }
     }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 namespace KH
 {
@@ -39,6 +40,9 @@ namespace KH
         [Header("Light Zone")]
         private LightZone_FollowBullet currentLightZone;
 
+        [Header("Lightspeed override")]
+        public bool isPillarOfLight = false;
+
 
         private void Awake()
         {
@@ -49,12 +53,8 @@ namespace KH
         private void FixedUpdate()
         {
             float currentSpeed = bulletSpeed;
-            /*
-            if (currentBulletType.canEmitLight && currentLightZone == null)
-            {
-                currentLightZone = LightZoneManager.instance.SpawnFollowLightZone(currentBulletType, transform);
-            }
-            */
+            if (isPillarOfLight) return;
+
             if (isDecelerating)
             {
                 decelerationTimer += Time.deltaTime;
@@ -114,7 +114,6 @@ namespace KH
         }
         public void InitializeEnemyBullet(Vector2 dir, float speed, Sprite sprite, BulletType bulletType)
         {
-            //rb.linearVelocity = dir.normalized * speed;
             spriteRenderer.sprite = sprite;
             bulletSpeed = speed;
             initialSpeed = speed;
@@ -125,6 +124,18 @@ namespace KH
 
             currentDirection = direction;
             isDecelerating = false;
+
+            if (NeedsNewColliders(bulletType))
+            {
+                RecreateColliders(bulletType, spriteWidth, spriteHeight);
+            }
+        }
+        public void InitializePillarOfLight(Sprite sprite, BulletType bulletType)
+        {
+            spriteRenderer.sprite = sprite;
+
+            float spriteWidth = sprite.bounds.size.x;
+            float spriteHeight = sprite.bounds.size.y;
 
             if (NeedsNewColliders(bulletType))
             {
@@ -193,7 +204,7 @@ namespace KH
         }
         private bool NeedsNewColliders(BulletType bulletType)
         {
-            return currentBulletType == null || bulletType.bulletID != currentBulletType.bulletID;
+            return (bulletType.colliderSize.x != 0 && bulletType.colliderSize.y != 0) || currentBulletType == null || bulletType.bulletID != currentBulletType.bulletID;
         }
         private void RecreateColliders(BulletType bulletType, float spriteWidth, float spriteHeight)
         {
@@ -219,7 +230,6 @@ namespace KH
             accelerationTimer = 0f;
             isAccelerating = true;
         }
-
         public void ApplySpeedMultiplier(float multiplier)
         {
             speedMultiplier = Mathf.Min(speedMultiplier, multiplier);
@@ -234,6 +244,27 @@ namespace KH
         {
             stopMovement = false;
             stopDuration = duration;
+        }
+        public IEnumerator WarningPillarFadeInRoutine(GameObject warningPillar, float warningFadeInDuration)
+        {
+            SpriteRenderer sprite = warningPillar.GetComponent<SpriteRenderer>();
+            Color color = sprite.color;
+            color.a = 0f;
+            sprite.color = color;
+
+            float timer = 0f;
+
+            while (timer < warningFadeInDuration)
+            {
+                timer += Time.deltaTime;
+
+                color.a = Mathf.Lerp(0f, 0.8f, timer / warningFadeInDuration);
+                sprite.color = color;
+
+                yield return null;
+            }
+            color.a = 0.8f;
+            sprite.color = color;
         }
     }
 }

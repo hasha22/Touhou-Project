@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2e0963dae156624987d5edda9997fe3, type: 3}
+  m_Name: Lightspeed
+  m_EditorClassIdentifier: Assembly-CSharp::Lightspeed
+  bulletTypes:
+  - {fileID: 11400000, guid: 7ce5e1a652c1fe742b01060e9081ed48, type: 2}
+  - {fileID: 11400000, guid: 6ad448d0e47c1784787a5b7ec6afcb8b, type: 2}
+  defaultBulletSpeed: 3
+  attackSounds:
+  - {fileID: 8300000, guid: 5435fa4fe3572bf479800fdb063da5ef, type: 3}
+  - {fileID: 8300000, guid: 2b09d051876835141b9178f582fa1396, type: 3}
+  attackSoundVolume: 1
+  numberOfRepetitions: 6
+  delayBetweenPatterns: 1
+  warningDurationHorizontal: 1
+  warningDurationVertical: 1
+  warningDurationDiagonalRight: 1
+  warningDurationDiagonalLeft: 1
+  warningDurationTargeted: 1.5
+  warningFadeInDuration: 0.4

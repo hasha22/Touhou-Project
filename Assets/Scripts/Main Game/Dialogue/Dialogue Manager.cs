@@ -12,7 +12,8 @@ namespace KH
         public GameObject dialogueBox;
         public Image playerPortrait;
         public Image bossPortrait;
-        public TMP_Text speakerName;
+        public TMP_Text firstSpeakerName;
+        public TMP_Text secondSpeakerName;
         public TMP_Text dialogueText;
 
         [Header("Typing Settings")]
@@ -77,6 +78,8 @@ namespace KH
             if (isActive) return;
 
             dialogueBox.SetActive(true);
+            firstSpeakerName.text = sequence.firstSpeaker;
+            secondSpeakerName.text = sequence.secondSpeaker;
             isActive = true;
             currentSequence = sequence;
             currentLine = 0;
