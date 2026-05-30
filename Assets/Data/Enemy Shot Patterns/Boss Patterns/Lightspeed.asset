@@ -20,11 +20,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5435fa4fe3572bf479800fdb063da5ef, type: 3}
   - {fileID: 8300000, guid: 2b09d051876835141b9178f582fa1396, type: 3}
   attackSoundVolume: 1
-  numberOfRepetitions: 6
-  delayBetweenPatterns: 1
+  numberOfRepetitions: 12
+  delayBetweenPatterns: 0.5
+  lightPillarDuration: 1
   warningDurationHorizontal: 1
   warningDurationVertical: 1
   warningDurationDiagonalRight: 1
   warningDurationDiagonalLeft: 1
   warningDurationTargeted: 1.5
-  warningFadeInDuration: 0.4
+  warningFadeInDuration: 0.5

@@ -245,12 +245,11 @@ namespace KH
             stopMovement = false;
             stopDuration = duration;
         }
-        public IEnumerator WarningPillarFadeInRoutine(GameObject warningPillar, float warningFadeInDuration)
+        public IEnumerator WarningPillarFadeInRoutine(float warningFadeInDuration)
         {
-            SpriteRenderer sprite = warningPillar.GetComponent<SpriteRenderer>();
-            Color color = sprite.color;
+            Color color = spriteRenderer.color;
             color.a = 0f;
-            sprite.color = color;
+            spriteRenderer.color = color;
 
             float timer = 0f;
 
@@ -259,12 +258,12 @@ namespace KH
                 timer += Time.deltaTime;
 
                 color.a = Mathf.Lerp(0f, 0.8f, timer / warningFadeInDuration);
-                sprite.color = color;
+                spriteRenderer.color = color;
 
                 yield return null;
             }
             color.a = 0.8f;
-            sprite.color = color;
+            spriteRenderer.color = color;
         }
     }
 }

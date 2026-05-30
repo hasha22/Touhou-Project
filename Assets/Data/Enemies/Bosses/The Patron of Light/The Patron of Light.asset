@@ -18,8 +18,8 @@ MonoBehaviour:
   bossPrefab: {fileID: 1623289750752492140, guid: 63c6ce0abcb187644921927cc8f9da0f, type: 3}
   hitScore: 30
   phases:
-  - {fileID: 11400000, guid: 2982884877e7f6f4597bcbfa50a8c412, type: 2}
-  - {fileID: 11400000, guid: 8279148b589c6a748829f8b31e21e5f1, type: 2}
+  - {fileID: 11400000, guid: 871bc6d7fdd316742af5edce33b4a0c5, type: 2}
+  - {fileID: 11400000, guid: 7e38d608d53a5ad40a1b84eb14b7a75c, type: 2}
   colliderSize: {x: 0.9, y: 1.4}
   colliderOffset: {x: 0, y: 0}
   spawnAfterWaveIndex: 1

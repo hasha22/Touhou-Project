@@ -9,7 +9,8 @@ public class Lightspeed : EnemyShotPattern
     public int numberOfRepetitions = 6;
     public float delayBetweenPatterns = 1f;
 
-    [Header("Warning Durations")]
+    [Header("Durations")]
+    public float lightPillarDuration = 1f;
     public float warningDurationHorizontal = 1f;
     public float warningDurationVertical = 1f;
     public float warningDurationDiagonalRight = 1f;
@@ -34,95 +35,90 @@ public class Lightspeed : EnemyShotPattern
         //add disappearing effect
         //Hides the boss, player can only attempt to survive the spell card
         boss.HideBoss();
-
+        Debug.Log("Hid boss");
+        int patternCount = System.Enum.GetValues(typeof(PillarPatternType)).Length;
 
         //loop for repetitions
         for (int i = 0; i < numberOfRepetitions; i++)
         {
-            List<GameObject> warningPillarsToDisable = new List<GameObject>();
-
-            //cycles through patterns
-            PillarPatternType currentPattern = (PillarPatternType)i;
-
-            //Determines warning time for each pattern type. Default 1f.
-            float warningTime = DetermineWarningTime(currentPattern);
-
-            //Sound Effect
-            if (attackSounds[0] != null)
-            {
-                AudioManager.instance.PlaySFX(attackSounds[0], boss.transform, attackSoundVolume);
-            }
-            // Horizontal Pillars
-            if (i == 0)
-            {
-                foreach (Transform spawns in ObjectPool.instance.horizontalPillarSpawns)
-                {
-                    //Spawns Pillar and sets position & rotation
-                    GameObject warningPillar = ObjectPool.instance.SpawnBullet(spawns.position);
-                    warningPillar.transform.rotation = Quaternion.Euler(0f, 0f, spawns.transform.rotation.z);
-
-                    //Overrides default bullet movement
-                    BulletController pillarController = warningPillar.GetComponent<BulletController>();
-                    pillarController.isPillarOfLight = true;
-
-                    //Initialization and fading in
-                    pillarController.InitializePillarOfLight(bulletTypes[0].sprite, bulletTypes[0]);
-                    warningPillarsToDisable.Add(warningPillar);
-                    pillarController.StartCoroutine(pillarController.WarningPillarFadeInRoutine(warningPillar, warningFadeInDuration));
-                }
-                yield return new WaitForSeconds(warningTime);
-
-                if (attackSounds[1] != null)
-                {
-                    AudioManager.instance.PlaySFX(attackSounds[1], boss.transform, attackSoundVolume);
-                }
-
-                foreach (Transform spawns in ObjectPool.instance.horizontalPillarSpawns)
-                {
-                    //Spawns Pillar and sets position & rotation
-                    GameObject lightPillar = ObjectPool.instance.SpawnBullet(spawns.position);
-                    lightPillar.transform.rotation = Quaternion.Euler(0f, 0f, spawns.transform.rotation.z);
-
-                    //Overrides default bullet movement
-                    BulletController pillarController = lightPillar.GetComponent<BulletController>();
-                    pillarController.isPillarOfLight = true;
-
-                    //Initialization
-                    pillarController.InitializePillarOfLight(bulletTypes[1].sprite, bulletTypes[1]);
-
-                    foreach (GameObject pillar in warningPillarsToDisable)
-                    {
-                        warningPillarsToDisable.Remove(pillar);
-                        ObjectPool.instance.ReturnToPool(pillar);
-                    }
-                }
-
-            }
-            // Vertical Pillars
-            else if (i == 1)
-            {
-
-            }
-            // Diagonal Left Pillars
-            else if (i == 2)
-            {
-
-            }
-            //Diagonal Right Pillars
-            else if (i == 3)
-            {
-
-            }
-            //Boss starts getting harder after 4 repetitions
-            else if (i == 4)
-            {
-
-            }
-
+            //Cycles through patterns
+            PillarPatternType currentPattern = (PillarPatternType)(i % patternCount);
+            Debug.Log($"Executing pattern: {currentPattern}");
+            yield return ExecutePattern(GetSpawnPoints(currentPattern), DetermineWarningTime(currentPattern), boss);
             yield return new WaitForSeconds(delayBetweenPatterns);
         }
         boss.RevealBoss();
         spellRoutine = null;
+    }
+    private IEnumerator ExecutePattern(List<Transform> spawnPoints, float warningTime, BossManager boss)
+    {
+        List<GameObject> warningPillars = new();
+        List<GameObject> lightPillars = new();
+
+        // Fire sound
+        if (attackSounds[0] != null)
+        {
+            AudioManager.instance.PlaySFX(attackSounds[0], boss.transform, attackSoundVolume);
+        }
+
+        // Warning phase
+        foreach (Transform spawn in spawnPoints)
+        {
+            GameObject warningPillar = ObjectPool.instance.SpawnBullet(spawn.position);
+            warningPillar.transform.rotation = spawn.rotation;
+            warningPillar.transform.localScale = new Vector3(1f, 3f, 1f);
+            warningPillars.Add(warningPillar);
+
+            BulletController pillarController = warningPillar.GetComponent<BulletController>();
+            pillarController.isPillarOfLight = true;
+            pillarController.InitializePillarOfLight(bulletTypes[0].sprite, bulletTypes[0]);
+
+            pillarController.StartCoroutine(pillarController.WarningPillarFadeInRoutine(warningFadeInDuration));
+        }
+        Debug.Log("Spawned warning pillars.");
+
+        Debug.Log($"Waiting {warningTime} seconds");
+        Debug.Log($"TimeScale: {Time.timeScale}");
+        yield return new WaitForSeconds(warningTime);
+        Debug.Log("Finished waiting");
+
+        // Remove warnings
+        foreach (GameObject pillar in warningPillars)
+        {
+            ObjectPool.instance.ReturnToPool(pillar);
+        }
+        warningPillars.Clear();
+
+        Debug.Log("Removing warning pillars.");
+
+        // Fire sound
+        if (attackSounds[1] != null)
+        {
+            AudioManager.instance.PlaySFX(attackSounds[1], boss.transform, attackSoundVolume);
+        }
+
+        // Spawn lethal pillars
+        foreach (Transform spawn in spawnPoints)
+        {
+            GameObject lightPillar = ObjectPool.instance.SpawnBullet(spawn.position);
+            lightPillar.transform.rotation = spawn.rotation;
+            lightPillar.transform.localScale = new Vector3(1f, 3f, 1f);
+            lightPillars.Add(lightPillar);
+
+            BulletController pillarController = lightPillar.GetComponent<BulletController>();
+            pillarController.isPillarOfLight = true;
+            pillarController.InitializePillarOfLight(bulletTypes[1].sprite, bulletTypes[1]);
+
+            Debug.Log("Spawned lethal pillars.");
+        }
+
+        yield return new WaitForSeconds(lightPillarDuration);
+
+        foreach (GameObject pillar in lightPillars)
+        {
+            ObjectPool.instance.ReturnToPool(pillar);
+        }
+        Debug.Log("Removed lethal pillars. Finished pattern.");
     }
     private float DetermineWarningTime(PillarPatternType currentPattern)
     {
@@ -138,5 +134,24 @@ public class Lightspeed : EnemyShotPattern
                 return warningDurationDiagonalRight;
         }
         return 1f;
+    }
+    private List<Transform> GetSpawnPoints(PillarPatternType pattern)
+    {
+        switch (pattern)
+        {
+            case PillarPatternType.Horizontal:
+                return ObjectPool.instance.horizontalPillarSpawns;
+
+            case PillarPatternType.Vertical:
+                return ObjectPool.instance.verticalPillarSpawns;
+
+            case PillarPatternType.DiagonalLeft:
+                return ObjectPool.instance.diagonalLeftPillarSpawns;
+
+            case PillarPatternType.DiagonalRight:
+                return ObjectPool.instance.diagonalRightPillarSpawns;
+        }
+
+        return ObjectPool.instance.horizontalPillarSpawns;
     }
 }
