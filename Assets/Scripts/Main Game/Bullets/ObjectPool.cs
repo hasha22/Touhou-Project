@@ -54,7 +54,6 @@ namespace KH
         public List<Transform> diagonalRightPillarSpawns;
         public List<Transform> diagonalLeftPillarSpawns;
         public List<Transform> targetedPillarTransforms;
-        public Transform hideBossPosition;
         public Transform importantObjectsParent;
 
         private void Awake()

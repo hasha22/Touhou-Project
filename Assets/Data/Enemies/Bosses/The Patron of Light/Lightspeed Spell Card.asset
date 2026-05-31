@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lightspeed Spell Card
   m_EditorClassIdentifier: 
   phaseBossHealth: 2000
-  phaseName: "Lightl Sign \u300C Lightspeed \u300D"
+  phaseName: "Light Sign \u300C Lightspeed \u300D"
   duration: 30
   isSpellCard: 1
   phaseMovementSequence: {fileID: 11400000, guid: 8b45058486035344bac16692e5016328, type: 2}

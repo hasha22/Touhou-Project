@@ -25,10 +25,10 @@ MonoBehaviour:
   spawnAfterWaveIndex: 1
   delayBeforeSpawn: 1
   spawnPoint: {x: -2.76, y: 3.13, z: 0}
-  shouldHaveInitialDialogue: 1
+  shouldHaveInitialDialogue: 0
   shouldHaveMidFightDialogue: 0
   shouldHaveDefeatedDialogue: 0
-  initialDialogueSequence: {fileID: 11400000, guid: f2b1859f2dbab654d851bae18d5eb838, type: 2}
+  initialDialogueSequence: {fileID: 0}
   midFightDialogueSequences: []
   defeatedDialogueSequence: {fileID: 0}
-  bossBackgroundMaterial: {fileID: 2100000, guid: 6a76f389fa8cc1a40a66d0ac896caa91, type: 2}
+  bossBackgroundMaterial: {fileID: 2100000, guid: 383e844dca9f2b342840efbf60e6b68f, type: 2}

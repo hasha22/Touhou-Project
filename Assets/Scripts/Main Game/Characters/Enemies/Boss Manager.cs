@@ -41,6 +41,7 @@ namespace KH
         [SerializeField][Range(0, 1)] private float deathSFXVolume = 0.1f;
 
         [Header("Coroutines")]
+        public Coroutine activeAttackPatternRoutine;
         private Coroutine phaseRoutine;
         private void Awake()
         {
@@ -58,6 +59,7 @@ namespace KH
             maxBounds = bounds.max;
 
             helperIndex = 0;
+            activeAttackPatternRoutine = null;
         }
         private void Update()
         {
@@ -84,6 +86,8 @@ namespace KH
             spriteRenderer.sprite = bossData.bossSprite;
 
             spriteRenderer.enabled = true;
+            isPaused = false;
+            isWaitingForDialogue = false;
 
             if (bossData.shouldHaveInitialDialogue)
             {
@@ -230,12 +234,13 @@ namespace KH
         }
         public void HideBoss()
         {
-            lastKnownPosition = this.transform.position;
-            this.transform.position = ObjectPool.instance.hideBossPosition.transform.position;
+            isInvulnerable = true;
+            spriteRenderer.enabled = false;
         }
         public void RevealBoss()
         {
-            this.transform.position = lastKnownPosition;
+            isInvulnerable = false;
+            spriteRenderer.enabled = true;
         }
     }
 }

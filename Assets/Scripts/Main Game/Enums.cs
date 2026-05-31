@@ -23,6 +23,7 @@ namespace KH
         Vertical = 1,
         DiagonalLeft = 2,
         DiagonalRight = 3,
+        Targeted = 4,
     }
 
     public enum EnemyType

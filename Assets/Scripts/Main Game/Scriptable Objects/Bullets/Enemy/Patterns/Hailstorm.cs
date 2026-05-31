@@ -30,22 +30,17 @@ namespace KH
         public float redirectSpeed = 3f;
         public float redirectAngleOffset = 15f;
 
-        [Header("Routines")]
-        public Coroutine hailStormRoutine;
-        private bool stopHail;
-
         public override void Fire(Vector2 origin, GameObject enemy)
         {
             BossManager boss = enemy.GetComponent<BossManager>();
-            if (hailStormRoutine == null && boss != null)
+            if (boss.activeAttackPatternRoutine == null && boss != null)
             {
-                hailStormRoutine = boss.StartCoroutine(HailStormRoutine(origin));
+                boss.activeAttackPatternRoutine = boss.StartCoroutine(HailStormRoutine(origin));
             }
         }
         private IEnumerator HailStormRoutine(Vector2 origin)
         {
             BossManager boss = EnemyDatabase.instance.currentActiveBoss;
-            stopHail = false;
 
             // create a list to pass to the coroutine to get a reference to the bullets that must be redirected
             List<BulletController> bulletsToRedirect = new List<BulletController>();
@@ -53,7 +48,6 @@ namespace KH
             // loop for bursts
             for (int i = 0; i < numberOfBursts; i++)
             {
-                if (stopHail) break;
 
                 // small offset 
                 float horizontalDir = (Random.value < 0.5f) ? -1f : 1f;
@@ -126,8 +120,7 @@ namespace KH
 
                 bc.InitializeEnemyBullet(newDir, redirectSpeed, bulletTypes[0].sprite, bulletTypes[0]);
             }
-            hailStormRoutine = null;
-            stopHail = false;
+            boss.activeAttackPatternRoutine = null;
         }
     }
 }

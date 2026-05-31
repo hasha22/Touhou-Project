@@ -6,7 +6,8 @@ using UnityEngine;
 public class Lightspeed : EnemyShotPattern
 {
     [Header("Lightspeed Data")]
-    public int numberOfRepetitions = 6;
+    public int numberOfRepetitionsPhase1 = 4;
+    public int numberOfRepetitionsPhase2 = 6;
     public float delayBetweenPatterns = 1f;
 
     [Header("Durations")]
@@ -17,17 +18,14 @@ public class Lightspeed : EnemyShotPattern
     public float warningDurationDiagonalLeft = 1f;
     public float warningDurationTargeted = 1.5f;
     public float warningFadeInDuration = 0.4f;
-
-    [Header("Coroutines")]
-    public Coroutine spellRoutine;
+    public float delayBetweenPhases = 1f;
 
     public override void Fire(Vector2 origin, GameObject enemy)
     {
         BossManager boss = enemy.GetComponent<BossManager>();
-
-        if (spellRoutine == null)
+        if (boss.activeAttackPatternRoutine == null && boss != null)
         {
-            spellRoutine = boss.StartCoroutine(LightspeedRoutine(boss));
+            boss.activeAttackPatternRoutine = boss.StartCoroutine(LightspeedRoutine(boss));
         }
     }
     private IEnumerator LightspeedRoutine(BossManager boss)
@@ -35,25 +33,46 @@ public class Lightspeed : EnemyShotPattern
         //add disappearing effect
         //Hides the boss, player can only attempt to survive the spell card
         boss.HideBoss();
-        Debug.Log("Hid boss");
-        int patternCount = System.Enum.GetValues(typeof(PillarPatternType)).Length;
+        int patternCountPhase1 = System.Enum.GetValues(typeof(PillarPatternType)).Length - 1;
+        int patternCountPhase2 = patternCountPhase1 + 1;
 
-        //loop for repetitions
-        for (int i = 0; i < numberOfRepetitions; i++)
+        //Phase 1 Repetitions
+        for (int i = 0; i < numberOfRepetitionsPhase1; i++)
         {
             //Cycles through patterns
-            PillarPatternType currentPattern = (PillarPatternType)(i % patternCount);
-            Debug.Log($"Executing pattern: {currentPattern}");
-            yield return ExecutePattern(GetSpawnPoints(currentPattern), DetermineWarningTime(currentPattern), boss);
+            PillarPatternType currentPattern = (PillarPatternType)(i % patternCountPhase1);
+            yield return ExecutePattern(currentPattern, GetSpawnPoints(currentPattern), DetermineWarningTime(currentPattern), boss);
+            yield return new WaitForSeconds(delayBetweenPatterns);
+        }
+
+        //Perhaps add a mid fight dialogue as a warning?
+        yield return new WaitForSeconds(delayBetweenPhases);
+
+        //Phase 2 Repetitions
+        PillarPatternType previousPattern = PillarPatternType.DiagonalRight;
+        for (int i = 0; i < numberOfRepetitionsPhase2; i++)
+        {
+            PillarPatternType currentPattern;
+            //This prevents the random pattern from being the same as the previous one
+            do
+            {
+                currentPattern =
+                    (PillarPatternType)Random.Range(0, patternCountPhase2);
+            }
+            while (currentPattern == previousPattern);
+            previousPattern = currentPattern;
+
+            yield return ExecutePattern(currentPattern, GetSpawnPoints(currentPattern), DetermineWarningTime(currentPattern), boss);
             yield return new WaitForSeconds(delayBetweenPatterns);
         }
         boss.RevealBoss();
-        spellRoutine = null;
+        boss.activeAttackPatternRoutine = null;
     }
-    private IEnumerator ExecutePattern(List<Transform> spawnPoints, float warningTime, BossManager boss)
+    private IEnumerator ExecutePattern(PillarPatternType currentPattern, List<Transform> spawnPoints, float warningTime, BossManager boss)
     {
         List<GameObject> warningPillars = new();
         List<GameObject> lightPillars = new();
+        List<Quaternion> pillarRotations = new();
 
         // Fire sound
         if (attackSounds[0] != null)
@@ -65,9 +84,12 @@ public class Lightspeed : EnemyShotPattern
         foreach (Transform spawn in spawnPoints)
         {
             GameObject warningPillar = ObjectPool.instance.SpawnBullet(spawn.position);
-            warningPillar.transform.rotation = spawn.rotation;
             warningPillar.transform.localScale = new Vector3(1f, 3f, 1f);
             warningPillars.Add(warningPillar);
+
+            Quaternion pillarRotation = GetPillarRotation(spawn, currentPattern);
+            warningPillar.transform.rotation = pillarRotation;
+            pillarRotations.Add(pillarRotation);
 
             BulletController pillarController = warningPillar.GetComponent<BulletController>();
             pillarController.isPillarOfLight = true;
@@ -75,12 +97,7 @@ public class Lightspeed : EnemyShotPattern
 
             pillarController.StartCoroutine(pillarController.WarningPillarFadeInRoutine(warningFadeInDuration));
         }
-        Debug.Log("Spawned warning pillars.");
-
-        Debug.Log($"Waiting {warningTime} seconds");
-        Debug.Log($"TimeScale: {Time.timeScale}");
         yield return new WaitForSeconds(warningTime);
-        Debug.Log("Finished waiting");
 
         // Remove warnings
         foreach (GameObject pillar in warningPillars)
@@ -89,8 +106,6 @@ public class Lightspeed : EnemyShotPattern
         }
         warningPillars.Clear();
 
-        Debug.Log("Removing warning pillars.");
-
         // Fire sound
         if (attackSounds[1] != null)
         {
@@ -98,27 +113,22 @@ public class Lightspeed : EnemyShotPattern
         }
 
         // Spawn lethal pillars
-        foreach (Transform spawn in spawnPoints)
+        for (int i = 0; i < spawnPoints.Count; i++)
         {
+            Transform spawn = spawnPoints[i];
             GameObject lightPillar = ObjectPool.instance.SpawnBullet(spawn.position);
-            lightPillar.transform.rotation = spawn.rotation;
+
+            lightPillar.transform.rotation = pillarRotations[i];
             lightPillar.transform.localScale = new Vector3(1f, 3f, 1f);
+
             lightPillars.Add(lightPillar);
 
             BulletController pillarController = lightPillar.GetComponent<BulletController>();
             pillarController.isPillarOfLight = true;
             pillarController.InitializePillarOfLight(bulletTypes[1].sprite, bulletTypes[1]);
-
-            Debug.Log("Spawned lethal pillars.");
         }
-
-        yield return new WaitForSeconds(lightPillarDuration);
-
-        foreach (GameObject pillar in lightPillars)
-        {
-            ObjectPool.instance.ReturnToPool(pillar);
-        }
-        Debug.Log("Removed lethal pillars. Finished pattern.");
+        boss.StartCoroutine(CleanupPillars(lightPillars)
+);
     }
     private float DetermineWarningTime(PillarPatternType currentPattern)
     {
@@ -132,6 +142,8 @@ public class Lightspeed : EnemyShotPattern
                 return warningDurationDiagonalLeft;
             case PillarPatternType.DiagonalRight:
                 return warningDurationDiagonalRight;
+            case PillarPatternType.Targeted:
+                return warningDurationTargeted;
         }
         return 1f;
     }
@@ -150,8 +162,29 @@ public class Lightspeed : EnemyShotPattern
 
             case PillarPatternType.DiagonalRight:
                 return ObjectPool.instance.diagonalRightPillarSpawns;
+            case PillarPatternType.Targeted:
+                return ObjectPool.instance.targetedPillarTransforms;
         }
-
         return ObjectPool.instance.horizontalPillarSpawns;
+    }
+    private IEnumerator CleanupPillars(List<GameObject> pillars)
+    {
+        yield return new WaitForSeconds(lightPillarDuration);
+
+        foreach (GameObject pillar in pillars)
+        {
+            ObjectPool.instance.ReturnToPool(pillar);
+        }
+    }
+    private Quaternion GetPillarRotation(Transform spawn, PillarPatternType pattern)
+    {
+        if (pattern != PillarPatternType.Targeted) return spawn.rotation;
+
+        Vector2 playerPos = PlayerInputManager.instance.playerObject.transform.position;
+        Vector2 direction = playerPos - (Vector2)spawn.position;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        return Quaternion.Euler(0f, 0f, angle - 90f);
     }
 }
