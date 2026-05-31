@@ -20,6 +20,19 @@ public class Lightspeed : EnemyShotPattern
     public float warningFadeInDuration = 0.4f;
     public float delayBetweenPhases = 1f;
 
+    private readonly List<PillarPatternType> weightedPatterns =
+    new()
+{
+    PillarPatternType.Horizontal,
+    PillarPatternType.Vertical,
+    PillarPatternType.DiagonalLeft,
+    PillarPatternType.DiagonalRight,
+
+    PillarPatternType.Targeted,
+    PillarPatternType.Targeted,
+    PillarPatternType.Targeted
+};
+
     public override void Fire(Vector2 origin, GameObject enemy)
     {
         BossManager boss = enemy.GetComponent<BossManager>();
@@ -34,7 +47,7 @@ public class Lightspeed : EnemyShotPattern
         //Hides the boss, player can only attempt to survive the spell card
         boss.HideBoss();
         int patternCountPhase1 = System.Enum.GetValues(typeof(PillarPatternType)).Length - 1;
-        int patternCountPhase2 = patternCountPhase1 + 1;
+        int patternCountPhase2 = weightedPatterns.Count;
 
         //Phase 1 Repetitions
         for (int i = 0; i < numberOfRepetitionsPhase1; i++)

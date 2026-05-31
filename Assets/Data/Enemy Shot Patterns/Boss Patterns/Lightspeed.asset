@@ -19,7 +19,7 @@ MonoBehaviour:
   attackSounds:
   - {fileID: 8300000, guid: 5435fa4fe3572bf479800fdb063da5ef, type: 3}
   - {fileID: 8300000, guid: 2b09d051876835141b9178f582fa1396, type: 3}
-  attackSoundVolume: 0.2
+  attackSoundVolume: 0.1
   numberOfRepetitionsPhase1: 6
   numberOfRepetitionsPhase2: 10
   delayBetweenPatterns: 0.2
